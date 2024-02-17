@@ -56,7 +56,10 @@
             '/js/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KV2ZB6ZG');</script>
     <!-- End Google Tag Manager -->
-        <!-- <style>
+        <style>
+            .gpay-card-info-iframe.gpay-card-info-iframe-fade-in{
+                display: none;
+            }
             .google-pay-area, .apple-pay-area {
                 display: flex;
                 justify-content: center;
@@ -65,8 +68,19 @@
             }
             .google-pay-area .google-pay-button {
                 height: 44px;
+                max-height: 44px;
+                overflow: hidden
             }
-        </style> -->
+            .gpay-card-info-container.black.long.en{
+                height: 44px;
+                max-height: 44px;
+                background-color: #242423;
+                border-radius: 30px;
+                overflow: hidden; 
+                background-image: url(https://www.gstatic.com/instantbuy/svg/dark/en.svg); background-repeat: no-repeat; 
+                background-position: center;
+            }
+        </style>
 </head>
 
 <body>
@@ -748,7 +762,7 @@
                                                       <!--place order button disabled untill user has a delivery address-->
                                                         @if(isset($login_addreses) && !empty($login_addreses))
                                                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                                                <div class="debit-btn-pw mt-30" style="margin-top: 15px;">
+                                                                <div class="debit-btn-pw mt-30" style="margin-top: 20px;">
                                                                     <button type="submit"
                                                                         class="btn-d-black btn-wt-300 next-button me-2"
                                                                         id="order_btn" type="submit">Pay with card</button>
