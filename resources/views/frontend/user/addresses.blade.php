@@ -169,7 +169,90 @@
             </div>
         </div>
     </section>
-    <script type="text/javascript"  src="https://maps.google.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places" ></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6w6K6XGM-FfYNTKiSNmgcWFzwOqXqWaw&libraries=places">
+</script>
+<script>
+const apiKey = "AIzaSyB6w6K6XGM-FfYNTKiSNmgcWFzwOqXqWaw";
+let autocomplete;
+let address1Field;
+let address2Field;
+let postalField;
+
+function initAutocomplete() {
+  address1Field = document.querySelector("[name='address']");
+  address2Field = document.querySelector("[name='city']");
+  postalField = document.querySelector("[name='zip_code']");
+  // Create the autocomplete object, restricting the search predictions to
+  // addresses in the US and Canada.
+    autocomplete = new google.maps.places.Autocomplete(address1Field, {
+    componentRestrictions: { country: ["uk"] },
+    fields: ["address_components", "geometry"],
+    types: ["address"],
+  });
+  address1Field.focus();
+  // When the user selects an address from the drop-down, populate the
+  // address fields in the form.
+  autocomplete.addListener("place_changed", fillInAddress);
+}
+
+function fillInAddress() {
+  // Get the place details from the autocomplete object.
+  const place = autocomplete.getPlace();
+  let address1 = "";
+  let postcode = "";
+
+  // Get each component of the address from the place details,
+  // and then fill-in the corresponding field on the form.
+  // place.address_components are google.maps.GeocoderAddressComponent objects
+  // which are documented at http://goo.gle/3l5i5Mr
+  for (const component of place.address_components) {
+    // @ts-ignore remove once typings fixed
+    const componentType = component.types[0];
+        switch (componentType) {
+      case "street_number": {
+        address1 = `${component.long_name} ${address1}`;
+        break;
+      }
+
+      case "route": {
+        address1 += component.short_name;
+        break;
+      }
+
+      case "postal_code": 
+      case "postal_code_suffix": 
+    {
+        postcode = component.long_name;
+        break;
+      }
+
+      case "locality":
+      case "postal_town":
+        document.querySelector("[name='city']").value = component.long_name;
+        break;
+    //   case "administrative_area_level_1": {
+    //     document.querySelector("#state").value = component.short_name;
+    //     break;
+    //   }
+    //   case "country":
+    //     document.querySelector("#country").value = component.long_name;
+    //     break;
+    }
+  }
+  address1Field.value = address1;
+  postalField.value = postcode;
+  // After filling the form with address components from the Autocomplete
+  // prediction, set cursor focus on the second address line to encourage
+  // entry of subpremise information such as apartment, unit, or floor number.
+  address2Field.focus();
+}
+
+window.initAutocomplete = initAutocomplete;
+window.initAutocomplete();
+
+</script>
+
+    <!-- <script type="text/javascript"  src="https://maps.google.com/maps/api/js?key={{env('GOOGLE_MAP_KEY')}}&libraries=places" ></script>
 <script>
     //  getLocationDetails( '221B Baker Street, London, UK', "{{env('GOOGLE_MAP_KEY')}}");
 const apiKey = "{{env('GOOGLE_MAP_KEY')}}";
@@ -260,4 +343,4 @@ var autocomplete = new google.maps.places.Autocomplete(input, {
                                     </tbody>
                                 </table>
                             </div>
-                        </div> -->
+                        </div> --> -->
