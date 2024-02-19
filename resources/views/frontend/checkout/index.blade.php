@@ -60,16 +60,21 @@
             .gpay-card-info-iframe.gpay-card-info-iframe-fade-in{
                 display: none;
             }
-            .google-pay-area, .apple-pay-area {
-                display: flex;
-                justify-content: center;
-                width: 100%;
-                margin-top: 20px;
-            }
             .google-pay-area .google-pay-button, #apple-pay-button {
                 height: 44px;
                 max-height: 44px;
                 overflow: hidden
+            }
+            #apple-pay-button {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 44px;
+                max-height: 44px;
+                background-color: #242423;
+                border-radius: 30px;
+                overflow: hidden; 
+                padding: 0px 60px;
             }
             .gpay-card-info-container.black.long.en{
                 height: 44px;
@@ -968,11 +973,11 @@ function mapStatus (status) {
 	return ApplePaySession.STATUS_FAILURE;
 }
 
-function getProductDetails (productNode) {
+function getProductDetails () {
+    const prodNames = <?php echo json_encode($product_data);?>;
 	return {
-		label: productNode.querySelector('h3').innerHTML,
-		amount: productNode.querySelector('.price').innerHTML
-			.replace('$', '')
+		label: "asdf",
+		amount:  $("[name='total_price']").val()
 	}
 }
 
@@ -980,7 +985,7 @@ function createApplePayPaymentRequest (product) {
 	return {
 		countryCode: 'US',
 		currencyCode: currencyCode,
-		supportedNetworks: ['amex', 'visa', 'masterCard', 'discover'],
+		supportedNetworks: ["discover"],
 		merchantCapabilities: ['supports3DS'],
 		requiredShippingContactFields: ['postalAddress', 'name', 'phone'],
 		requiredBillingContactFields: ['postalAddress', 'name'],
@@ -1069,13 +1074,13 @@ function cancel (session, event) {
 
 function startApplePay () {
 	// listen to apple pay buttons' click events
-	$("#apple-pay-button").click(function() {
+	$("#apple-pay-button").click(function(e) {
         console.log("applemay", window.ApplePaySession)
         if (!window.ApplePaySession) {
             return;
         }
         e.preventDefault();
-        var request = createApplePayPaymentRequest(getProductDetails(e.target.parentNode.parentNode));
+        var request = createApplePayPaymentRequest(getProductDetails());
         var session = new ApplePaySession(1, request);
         session.onvalidatemerchant = function (event) {
             validateApplePayMerchant(session, event);
@@ -1101,12 +1106,19 @@ function startApplePay () {
 
 /* Payment Request API */
 function createPaymentRequest (product) {
-	var methodData = [{
-		supportedMethods: ['visa', 'mastercard', 'amex']
-	}, {
-		supportedMethods: ['https://android.com/pay'],
+	var methodData = [ {
+		supportedMethods: ['https://apple.com/apple-pay'],
 		data: {
 			environment: 'TEST',
+            merchantIdentifier:" sdfasdf",
+            paymentMethodType: "credit",
+            countryCode:"US", 
+            version: "12",
+            currencyCode: "USD",
+            merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
+            supportedNetworks: ["visa","masterCard","amex"],
+            requiredBillingContactFields: ["postalAddress"],
+            requiredShippingContactFields: ["postalAddress","name", "phone", "email"],
 			paymentMethodTokenizationParameters: {
 				tokenizationType: 'NETWORK_TOKEN',
 				parameters: {
@@ -1185,14 +1197,14 @@ function shippingOptionChange (request, details, event) {
 
 function startPaymentRequest () {
 	// listen to buy now buttons' click event
-    $("#apple-pay-button").click(function() {
+    $("#apple-pay-button").click(function(e) {
         e.preventDefault();
         console.log("window.PaymentRequest")
         if (!window.PaymentRequest) {
             return;
         }
         console.log("window.PaymentRequest1")
-        var requestData = createPaymentRequest(getProductDetails(e.target.parentNode.parentNode));
+        var requestData = createPaymentRequest(getProductDetails());
         var request = new PaymentRequest(requestData.methodData, requestData.details, requestData.options);
         request.addEventListener('shippingaddresschange', shippingAddressChange.bind(window, request, requestData.details));
         request.addEventListener('shippingoptionchange', shippingOptionChange.bind(window, request, requestData.details));
@@ -1210,8 +1222,13 @@ function startPaymentRequest () {
 }
 
 $(document.body).ready(function(){
-    startApplePay();
-	startPaymentRequest();
+    if(window.ApplePaySession) {
+        startApplePay();
+        startPaymentRequest();
+    }
+    else {
+        $(".apple-pay-area").hide();
+    }
 })
         </script>
     <!-- <script src="js/custom.js"></script> -->
@@ -2049,7 +2066,7 @@ function initAutocomplete() {
   postalField = document.querySelector("#zipcode");
   // Create the autocomplete object, restricting the search predictions to
   // addresses in the US and Canada.
-  autocomplete = new google.maps.places.Autocomplete(address1Field, {
+    autocomplete = new google.maps.places.Autocomplete(address1Field, {
     componentRestrictions: { country: ["uk"] },
     fields: ["address_components", "geometry"],
     types: ["address"],
@@ -2073,7 +2090,7 @@ function fillInAddress() {
   for (const component of place.address_components) {
     // @ts-ignore remove once typings fixed
     const componentType = component.types[0];
-    switch (componentType) {
+        switch (componentType) {
       case "street_number": {
         address1 = `${component.long_name} ${address1}`;
         break;
