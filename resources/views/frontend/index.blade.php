@@ -12,7 +12,7 @@
             <div class="home-div top-div text-white">
                 <h1><span class="sans-heading">be the gent<br> you were</span> <br>born to be</h1>
                 <h4>UK’s Leading Men’s Health Pharmacy</h4>
-                <h4>Allow us to assist you with</h4>
+                <h4>Allow us to assist you with</h4> 
                 <div class="d-flex align-items-center">
                     <a class="white-btn" href="{{ route('shop.index', 'hair-loss') }}">Hair
                         <span>
@@ -910,6 +910,9 @@
                 },
             }
         });
+
+
+      
     });
 </script>
 

@@ -560,7 +560,6 @@
         ?>
     const subscriptionDuration = <?php echo $subscription_dur ?>;
     const finalPrice = <?php echo $final_price ?>;
-    console.log(finalPrice);
 
 
 

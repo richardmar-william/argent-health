@@ -517,6 +517,7 @@ class CheckoutController extends Controller
                     $message->to(Auth()->user()->email)->subject('Order Confirmed!')->from(config('mail.from.address'), config('mail.from.name'));
 
                 });
+                    Session::flesh("order_id", $order_data->ref_id);
                     Session::put('placed_order','placed');
                     Session::forget('sessionid');
                     Session::forget('hair_loss');
