@@ -18,12 +18,10 @@
     <meta property="og:url" content="" />
     <meta name="bucls" content="SHARED-SERVICES" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/css2.css?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
           rel="stylesheet">
-    <link href="/css/css2.css?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/font-awesome/all.min.css" />
-    <link rel="stylesheet" href="css/quest-v2.css">
-    <link rel="stylesheet" href="css/quest-v2-respsv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
 
@@ -51,12 +49,11 @@
         })();
     </script>
     <!-- End Matomo Tag Manager -->
-
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '/js/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KV2ZB6ZG');</script>
     <!-- End Google Tag Manager -->
 
@@ -155,12 +152,12 @@
                                                                      height="90px" alt="">
                                                             </figure>
                                                             <div class="r-t-body-cont">
-
+                                                                
 
                                                                 <h5>
                                                                     <p class="add-highlite-main">{{$products->highlite}}</p>
                                                                             {{ $products->name }}
-                                                                </h5>
+                                                                                                                                            </h5>
                                                                 <p>{{ strip_tags($products->description) }}</p>
                                                                 <div class="strength">
                                                                     <h4> 
@@ -190,7 +187,7 @@
                                                     <div class="recmd-tablets-card act mt-30">
                                                         <div class="r-t-card-body">
                                                             @php
-                                                            
+                                                                
                                                                 $type = in_array("Minoxidil", $con1) ? "Minoxidil" : "Finasteride";
                                                                 $product_data = \App\Models\Product::whereRaw("find_in_set('$type',treat_method)")->first();
                                                                 $media =
@@ -224,7 +221,7 @@
                                                         </div>
                                                         <!-- <div class="r-t-card-footer"><button type="button" class="btn-d-black" title="Add To Cart"><i class="fa-solid fa-circle-plus me-2"></i>Add</button></div> -->
                                                     </div>
-                                        
+                                                
                                                 @else
                                                     @php
 
@@ -252,9 +249,9 @@
 
 
                                                                     <h5>
-                                                                        <p class="add-highlite-main">{{$products->highlite}}</p>
+<p class="add-highlite-main">{{$products->highlite}}</p>
                                                                                 {{ $products->name }}
-                                                                    </h5>
+                                                                                                                                                    </h5>
                                                                     <p>{{ strip_tags($products->description) }}</p>
                                                                     <div class="strength">
                                                                         <h4> 
@@ -396,11 +393,11 @@
                                                                          height="90px" alt="">
                                                                 </figure>
                                                                 <div class="r-t-body-cont">
-                                                                    <h5>
+<h5>
                                                                         <p class="add-highlite-main">{{$products->highlite}}</p>
-                                                                        {{ $products->name }}
+                                                                                {{ $products->name }}
                                                                     </h5>
-                                                                    <p>{{ strip_tags($products->description) }}</p>
+                                                                                                                                        <p>{{ strip_tags($products->description) }}</p>
                                                                     @switch($products->id)
 
                                                                         @case(56)
@@ -444,7 +441,7 @@
 
                                                         </div>
                                                     @endforeach
-                                                @endif
+                                                                                                @endif
                                             @elseif($category == 33)
                                                 <!-- pe recomendation -->
                                                 @php
@@ -486,7 +483,7 @@
                                                     <!-- <div class="r-t-card-footer"><button type="button" class="btn-d-black" title="Add To Cart"><i class="fa-solid fa-circle-plus me-2"></i>Add</button></div> -->
                                                 </div>
                                                 <!-- recocomndation sec end-->
-                                                @if(in_array("I can't tolerate even small amounts of lactose",$con4))
+                                                                                                @if(in_array("I can't tolerate even small amounts of lactose",$con4))
                                                     <div class="recmd-tablets-card act mt-30">
                                                         <div class="r-t-card-body">
                                                             @php
@@ -664,13 +661,15 @@
                                                     <div class="r-t-body-cont">
                                                         <h5>
                                                             <p class="add-highlite-main">{{ $products->highlite }}</p>
-                                                            {{ $products->name }}
+                                                                    {{ $products->name }}
                                                         </h5>
                                                         <p>{{ strip_tags($products->description) }}</p>
                                                         <div class="strength">
                                                             <h4>
                                                                 {{ 'Starting at £'.$products->first_time_disc.' a month' }}
                                                             </h4>
+                                                            <!-- <h4>(Strength {{ isset($products->quantity_mg) ? $products->quantity_mg : ""}} </h4>
+                                                            <h4>Tablet {{ isset($products->quantity) ? $products->quantity : ""}}) </h4> -->
                                                         </div>
 
                                                     </div>
@@ -688,7 +687,7 @@
                                     @php
 
                                         $product1 = \App\Models\Product::whereIn('category_id', [32])->orderBy('id',
-                                            'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
+'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
                                         'DESC')->get();
 
                                     @endphp
@@ -709,7 +708,7 @@
                                                 </figure>
                                                 <div class="r-t-body-cont">
                                                     <h5>
-                                                         {{ $products->highlite }}
+                                                        {{ $products->highlite }}
 
                                                     </h5>
                                                     <p>{{ strip_tags($products->description) }}</p>
@@ -771,7 +770,7 @@
                                     @php
 
                                         $product1 = \App\Models\Product::whereIn('category_id', [33])->orderBy('id',
-                                            'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
+'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
                                         'ASC')->get();
 
                                     @endphp
@@ -828,7 +827,7 @@
                                     @php
 
                                         $product1 = \App\Models\Product::whereIn('category_id', [31])->orderBy('id',
-                                            'ASC')->where("subscription_duration",'1')->groupBy("name")->get();
+                                        'ASC')->where("subscription_duration",'1')->groupBy("name")->get();
 
                                     @endphp
                                     @foreach($product1 as $products)
@@ -850,7 +849,7 @@
                                                     class="r-t-body-cont">
                                                     <h5>
                                                         <p class="add-highlite-main">{{ $products->highlite }}</p>
-                                                        {{ $products->name }}
+                                                                {{ $products->name }}
                                                     </h5>
                                                     <p>{{ strip_tags($products->description) }}</p>
 
@@ -859,6 +858,8 @@
                                                         <h4>
                                                             {{ 'Starting at £'.$products->first_time_disc.' a month' }}
                                                         </h4>
+                                                        <!-- <h4>(Strength {{ isset($products->quantity_mg) ? $products->quantity_mg : ""}} </h4>
+                                                           <h4>Tablet {{ isset($products->quantity) ? $products->quantity : ""}}) </h4> -->
                                                     </div>
 
                                                 </div>
@@ -890,39 +891,39 @@
     </div>
     <!-- 11th step end -->
     <!--============================== strenth section =============================-->
- <div class="quest-v2-step" id="step2">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="v2-6step-cont">
-                    <div class="back-btn-content mb-30">
-                        <div class="row align-items-center">
-                            <div class="col-lg-1 col-md-2 col-6">
-                                <a href="javascript:void(0)" class="text-icon-btn prev-button"
-                                    id="step2_back"><i
-                                        class="fa-sharp fa-solid fa-circle-arrow-left"></i>Back</a>
+    <div class="quest-v2-step" id="step2">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="v2-6step-cont">
+                        <div class="back-btn-content mb-30">
+                            <div class="row align-items-center">
+                                <div class="col-lg-1 col-md-2 col-6">
+                                    <a href="javascript:void(0)" class="text-icon-btn prev-button"
+                                       id="step2_back"><i
+                                            class="fa-sharp fa-solid fa-circle-arrow-left"></i>Back</a>
+                                </div>
+                                <div class="col-lg-10 col-md-8 col-12 ordr-3">
+                                    <h3 class="quest-v2-subh text-center m-0">
+                                        Please choose your preferred monthly treatment
+                                    </h3>
+                                </div>
+                                <div class="col-lg-1 col-md-2 col-6 d-flex justify-content-end"></div>
                             </div>
-                            <div class="col-lg-10 col-md-8 col-12 ordr-3">
-                                <h3 class="quest-v2-subh text-center m-0">
-                                    Please choose your preferred monthly treatment
-                                </h3>
-                            </div>
-                            <div class="col-lg-1 col-md-2 col-6 d-flex justify-content-end"></div>
                         </div>
-                    </div>
-                    
+                        
 
-                    @if($category == 30)
-                        <div class="text-icon-btn justify-content-center fw-500 mb-40" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop_1"
-                                data-bs-content="Choose between the dropper and the spray bottle: Opt for the dropper for precise application, especially suited for longer hair and targeting specific thinning spots. Select the spray for broader coverage, making it easier to apply on shorter hair. Both methods are designed to reach the scalp for maximum scalp effectiveness.">
-                            <i class="fa-solid fa-circle-info"></i>Which Bottle is right for me?
-                        </div>
-                        <div class='ctsm_radio_box' id="strength-view-content">
+                        @if($category == 30)
+                            <div class="text-icon-btn justify-content-center fw-500 mb-40" data-bs-toggle="modal"
+                                 data-bs-target="#staticBackdrop_1"
+                                 data-bs-content="Choose between the dropper and the spray bottle: Opt for the dropper for precise application, especially suited for longer hair and targeting specific thinning spots. Select the spray for broader coverage, making it easier to apply on shorter hair. Both methods are designed to reach the scalp for maximum scalp effectiveness.">
+                                <i class="fa-solid fa-circle-info"></i>Which Bottle is right for me?
+                            </div>
+                            <div class='ctsm_radio_box' id="strength-view-content">
                         </div>
                         <!-- <div class="ctsm_radio_box" id="strength30">
-                            <div class="row">
-                                @php
+                                <div class="row">
+                                    @php
                                     $product1 = \App\Models\Product::where('type', 'Agents Minoxidl Solution')->orderBy('id', 'DESC')->get();
 
                                 @endphp
@@ -938,25 +939,25 @@
 
                                     @endphp
                                 <div class="col-md-6 myBtn" onclick="AddToCart('{{$products->id}}')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="Sildenafil{{$key}}" name="strength_type" value="{{$tag->name}}">
-                                        <label class="" for="Sildenafil{{$key}}">
-                                            <h3>{{$tag->name}}</h3>
-                                            <figure>
-                                                <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
-                                                        alt="">
-                                            </figure>
-                                        </label>
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="Sildenafil{{$key}}" name="strength_type" value="{{$tag->name}}">
+                                            <label class="" for="Sildenafil{{$key}}">
+                                                <h3>{{$tag->name}}</h3>
+                                                <figure>
+                                                    <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
+                                                         alt="">
+                                                </figure>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                
+                                    
                                 @endforeach
-                            </div>
-                        </div>
-
-                        <div class="ctsm_radio_box" id="comb_pill_sol">
-                            <div class="row">
-                                @php
+                                        </div>
+                                    </div>
+                                
+                            <div class="ctsm_radio_box" id="comb_pill_sol">
+                                <div class="row">
+                                    @php
                                     $product1 = \App\Models\Product::where('type', 'Agent Pill and solution')->orderBy('id', 'DESC')->get();
 
                                 @endphp
@@ -972,52 +973,52 @@
 
                                     @endphp
                                 <div class="col-md-6 myBtn" onclick="AddToCart('{{$products->id}}')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="pill_sol_spray{{$key}}" name="strength_type" value="{{$tag->name}}">
-                                        <label class="" for="pill_sol_spray{{$key}}">
-                                            <h3>{{$tag->name}}</h3>
-                                            <figure>
-                                                <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
-                                                        alt="">
-                                            </figure>
-                                        </label>
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="pill_sol_spray{{$key}}" name="strength_type" value="{{$tag->name}}">
+                                            <label class="" for="pill_sol_spray{{$key}}">
+                                                <h3>{{$tag->name}}</h3>
+                                                <figure>
+                                                    <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
+                                                         alt="">
+                                                </figure>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                
+                                    
                                 @endforeach
-                            </div>
-                        </div>
-                        <div class="ctsm_radio_box" id="minoxidil">
-                            <div class="row">
-                                <div class="col-md-6 myBtn" onclick="AddToCart('124','','minoxidil')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="minoxidil_spray" name="strength_type" value="Spray">
-                                        <label class="" for="minoxidil_spray">
-                                            <h3>Spray</h3>
-                                            <figure>
-                                                <img src="{{asset('storage/images/categories/hair-loss.png')}}"
-                                                        alt="">
-                                            </figure>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-6 myBtn" onclick="AddToCart('118','','minoxidil')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="minoxidil_dropper" name="strength_type"
-                                                value="Dropper">
-                                        <label class="" for="minoxidil_dropper">
-                                            <h3>Dropper</h3>
-                                            <figure>
-                                                <img src="{{asset('storage/images/categories/beard.png')}}" alt="">
-                                            </figure>
-                                        </label>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ctsm_radio_box" id="min_fin_2in1">
-                            <div class="row">
-                                @php
+                            <div class="ctsm_radio_box" id="minoxidil">
+                                <div class="row">
+                                    <div class="col-md-6 myBtn" onclick="AddToCart('124','','minoxidil')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="minoxidil_spray" name="strength_type" value="Spray">
+                                            <label class="" for="minoxidil_spray">
+                                                <h3>Spray</h3>
+                                                <figure>
+                                                    <img src="{{asset('storage/images/categories/hair-loss.png')}}"
+                                                         alt="">
+                                                </figure>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 myBtn" onclick="AddToCart('118','','minoxidil')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="minoxidil_dropper" name="strength_type"
+                                                   value="Dropper">
+                                            <label class="" for="minoxidil_dropper">
+                                                <h3>Dropper</h3>
+                                                <figure>
+                                                    <img src="{{asset('storage/images/categories/beard.png')}}" alt="">
+                                                </figure>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="ctsm_radio_box" id="min_fin_2in1">
+                                <div class="row">
+                                    @php
                                     $product1 = \App\Models\Product::where('type', 'Agent 2 in 1 combination solution')->orderBy('id', 'DESC')->get();
 
                                 @endphp
@@ -1033,31 +1034,31 @@
 
                                     @endphp
                                 <div class="col-md-6 myBtn" onclick="AddToCart('{{$products->id}}')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="min_fin_2in1_spray{{$key}}" name="strength_type" value="{{$tag->name}}">
-                                        <label class="" for="min_fin_2in1_spray{{$key}}">
-                                            <h3>{{$tag->name}}</h3>
-                                            <figure>
-                                                <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
-                                                        alt="">
-                                            </figure>
-                                        </label>
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="min_fin_2in1_spray{{$key}}" name="strength_type" value="{{$tag->name}}">
+                                            <label class="" for="min_fin_2in1_spray{{$key}}">
+                                                <h3>{{$tag->name}}</h3>
+                                                <figure>
+                                                    <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
+                                                         alt="">
+                                                </figure>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                
+                                    
                                 @endforeach
                                 
+                                        </div>
+                                    </div> -->
+                        @elseif($category == 31)
+                            <div class="text-icon-btn justify-content-center fw-500 mb-40" data-bs-toggle="modal"
+                                 data-bs-target="#staticBackdrop_1"
+                                 data-bs-content="Choose between the dropper and the spray bottle: Opt for the dropper for precise application, especially suited for longer hair and targeting specific thinning spots. Select the spray for broader coverage, making it easier to apply on shorter hair. Both methods are designed to reach the scalp for maximum scalp effectiveness.">
+                                <i class="fa-solid fa-circle-info"></i>Which Bottle is right for me?
                             </div>
-                        </div> -->
-                    @elseif($category == 31)
-                        <div class="text-icon-btn justify-content-center fw-500 mb-40" data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop_1"
-                                data-bs-content="Choose between the dropper and the spray bottle: Opt for the dropper for precise application, especially suited for longer hair and targeting specific thinning spots. Select the spray for broader coverage, making it easier to apply on shorter hair. Both methods are designed to reach the scalp for maximum scalp effectiveness.">
-                            <i class="fa-solid fa-circle-info"></i>Which Bottle is right for me?
-                        </div>
-                        <div class="ctsm_radio_box" id="beard_minox">
-                            <div class="row">
-                                @php
+                            <div class="ctsm_radio_box" id="beard_minox">
+                                <div class="row">
+                                    @php
                                     $product1 = \App\Models\Product::where('type', 'Full Beard Growth kit with topical solution')->orderBy('id', 'DESC')->get();
 
                                 @endphp
@@ -1073,292 +1074,293 @@
 
                                     @endphp
                                 <div class="col-md-6 myBtn" onclick="AddToCart('{{$products->id}}')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="beard_minox_spray{{$key}}" name="strength_type" value="{{$tag->name}}">
-                                        <label class="" for="beard_minox_spray{{$key}}">
-                                            <h3>{{$tag->name}}</h3>
-                                            <figure>
-                                                <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
-                                                        alt="">
-                                            </figure>
-                                        </label>
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="beard_minox_spray{{$key}}" name="strength_type" value="{{$tag->name}}">
+                                            <label class="" for="beard_minox_spray{{$key}}">
+                                                <h3>{{$tag->name}}</h3>
+                                                <figure>
+                                                    <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}"
+                                                         alt="">
+                                                </figure>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                
+                                    
                                 @endforeach
                                 
-                            </div>
-                        </div>
-
-
-
-                    @elseif($category == 32)
-                        <div data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"
-                                data-bs-content="For first-time users, the lower strength option is advised. This allows you to get the benefits of the treatment while giving your body time to acclimate. Once you see how you respond to the lower strength, you can then consider moving up." class="text-icon-btn justify-content-center fw-500 mb-40"><i
-                                class="fa-solid fa-circle-info" ></i>Which
-                            strength is right for me?
-                        </div>
-                        <div class="ctsm_radio_box" id="sid">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-4 col-12 mb-3  d-flex justify-content-center">
-                                    <div class="pre-tm-tablet">
-                                        <figure>
-                                            <img src="{{ asset('/storage/images/products/sildenafil-100mg-6-tablets1697799650-1.PNG')}}"
-                                                    alt="">
-                                        </figure>
-                                        <h5 id="product_name"></h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-12 mb-3" onclick="AddToCart('52','100mg','Sildenafil')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="Sildenafil" name="strength_type" value="100mg">
-                                        <label class="" for="Sildenafil">
-                                            <div class=" pre-tm-mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">100 mg</h3>
-                                                </div>
-                                                <div class="dosage-price">
-                                                    <h3>from</h3>
-                                                    <h3>£16</h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-12 mb-3" onclick="AddToCart('65' ,'50mg','Sildenafil')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="Sildenafil2" name="strength_type" value="50mg">
-                                        <label class="" for="Sildenafil2">
-                                            <div class=" pre-tm-mg" data-strengthType="50 mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">50 mg</h3>
-                                                </div>
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£12</h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <!-- NEW CODE END -->
-                        <!-- NEW CODE START -->
-                        <div class="ctsm_radio_box" id="teda">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-4 col-6 mb-3  d-flex justify-content-center">
-                                    <div class="pre-tm-tablet">
-                                        <figure>
-                                            <img src="{{ asset('/storage/images/products/tadalafil-20mg-4-tablets1697799931-1.PNG')}}"
-                                                    alt="">
-                                        </figure>
-                                        <h5 id="product_name"></h5>
+
+
+
+                        @elseif($category == 32)
+                            <div data-bs-toggle="modal"
+                                 data-bs-target="#staticBackdrop"
+                                 data-bs-content="For first-time users, the lower strength option is advised. This allows you to get the benefits of the treatment while giving your body time to acclimate. Once you see how you respond to the lower strength, you can then consider moving up." class="text-icon-btn justify-content-center fw-500 mb-40"><i
+                                    class="fa-solid fa-circle-info" ></i>Which
+                                strength is right for me?
+                            </div>
+                            <!-- NEW CODE START -->
+                            <div class="ctsm_radio_box" id="sid">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-12 mb-3  d-flex justify-content-center">
+                                        <div class="pre-tm-tablet">
+                                            <figure>
+                                                <img src="{{ asset('/storage/images/products/sildenafil-100mg-6-tablets1697799650-1.PNG')}}"
+                                                     alt="">
+                                            </figure>
+                                            <h5 id="product_name"></h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 myBtn col-md-7 col-12 mb-3" onclick="AddToCart('55','20mg','tadalafil')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="tedenafil" name="strength_type" value="20mg">
-                                        <label class="" for="tedenafil">
-                                            <div class=" pre-tm-mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">20 mg</h3>
+                                    <div class="col-lg-4 col-md-7 col-12 mb-3" onclick="AddToCart('52','100mg','Sildenafil')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="Sildenafil" name="strength_type" value="100mg">
+                                            <label class="" for="Sildenafil">
+                                                <div class=" pre-tm-mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">100 mg</h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from</h3>
+                                                        <h3>£16</h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
                                                 </div>
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£16 </h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 myBtn col-md-7 col-12 mb-3" onclick="AddToCart('61','10mg','tadalafil')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="tedenafil2" name="strength_type" value="10mg">
-                                        <label class="" for="tedenafil2">
-                                            <div class=" pre-tm-mg" data-strengthType="10 mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">10 mg</h3>
+                                    <div class="col-lg-4 col-md-7 col-12 mb-3" onclick="AddToCart('65' ,'50mg','Sildenafil')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="Sildenafil2" name="strength_type" value="50mg">
+                                            <label class="" for="Sildenafil2">
+                                                <div class=" pre-tm-mg" data-strengthType="50 mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">50 mg</h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£12</h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
                                                 </div>
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£12 </h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="ctsm_radio_box" id="tadalafil_daily">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-4 col-12 mb-3  d-flex justify-content-center">
-                                    <div class="pre-tm-tablet">
-                                        <figure>
-                                            <img src="{{ asset('/storage/images/products/tadalafil-daily-5mg-28-tablets1697799830-1.PNG')}}"
-                                                    alt="">
-                                        </figure>
-                                        <h5 id="product_name"></h5>
+                            <!-- NEW CODE END -->
+                            <!-- NEW CODE START -->
+                            <div class="ctsm_radio_box" id="teda">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-6 mb-3  d-flex justify-content-center">
+                                        <div class="pre-tm-tablet">
+                                            <figure>
+                                                <img src="{{ asset('/storage/images/products/tadalafil-20mg-4-tablets1697799931-1.PNG')}}"
+                                                     alt="">
+                                            </figure>
+                                            <h5 id="product_name"></h5>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-4 myBtn col-md-7 col-12 mb-3" onclick="AddToCart('40','5mg','tadalafil_daily')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="tadalafil_daily_5" name="strength_type" value="5mg">
-                                        <label class="" for="tadalafil_daily_5">
-                                            <div class=" pre-tm-mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">5 mg</h3>
+                                    <div class="col-lg-4 myBtn col-md-7 col-12 mb-3" onclick="AddToCart('55','20mg','tadalafil')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="tedenafil" name="strength_type" value="20mg">
+                                            <label class="" for="tedenafil">
+                                                <div class=" pre-tm-mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">20 mg</h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£16 </h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
                                                 </div>
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£20</h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
+                                            </label>
+                                        </div>
                                     </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <div class="ctsm_radio_box" id="viagra_connect">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-4 col-6 mb-3  d-flex justify-content-center">
-                                    <div class="pre-tm-tablet">
-                                        <figure>
-                                            <img src="{{ asset('/storage/images/products/viagra-connect-50mg-4-tablets1697800053-1.PNG')}}"
-                                                    alt="">
-                                        </figure>
-                                        <h5 id="product_name"></h5>
-                                    </div>
-                                </div>
-                                <div class="col-lg-4 col-md-7 col-12 mb-3 myBtn" onclick="AddToCart('45','50mg','viagra_connect')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="viagra_connect_50" name="strength_type"
-                                                value="50mg">
-                                        <label class="" for="viagra_connect_50">
-                                            <div class=" pre-tm-mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">50mg </h3>
+                                    <div class="col-lg-4 myBtn col-md-7 col-12 mb-3" onclick="AddToCart('61','10mg','tadalafil')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="tedenafil2" name="strength_type" value="10mg">
+                                            <label class="" for="tedenafil2">
+                                                <div class=" pre-tm-mg" data-strengthType="10 mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">10 mg</h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£12 </h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
                                                 </div>
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£35</h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                        <!-- NEW CODE END -->
-                    @elseif($category == 33)
-                        <div data-bs-toggle="modal"
-                                data-bs-target="#staticBackdrop"
-                                data-bs-content="For first-time users, the lower strength option is advised. This allows you to get the benefits of the treatment while giving your body time to acclimate. Once you see how you respond to the lower strength, you can then consider moving up." class="text-icon-btn justify-content-center fw-500 mb-40"><i
-                                class="fa-solid fa-circle-info" ></i>Which
-                            strength is right for me?
-                        </div>
-                        <!-- new code start  -->
-                        <div class="ctsm_radio_box" id="month_priligy">
-                            <div class="row justify-content-center">
-                                <div class="col-lg-4 col-6s mb-3  d-flex justify-content-center">
-                                    <div class="pre-tm-tablet">
-                                        <figure>
-                                            <img src="{{asset('/storage/images/products/Dapoxetine-Prilligy.PNG')}}"
-                                                    alt="">
-                                        </figure>
-                                        <h5 id="product_name"></h5>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 myBtn" onclick="AddToCart('66','30mg','priligy')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="priligy_30" name="strength_type"
-                                                value="Priligy (Dapoxetine) 30mg">
-                                        <label class="" for="priligy_30">
-
-                                            <div class=" pre-tm-mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">Priligy (Dapoxetine) 30mg</h3>
-                                                </div>
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£25</h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
-                                    </div>
-                                </div>
-                                <div class="col-md-4 myBtn" onclick="AddToCart('68','60mg','priligy')">
-                                    <div class="form-group form-radio">
-                                        <input type="radio" id="priligy_60" name="strength_type"
-                                                value="Priligy (Dapoxetine) 60mg">
-                                        <label class="" for="priligy_60">
-                                            <div class=" pre-tm-mg">
-                                                <div class="dosage-mg">
-                                                    <h3 class="hd-4">Priligy (Dapoxetine) 60mg</h3>
-                                                </div>
-
-                                                <div class="dosage-price">
-                                                    <h3>from </h3>
-                                                    <h3>£29</h3>
-                                                    <h3 class="hd-p">per month</h3>
-                                                </div>
-                                            </div>
-                                        </label>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="ctsm_radio_box" id="month_normal">
-                            <div class="row">
-                                <!-- <div class="col-md-6 myBtn" onclick="AddToCart('66')">
-                                                <div class="form-group form-radio">
-                                                    <input type="radio" id="Sildenafil" name="strength_type" value="Priligy (Dapoxetine) 30mg">
-                                                    <label class="" for="Sildenafil">
-                                                        <h3>Priligy (Dapoxetine) 30mg</h3>
-                                                        <figure>
-                                                            <img src="{{asset('frontend_new/images/pre-Priligy.JPG')}}" alt="">
-                                                        </figure>
-                                                    </label>
+                            <div class="ctsm_radio_box" id="tadalafil_daily">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-12 mb-3  d-flex justify-content-center">
+                                        <div class="pre-tm-tablet">
+                                            <figure>
+                                                <img src="{{ asset('/storage/images/products/tadalafil-daily-5mg-28-tablets1697799830-1.PNG')}}"
+                                                     alt="">
+                                            </figure>
+                                            <h5 id="product_name"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 myBtn col-md-7 col-12 mb-3" onclick="AddToCart('40','5mg','tadalafil_daily')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="tadalafil_daily_5" name="strength_type" value="5mg">
+                                            <label class="" for="tadalafil_daily_5">
+                                                <div class=" pre-tm-mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">5 mg</h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£20</h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
                                                 </div>
-                                            </div> -->
-                                <!-- <div class="col-md-6 myBtn" onclick="AddToCart('43')">
-                                                <div class="form-group form-radio">
-                                                    <input type="radio" id="Sildenafil2" name="strength_type" value="Stud 100 Desensitization Spray">
-                                                    <label class="" for="Sildenafil2">
-                                                        <h3>Stud 100 Desensitization Spray</h3>
-                                                        <figure>
-                                                            <img src="{{asset('storage/images/categories/hair-loss.png')}}" alt="">
-                                                        </figure>
-                                                    </label>
-                                                </div>
-                                            </div> -->
+                                            </label>
+                                        </div>
+                                    </div>
 
+                                </div>
                             </div>
+                            <div class="ctsm_radio_box" id="viagra_connect">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-6 mb-3  d-flex justify-content-center">
+                                        <div class="pre-tm-tablet">
+                                            <figure>
+                                                <img src="{{ asset('/storage/images/products/viagra-connect-50mg-4-tablets1697800053-1.PNG')}}"
+                                                     alt="">
+                                            </figure>
+                                            <h5 id="product_name"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-7 col-12 mb-3 myBtn" onclick="AddToCart('45','50mg','viagra_connect')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="viagra_connect_50" name="strength_type"
+                                                   value="50mg">
+                                            <label class="" for="viagra_connect_50">
+                                                <div class=" pre-tm-mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">50mg </h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£35</h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!-- NEW CODE END -->
+                        @elseif($category == 33)
+                            <div data-bs-toggle="modal"
+                                 data-bs-target="#staticBackdrop"
+                                 data-bs-content="For first-time users, the lower strength option is advised. This allows you to get the benefits of the treatment while giving your body time to acclimate. Once you see how you respond to the lower strength, you can then consider moving up." class="text-icon-btn justify-content-center fw-500 mb-40"><i
+                                    class="fa-solid fa-circle-info" ></i>Which
+                                strength is right for me?
+                            </div>
+                            <!-- new code start  -->
+                            <div class="ctsm_radio_box" id="month_priligy">
+                                <div class="row justify-content-center">
+                                    <div class="col-lg-4 col-6s mb-3  d-flex justify-content-center">
+                                        <div class="pre-tm-tablet">
+                                            <figure>
+                                                <img src="{{asset('/storage/images/products/Dapoxetine-Prilligy.PNG')}}"
+                                                     alt="">
+                                            </figure>
+                                            <h5 id="product_name"></h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 myBtn" onclick="AddToCart('66','30mg','priligy')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="priligy_30" name="strength_type"
+                                                   value="Priligy (Dapoxetine) 30mg">
+                                            <label class="" for="priligy_30">
+
+                                                <div class=" pre-tm-mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">Priligy (Dapoxetine) 30mg</h3>
+                                                    </div>
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£25</h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 myBtn" onclick="AddToCart('68','60mg','priligy')">
+                                        <div class="form-group form-radio">
+                                            <input type="radio" id="priligy_60" name="strength_type"
+                                                   value="Priligy (Dapoxetine) 60mg">
+                                            <label class="" for="priligy_60">
+                                                <div class=" pre-tm-mg">
+                                                    <div class="dosage-mg">
+                                                        <h3 class="hd-4">Priligy (Dapoxetine) 60mg</h3>
+                                                    </div>
+
+                                                    <div class="dosage-price">
+                                                        <h3>from </h3>
+                                                        <h3>£29</h3>
+                                                        <h3 class="hd-p">per month</h3>
+                                                    </div>
+                                                </div>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ctsm_radio_box" id="month_normal">
+                                <div class="row">
+                                    <!-- <div class="col-md-6 myBtn" onclick="AddToCart('66')">
+                                                    <div class="form-group form-radio">
+                                                        <input type="radio" id="Sildenafil" name="strength_type" value="Priligy (Dapoxetine) 30mg">
+                                                        <label class="" for="Sildenafil">
+                                                            <h3>Priligy (Dapoxetine) 30mg</h3>
+                                                            <figure>
+                                                                <img src="{{asset('frontend_new/images/pre-Priligy.JPG')}}" alt="">
+                                                            </figure>
+                                                        </label>
+                                                    </div>
+                                                </div> -->
+                                    <!-- <div class="col-md-6 myBtn" onclick="AddToCart('43')">
+                                                    <div class="form-group form-radio">
+                                                        <input type="radio" id="Sildenafil2" name="strength_type" value="Stud 100 Desensitization Spray">
+                                                        <label class="" for="Sildenafil2">
+                                                            <h3>Stud 100 Desensitization Spray</h3>
+                                                            <figure>
+                                                                <img src="{{asset('storage/images/categories/hair-loss.png')}}" alt="">
+                                                            </figure>
+                                                        </label>
+                                                    </div>
+                                                </div> -->
+
+                                </div>
+                            </div>
+                            <!-- new code end -->
+                        @endif
+                        <!-- strenth section Ends-->
+                        <div class="quest-v2-btn text-center mt-30 pt-30">
+                            <!-- <a class="btn-d-black btn-wt-300 " href="javascript:void(0)" id="cont_2">Continue</a> -->
+                            <!-- <button type="submit" class="btn-d-black btn-wt-300" >Continue</button> -->
+                            <button class="btn-d-black btn-wt-300 " type="button" id="cont_2">Continue</button>
                         </div>
-                        <!-- new code end -->
-                    @endif
-                    <!-- strenth section Ends-->
-                    <div class="quest-v2-btn text-center mt-30 pt-30">
-                        <!-- <a class="btn-d-black btn-wt-300 " href="javascript:void(0)" id="cont_2">Continue</a> -->
-                        <!-- <button type="submit" class="btn-d-black btn-wt-300" >Continue</button> -->
-                        <button class="btn-d-black btn-wt-300 " type="button" id="cont_2">Continue</button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
     <!-- 12th step end -->
     <!-- recommended addon -->
 
@@ -1390,6 +1392,19 @@
                                         class="fa-solid fa-circle-info"></i>Which strength is right for me?
                                 </div> -->
 
+                        {{--  @if($category == 30 && $category == 31) --}}
+                        <!-- <div class="text-icon-btn justify-content-center fw-500 mb-40">
+                                        Which Bottle is right for me?
+                                    </div> -->
+                        <!-- <div class="text-icon-btn justify-content-center fw-500 mb-40"><i
+                                        class="fa-solid fa-circle-info"></i>Which Bottle is right for me?
+                                </div> -->
+                        {{--   @else --}}
+                        <!-- <div class="text-icon-btn justify-content-center fw-500 mb-40"><i
+                                            class="fa-solid fa-circle-info"></i>Which strength is right for me?
+                                    </div> -->
+                        {{--   @endif  --}}
+
 
                         @if($category == 30)
                             <div class="text-icon-btn justify-content-center fw-500 mb-40" data-bs-toggle="modal"
@@ -1404,7 +1419,8 @@
                                  data-bs-content="Choose between the dropper and the spray bottle: Opt for the dropper for precise application, especially suited for longer hair and targeting specific thinning spots. Select the spray for broader coverage, making it easier to apply on shorter hair. Both methods are designed to reach the scalp for maximum scalp effectiveness.">
                                 <i class="fa-solid fa-circle-info"></i> Which Bottle is right for me?
                             </div>
-        
+
+
                         @elseif($category == 32)
                             <div data-bs-toggle="modal"
                                  data-bs-target="#staticBackdrop"
@@ -1412,7 +1428,7 @@
                                     class="fa-solid fa-circle-info" ></i>Which
                                 strength is right for me?
                             </div>
-                            
+
                             <!-- NEW CODE START -->
                             <div class="r-t-card-footer justify-content-center d-none" id="Sildenafil_tablet_box_100">
                                 <div class="tablets-list-box t1 myBtn" onclick="AddToCart('52')">
@@ -2076,8 +2092,8 @@
 
 </section>
 
-<script src="/js/jquery3.6.4.min.js"></script>
-<script src="/js/bootstrap.bundle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- <script src="js/custom.js"></script> -->
 <script src="{{ asset('js/custom.js') }}"></script>
 </body>
@@ -2161,6 +2177,9 @@
 
     // code to add product to purchase
     function AddToCart(product_id, strength = null, prod_name = null) {
+        console.log('product_id', product_id);
+        console.log('strength', strength);
+        console.log('prod_name', prod_name);
 
         if (strength != null && strength != '') {
             $('#Sildenafil_tablet_box_100').addClass('d-none');
@@ -2205,6 +2224,7 @@
                 }
             }
         } else {
+            console.log('das');
             // if(prod_name == 'pill_solution'){
             //     $('#cont_2').attr('type','submit');
             // }
@@ -2348,7 +2368,7 @@
             $("#beard3").hide();
 
         }
-        // console.log("product_ids", product_ids);
+// console.log("product_ids", product_ids);
         $("#ProductIds").val(product_ids.join(',')); // Convert the array to a comma-separated string and set the value
     }
 </script>
@@ -2356,13 +2376,13 @@
 
 
 <script>
-    var productList = <?=json_encode($productList)?>;
+var productList = <?=json_encode($productList)?>;
     var mediaList = <?=json_encode($mediaList)?>;
     $(document).ready(function() {
         $('#step2').hide();
         $('#step3').hide();
         $('#step4').hide();
-        function getProductInfo(id) {
+function getProductInfo(id) {
             for(i = 0 ; i < productList.length ; i ++) {
                 if(productList[i].id == id) return productList[i];
             }
@@ -2389,7 +2409,7 @@
         $('#Sildenafil_tablet_100').hide();
         $('#cont_1').click(function() {
             input_prod_id = $('#ProductIds').val();
-            var productInfo = getProductInfo(input_prod_id);
+var productInfo = getProductInfo(input_prod_id);
             if(!productInfo) return;
             var productListWithSameCode = getProductListWithSameCode(input_prod_id);
             if(productListWithSameCode.length == 0) return;
@@ -2418,8 +2438,8 @@
                 </div>`)
             $('#step1').hide();
             $('#step2').show();
-            
-            $('#step2 .ctsm_radio_box [type="radio"]').change(function(){
+
+$('#step2 .ctsm_radio_box [type="radio"]').change(function(){
                 if(this.checked) {
                     $("#cont_2").prop("disabled", false);
                 }
@@ -2439,6 +2459,7 @@
         });
         $('#cont_2').click(function() {
             input_prod_id = $('#ProductIds').val();
+
 
             if (parseInt(input_prod_id) === 116 || parseInt(input_prod_id) === 115 || parseInt(
                     input_prod_id) === 124 || parseInt(input_prod_id) === 118 || parseInt(input_prod_id) ===

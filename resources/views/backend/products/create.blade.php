@@ -3,16 +3,6 @@
     <link rel="stylesheet" href="{{ asset('backend/vendor/select2/css/select2.min.css') }}">
 @endsection
 @section('content')
-<style>
-    .select2-selection--single {
-        height: 42px !important;
-        padding-top: 6px;
-        border: 1px solid black !important;
-    }
-    .select2-selection__arrow > b{
-        margin-top: 6px !important;
-    }
-    </style>
     <div class="card shadow mb-4">
         <div class="card-header py-3 d-flex">
             <h6 class="m-0 font-weight-bold text-primary">
@@ -120,52 +110,6 @@
                             @error('tags')<span class="text-danger">{{ $message }}</span>@enderror
                         </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="treat_method">Recommended Question(s)</label>
-
-                            <select name="treat_method[]" id="treat_method" class="form-control select2" multiple="multiple">
-                                @forelse($treat_method as $treat)
-                                    <option value="{{ $treat }}">
-                                        {{ $treat }}
-                                    </option>
-                                @empty
-                                @endforelse
-                            </select>
-                            @error('treat_method')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="highlite" class="text-small ">{{ __('Highlight') }}</label>
-                            <input id="highlite" type="text" class="form-control form-control-lg" name="highlite"
-                                   value="{{ old('highlite') }}">
-                            @error('highlite')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                    </div>
-
-
-                </div>
-                <div class="row">
-                    <div class="col-6">
-                        <div class="form-group">
-                            <label for="type">Code</label>
-
-                            <select name="type" id="type" class="form-control select2">
-                                @forelse($types as $type)
-                                    <option value="{{ $type }}">
-                                        {{ $type }}
-                                    </option>
-                                @empty
-                                @endforelse
-                            </select>
-                            @error('type')<span class="text-danger">{{ $message }}</span>@enderror
-                        </div>
-                    </div>
-
-
                 </div>
                 <div class="row">
                     <div class="col-6">

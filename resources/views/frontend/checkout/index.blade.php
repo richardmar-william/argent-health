@@ -19,10 +19,10 @@
     <meta property="og:url" content="" />
     <meta name="bucls" content="SHARED-SERVICES" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/css2.css?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
         rel="stylesheet">
-    <link href="/css/css2.css?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/font-awesome/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/quest-v2.css">
     <link rel="stylesheet" href="css/quest-v2-respsv.css">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
@@ -38,25 +38,16 @@
     <script src="{{ asset('frontend/js/vendor/modernizr-2.8.3.min.js') }}"></script>
     <script src="{{ asset('frontend/js/vendor/jquery-1.12.0.min.js') }}"></script>
     <!-- Add CkEditor -->
-    <!-- Matomo Tag Manager -->
-    <script>
-        var _mtm = window._mtm = window._mtm || [];
-        _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
-        (function() {
-            var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
-            g.async=true; g.src='https://analytics.agenthealth.co.uk/js/container_JjcvL0pk.js';
-            s.parentNode.insertBefore(g,s);
-        })();
-    </script>
-    <!-- End Matomo Tag Manager -->
+
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '/js/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KV2ZB6ZG');</script>
     <!-- End Google Tag Manager -->
-        <style>
+<style>
             .gpay-card-info-iframe.gpay-card-info-iframe-fade-in{
                 display: none;
             }
@@ -95,6 +86,18 @@
             height="0" width="0"
             style="display:none;visibility:hidden"></iframe>
 </noscript>
+
+<!-- Matomo Tag Manager -->
+<script>
+    var _mtm = window._mtm = window._mtm || [];
+    _mtm.push({'mtm.startTime': (new Date().getTime()), 'event': 'mtm.Start'});
+    (function() {
+        var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+        g.async=true; g.src='https://analytics.agenthealth.co.uk/js/container_JjcvL0pk.js';
+        s.parentNode.insertBefore(g,s);
+    })();
+</script>
+<!-- End Matomo Tag Manager -->
 
     <section class="questionnaire-v2-main">
         <div class="quest-v2-header">
@@ -261,7 +264,7 @@
                                             <div class="qos-product-text mb-3 mt-2">
                                                 <input type="text" id="coupon_code" class="discount-cls-main"
                                                     name="coupon_code" value="" placeholder="Coupon Code" >
-                                                <input type="hidden" id="input_couponTotal" value="">
+<input type="hidden" id="input_couponTotal" value="">
                                                 <input type="hidden" name="total_price" value="{{$total_price}}">
                                                 <input type="hidden" name="session_id" value="{{$sessionId}}">
 
@@ -345,8 +348,8 @@
                                     <h3 class="quest-v2-subh mb-30">
                                         Order summary
                                     </h3>
-                                    <h4 class="q-orsm-heading mb-20">Log in to your account </h4>
 
+                                    <h4 class="q-orsm-heading mb-20">Log in to your account </h4>
                                     <p class="mb-40">Please log in to your account to complete your order.<br>Or if you don't have an
                                         account
                                         <a href="javascript:void(0)" onClick="ShowHideSignup(1)"
@@ -379,14 +382,14 @@
                                             <div class="l-s-button-box" style="display: flex; justify-content: between;">
                                                 <button type="submit"
                                                     class="l-s-btn next-button btn-d-black">{{ __('Login') }}</button>
-                                                    
+
                                             </div>
                                             <!-- <button class="btn-d-black next-button">Login</button> -->
 
                                             @if (Route::has('password.request'))
                                             <a href="{{ route('password.request') }}">Forget your password?</a>
                                             @endif
-                                            
+
                                         </div>
                                     </form>
                                     <!-- log in form end-->
@@ -728,7 +731,7 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                            <h4 class="q-orsm-heading mb-20 debit-text">
+                                                            <h4 class="q-orsm-heading mb-20 debit-text"><?xml version="1.0" standalone="no"?>
                                                                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
                                                                 "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
                                                                 <svg version="1.0" xmlns="http://www.w3.org/2000/svg"
@@ -769,10 +772,10 @@
                                                         @if(isset($login_addreses) && !empty($login_addreses))
                                                             <div style="display: flex; justify-content: space-between; align-items: center;">
                                                                 <div class="debit-btn-pw mt-30" style="margin-top: 20px;">
-                                                                    <button type="submit"
-                                                                        class="btn-d-black btn-wt-300 next-button me-2"
-                                                                        id="order_btn" type="submit">Pay with card</button>
-                                                                </div>
+                                                                <button type="submit"
+                                                                    class="btn-d-black btn-wt-300 next-button me-2"
+                                                                    id="order_btn" type="submit">Pay with card</button>
+</div>
                                                                 
                                                                 <div class='google-pay-area' style="display: inline-block;">
                                                                     <div id="google-pay-button"></div>
@@ -925,13 +928,13 @@
 
     </section>
 
-    <script src="/js/jquery3.6.4.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
 
-    <script src="http://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
-    <script src="http://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
-    <script async crossorigin
+    <script src="https://jqueryvalidation.org/files/dist/additional-methods.min.js"></script>
+    <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/jquery.mask.min.js"></script>
+<script async crossorigin
         src="https://applepay.cdn-apple.com/jsapi/v1.1.0/apple-pay-sdk.js"
         ></script>
         <script>
@@ -1233,407 +1236,6 @@ $(document.body).ready(function(){
         </script>
     <!-- <script src="js/custom.js"></script> -->
     <script src="{{ asset('js/custom.js') }}"></script>
-    <Script>/**
- * Define the version of the Google Pay API referenced when creating your
- * configuration
- *
- */
-const baseRequest = {
-    apiVersion: 2,
-    apiVersionMinor: 0,
-};
-
-/**
- * Card networks supported by your site and your gateway
- *
- */
-const allowedCardNetworks = [
-    "AMEX",
-    "DISCOVER",
-    "JCB",
-    "MASTERCARD",
-    "MIR",
-    "VISA",
-];
-
-/**
- * Card authentication methods supported by your site and your gateway
- *
- * supported card networks
- */
-const allowedCardAuthMethods = ["PAN_ONLY", "CRYPTOGRAM_3DS"];
-
-/**
- * Identify your gateway and your site's gateway merchant identifier
- *
- * The Google Pay API response will return an encrypted payment method capable
- * of being charged by a supported gateway after payer authorization
- *
- */
-const tokenizationSpecification = {
-    type: "PAYMENT_GATEWAY",
-    parameters: {
-        gateway: "example",
-        gatewayMerchantId: "exampleGatewayMerchantId",
-    },
-};
-
-/**
- * Describe your site's support for the CARD payment method and its required
- * fields
- *
- */
-const baseCardPaymentMethod = {
-    type: "CARD",
-    parameters: {
-        allowedAuthMethods: allowedCardAuthMethods,
-        allowedCardNetworks: allowedCardNetworks,
-    },
-};
-
-/**
- * Describe your site's support for the CARD payment method including optional
- * fields
- *
- */
-const cardPaymentMethod = Object.assign({}, baseCardPaymentMethod, {
-    tokenizationSpecification: tokenizationSpecification,
-});
-
-/**
- * An initialized google.payments.api.PaymentsClient object or null if not yet set
- *
- */
-let paymentsClient = null;
-
-/**
- * Configure your site's support for payment methods supported by the Google Pay
- * API.
- *
- * Each member of allowedPaymentMethods should contain only the required fields,
- * allowing reuse of this base request when determining a viewer's ability
- * to pay and later requesting a supported payment method
- *
- */
-function getGoogleIsReadyToPayRequest() {
-    return Object.assign({}, baseRequest, {
-        allowedPaymentMethods: [baseCardPaymentMethod],
-    });
-}
-
-/**
- * Configure support for the Google Pay API
- *
- */
-function getGooglePaymentDataRequest() {
-    const paymentDataRequest = Object.assign({}, baseRequest);
-    paymentDataRequest.allowedPaymentMethods = [cardPaymentMethod];
-    paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
-    paymentDataRequest.merchantInfo = {
-        // merchantId: 'BCR2DN4T5GROHDAU',
-        merchantName: "example",
-    };
-
-    paymentDataRequest.callbackIntents = [
-        "SHIPPING_ADDRESS",
-        "SHIPPING_OPTION",
-        "PAYMENT_AUTHORIZATION",
-    ];
-    paymentDataRequest.shippingAddressRequired = true   ;
-    paymentDataRequest.shippingAddressParameters = {};
-    paymentDataRequest.shippingOptionRequired = true;
-
-    return paymentDataRequest;
-}
-
-/**
- * Return an active PaymentsClient or initialize
- *
- */
-function getGooglePaymentsClient() {
-    if (paymentsClient === null) {
-        paymentsClient = new google.payments.api.PaymentsClient({
-            environment: "TEST",
-            merchantInfo: {
-                merchantName: "example",
-                merchantId: "exampleGatewayMerchantId",
-            },
-            paymentDataCallbacks: {
-                onPaymentAuthorized: onPaymentAuthorized,
-                onPaymentDataChanged: onPaymentDataChanged,
-                // onMailVerificiatJ Iz
-            },
-        });
-    }
-    return paymentsClient;
-}
-
-function onPaymentAuthorized(paymentData) {
-    return new Promise(function (resolve, reject) {
-        // handle the response
-        processPayment(paymentData)
-            .then(function () {
-                resolve({ transactionState: "SUCCESS" });
-            })
-            .catch(function () {
-                resolve({
-                    transactionState: "ERROR",
-                    error: {
-                        intent: "PAYMENT_AUTHORIZATION",
-                        message: "Insufficient funds",
-                        reason: "PAYMENT_DATA_INVALID",
-                    },
-                });
-            });
-    });
-}
-
-/**
- * Handles dynamic buy flow shipping address and shipping options callback intents.
- *
- */
-function onPaymentDataChanged(intermediatePaymentData) {
-    return new Promise(function (resolve, reject) {
-        let shippingAddress = intermediatePaymentData.shippingAddress;
-        let shippingOptionData = intermediatePaymentData.shippingOptionData;
-        let paymentDataRequestUpdate = {};
-
-        if (
-            intermediatePaymentData.callbackTrigger == "INITIALIZE" ||
-            intermediatePaymentData.callbackTrigger == "SHIPPING_ADDRESS"
-        ) {
-            if (shippingAddress.administrativeArea == "NJ") {
-                paymentDataRequestUpdate.error =
-                    getGoogleUnserviceableAddressError();
-            } else {
-                paymentDataRequestUpdate.newShippingOptionParameters =
-                    getGoogleDefaultShippingOptions();
-                let selectedShippingOptionId =
-                    paymentDataRequestUpdate.newShippingOptionParameters
-                        .defaultSelectedOptionId;
-                paymentDataRequestUpdate.newTransactionInfo =
-                    calculateNewTransactionInfo(selectedShippingOptionId);
-            }
-        } else if (
-            intermediatePaymentData.callbackTrigger == "SHIPPING_OPTION"
-        ) {
-            paymentDataRequestUpdate.newTransactionInfo =
-                calculateNewTransactionInfo(shippingOptionData.id);
-        }
-
-        resolve(paymentDataRequestUpdate);
-    });
-}
-
-/**
- * Helper function to create a new TransactionInfo object.
- *
- */
-function calculateNewTransactionInfo(shippingOptionId) {
-    let newTransactionInfo = getGoogleTransactionInfo();
-
-    let shippingCost = getShippingCosts()[shippingOptionId];
-    newTransactionInfo.displayItems.push({
-        type: "LINE_ITEM",
-        label: "Shipping cost",
-        price: String(shippingCost),
-        status: "FINAL",
-    });
-
-    let totalPrice = 0.0;
-    newTransactionInfo.displayItems.forEach(
-        (displayItem) => (totalPrice += parseFloat(displayItem.price))
-    );
-    newTransactionInfo.totalPrice = totalPrice.toString();
-
-    return newTransactionInfo;
-}
-
-/**
- * Initialize Google PaymentsClient after Google-hosted JavaScript has loaded
- *
- * Display a Google Pay payment button after confirmation of the viewer's
- * ability to pay.
- */
-function onGooglePayLoaded() {
-    const paymentsClient = getGooglePaymentsClient();
-    paymentsClient
-        .isReadyToPay(getGoogleIsReadyToPayRequest())
-        .then(function (response) {
-            if (response.result) {
-                addGooglePayButton();
-                // @todo prefetch payment data to improve performance after confirming site functionality
-                // prefetchGooglePaymentData();
-            }
-        })
-        .catch(function (err) {
-            // show error in developer console for debugging
-            console.error(err);
-        });
-}
-
-/**
- * Add a Google Pay purchase button alongside an existing checkout button
- *
- */
-function addGooglePayButton() {
-    const paymentsClient = getGooglePaymentsClient();
-    const button = paymentsClient.createButton({
-        onClick: onGooglePaymentButtonClicked,
-        allowedPaymentMethods: [baseCardPaymentMethod],
-    });
-    document.getElementById("google-pay-button").appendChild(button);
-}
-
-/**
- * Provide Google Pay API with a payment amount, currency, and amount status
- *
- */
-function getGoogleTransactionInfo() {
-    const prodNames = <?php echo json_encode($product_data);?>;
-    let displayTmpItems = prodNames.map(item => {
-        return {
-            label: item.name,
-            type: "SUBTOTAL",
-            price: String(item.first_time_disc),
-        }})
-    if($("#input_couponTotal").val()) {
-        displayTmpItems.push( {
-            label: `Coupon code: ${$("#coupon_code").val()}`,
-            type: "SUBTOTAL",
-            price: String(-1 * $("#input_couponTotal").val()),
-        })
-    }
-    return {
-        displayItems: displayTmpItems,
-        countryCode: "GB",
-        currencyCode: "GBP",
-        totalPriceStatus: "FINAL",
-        totalPrice: $("[name='total_price']").val(),
-        totalPriceLabel: "Total",
-    };
-}
-
-/**
- * Provide a key value store for shippping options.
- */
-function getShippingCosts() {
-    return {
-        "shipping-001": "0.00",
-    };
-}
-
-/**
- * Provide Google Pay API with shipping address parameters when using dynamic buy flow.
- *
- */
-function getGoogleShippingAddressParameters() {
-    return {
-        allowedCountryCodes: ["UK"],
-        phoneNumberRequired: true,
-    };
-}
-
-/**
- * Provide Google Pay API with shipping options and a default selected shipping option.
- *
- */
-function getGoogleDefaultShippingOptions() {
-    return {
-        defaultSelectedOptionId: "shipping-001",
-        shippingOptions: [
-            {
-                id: "shipping-001",
-                label: "Free: Standard shipping",
-                description: "Free Shipping delivered in 5 business days.",
-            },
-        ],
-    };
-}
-
-/**
- * Provide Google Pay API with a payment data error.
- *
- */
-function getGoogleUnserviceableAddressError() {
-    return {
-        reason: "SHIPPING_ADDRESS_UNSERVICEABLE",
-        message: "Cannot ship to the selected address",
-        intent: "SHIPPING_ADDRESS",
-    };
-}
-
-/**
- * Prefetch payment data to improve performance
- *
- */
-function prefetchGooglePaymentData() {
-    const paymentDataRequest = getGooglePaymentDataRequest();
-    // transactionInfo must be set but does not affect cache
-    paymentDataRequest.transactionInfo = {
-        totalPriceStatus: "NOT_CURRENTLY_KNOWN",
-        currencyCode: "USD",
-    };
-    const paymentsClient = getGooglePaymentsClient();
-    paymentsClient.prefetchPaymentData(paymentDataRequest);
-}
-
-/**
- * Show Google Pay payment sheet when Google Pay payment button is clicked
- */
-function onGooglePaymentButtonClicked() {
-    const paymentDataRequest = getGooglePaymentDataRequest();
-    paymentDataRequest.transactionInfo = getGoogleTransactionInfo();
-
-    const paymentsClient = getGooglePaymentsClient();
-    paymentsClient.loadPaymentData(paymentDataRequest);
-}
-
-/**
- * Process payment data returned by the Google Pay API
- *
- *
- */
-function processPayment(paymentData) {
-    return new Promise(function (resolve, reject) {
-        setTimeout(function () {
-            paymentToken = paymentData.paymentMethodData.tokenizationData.token;
-            if (paymentToken != "") {
-                jQuery.ajax({
-                    url: "{{ url('google-payment') }}",
-                    method: "POST",
-                    data: {
-                        total_price: <?php echo $first_time_discount?>,
-                        coupon_code: $('#ass_coupon_code').val(),
-                        data: paymentData,
-                        subscription_duration: "<?php echo $prod_subs?>",
-                        amount: $("[name='total_price']").val(),
-                        address_id: $("#address_id").val(),
-                        order_id: '<?php echo $order_id; ?>',
-                        product_id: "<?php echo $product_id; ?>",
-                        session_id: "<?php echo $sessionId;?>",
-                        productData: <?php echo json_encode($product_data);?>,
-                        _token: "{{ csrf_token() }}",
-                    },
-                    success: function (result) {
-                        if (result.success) {
-                            window.location.href = result.url;
-                        } else {
-                            alert("Some thing went wrong, please tray again");
-                        }
-                    },
-                });
-            }
-
-            resolve({});
-        }, 3000);
-    });
-}
-
-    </script>
-    <script async src="https://pay.google.com/gp/p/js/pay.js" onload="onGooglePayLoaded()"></script>
-    
-
 </body>
 
 </html>
@@ -1906,8 +1508,8 @@ $(document).ready(function() {
             var afterAmt = totalAmt*(0.9);
             discountedAmt = parseFloat(discountedAmt).toFixed(2);
             afterAmt = parseFloat(afterAmt).toFixed(2);
-            $("#input_couponTotal").val(discountedAmt)
-            $("[name='total_price']").val(afterAmt)
+
+
             $('#couponTotal').html('£'+discountedAmt);
             $('#orderTotal').html('£'+afterAmt)
             $('.coupon-area').removeClass('d-none');
@@ -2136,75 +1738,75 @@ window.initAutocomplete();
 // google.maps.event.addListener(window, 'load', initialize);
 
 // function initialize() {
-//     console.log("google map inialized");
+    //     console.log("google map inialized");
 //     var input = document.getElementById('autocomplete');
-//     var autocomplete = new google.maps.places.Autocomplete(input, {
-//         types: ['geocode'], // Restrict to addresses
-//         componentRestrictions: {
-//             country: 'UK'
-//         }, // Restrict to Algeria
-//     });
-//     console.log(autocomplete)
+    //     var autocomplete = new google.maps.places.Autocomplete(input, {
+        //         types: ['geocode'], // Restrict to addresses
+        //         componentRestrictions: {
+            //             country: 'UK'
+        //         }, // Restrict to Algeria
+    //     });
+    //     console.log(autocomplete)
 //     autocomplete.addListener('place_changed', function() {
 
-//         var place = autocomplete.getPlace();
-//         console.log(place.adr_address);
-//         getLocationDetails(place.adr_address, apiKey)
-//             .then(({
-//                 city,
-//                 country,
-//                 pincode
-//             }) => {
-//                 $('input[name="postcode"]').val(pincode);
-//                 $('input[name="city"]').val(city);
+        //         var place = autocomplete.getPlace();
+        //         console.log(place.adr_address);
+        //         getLocationDetails(place.adr_address, apiKey)
+            //             .then(({
+                //                 city,
+                //                 country,
+                //                 pincode
+            //             }) => {
+                //                 $('input[name="postcode"]').val(pincode);
+                //                 $('input[name="city"]').val(city);
 
-//             });
+            //             });
 
 
-//         $('#latitude').val(place.geometry['location'].lat());
+        //         $('#latitude').val(place.geometry['location'].lat());
 
-//         $('#longitude').val(place.geometry['location'].lng());
+        //         $('#longitude').val(place.geometry['location'].lng());
 
-//         $("#latitudeArea").removeClass("d-none");
+        //         $("#latitudeArea").removeClass("d-none");
 
-//         $("#longtitudeArea").removeClass("d-none");
-//     });
+        //         $("#longtitudeArea").removeClass("d-none");
+    //     });
 // }
 
 
 
 // function getLocationDetails(address, apiKey) {
-//     const apiUrl =
-//         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
+    //     const apiUrl =
+        //         `https://maps.googleapis.com/maps/api/geocode/json?address=${encodeURIComponent(address)}&key=${apiKey}`;
 
-//     return fetch(apiUrl)
-//         .then(response => response.json())
-//         .then(data => {
-//             if (data.status === "OK") {
-//                 const result = data.results[0];
-//                 const city = result.address_components.find(comp => comp.types.includes("locality"))?.long_name ||
-//                     null;
-//                 const country = result.address_components.find(comp => comp.types.includes("country"))?.long_name ||
-//                     null;
-//                 const pincode = result.address_components.find(comp => comp.types.includes("postal_code"))
-//                     ?.long_name || null;
+    //     return fetch(apiUrl)
+        //         .then(response => response.json())
+        //         .then(data => {
+            //             if (data.status === "OK") {
+                //                 const result = data.results[0];
+                //                 const city = result.address_components.find(comp => comp.types.includes("locality"))?.long_name ||
+                    //                     null;
+                //                 const country = result.address_components.find(comp => comp.types.includes("country"))?.long_name ||
+                    //                     null;
+                //                 const pincode = result.address_components.find(comp => comp.types.includes("postal_code"))
+                    //                     ?.long_name || null;
 
-//                 return {
-//                     city,
-//                     country,
-//                     pincode
-//                 };
-//             } else {
-//                 throw new Error("Geocoding API request failed");
-//             }
+                //                 return {
+                    //                     city,
+                    //                     country,
+                    //                     pincode
+                //                 };
+            //             } else {
+                //                 throw new Error("Geocoding API request failed");
+            //             }
 //         })
-//         .catch(error => {
-//             console.error("Error fetching location details:", error);
-//             return {
-//                 city: null,
-//                 country: null,
-//                 pincode: null
-//             };
-//         });
+        //         .catch(error => {
+            //             console.error("Error fetching location details:", error);
+            //             return {
+                //                 city: null,
+                //                 country: null,
+                //                 pincode: null
+            //             };
+        //         });
 // }
 </script>

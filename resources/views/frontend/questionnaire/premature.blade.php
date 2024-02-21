@@ -13,7 +13,7 @@
     <meta name="country" content="us" />
     <meta name="robots" content="INDEX, FOLLOW" />
     <title>Premature Ejaculation | Questionnaire | Agent</title>
-<style>
+    <style>
         #loader {
             background: rgba(0, 0, 0, 0.7);
             overflow: hidden;
@@ -155,15 +155,13 @@
     <meta property="og:url" content="" />
     <meta name="bucls" content="SHARED-SERVICES" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/css2.css?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
         rel="stylesheet">
-    <link href="/css/css2.css?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/font-awesome/all.min.css" />
-    <link rel="stylesheet" href="css/quest-v2.css">
-    <link rel="stylesheet" href="css/quest-v2-respsv.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
-
 
     <livewire:styles />
     @yield('style')
@@ -191,7 +189,7 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
                 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
             j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            '/js/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
         })(window,document,'script','dataLayer','GTM-KV2ZB6ZG');</script>
     <!-- End Google Tag Manager -->
 
@@ -1399,8 +1397,8 @@
         </div>
     </section>
 
-    <script src="/js/jquery3.6.4.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/custom.js"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
 
@@ -1496,6 +1494,7 @@ function AddToCart(product_id) {
     console.log(product_id, unique_array, final_array);
     $("#ProductIds").val(final_array);
 }
+
 $(function(){
     $('.d-none').removeClass('d-none');
 })

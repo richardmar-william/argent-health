@@ -62,8 +62,8 @@
 </section>
 <!-- login end -->
 @endsection
-<script src="/js/jquery3.6.4.min.js"></script>
-<script src="/js/jquery.validate1.16.0.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
 
 <script>
 $(document).ready(function() {

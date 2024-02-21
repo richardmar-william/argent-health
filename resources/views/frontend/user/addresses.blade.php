@@ -319,7 +319,7 @@ var autocomplete = new google.maps.places.Autocomplete(input, {
 
 
 
- <!-- <div class="my-2">
+<div class="my-2">
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
@@ -343,4 +343,4 @@ var autocomplete = new google.maps.places.Autocomplete(input, {
                                     </tbody>
                                 </table>
                             </div>
-                        </div> --> -->
+                        </div> --> 

@@ -134,7 +134,7 @@
             display: flex !important;
             align-items: center !important;
         }
-        .google-pay-area, .apple-pay-area {
+.google-pay-area, .apple-pay-area {
             display: flex;
             justify-content: center;
             width: 100%;
@@ -392,9 +392,6 @@
                                     </div>
                                 </div>
                                 <button type="submit">Pay securely</button>
-                                <!-- <div class='google-pay-area'>
-                                    <div id="google-pay-button"></div>
-                                </div> -->
                             </form>
 
                             <p class="mt-4"><small style="font-size: 10px; color: #ccc;">After your initial discounted purchase, automatic billing of the regular subtotal amount will occur in line with your chosen subscription frequency, starting after the current period </small></p>
@@ -486,7 +483,6 @@
 
 </section>
 
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
     <script>
@@ -560,7 +556,7 @@
         ?>
     const subscriptionDuration = <?php echo $subscription_dur ?>;
     const finalPrice = <?php echo $final_price ?>;
-
+    
 
 
     // console.log(formattedCurrentDate);  // Output: '2023-10-05' (assuming the current date is October 5, 2023)

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title', 'FAQ\'s')
-@section('meta-desc', 'Got questions or feedback? Reach out to us! Our dedicated team at Agent is here to assist. Contact us for a prompt and personalized response.')
+@section('meta-desc', 'Find answers to commonly asked questions about our men\'s supplements. Your queries, our solutions. Explore our FAQ page for quick insights and guidance.')
 @section('content')
 <section class="faq faq-page">
     <div class="container-xxl container">
