@@ -126,6 +126,69 @@ class GooglePayController extends Controller
             $fileContent = json_decode(file_get_contents($fileurl));
             array_push($fileContent, $request->all());
             file_put_contents($fileurl, json_encode($fileContent));
+
+            //CURL for trust pay
+            $jsonData = [
+                "alias" => "ws@agenthealth.com",
+                "version" => "1.00",
+                "request" => [
+                    [
+                        "currencyiso3a" => "GBP",
+                        "requesttypedescriptions" => ["AUTH"],
+                        "sitereference" => "test_agenthealth119402",
+                        "baseamount" => $final_price,
+                        "orderreference" => $order_id,
+                        "accounttypedescription" => "ECOM",
+                        "pan" => $ccnumber,
+                        "expirydate" => $formattedDate,
+                        "securitycode" => $request->cvc
+                    ]
+                ]
+            ];
+
+            $headers = [
+                "Content-Type: application/json",
+                "Accept: application/json",
+            ];
+
+            $curl = curl_init();
+
+                    curl_setopt_array($curl, [
+                        CURLOPT_URL => 'https://webservices.securetrading.net/json/',
+                        CURLOPT_RETURNTRANSFER => true,
+                        CURLOPT_USERPWD => 'ws@agenthealth.com:_3d{,Kk[,!dd',
+                        CURLOPT_HTTPHEADER => $headers,
+                        CURLOPT_CUSTOMREQUEST => 'POST',
+                        CURLOPT_POSTFIELDS => json_encode($jsonData),
+                        ]);
+                    $response = curl_exec($curl);
+
+                        if (curl_errno($curl)) {
+
+                        return view('frontend.checkout.error',compact('user_id','order_id'));
+
+                        } else {
+
+                                    $responseData = json_decode($response, true);
+
+                                    $errorcode = $responseData['response'][0]['errorcode'];
+                                    if($errorcode == 0){
+                                        $requestReference = $responseData['requestreference'];
+
+                                        $ResponseCode = $responseData['response'][0]['acquirerresponsecode'];
+                                        $ammount = $responseData['response'][0]['baseamount'];
+                                        $currency = $responseData['response'][0]['currencyiso3a'];
+                                        $merchantname = $responseData['response'][0]['merchantname'];
+                                        $orderreference = $responseData['response'][0]['orderreference'];
+
+                                        return view('frontend.checkout.success',compact('user_id','order_id', 'orderreference', 'currency', 'ammount', 'merchantname'));
+                                    }
+                                    else{
+                                        return view('frontend.checkout.error',compact('user_id','order_id'));
+                                    }
+                            }
+                            curl_close($curl);
+            //curl for payment
             return response(['success' => true, 'url' => '/checkout/success1']);
 
         }
