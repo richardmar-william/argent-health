@@ -155,12 +155,15 @@
     <meta name="bucls" content="SHARED-SERVICES" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
-        rel="stylesheet">
+    rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Yeseva+One&display=swap"
+    rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
 
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -224,7 +227,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #484f47;">
 
 {{--<div id="loader">--}}
 {{--    <div class="spinner">--}}
@@ -250,7 +253,7 @@
     }
     //dd($sessionId);
     @endphp
-
+    <!-- <img src="/frontend/images/Untitled.png" style="position: fixed; width: 100%; left: 0px; top: 0px; opacity: 0.5;"> -->
     <section class="questionnaire-v2-main">
         <div class="quest-v2-header">
             <div class="container-fluid">
@@ -966,70 +969,66 @@
                             </div>
                         </div>
 
-                        <div class="quest-v2-step d-none" id="step11">
+                        <div class="quest-v2-step d-none question-final" id="step11">
                             <div class="row">
-                                <div class="col-lg-7 col-md-12">
+                                <div class="col-md-12 col-lg-6 qe-img">
+                                    <img src="/frontend/images/questionnaire.jpg">
+                                </div>
+                                <div class="col-md-12 col-lg-6 qe-content">
                                     <div class="v2-1step-cont">
-                                        <h4 class="weare-going-con mb-20">Final Acknowledgment: </h4>
-                                        <p class="mb-30">Thank you for answering questions about your health and experiences with hair loss. Your responses will assist our licensed clinicians in determining if a prescription for hair loss
+                                        <div>
+                                            <h1 class="weare-going-con mb-20 qe-title">
+                                                <div class="ques-final-thankyou">Thank you</div> 
+                                                <div class="ques-final-answering">For Answering</div> 
+                                            </h1>
+                                            <p class="mb-30">Thank you for answering questions about your health and experiences with hair loss. Your responses will assist our licensed clinicians in determining if a prescription for hair loss
                                             treatment could be appropriate for you. They will promptly review your answers and get back to you with suitable suggestions.</p>
-                                        <h3 class="list-heading mb-30">Before Submitting Your Answers, Please
-                                            Acknowledge The Following:</h3>
-                                        <ul class="quest-v2-list pb-30 mb-20">
-                                            <li>You Are The Sole User Of Any Medication Provided Through This Service.
-                                            </li>
-                                            <li>You Have Provided Truthful Answers To The Best Of Your Knowledge.</li>
-                                            <li>You Are Aware That Minoxidil 5% Solution And Combined Minoxidil 5% With 0.1% Finasteride Solution Are Prescribed As Unlicensed Products.</li>
-                                            <li>You Were Assigned Male At Birth.</li>
-                                            <li>You Have Disclosed Any Serious Illnesses Or Operations You Have Had.</li>
-                                            <li>You Have Disclosed Any Prescription Medication You Currently Take.</li>
-                                            <li>You Will Only Use The Recommended Method Of Hair Loss Treatment And Not Combine More Than One Different Medication For This Condition.</li>
-                                            <li>You Are Aware That You Should Not Take Finasteride If You’re Trying For A Baby.</li>
-                                            <li>You Accept Our Terms & Conditions, Privacy Policy, And Terms Of Sale.
-                                            </li>
-                                            <li>You Currently Live In The UK.</li>
-                                            <li>You Are Using This Service Of Your Own Free Will.</li>
-                                            <li>Will Read all patient information leaflets available</li>
-                                            <li>You Agree To The Terms Of Service, Terms Of Subscription, And Privacy Policy.</li>
-                                        </ul>
-                                        <ul class="quest-lfc-btn desktop-none">
-                                            <li><a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
-                                                    Licensed & Registered Medication
-                                                </a></li>
-                                            <li><a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
-                                                    Free & Discreet 24 Hour Shipping
-                                                </a></li>
-                                            <li><a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
-                                                    Pause or Cancel Anytime
-                                                </a></li>
-                                        </ul>
-                                        <div class="quest-v2-btn">
-                                            <a class="btn-d-trans btn-wt-170 prev-button"
-                                                href="javascript:void(0)">Back</a>
-                                            <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
-                                                value="btn">continue</button>
-
+                                        </div>
+                                        <div>
+                                            <h3 class="list-heading mb-30">Before Submitting Your Answers, PleaseAcknowledge The Following:</h3>
+                                            <ul class="quest-v2-list pb-30 mb-20 before-submit-area">
+                                                <li>You Are The Sole User Of Any Medication Provided Through This Service.</li>
+                                                <li>You Have Provided Truthful Answers To The Best Of Your Knowledge.</li>
+                                                <li>You Are Aware That Minoxidil 5% Solution And Combined Minoxidil 5% With 0.1% Finasteride Solution Are Prescribed As Unlicensed Products.</li>
+                                                <li>You Were Assigned Male At Birth.</li>
+                                                <li>You Have Disclosed Any Serious Illnesses Or Operations You Have Had.</li>
+                                                <li>You Have Disclosed Any Prescription Medication You Currently Take.</li>
+                                                <li>You Will Only Use The Recommended Method Of Hair Loss Treatment And Not Combine More Than One Different Medication For This Condition.</li>
+                                                <li>You Are Aware That You Should Not Take Finasteride If You’re Trying For A Baby.</li>
+                                                <li>You Accept Our Terms & Conditions, Privacy Policy, And Terms Of Sale.</li>
+                                                <li>You Currently Live In The UK.</li>
+                                                <li>You Are Using This Service Of Your Own Free Will.</li>
+                                                <li>Will Read all patient information leaflets available</li>
+                                                <li>You Agree To The Terms Of Service, Terms Of Subscription, And Privacy Policy.</li>
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-5">
-                                    <ul class="quest-lfc-btn phone-none">
-                                        <li><a href="javascript:void(0)">
-                                                <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
-                                                Licensed & Registered Medication
-                                            </a></li>
-                                        <li><a href="javascript:void(0)">
-                                                <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
-                                                Free & Discreet 24 Hour Shipping
-                                            </a></li>
-                                        <li><a href="javascript:void(0)">
-                                                <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
-                                                Pause or Cancel Anytime
-                                            </a></li>
-                                    </ul>
+                            </div>
+                            <div class="row ques-footer">
+                                <div class='col-lg-6 col-md-12 ques-lfc' >
+                                    <div class="quest-lfc-btn">
+                                        <div>
+                                            <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
+                                            <span>Licensed & Registered Medication</span>
+                                        </div>
+                                        <div>
+                                            <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
+                                            <span>Free & Discreet 24 Hour Shipping</span>
+                                        </div>
+                                        <div>
+                                            <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
+                                            <span>Pause or Cancel Anytime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="quest-v2-btn">
+                                        <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
+                                        <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
+                                            value="btn">continue</button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1111,7 +1110,8 @@
     <script>
         $(function(){
             $('.d-none').removeClass('d-none');
-        })
+            $("body").css('background-color', "#484f47");
+        });
     </script>
 
 
@@ -1123,7 +1123,7 @@
 <script>
 $('#check').change(function() {
     $('#btncheck').prop("disabled", !this.checked);
-}).change()
+}).change();
 </script>
 
 

@@ -28,7 +28,20 @@
     <link rel="stylesheet" href="css/quest-v2-respsv.css">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
+    <style>
+        .thankyou-right {
+             padding: 4rem 0rem 0rem 3rem;
+        }
+        @media screen and (max-width: 991px) {
+            .ques-lfc {
+                display: none;
+            }
+            .thankyou-right {
+                padding: 4rem 2rem 0rem 2rem;
+            }
+        }
+    </style>
     <livewire:styles />
     @yield('style')
     <livewire:scripts />
@@ -67,30 +80,137 @@
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
 <section>
-
-<div class="" id="" tabindex="-1" aria-labelledby="placeOrderModalLabel" >
-            <div class="modal-dialog modal-dialog-centered">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <!-- <h5 class="modal-title" id="placeOrderModalLabel">Modal title</h5> -->
-
+    <div class="quest-v2-header">
+        <div class="container-fluid">
+            <a class="quest-logo" href="{{ url('/') }}">
+                <!-- <img src="images/quest-logo.png" alt=""> -->
+                <img src="{{ asset('images/quest-logo.png')}}" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="thank-you-box" style="width: 80%; padding: 3rem 4rem; border-radius: 36px; margin: auto; margin-top: 4rem; background-color: white; color: black; margin-bottom: 5rem;">
+        <div class="row">
+            <div class="col col-md-12 col-lg-6">
+                <img src="/frontend/images/thankyou.png" style="width: 100%">
+                <div class='col-lg-6 col-md-12 ques-lfc'  style="width: 100%">
+                    <div class="quest-lfc-btn" style="width: 100%; display: flex; justify-content: space-between; margin: 2rem 0rem; padding: 0rem;">
+                        <div style="display: flex; justify-content: space-between; align-items: center">
+                            <div><img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed" style="width: 2rem; margin: 0.5rem;"></div>
+                            <div style="margin: 0px;"><span>Licensed & Registered Medication</span></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center">
+                            <div><img src="{{asset('frontend_new/images/lock.png')}}" alt="backed" style="width: 2rem; margin: 0.5rem;"></div>
+                            <div style="margin: 0px;"><span>Free & Discreet 24 Hour Shipping</span></div>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; align-items: center">
+                            <div><img src="{{asset('frontend_new/images/delete.png')}}" alt="backed" style="width: 2rem; margin: 0.5rem;"></div>
+                            <div style="margin: 0px;"><span>Pause or Cancel Anytime</span></div>
+                        </div>
                     </div>
-                <div class="modal-body">
-                    <figure>
-                        <img src="{{ asset('frontend_new/images/Icon.png') }}" alt="img"/>
-                    </figure>
-
+                </div>
+            </div>
+            <div class="col col-md-12 col-lg-6 thankyou-right" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <?php
+                $orderRefId = Session::get("order_id");
+                $total_price = 75;
+                $first_time_discount = 60;
+                $discount_price = 15;
+                $category_id = 30;
+                $price = 75;
+                $product = DB::table('products')->where('id',"115")->first();
+                ?>
+                
+                <div>
                     <h1>Thank You</h1>
+                    <h1>For your order</h1>
 
-                    <p style="    font-size: 24px;">Your order is confirmed </p>
+                    <h4 style="margin-top: 2rem;">Full Beard Kit with Topical Solutions</h4>
+                        @if($total_price > $first_time_discount)
+                    <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
+                            £{{$total_price}}.00
+                        </div>
+                    </div>
+                    @else
+                    <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
+                            £{{$first_time_discount}}.00
+                        </div>
+                    </div>
+                    @endif
+
+                <p class="clearText duration-label"><span id="dur_label">{{$product->subscription_duration}}</span> x months supply of treatment</p>
+                    <div class="qos-product-text">
+                        <ul class="list-group w-100 ">
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                Online Consultation and Health Assessment
+                                <span class="text-success">Included</span>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                Continuous Support with Ongoing Reviews
+                                <span class="text-success">Included</span>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                Medical Evaluation and Screening
+                                <span class="text-success">Included</span>
+                            </li>
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                Shipping
+                                <span class="text-success">Included</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cstm-border"></div>
+                    <div class="qos-product-multi qos-product-text">
+                    <ul class="list-group w-100">
+                            <li
+                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                First order discount
+                                @if(true or $total_price > $first_time_discount)
+                                    <span class="discount-price">-£{{$discount_price}}</span>
+                                @else
+                                <span class="discount-price">£0</span>
+                                @endif
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="cstm-border"></div>
+
+
+                    <div class="total-amount">
+                        <h3>Total</h3>
+                        <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 </span>
+                    </h3>
+                        <span id="totalAmt" class="d-none">{{$first_time_discount}}</span>
+                        <!-- <p><span id="user_off"></span>%Discount</p> -->
+                    </div>
+
+                <div class="text-dark mt-30 orderText">
+                    You will receive a monthly delivery of your treatment during the subscription
                 </div>
-                <div class="modal-footer">
-                    <a href="{{ url('/questionnaireCat') }}" class="btn btn-d-black" data-bs-dismiss="modal">View more treatments</a>
-                    <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+
+                    <div class="coupon-area d-none">
+                <div class="total-amount">
+                    <h3>Coupon Discount</h3>
+                    <h3 class="text-default">- <span id="couponTotal">0</span></h3>
+                    <!-- <p><span id="user_off"></span>%Discount</p> -->
                 </div>
+                <div class="total-amount">
+                    <h3>Order Total</h3>
+                    <h3 class="text-success"><span id="orderTotal">0</span></h3>
+                    <!-- <p><span id="user_off"></span>%Discount</p> -->
+                </div>
+                </div>
+                </div>
+                <div style="width: 90%; display: flex; justify-content: space-between; margin: 2rem;">
+                    <button class='btn-d-trans' style="border: 1px solid black; color: black; padding: 1rem 4rem">Back</button>
+                    <button class='btn-d-black' style=" padding: 1rem 4rem">Continue</button>
                 </div>
             </div>
         </div>
+    </div>
 
 
 </section>

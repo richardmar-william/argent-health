@@ -48,7 +48,11 @@ class HomeController extends Controller
         //dd($request->all());
 
         $user = new User();
+        if(!isset($request->fName) && empty($request->fName))
+            $request->fName = $request->first_name." ".$request->surname;
         $user->full_name = $request->fName;
+        $user->first_name = $request->first_name;
+        $user->surname = $request->surname;
         $user->email = $request->email;
         $user->phone = $request->number;
         $user->password = Hash::make($request->password);

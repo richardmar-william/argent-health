@@ -124,6 +124,7 @@ Route::get('/questionnaire/storeBeared',[QuestionnaireController::class,'storeBe
 Route::get('/questionnaire/storeHairLoss',[QuestionnaireController::class,'storeHairLoss'])->name('questionnaire.storeHairLoss');
 Route::get('/questionnaire/storeerectiledysfunction',[QuestionnaireController::class,'storeerectiledysfunction'])->name('questionnaire.storeerectiledysfunction');
 Route::get('/questionnaire/storeApremature',[QuestionnaireController::class,'storeApremature'])->name('questionnaire.storeApremature');
+Route::get('/user/email/{email}',[UserController::class,'isExist'])->name('user.exist');
 
 
 Route::get('/questionnaire/{id}',[QuestionnaireController::class,'index'])->name('questionnaire.index');
@@ -155,6 +156,7 @@ Route::any('checkout/success1', [CheckoutController::class, 'success'])->name('c
 Route::post('checkout/applycoupon', [CheckoutController::class, 'apply_coupon'])->name('checkout.applycoupon');
 Route::post('checkout/subscription_update', [CheckoutController::class, 'subscription_update'])->name('subscription.update');
 Route::post('/google-payment', [GooglePayController::class, 'store'])->name('googlepayment.store');
+Route::post('googlepay-config', [GooglePayController::class, 'setConfig'])->name('googlepay.config');
 
 Route::middleware(['middleware' => 'auth', 'checkCart'])->group(function() {
     //google pay gateway

@@ -8,6 +8,7 @@ use App\Services\ImageService;
 use Illuminate\Support\Facades\Hash;
 use App\Traits\ImageUploadTrait;
 use App\Models\Order;
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Models\Delivery_address;
 use App\Models\Billing_address;
@@ -129,6 +130,16 @@ class UserController extends Controller
             $update_address->save();
         }
         return redirect()->back()->with('message', 'Delivery address updated successfull');
+    }
+    // code to check user exists
+    public function isExist(Request $request){
+        // dd($request->all());
+        if(isset($request->email) && !empty($request->email)){
+            $user = User::where('email', $request->email)->get()->first();
+            return $user;
+            // if($user)
+        }
+        else return null;
     }
 
     // code to update billing address

@@ -15,6 +15,7 @@ use App\Models\Temp;
 use Auth;
 use App\Notifications\Frontend\User\OrderStatusNotification;
 use App\Services\OmnipayService;
+use App\Traits\SMPT2GoTrait;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -25,6 +26,7 @@ use Mail;
 
 class OrderController extends Controller
 {
+    use SMPT2GoTrait;
     public function index(): View
     {
         $this->authorize('access_order');
@@ -125,10 +127,7 @@ class OrderController extends Controller
             $data['email'] = $user->email;
             // dd($data);
             if($request->order_status == 2){
-                Mail::send('emails.orders.order_confirm', ['data'=> $data], function($message)use($data) {
-                    $message->to($data['email'])->subject('Order confirmed successfully!')->from(config('mail.from.address'), config('mail.from.name'));
-        
-                });
+                $this->sendOrderConfirmMail($user->full_name, $data['ref_id']);
             }
             // $user->notify(new OrderStatusNotification($order));
 
@@ -167,49 +166,49 @@ class OrderController extends Controller
 
      /* function for the royal mail shipment gatway */
      public  function order_shipment(request $request){
-    // dd($request);
-        $weightInGrams = $request->weightInGrams;
-        $packageFormatIdentifier = $request->packageFormatIdentifier;
-        $heightInMms = $request->heightInMms;
-        $widthInMms = $request->widthInMms;
-        $depthInMms = $request->depthInMms;    
-        $order_id =  $request->order_id;
-        
-        $order = Order::where('id',$order_id)->first();
-        //dd($order->ref_id);
-        $user = User::where('id',$order->user_id)->first();
-       //dd( $user->id);
-        
-        // $city = City::where('id',$address->city_id)->first();
-        // $country = Country::where('id',$address->country_id)->first();
-        //dd($address->zip_code);
-        //dd($user_address);
-        $address = Delivery_address::where('user_id',$user->id)->first();
-        $user_address = UserAddress::where('user_id',$user->id)->first(); 
-        //dd($address, $user_address );
-        
-        // if($address == null || $user_address == null){
-        //   return redirect()->back()->with('error2', 'User does not have delivery address. So can not proceed without delivery address.');   
-        // }
-          
-        
-          //dd($order->user_address_id);
-        $order_address = Delivery_address::where('id',$order->user_address_id)->first();
-        //checking if order has address id
-        if(isset($order_address)) {
-          $addressLine1 = $order_address->address;
-          $city = $order_address->city;
-          $postcode = $order_address->zip_code;
-        } 
+         $weightInGrams = $request->weightInGrams;
+         $packageFormatIdentifier = $request->packageFormatIdentifier;
+         $heightInMms = $request->heightInMms;
+         $widthInMms = $request->widthInMms;
+         $depthInMms = $request->depthInMms;    
+         $order_id =  $request->order_id;
+         
+         $order = Order::where('id',$order_id)->first();
+         //dd($order->ref_id);
+         $user = User::where('id',$order->user_id)->first();
+         //dd( $user->id);
+         
+         // $city = City::where('id',$address->city_id)->first();
+         // $country = Country::where('id',$address->country_id)->first();
+         //dd($address->zip_code);
+         //dd($user_address);
+         $address = Delivery_address::where('user_id',$user->id)->first();
+         $user_address = UserAddress::where('user_id',$user->id)->first(); 
+         //dd($address, $user_address );
+         
+         // if($address == null || $user_address == null){
+             //   return redirect()->back()->with('error2', 'User does not have delivery address. So can not proceed without delivery address.');   
+             // }
+             
+             
+             //dd($order->user_address_id);
+             $order_address = Delivery_address::where('id',$order->user_address_id)->first();
+             //checking if order has address id
+             if(isset($order_address)) {
+                 $addressLine1 = $order_address->address;
+                 $city = $order_address->city;
+                 $postcode = $order_address->zip_code;
+                } 
         else {
-          $addressLine1 = $address->address;    
-              $city = $address->city; 
-              $postcode = $address->zip_code;
+            $addressLine1 = $address->address;    
+            $city = $address->city; 
+            $postcode = $address->zip_code;
         }
-
-
-
-            // if($address != null){
+        
+        
+        
+        
+        // if($address != null){
             //   $addressLine1 = $address->address;    
             //   $city = $address->city; 
             //   $postcode = $address->zip_code;    
@@ -223,7 +222,7 @@ class OrderController extends Controller
             // }
 
 
-         $sender_id = Auth::id(); 
+        $sender_id = Auth::id(); 
          //dd($sender_id);
         $sender = User::where('id',$sender_id)->first();
          //dd($sender->full_name);
@@ -247,8 +246,86 @@ class OrderController extends Controller
         $shippingCostCharged = $order->shipping;
         $otherCosts = $order->tax;
         $total = $order->total;
-
-       
+                header("content-type: application/json");
+       print_r(json_encode(array(
+                "items" => array(
+                    array(
+                        "orderReference" => $order->id,
+                        "recipient" => array(
+                            "address" => array(
+                                "fullName" => $fullName,
+                                "addressLine1" => $addressLine1,
+                                "city" => $city,
+                                "county" => "UK",
+                                "postcode" => $postcode,
+                                "countryCode" => "GB" // Corrected the country code to "GB" for the United Kingdom
+                            ),
+                            "phoneNumber" => $userphone,
+                            "emailAddress" => $useremail
+                        ),
+                        
+                        "sender" => array(
+                            "tradingName" => $tradingName,
+                            // "phoneNumber" => $phoneNumber,
+                            "phoneNumber" => $userphone,
+                            "emailAddress" => "info@agenthealth.co.uk"
+                            // "emailAddress" => $emailAddress
+                            // "emailAddress" => $useremail
+                        ),
+                        "billing" => array(
+                            "address" => array(
+                                "fullName" => $fullName,
+                                "addressLine1" => $addressLine1,
+                                "city" => $city,
+                                "county" => "UK",
+                                "postcode" => $postcode,
+                                "countryCode" => "GB" // Corrected the country code to "GB" for the United Kingdom
+                            ),
+                            "phoneNumber" => $userphone,
+                            "emailAddress" => $useremail
+                        ),
+                        "packages" => array(
+                            array(
+                                "weightInGrams" => $weightInGrams,
+                                "packageFormatIdentifier" => "parcel",
+                                "dimensions" => array(
+                                    "heightInMms" => $heightInMms,
+                                    "widthInMms" => $widthInMms,
+                                    "depthInMms" => $depthInMms
+                                ),
+                                "contents" => array(
+                                    array(
+                                        "SKU" => $order->ref_id,
+                                        "quantity" => 1,
+                                        "unitValue" => 4,
+                                        "unitWeightInGrams" => $weightInGrams,
+                                        "requiresExportLicence" => true
+                                    )
+                                )
+                            )
+                        ),
+                        "orderDate" => $orderDate,
+                        "subtotal" => $subtotal,
+                        "shippingCostCharged" => $shippingCostCharged,
+                        "otherCosts" => $otherCosts,
+                        "total" => $total,
+                        "currencyCode" => "GBP", 
+                        "postageDetails" => array(
+                            "sendNotificationsTo" => "sender",
+                            "consequentialLoss" => 0,
+                            "receiveEmailNotification" => true,
+                            "receiveSmsNotification" => true,
+                            "guaranteedSaturdayDelivery" => false,
+                            "requestSignatureUponDelivery" => true,
+                            "isLocalCollect" => true,
+                            "requiresExportLicense" => true
+                        ),
+                        "label" => array(
+                            "includeLabelInResponse" => true,
+                            "includeCN" => true,
+                            "includeReturnsLabel" => true
+                        )
+                ))))); exit;
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
@@ -349,6 +426,8 @@ class OrderController extends Controller
         curl_close($curl);
 
         $responseData = json_decode($response, true);
+        
+        
         if (isset($responseData['successCount'])) {
             $successCount = $responseData['successCount'];
         } else {
@@ -356,12 +435,11 @@ class OrderController extends Controller
         }
 
         //  echo "<pre>";
-        //  print_r($successCount);
-        //  die();
-          
         if($successCount == 1){
-        // dd('yes');
-          $update = Order::where("id", $order_id)->update(["status" => 1, 'order_status' => 2]);
+             //  die();
+             // dd('yes');
+             $update = Order::where("id", $order_id)->update(["status" => 1, 'order_status' => 2]);
+            //  print_r($order_id); exit;
           return redirect()->back()->with('success', 'Shipment Process is started successfully.');   
          }
         else{

@@ -6,13 +6,14 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\QuesAns;
 use App\Models\User;
+use App\Traits\SMPT2GoTrait;
 use Illuminate\Support\Facades\Http;
 use Mail;
 use Redirect;
 
 class PatientController extends Controller
 {
-
+    use SMPT2GoTrait;
      /* fucntion for patient history */
      public function patient_history(){
         $quationnair = QuesAns::orderBy('id','DESC')->where('userid','!=','')->where('epdf','!=','')->groupBy('session_id')->get();
@@ -42,11 +43,11 @@ class PatientController extends Controller
             $data["body"] = "This is to remind you that your subscription is ending. Please 
                             subscribe to get the the benefits continue.";
       
-            Mail::send('emails.reminder', $data, function($message)use($data) {
-                $message->to($data["email"], $data["email"])
-                        ->subject($data["title"]); 
-            });
-
+            // Mail::send('emails.reminder', $data, function($message)use($data) {
+            //     $message->to($data["email"], $data["email"])
+            //             ->subject($data["title"]); 
+            // });
+            $this->sendGeneralMail($data['email'], $data['title'], $data['body']);
             return Redirect::back()->with(['message' => 'Reminder has been sent successfully to '. $user->username.'.']);
     }
 

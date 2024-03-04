@@ -21,11 +21,17 @@ use Illuminate\Support\Str;
 use App\Models\affiliateCoupon;
 use App\Models\Referral_wallet;
 use App\Models\AffiliateCouponDetails;
+use App\Traits\SMPT2GoTrait;
 use Illuminate\Support\Facades\Http;
+use SMTP2GO\ApiClient;
+use SMTP2GO\Types\Mail\Address;
+use SMTP2GO\Service\Mail\Send as MailSend;
+use SMTP2GO\Collections\Mail\AddressCollection;
 use Mail;
 
 class CheckoutController extends Controller
 {
+    use SMPT2GoTrait;
     // public function index(Request $request)
     // {
     //     //dd('yaga', $request);
@@ -66,11 +72,12 @@ class CheckoutController extends Controller
 
        //code to save questionnair
        public function cart_product(Request $request)
-       {
+       {    
+        // print_r($request->isMethod('post')); exit;
 
                     //DB::table('temp')->where('product_ids', NULL)->delete();
                     //DB::beginTransaction();
-
+        
                 try {
 
                     $data = [];
@@ -315,6 +322,7 @@ class CheckoutController extends Controller
                     }
 
                     $jsonData = json_encode($data);
+
                    // dd($jsonData);
                     // $questionnair = new Temp();
                     // $questionnair->session_id = session('my_random_string');
@@ -323,7 +331,6 @@ class CheckoutController extends Controller
                     // $questionnair->jason_data = $jsonData;
                     // $questionnair->save();
                     // dd($request->session_id, $request->category_id, $jsonData) ;
-
                     if(Auth::check()){
                         $user_id = auth()->id();
                     }
@@ -331,7 +338,33 @@ class CheckoutController extends Controller
                         $user_id = '';
                     }
 
-                    //dd($request->all());
+                    if(empty($request->session_id)){
+                        if(!isset($request->session_id)) {
+                            if(Session::has('hair_loss')){
+                                $sessionId = Session::get('hair_loss');
+                                //Session::forget('hair_loss');
+                            }
+                            if(Session::has('beard_browth')){
+                                $sessionId = Session::get('beard_browth');
+                                //Session::forget('beard_browth');
+                            }
+                            if(Session::has('erectile_dysfunction')){
+                                $sessionId = Session::get('erectile_dysfunction');
+                                //Session::forget('erectile_dysfunction');
+                            }
+                            if(Session::has('premature_ejaculation')){
+                                $sessionId = Session::get('premature_ejaculation');
+                                //Session::forget('premature_ejaculation');
+                            }
+                            $request->session_id = $sessionId;
+                        }
+                        $request->category_id = $request->session()->get('categoryId');
+                        $jsonData = $request->session()->get('jsonData');
+                    }
+                    else $tmpId = $request->session_id;
+                    // print_r($request->session()); exit;
+                    // print_r($request->session()); exit;
+                    // print_r($request->all()); exit;
                     $check_temp = Temp::where('session_id',$request->session_id)->first();
                     if($check_temp){
                         $check_temp->user_id = $user_id;
@@ -339,14 +372,21 @@ class CheckoutController extends Controller
                         $check_temp->category_id = $request->category_id;
                         $check_temp->jason_data = $jsonData;
                         $check_temp->save();
-                    }else{
+                    }
+                    else{
                         $check_temp = new Temp();
-                        $check_temp->user_id = $user_id;
                         $check_temp->session_id = $request->session_id;
                         $check_temp->category_id = $request->category_id;
                         $check_temp->jason_data = $jsonData;
                         $check_temp->save();
+                        $check_temp->user_id = $user_id;
+
+                        Session::put("jsonData", $jsonData);
+                        Session::put("oldSessionId", $request->session_id);
+                        Session::put("categoryId", $request->category_id);
                     }
+                    $session = $request->session_id;
+                 
                     //echo $request->session_id;die;
                     //$check_tempd = DB::table('temp')->where('session_id',$request->session_id)->first();
                     //dd($check_tempd);
@@ -361,12 +401,13 @@ class CheckoutController extends Controller
                     // ]);
                     //dd("$request->session_id");
                     // DB::commit();
-                    $productList = Product::with('tags')->get()->toArray();
+                    $productList = Product::with('tags')->orderBy("category_id")->orderBy("quantity_mg")->orderBy("quantity")->orderBy("treat_method")->get()->toArray();
                     $mediaList = Media::get()->toArray();
                     return view('frontend.checkout.cart_product', ["category"=>$request->category_id, 'productList' => $productList, "mediaList" => $mediaList, "session_id"=>$request->session_id]);
                 }
                 catch (\Exception $e) {
                     DB::rollback();
+                    print_r($e->getMessage()); exit;
                     return redirect('/')->withErrors(['error' => $e->getMessage()]);
                 }
 
@@ -378,7 +419,6 @@ class CheckoutController extends Controller
     public function index(Request $request)
     {
             $session = $request->Session_Id;
-
             if(Session::has('hair_loss')){
                 $sessionId = Session::get('hair_loss');
                  //Session::forget('hair_loss');
@@ -395,8 +435,7 @@ class CheckoutController extends Controller
                 $sessionId = Session::get('premature_ejaculation');
                 //Session::forget('premature_ejaculation');
             }
-
-
+            
             //dd($sessionId);
             // if($request->Session_Id != $sessionId){
             //     DB::table('temp')->where('product_ids', NULL)->delete();
@@ -418,56 +457,46 @@ class CheckoutController extends Controller
             //     return redirect('/shop');
             // }
             try {
+
                 if ($request->isMethod('post')) {
                     $check_data = Temp::where('session_id',$sessionId)->first();
+
                     if(isset($check_data)){
                         $check_data->strength_type = $request->strength_type;
                         $check_data->recommended = $request->recommended;
                         $check_data->product_ids = $request->product_ids;
-                        $check_data->subscription_duration = $request->subs_1;
+                        $check_data->subscription_duration = 1;
                         $check_data->save();
                     }
 
                 }
 
-        $get_data = Temp::where('session_id', $sessionId)->first();
-        if(!isset($get_data) || empty($get_data)){
-          return redirect('/shop');
-        }
-        // $total_price = Product::whereIn('id',explode(',', $get_data->product_ids))->select('price');
-        $product_detail = Product::whereIn('id',explode(',', $get_data->product_ids))->first();
-        // dd($get_data->product_ids);
-    
-        $product_data = Product::whereRaw("name='{$product_detail['name']}'")->whereRaw("subscription_duration={$get_data->subscription_duration}")->first();
-            
-        if(!isset($product_data) || empty($product_data)){
-          return redirect('/shop');
-        }
-        
+                $get_data = Temp::where('session_id', $sessionId)->first();
+                if(!isset($get_data) || empty($get_data)){
+                    return redirect('/shop');
+                }
+                // $total_price = Product::whereIn('id',explode(',', $get_data->product_ids))->select('price');
+                // print_r($get_data); exit;
+                $product_detail = Product::whereIn('id',explode(',', $get_data->product_ids))->first();
+                // dd($get_data->product_ids);
+                $product_data = Product::whereRaw("name='{$product_detail['name']}'")->whereRaw("subscription_duration={$get_data->subscription_duration}")->first();
+                    
+                if(!isset($product_data) || empty($product_data)){
+                    return redirect('/shop');
+                }
+                
+                
 
-        $prod_subs = $product_data['subscription_duration'];
-        $total_price = $product_data['price'];
-        $first_time_disc = $product_data['first_time_disc'];
-        // dd($product_subscription['subscription_duration']);
-        // switch($product_data['subscription_duration']){
-        // case(1):
-        //     $total_price = $product_data['price'];
-        // break;
-        // case(3):
-        //     $total_price = $product_data['subscription_price3'];
-        // break;
-        // case(6):
-        //     $total_price = $product_data['subscription_price6'];
-        // break;
-        // default:
-        //     $total_price = $product_data['price'];
-        // }
-        $product_id = $product_data['id'];
-        $product_data = Product::whereIn('id',explode(',',  $product_data['id']))->get();
+                $prod_subs = $product_data['subscription_duration'];
+                $total_price = $product_data['price'];
+                $first_time_disc = $product_data['first_time_disc'];
+     
+                $product_id = $product_data['id'];
+                $product_data = Product::whereIn('id',explode(',',  $product_data['id']))->get();
 
-        $order_id = 0;
-        return view('frontend.checkout.index',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));
-    } catch (\Illuminate\Session\TokenMismatchException $e) {
+                $order_id = 0;
+                return view('frontend.checkout.index',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));
+            } catch (\Illuminate\Session\TokenMismatchException $e) {
     // If a TokenMismatchException is caught, it means the CSRF token validation failed
 
     // You can log the exception if needed
@@ -513,17 +542,18 @@ class CheckoutController extends Controller
                 $data['ref_id'] = $order_data->ref_id;
                 // $data['product_details'] = $product_details->toArray();
                 // dd($data['product_details']);
-                Mail::send('emails.orders.place_order', ['data'=> $data], function($message)use($data) {
-                    $message->to(Auth()->user()->email)->subject('Order Confirmed!')->from(config('mail.from.address'), config('mail.from.name'));
-
-                });
-                    Session::flesh("order_id", $order_data->ref_id);
-                    Session::put('placed_order','placed');
-                    Session::forget('sessionid');
-                    Session::forget('hair_loss');
-                    Session::forget('beard_browth');
-                    Session::forget('erectile_dysfunction');
-                    Session::forget('premature_ejaculation');
+                $full_name = auth()->user()->full_name;
+                $order_num = $order_data->ref_id;
+                
+                $this->sendOrderConfirmMail($full_name, $order_num);
+                
+                Session::put("order_id", $order_data->ref_id);
+                Session::put('placed_order','placed');
+                Session::forget('sessionid');
+                Session::forget('hair_loss');
+                Session::forget('beard_browth');
+                Session::forget('erectile_dysfunction');
+                Session::forget('premature_ejaculation');
                 return redirect('http://178.159.0.74/agent/public/checkout/success1');
             }else{
                 return redirect('http://178.159.0.74/agent/public/checkout/error');
@@ -567,15 +597,15 @@ class CheckoutController extends Controller
             }
             Session::put('sessionid',$sessionId);
             $get_data = Temp::where('session_id', $sessionId)->first();
-                if(isset($coupon_data)){
-                    $get = AffiliateCouponDetails::where('coupon_id',$coupon_data->id)->where('cat_id',$get_data->category_id)->first();
-                    $user_off = $get->value;
-                    $discount = ($user_off/100)*$total_price;
-                    $final_price = $total_price - $discount;
-                    }
-                else{
-                    $final_price = $total_price;
-                }
+                // if(isset($coupon_data)){
+                //     $get = AffiliateCouponDetails::where('coupon_id',$coupon_data->id)->where('cat_id',$get_data->category_id)->first();
+                //     $user_off = $get->value;
+                //     $discount = ($user_off/100)*$total_price;
+                //     $final_price = $total_price - $discount;
+                //     }
+                // else{
+                // }
+                $final_price = $total_price;
 
             $prod_name = DB::table('products')->where('id',$prodcut_id)->get();
 
@@ -655,9 +685,10 @@ class CheckoutController extends Controller
 
 							DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
 
-							
+							$sessionId = $request->session_id;
 							$cc = $request->coupon_code;
-							return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','cc'));
+                            
+							return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc'));
 
 					//  return redirect('checkout/payment-page')->route('payment.page',['user_id'=>$user_id,'order_id'=>$order_id,'final_price'=>$final_price]);
 								// for testing
@@ -706,5 +737,15 @@ class CheckoutController extends Controller
     public function subscription_update(){
         dd('subscription function');
     }
+    public function setTempEmail(Request $request) {
+        $session_id = $request->session_id;
+        $email = $request->email;
 
+        $check_temp = Temp::where('session_id',$request->session_id)->first();
+        if($check_temp){
+            $check_temp->email = $email;
+            $check_temp->save();
+        }
+        exit("success");
+    }
 }

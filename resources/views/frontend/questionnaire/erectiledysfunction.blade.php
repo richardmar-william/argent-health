@@ -157,12 +157,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
         rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Yeseva+One&display=swap"
+    rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
-
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
 
 
     <livewire:styles />
@@ -196,7 +198,7 @@
 
 </head>
 
-<body>
+<body style="background-color: #484f47;">
 
 {{--<div id="loader">--}}
 {{--    <div class="spinner">--}}
@@ -991,16 +993,25 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="quest-v2-step d-none" id="step14">
+                        <div class="quest-v2-step d-none question-final" id="step14">
                             <div class="row">
-                                <div class="col-lg-7 col-md-12">
+                                <div class="col-md-12 col-lg-6 qe-img">
+                                    <img src="/frontend/images/questionnaire.jpg">
+                                </div>
+                                <div class="col-md-12 col-lg-6 qe-content">
                                     <div class="v2-1step-cont">
-                                        <h4 class="weare-going-con mb-20">Final Acknowledgment:</h4>
-                                        <p class="mb-30">Thank you for completing this questionnaire about your health and your experience with erectile dysfunction. Your answers will be reviewed by a licensed clinician on our team to assess if a prescription medication might be appropriate
+                                        <div>
+                                            <h1 class="weare-going-con mb-20 qe-title">
+                                                <div class="ques-final-thankyou">Thank you</div> 
+                                                <div class="ques-final-answering">For Answering</div> 
+                                            </h1>
+                                            <p class="mb-30">Thank you for completing this questionnaire about your health and your experience with erectile dysfunction. Your answers will be reviewed by a licensed clinician on our team to assess if a prescription medication might be appropriate
                                             for your condition. They will promptly review your answers and get back to you with suitable suggestions.</p>
-                                        <h3 class="list-heading mb-30">Before You Submit Your Responses, Please Affirm That You:</h3>
-                                        <ul class="quest-v2-list pb-30 mb-30">
-                                            <li>Are Completing This Survey To The Best Of Your Abilities And In A Truthful Manner. </li>
+                                        </div>
+                                        <div>
+                                            <h3 class="list-heading mb-30">Before You Submit Your Responses, Please Affirm That You:</h3>
+                                            <ul class="quest-v2-list pb-30 mb-20 before-submit-area">
+                                                <li>Are Completing This Survey To The Best Of Your Abilities And In A Truthful Manner. </li>
                                             <li>Were Assigned Male At Birth And Are Currently Experiencing Symptoms Of Erectile Dysfunction. </li>
                                             <li>Have Disclosed Any Significant Illnesses Or Surgeries You've Undergone.
                                             </li>
@@ -1012,45 +1023,35 @@
                                             </li>
                                             <li>Will Read all patient information leaflets available</li>
                                             <li>Are Accepting Our Terms & Conditions And Terms Of Sale.</li>
-
-                                        </ul>
-                                        <ul class="quest-lfc-btn desktop-none">
-                                            <li><a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
-                                                    Licensed & Registered Medication
-                                                </a></li>
-                                            <li><a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
-                                                    Free & Discreet 24 Hour Shipping
-                                                </a></li>
-                                            <li><a href="javascript:void(0)">
-                                                    <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
-                                                    Pause or Cancel Anytime
-                                                </a></li>
-                                        </ul>
-                                        <div class="quest-v2-btn">
-                                            <a class="btn-d-trans btn-wt-170 prev-button"
-                                                href="javascript:void(0)">Back</a>
-                                            <button type="submit" class="btn-d-black btn-wt-300 mr-20">Continue</button>
-
+                                            </ul>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-5 col-md-12">
-                                    <ul class="quest-lfc-btn phone-none">
-                                        <li><a href="javascript:void(0)">
-                                                <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
-                                                Licensed & Registered Medication
-                                            </a></li>
-                                        <li><a href="javascript:void(0)">
-                                                <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
-                                                Free & Discreet 24 Hour Shipping
-                                            </a></li>
-                                        <li><a href="javascript:void(0)">
-                                                <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
-                                                Pause or Cancel Anytime
-                                            </a></li>
-                                    </ul>
+                            </div>
+                            <div class="row ques-footer">
+                                <div class='col-lg-6 col-md-12 ques-lfc' >
+                                    <div class="quest-lfc-btn">
+                                        <div>
+                                            <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
+                                            <span>Licensed & Registered Medication</span>
+                                        </div>
+                                        <div>
+                                            <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
+                                            <span>Free & Discreet 24 Hour Shipping</span>
+                                        </div>
+                                        <div>
+                                            <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
+                                            <span>Pause or Cancel Anytime</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="quest-v2-btn">
+                                        <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
+                                        <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
+                                            value="btn">continue</button>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>

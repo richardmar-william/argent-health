@@ -65,14 +65,17 @@ class LoginController extends Controller
        
         $url = url()->previous();
  
+            
         if (auth()->user()->isAdminOrSupervisor()) {
           
             return $this->redirectTo = '/admin';
         }
         elseif(auth()->user()->isUser()){
-           
             if($url == URL::to('/login')){
                 return $this->redirectTo = '/';
+            }
+            else if($url == URL::to('/cart_product')){
+                return $this->redirectTo = '/cart_product';
             }
             else{
                 return $this->redirectTo = '/checkout';
@@ -86,7 +89,10 @@ class LoginController extends Controller
         }
         elseif(auth()->user()->role == 3){
             if($url == URL::to('/checkout')){
-            return $this->redirectTo = '/checkout';
+                return $this->redirectTo = '/checkout';
+            }
+            else if($url == URL::to('/cart_product')){
+                return $this->redirectTo = '/cart_product';
             }
             else{
                 return $this->redirectTo = '/';

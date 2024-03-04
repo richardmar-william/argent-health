@@ -5,6 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="language" content="en" />
     <meta name="country" content="us" />
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="INDEX, FOLLOW" />
     <title>Cart Product</title>
     <meta name="keywords" content="" />
@@ -21,9 +22,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
 
     <livewire:styles />
     @yield('style')
@@ -58,7 +61,6 @@
     <!-- End Google Tag Manager -->
 
 </head>
-
 <body>
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -77,7 +79,325 @@
             </a>
         </div>
     </div>
-    <div class="quest-v2-content">
+        <div class="quest-v2-content auth-view <?php echo Auth::check()?"d-none":""?>">
+            <div class="quest-v21-signin">
+                <div class="img-view"><img src="/frontend/images/signin.jpg"></div>
+                <form class="quest-v21-signin-form" action="{{ route('login') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="session_id" value="<?php echo $session_id;?>">
+                    <input type="hidden" name="log-in" value="cart_product">
+                    <h1>
+                        <div>Please enter</div>
+                        <span>your email</span>
+                    </h1>
+                    <h4>Enter Your Email to get started</h4>
+                    <div class=" form-group input-email">
+                        <label for="email" class="form-label">Email Address:</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div class="form-group input-password">
+                        <label for="pwd" class="form-label">Password:</label>
+                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                    </div>
+                    <button type="button" class='btn-d-black' id="btn_signin">Continue</button>
+                </form>
+            </div>
+        </div>
+    
+    @if($category == "30" || $category == "31" || $category == "32" || $category == "33")
+    <div class="container-fluid mt-3 choose-perfer-content authed-view <?php echo (!($category == "30" || $category == "31" || $category == "32" || $category == "33") || !Auth::check()) ? "d-none":""?>">
+        <div class="row choose-prefer-contet-header">
+            <div class="col col-lg-8 col-md-12 p-3 choose-prefer">
+                <div class="choose-prefer-title">Please choose your  </div>
+                <div>preferred monthly </div>
+                <div>treatment</div>
+            </div>
+            <div class="col p-3 text-right recommend-button">
+                <a class="btn-d-trans btn-wt-300" href="javascript:void(0)">Recommended for you</a>
+            </div>
+        </div>
+        @php
+        $recom_product = \App\Models\Temp::where('session_id',
+                                                $session_id)->first();
+        $ques_30 = json_decode($recom_product->jason_data);
+        $con1 = array_column($ques_30, 'answer');
+        $treat_method = null;
+        if($category == 30) {
+            if(in_array("Lactose", $con1)) $treat_method = "Lactose";
+            else if(in_array("Minoxidil", $con1)) $treat_method = "Minoxidil";
+            else if(in_array("Finasteride", $con1)) $treat_method = "Finasteride";
+            else $treat_method = "Lactose";
+        }
+        if($category == 31) {
+            $treat_method = "Beard";
+        }
+        if($category == 32) {
+            if(in_array("1 hour before sexual intercourse", $con1)) $treat_method = "1 hour before sexual intercourse";
+            else if(in_array("I'd rather not plan and take the tablet beforehand", $con1)) $treat_method = "I'd rather not plan and take the tablet beforehand";
+            else $treat_method = "Erectile_Extra";
+            
+        }
+        if($category == 33) {
+            if(in_array("Serotonin reuptake inhibitors i.e priligy", $con1)) $treat_method = "Serotonin reuptake inhibitors i.e priligy";
+            if(in_array("I can't tolerate even small amounts of lactose", $con1)) $treat_method = "I can't tolerate even small amounts of lactose";
+            else if(in_array("I'm comfortable with proceeding to be assessed for a prescription", $con1)) $treat_method = "I'm comfortable with proceeding to be assessed for a prescription";
+            else if(in_array("Lidocaine or other local anesthetics", $con1)) $treat_method = "Lidocaine or other local anesthetics";
+            else $treat_method = "Lidocaine or other local anesthetics";
+
+        }
+        $product1 = \App\Models\Product::whereRaw('find_in_set("'.$treat_method.'",treat_method)')->orderBy('id', 'ASC')->get();
+        @endphp
+        <div class="carousel slide" data-bs-ride="carousel" id="rec_prod">
+            <div class="row recommended-product-list carousel-inner" style="justify-content: <?php echo sizeof($product1) < 2 ? "center" : "flex-start"?>">
+                
+                @foreach($product1 as $pkey => $products)
+                    @php                    
+                    $proList = [];
+                    for($i = 0 ; $i < sizeof($productList) ; $i ++) {
+                        if($category == 30 || $category == 31 ) {
+                            if($productList[$i]["type"] == null || $productList[$i]['type'] == "") continue;
+                            if($productList[$i]['type'] == $products->type ) {
+                                if(is_array($productList[$i]['tags']) && sizeof($productList[$i]['tags']) > 0) {
+                                    $productList[$i]['tag'] = $productList[$i]['tags'][0]['name'];
+                                    array_push($proList, $productList[$i]);
+                                }
+                            }
+                        }
+                        else  {
+                            if($productList[$i]['type'] == $products->type && $productList[$i]['category_id'] == $category) {
+                                $productList[$i]['tag'] = $productList[$i]['quantity_mg']."mg";
+                                $flag = false;
+                                foreach($proList as $proItem) {
+                    
+                                    if($proItem['quantity_mg'] == $productList[$i]['quantity_mg']) {
+                                        $flag = true;
+                                        break;
+                                    }
+                                }
+                                if(!$flag)
+                                    array_push($proList, $productList[$i]);
+                            }
+                        }
+                    }
+                    
+                    @endphp
+                        <div class="col col-6 col-lg-6 col-md-12 product-card carousel-item <?php echo $pkey == 0 ? "active":"";?>">
+                            <div class="tag-selector-area">
+                                <ul class="nav nav-tabs tag-selector"  role="tablist">
+                                    <?php
+                                    foreach($proList as $key => $item) {
+                                        echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."'>
+                                                <a class='nav-link' data-bs-toggle='tab' href='#recom_{$products->id}_{$key}'>{$item['tag']}</a>
+                                            </li>";
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-content">
+                            @foreach($proList as $iKey => $proItem)
+                                @php
+                                $media = DB::table('media')->where('mediable_id',$proItem['id'])->first();
+                                $pro_tag = DB::table('product_tags')->where('product_id',$proItem['id'])->first();
+                                $tags = []; 
+                                if($pro_tag)
+                                    $tags = DB::table('tags')->where('id', $pro_tag->tag_id)->first();
+                                @endphp
+                                <div class="row container tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
+                                    <div class="col col-12">
+                                        <figure>
+                                            <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="100%" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col col-12 product-detail-info">
+                                        <p class="product-highlite">{{$proItem['highlite'] ? $proItem['highlite'] : "Pill free option"}}</p>
+                                        <h1 class='product-name'>{{$proItem['name']}}</h1>
+                                        <p class="product-detail-description">{{strip_tags($proItem['description'])}}</p>
+                                        <div class="product-price">
+                                            {{ 'Starting at £'.$proItem['first_time_disc']." ".($proItem['subscription_duration'] == 1 ? 'a month' : $proItem['subscription_duration']." months") }}
+                                        </div>
+                                        @if($category == 33 || $category == 32)
+                                        <div class="choose-tablets">
+                                            <h4>Choose your tablets per month</h4>
+                                            <div class="tablets-items">
+                                                @php
+                                                $tablets = [];
+                                                foreach($productList as $productItem) {
+                                                    if($productItem['type'] == $proItem['type'] && $productItem['quantity_mg'] == $proItem['quantity_mg'] && $category == $productItem['category_id']) {
+                                                        array_push($tablets, $productItem);
+                                                    }
+                                                }
+                                                @endphp
+
+                                                @foreach($tablets as $tablet) 
+                                                <div  class="tablets-item <?php if($tablet['id'] == $proItem['id']) echo "selected"?>" data-id="<?php echo $tablet['id'];?>">
+                                                    <div>{{$tablet['quantity']}}</div>
+                                                    <div>£{{number_format($tablet['first_time_disc'] /$tablet['quantity'], 2)}}/tablet</div>
+                                                </div>
+                                                @endforeach
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        @endif
+                                        <div class="product-toolbar">
+                                            <button class="btn-d-black" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            @endforeach
+                            </div>
+                        </div>
+                @endforeach
+            </div>
+            <div class="carousel-indicators">
+                @foreach($product1 as $pkey => $products)
+                    <button type="button" data-bs-target="#rec_prod" data-bs-slide-to="{{$pkey}}" class="active"></button>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#rec_prod" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#rec_prod" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+        <div class="row asking-all-treatment">
+            <div class="col col-12">
+                <strong>Prefer a different treatment?</strong>
+            </div>
+            <div class="col col-12">
+                <button class='btn-d-trans all-treatment-btn'>See All Treatment</button>
+            </div>
+        </div>
+        
+            @php
+
+                $product1 = \App\Models\Product::whereIn('category_id', [$category])->orderBy('id',
+                'ASC')->where("subscription_duration",'1')->groupBy("type")->get();
+                            
+            @endphp
+            
+        <div class="carousel slide" data-bs-ride="carousel" id="other_rec_prod">
+            <div class="row other-recommended recommended-product-list carousel-inner" style="justify-content: <?php echo sizeof($product1) < 2 ? "center" : "flex-start"?>">
+                @foreach($product1 as $pkey => $products)
+                    @php                    
+                    $proList = [];
+                    if(empty($products->type)) {
+                        array_push($proList, $products);
+                    }
+                    else for($i = 0 ; $i < sizeof($productList) ; $i ++) {
+                        if($category == 30 || $category == 31 ) {
+                            
+                            if($productList[$i]['type'] == $products->type ) {
+                                if(is_array($productList[$i]['tags']) && sizeof($productList[$i]['tags']) > 0) {
+                                    $productList[$i]['tag'] = $productList[$i]['tags'][0]['name'];
+                                    array_push($proList, $productList[$i]);
+                                }
+                            }
+                        }
+                        else  {
+                            if($productList[$i]['type'] == $products->type && $productList[$i]['category_id'] == $category) {
+                                $productList[$i]['tag'] = $productList[$i]['quantity_mg']."mg";
+                                $flag = false;
+                                foreach($proList as $proItem) {
+                    
+                                    if($proItem['quantity_mg'] == $productList[$i]['quantity_mg']) {
+                                        $flag = true;
+                                        break;
+                                    }
+                                }
+                                if(!$flag)
+                                    array_push($proList, $productList[$i]);
+                            }
+                        }
+                    }
+                    @endphp
+                        <div class="col col-6 col-lg-6 col-md-12 product-card carousel-item <?php echo $pkey == 0 ? "active":"";?>">
+                            <div class="tag-selector-area">
+                                <ul class="nav nav-tabs tag-selector"  role="tablist">
+                                    <?php
+                                    foreach($proList as $key => $item) {
+                                        echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."'>
+                                                <a class='nav-link' data-bs-toggle='tab' href='#recom_{$products->id}_{$key}'>".($item['tag'] ? $item['tag']:"No Tag")."</a>
+                                            </li>";
+                                    }
+                                    ?>
+                                </ul>
+                            </div>
+                            
+                            <div class="tab-content">
+                            @foreach($proList as $iKey => $proItem)
+                                @php
+                                $media = DB::table('media')->where('mediable_id',$proItem['id'])->first();
+                                $pro_tag = DB::table('product_tags')->where('product_id',$proItem['id'])->first();
+                                $tags = []; 
+                                if($pro_tag)
+                                    $tags = DB::table('tags')->where('id', $pro_tag->tag_id)->first();
+                                @endphp
+                                <div class="row container tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
+                                    <div class="col col-12">
+                                        <figure>
+                                            <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="100%" alt="">
+                                        </figure>
+                                    </div>
+                                    <div class="col col-12 product-detail-info">
+                                        <p class="product-highlite">{{$proItem['highlite'] ? $proItem['highlite'] : "Pill free option"}}</p>
+                                        <h1 class='product-name'>{{$proItem['name']}}</h1>
+                                        <p class="product-detail-description">{{strip_tags($proItem['description'])}}</p>
+                                        <div class="product-price">
+                                            {{ 'Starting at £'.$proItem['first_time_disc']." ".($proItem['subscription_duration'] == 1 ? 'a month' : $proItem['subscription_duration']." months") }}
+                                        </div>
+                                        @if($category == 33 || $category == 32)
+                                        <div class="choose-tablets">
+                                            <h4>Choose your tablets per month</h4>
+                                            <div class="tablets-items">
+                                                @php
+                                                $tablets = [];
+                                                foreach($productList as $productItem) {
+                                                    if($productItem['type'] == $proItem['type'] && $productItem['quantity_mg'] == $proItem['quantity_mg'] && $category == $productItem['category_id']) {
+                                                        array_push($tablets, $productItem);
+                                                    }
+                                                }
+                                                @endphp
+
+                                                @foreach($tablets as $tablet) 
+                                                <div  class="tablets-item <?php if($tablet['id'] == $proItem['id']) echo "selected"?>" data-id="<?php echo $tablet['id'];?>">
+                                                    <div>{{$tablet['quantity']}}</div>
+                                                    <div>£{{number_format($tablet['first_time_disc'] /$tablet['quantity'], 2)}}/tablet</div>
+                                                </div>
+                                                @endforeach
+                                                <div></div>
+                                            </div>
+                                        </div>
+                                        @endif
+                                        <div class="product-toolbar">
+                                            <button class="btn-d-black" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            
+                            @endforeach
+                            </div>
+                        </div>
+                @endforeach
+            </div>
+            <div class="carousel-indicators">
+                @foreach($product1 as $pkey => $products)
+                    <button type="button" data-bs-target="#other_rec_prod" data-bs-slide-to="{{$pkey}}" class="active"></button>
+                @endforeach
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#other_rec_prod" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#other_rec_prod" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </div>
+    
+    @else
+    <div class="quest-v2-content authed-view <?php echo ($category == "30" || $category == "31" || !Auth::check()) ? "d-none":""?>">
         <div class="container-fluid">
             <div class="quest-v2-inner-wrap">
                 <!-- product start -->
@@ -88,6 +408,8 @@
                 <form action="{{ route('checkout.index') }}" method="POST">
                     @csrf
 
+                    <input type="hidden" name="product_ids" id="ProductIds">
+                    <input type="hidden" name="Session_Id" value="{{ $session_id }}">
                     <div class="quest-v2-step" id="step1">
                         <div class="container-fluid">
                             <div class="row">
@@ -107,9 +429,6 @@
 
                                                 </div>
 
-{{--                                                <div class="col-12 text-center">--}}
-{{--                                                    <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>--}}
-{{--                                                </div>--}}
 
                                             </div>
                                         </div>
@@ -249,7 +568,7 @@
 
 
                                                                     <h5>
-<p class="add-highlite-main">{{$products->highlite}}</p>
+                                                                    <p class="add-highlite-main">{{$products->highlite}}</p>
                                                                                 {{ $products->name }}
                                                                                                                                                     </h5>
                                                                     <p>{{ strip_tags($products->description) }}</p>
@@ -372,7 +691,7 @@
 
                                                     @php
 
-                                                        $product1 = \App\Models\Product::whereRaw("find_in_set(\"I'd rather not plan and take the tablet beforehand\",treat_method)")->orderBy('id',
+                                                        $product1 = \App\Models\Product::whereRaw(`find_in_set("I'd rather not plan and take the tablet beforehand",treat_method)`)->orderBy('id',
                                                         'DESC')->get();
 
                                                     @endphp
@@ -393,7 +712,7 @@
                                                                          height="90px" alt="">
                                                                 </figure>
                                                                 <div class="r-t-body-cont">
-<h5>
+                                                                    <h5>
                                                                         <p class="add-highlite-main">{{$products->highlite}}</p>
                                                                                 {{ $products->name }}
                                                                     </h5>
@@ -686,8 +1005,7 @@
                                 @elseif($category == 32)
                                     @php
 
-                                        $product1 = \App\Models\Product::whereIn('category_id', [32])->orderBy('id',
-'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
+                                        $product1 = \App\Models\Product::whereIn('category_id', [32])->orderBy('id', 'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
                                         'DESC')->get();
 
                                     @endphp
@@ -769,8 +1087,7 @@
                                 @elseif($category == 33)
                                     @php
 
-                                        $product1 = \App\Models\Product::whereIn('category_id', [33])->orderBy('id',
-'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
+                                        $product1 = \App\Models\Product::whereIn('category_id', [33])->orderBy('id', 'ASC')->where("subscription_duration",'1')->groupBy("name")->orderBy('id',
                                         'ASC')->get();
 
                                     @endphp
@@ -876,10 +1193,10 @@
                                 </div>
                             </div>
 
-
+                                
+                    <input type="hidden" name="product_ids" id="ProductIds">
+                    <input type="hidden" name="Session_Id" value="{{ $session_id }}">
                             @endif
-                            <input type="hidden" name="product_ids" id="ProductIds">
-                            <input type="hidden" name="Session_Id" value="{{ $session_id }}">
                             <!-- all treatmenyt sec end -->
 
 
@@ -891,7 +1208,7 @@
     </div>
     <!-- 11th step end -->
     <!--============================== strenth section =============================-->
-    <div class="quest-v2-step" id="step2">
+    <div class="quest-v2-step authed-view <?php echo ($category == "30" || $category == "31" || !Auth::check()) ? "d-none":""?>" id="step2">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -1368,7 +1685,7 @@
 
     <!-- tablet section start -->
 
-    <div class="quest-v2-step" id="step3">
+    <div class="quest-v2-step authed-view <?php echo ($category == "30" || $category == "31" || !Auth::check()) ? "d-none":""?>" id="step3">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -1860,7 +2177,7 @@
         </div>
     </div>
 
-    <div class="quest-v2-step" id="step4">
+    <div class="quest-v2-step authed-view <?php echo ($category == "30" || $category == "31" || !Auth::check()) ? "d-none":""?>" id="step4">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -1885,7 +2202,7 @@
                         @if($category != 32 and $category!=33)
                         <div class="text-center">
 
-                        <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
+                        <img src="{{asset('frontend_new/images/money-back.png')}}" style="width: 100%"/>
 
                         </div>
                         @endif
@@ -1999,7 +2316,7 @@
 
 
     <!-- loader section start -->
-    <div class="quest-v2-loadingstep" style="display: none;">
+    <div class="quest-v2-loadingstep " style="display: none;">
         <div class="row">
             <div class="col-md-12">
                 <div class="quest-loading-steps">
@@ -2024,7 +2341,7 @@
     </div>
     </div>
     </div>
-
+                                @endif
     <!-- pop up   start (add)-->
     <!-- <div class="ques_product_seccess"><h5>Added to cart...</h5></div> -->
     <!-- pop up end (add) -->
@@ -2089,7 +2406,12 @@
             </div>
         </div>
     </div>
-
+    
+    <form action="{{ route('checkout.index') }}" method="POST" id="submit_form">
+        @csrf
+        <input type="hidden" name="product_ids" id="ProductIds">
+        <input type="hidden" name="Session_Id" value="{{ $session_id }}">
+    </form>
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -2382,7 +2704,12 @@ var productList = <?=json_encode($productList)?>;
         $('#step2').hide();
         $('#step3').hide();
         $('#step4').hide();
-function getProductInfo(id) {
+        // $("#other_rec_prod").hide();
+        $(".all-treatment-btn").click(function() {
+            if($("#other_rec_prod").css('display') == "flex") $("#other_rec_prod").css('display', "none")
+            else $("#other_rec_prod").css('display', "flex")
+        })
+            function getProductInfo(id) {
             for(i = 0 ; i < productList.length ; i ++) {
                 if(productList[i].id == id) return productList[i];
             }
@@ -2409,7 +2736,7 @@ function getProductInfo(id) {
         $('#Sildenafil_tablet_100').hide();
         $('#cont_1').click(function() {
             input_prod_id = $('#ProductIds').val();
-var productInfo = getProductInfo(input_prod_id);
+            var productInfo = getProductInfo(input_prod_id);
             if(!productInfo) return;
             var productListWithSameCode = getProductListWithSameCode(input_prod_id);
             if(productListWithSameCode.length == 0) return;
@@ -2571,6 +2898,97 @@ $('#step2 .ctsm_radio_box [type="radio"]').change(function(){
     $('.read-m-btn').click(function (){
         $('.moon').css('display','inherit');
 
+    })
+
+    $(document.body).ready(function() {
+        $(".tag-selector > li").click(function() {
+            $(this).parent().children("li").removeClass("nav-item-selected");
+            $(this).addClass("nav-item-selected")
+        })
+        $(".product-toolbar button").click(function(){
+            $("#submit_form").submit();
+        }) 
+        function validateEmail(email) {
+            // Regular expression for validating email addresses
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        function checkEmail() {
+            var email = $("#email").val();
+            console.log(email)
+            if(!email) {
+                alert("Please enter your email address");
+                return;
+            }
+
+            if(!validateEmail(email)) {
+                alert("Please enter your valid email address");
+                return;
+            }
+            if($(".input-password").css("display") == "none")
+                $.get("/user/email/"+email, function(res) {
+                    if(res.id) {
+                        $(".img-view img").attr("src", "/frontend/images/login.jpg");
+                        $(".input-password").show();
+                    }
+                    else {
+                        localStorage.setItem("new_user_email", email);
+
+                    $.post("/temp/email", {email: email, session_id: "<?php echo $session_id; ?>", _token: "<?php echo csrf_token(); ?>"});
+                        $(".auth-view").addClass("d-none")
+                        $(".authed-view").removeClass("d-none");
+                        $("body").css("background-color", "#e4e4e4")
+                    }
+                })
+            else {
+                var password = $("#pwd").val();
+                if(!password) {
+                    alert("Please enter your password!");
+                    return;
+                }
+                $(".quest-v21-signin-form").submit();
+           
+            }
+        }
+
+        $("#btn_signin").click(checkEmail)
+        $("#email").keyup(function(e) {
+            if(e.keyCode == 13) {
+                checkEmail();
+            }
+        })
+        
+        $("#pwd").keyup(function(e) {
+            if(e.keyCode == 13) {
+                checkEmail();
+            }
+        })
+        $(".tablets-item").click(function() {
+            var pId = $(this).attr("data-id");
+            var productList = <?php echo json_encode($productList); ?>;
+            $(".tablets-item").removeClass("selected");
+            $(this).addClass("selected");
+            $(".product-toolbar button").attr("onclick", "AddToCart('"+pId+"')");
+
+            for(var i = 0 ; i < productList.length ; i ++) {
+                if(productList[i].id == pId) {
+                    $(".product-detail-description").html(productList[i].description)
+                    $(".product-highlite").html(productList[i].highlite ? productList[i].highlite : "Pill free option")
+                    $(".product-name").html(productList[i].name)
+                    $(".product-price").html('Starting at £'+productList[i].first_time_disc + " a month")
+                    break;
+                }
+            }
+        })
+
+        if(window.screen.width > 991) {
+            $(".carousel-indicators").css("display", "none")
+            $(".carousel-control-prev").css("display", "none")
+            $(".carousel-control-next").css("display", "none")
+            $(".carousel-item").removeClass("carousel-item")
+            $(".carousel").removeClass("slide")
+            $(".carousel").removeClass("carousel")
+        }
     })
 </script>
 

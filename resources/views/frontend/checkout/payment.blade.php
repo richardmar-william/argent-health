@@ -4,24 +4,24 @@
     $user = DB::table('users')->where('id', $user_id)->first();
     $user_address1 =  DB::table('delivery_address')->where('user_id', $user_id)->orderBy('id','DESC')->first();
     $user_address2 =  DB::table('delivery_address')->where('id', $order->user_address_id)->first();
-     $user_name = $user->full_name;
-     $user_tel = $user->phone;
-     $user_email = $user->email;
-     $order_refId = $order->ref_id;
-        if($user_address2 == ''){
-            $user_add = $user_address1->address;
-            $user_city = $user_address1->city;
-            $user_zip = $user_address1->zip_code;
-        }
-        else {
-            $user_add = $user_address2->address;
-            $user_city = $user_address2->city;
-            $user_zip = $user_address2->zip_code;
-        }
-            //
-            $user_del_add = $user_address1->address;
-            $user_del_city = $user_address1->city;
-            $user_del_zip = $user_address1->zip_code;
+    $user_name = $user->full_name;
+    $user_tel = $user->phone;
+    $user_email = $user->email;
+    $order_refId = $order->ref_id;
+    if($user_address2 == ''){
+        $user_add = $user_address1->address;
+        $user_city = $user_address1->city;
+        $user_zip = $user_address1->zip_code;
+    }
+    else {
+        $user_add = $user_address2->address;
+        $user_city = $user_address2->city;
+        $user_zip = $user_address2->zip_code;
+    }
+        //
+        $user_del_add = $user_address1->address;
+        $user_del_city = $user_address1->city;
+        $user_del_zip = $user_address1->zip_code;
 
 @endphp
 <!DOCTYPE HTML>
@@ -40,6 +40,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap"
           rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Yeseva+One&display=swap"
+          rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/quest-v2.css">
@@ -49,6 +51,7 @@
         <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
 
 
@@ -77,9 +80,7 @@
         button[type="submit"] {
             background-color: #007bff;
             color: #fff;
-            padding: 10px;
             border: none;
-            border-radius: 5px;
             cursor: pointer;
         }
 
@@ -123,7 +124,7 @@
         button[type="submit"] {
             background-color: #000;
             margin: auto;
-            padding: 10px 72px;
+            padding: 1.5rem 5rem;
         }
 
         .error-field {
@@ -134,14 +135,24 @@
             display: flex !important;
             align-items: center !important;
         }
-.google-pay-area, .apple-pay-area {
+        .google-pay-area, .apple-pay-area {
             display: flex;
             justify-content: center;
-            width: 100%;
             margin-top: 20px;
         }
         .google-pay-area .google-pay-button {
             height: 44px;
+        }
+        .quest-v2-content .form-radio label {
+            padding: 0.5rem 0rem 0.5rem 2.4rem;
+        }
+        .quest-v2-content [type="radio"]:checked + label:before,
+        .quest-v2-content [type="radio"]:not(:checked) + label:before {
+            left: 0px;
+        }
+        .quest-v2-content [type="radio"]:checked + label:after,
+        .quest-v2-content [type="radio"]:not(:checked) + label:after {
+            left: 4px;
         }
     </style>
 
@@ -175,8 +186,7 @@
     <!-- End Google Tag Manager -->
 
 </head>
-<body class="" style="    color: #fff;
-    background: #484F47;">
+<body >
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -195,290 +205,297 @@
         </div>
     </div>
     <div class="quest-v2-content">
-        <div class="container-fluid">
-            <div class="quest-v2-inner-wrap">
+        <div class="quest-v2-inner-wrap">
 
-    <div class="py-5">
-        <div class="container bg-image">
-            <div class="row align-items-center">
+            <div class="py-5">
+                <div class="bg-image">
+                    <div class="row">
 
-                <div class="col-lg-6 pay-col">
-{{--                    <div class="text-pay">--}}
-{{--                        <figure>--}}
-{{--                            <img src="{{ asset('frontend_new/images/logo-pay.png') }}" alt="">--}}
-{{--                        </figure>--}}
+                        <div class="col-lg-6 col-md-12 order-detail">
+                            <input type="hidden" name="session_id" value="{{$sessionId}}">
+                            <input type="hidden" name="total_price" value="{{$total_price}}">
+                            
+                            <div class="quest-ordrsmry-left">
+                                    <h1 class="card-heading">
+                                        <div>Order</div>
+                                        <div>Summary</div>
+                                    </h1>
 
-{{--                    </div>--}}
-                    <div class="card-design mb-40">
-                        <h3 class="card-heading mb-30">Your Order</h3>
-                        @foreach($prod_name as $product)
-                                        @php
-                                        $first_time_discount = $product->first_time_disc;
-                                        $category_id = $product->category_id;
-                                        $price = $product->price;
-                                        $discount_price = abs( (float) $product->first_time_disc - (float) $product->price );
-                                        $img = DB::table('media')->where('mediable_id',$product->id)->first();
-                                        $tag = DB::table('product_tags')->where('product_id', $product->id)->first();
-                                        if(isset($tag->tag_id)) {
-                                        $type = DB::table('tags')->where('id',$tag->tag_id)->first();
-                                        }
-                                        $category_id = $product->category_id;
-                                        @endphp
-                        <div class="qos-product">
-                            <figure>
-                                <img class="img-fluid"
-                                    src="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}"
-                                    alt="gent-img2">
-                            </figure>
-                            <div class="qos-product-cont">
-                                <h5>{{ $product->name }}</h5>
-                                <h5 id="p_name"></h5>
-                            </div>
-                            <div class="qos-product-price" style="display: flex;">
-                           {{($product->subscription_duration == 1)? 'Monthly subscription':$product->subscription_duration.' Monthly subscription'}}
-                            </div>
-                        </div>
-                        @endforeach
-                        <div class="cstm-border"></div>
-                        <form id="myForm">
-                            <input type="hidden" name="_token" value="Lw9F4CbRYIZULxwOAxUIMs5vnGYVBe8k3ie1idTc">
-                            @if($price > $first_time_discount)
-                                <div class="qos-product-text mb-20 text-dark">Subtotal <div class="price text-dark">
-                                        £{{$price}}.00</div>
-                                </div>
-                            @else
-                                <div class="qos-product-text mb-20 text-dark">Subtotal <div class="price text-dark">
-                                        £{{$first_time_discount}}.00</div>
-                                </div>
-                            @endif
+                                <!-- apply affiliate -->
+                                <div class="card-design mb-40">
+                                    @foreach($prod_name as $product)
+                                    @php
+                                    $first_time_discount = $product->first_time_disc;
+                                    $category_id = $product->category_id;
+                                    // dd($category_id);
+                                    $price = $product->price;
+                                    $name = $product->name;
+                                    $desc = $product->description;
+                                    $discount_price = abs( (float) $product->first_time_disc - (float) $product->price );
+                                    $img = DB::table('media')->where('mediable_id',$product->id)->first();
+                                    $tag = DB::table('product_tags')->where('product_id', $product->id)->first();
+                                    if(isset($tag->tag_id)) {
+                                    $type = DB::table('tags')->where('id',$tag->tag_id)->first();
+                                    }
+                                    $category_id = $product->category_id;
+                                    @endphp
 
-                            <p class="clearText">{{$product->subscription_duration}} x months supply of treatment</p>
+                                    <div class="qos-product">
+                                        <img class="img-fluid"
+                                            src="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}"
+                                            alt="gent-img2" />
+                                    </div>
+                                    <h1 class="product-title">{{$name}}</h1>
+                                    <p class="product-desc">{{strip_tags($desc)}}</p>
 
-                            <div class="qos-product-text">
-                                <ul class="list-group w-100 ">
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                        Online Consultation and Health Assessment
-                                        <span class="text-success">Included</span>
-                                    </li>
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                        Continuous Support with Ongoing Reviews
-                                        <span class="text-success">Included</span>
-                                    </li>
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                        Medical Evaluation and Screening
-                                        <span class="text-success">Included</span>
-                                    </li>
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                        Shipping
-                                        <span class="text-success">Included</span>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="cstm-border"></div>
-                            <div class="qos-product-multi qos-product-text">
-                                <ul class="list-group w-100">
-                                    <li
-                                        class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                        First order discount
-                                        @if($price > $first_time_discount)
-                                           <span class="">-£{{$discount_price}}</span>
+                                    @php
+                                    $monthList = DB::table("products")->where('name', $name)->orderBy("subscription_duration")->get()->toArray();
+                                    @endphp
+                                    <div class="row">
+                                        @foreach($monthList as $month) 
+                                            $img = DB::table('media')->where('mediable_id',$product->id)->first();
+                                            @if($category_id == "33" || $category_id == "32") 
+                                            <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
+                                                <div class="form-group form-radio">
+                                                    <input type="radio" id="product_sub_month_0" name="input_product_sub" value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                    <label class="sub-leb" for="product_sub_month_0">
+                                                        <h4>One time treatment plan</h4>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @endif
+                                            @if($month->subscription_duration == 1)
+                                            <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
+                                                <div class="form-group form-radio">
+                                                    <input type="radio" id="product_sub_month_2" name="input_product_sub" <?php if($product->subscription_duration == 1) echo "checked";?> value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                    <label class="sub-leb" for="product_sub_month_2">
+                                                        <h4>1 month treatment plan</h4>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @else 
+                                            <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
+                                                <div class="form-group form-radio">
+                                                    <input type="radio" id="product_sub_month_3" name="input_product_sub" <?php if($product->subscription_duration == $month->subscription_duration) echo "checked";?> product-id="{{$month->id}}" value="3">
+                                                    <label class="sub-leb" for="product_sub_month_3">
+                                                        <span class="">Recommended</span>
+                                                        <h4>{{$month->subscription_duration}} months treatment plan</h4>
+                                                        <p>Save up to 30% with this treatment duration</p>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            @endif
+                                        @endforeach
+                                        </div>
+                                    @endforeach
+                                    <!-- <form id="myForm"> -->
+                                        @if($total_price > $first_time_discount)
+                                        <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
+                                                £{{$total_price}}.00
+                                            </div>
+                                        </div>
                                         @else
-                                           <span class="">£0</span>
+                                        <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
+                                                £{{$first_time_discount}}.00
+                                            </div>
+                                        </div>
                                         @endif
-                                    </li>
-                                </ul>
+
+                                    <p class="clearText duration-label"><span id="dur_label">{{$product->subscription_duration}}</span> x months supply of treatment</p>
+                                        <div class="qos-product-text">
+                                            <ul class="list-group w-100 ">
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                    Online Consultation and Health Assessment
+                                                    <span class="text-success">Included</span>
+                                                </li>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                    Continuous Support with Ongoing Reviews
+                                                    <span class="text-success">Included</span>
+                                                </li>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                    Medical Evaluation and Screening
+                                                    <span class="text-success">Included</span>
+                                                </li>
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                    Shipping
+                                                    <span class="text-success">Included</span>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cstm-border"></div>
+                                        <div class="qos-product-multi qos-product-text">
+                                        <ul class="list-group w-100">
+                                                <li
+                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                    First order discount
+                                                    @if(true or $total_price > $first_time_discount)
+                                                        <span class="discount-price">-£{{$discount_price}}</span>
+                                                    @else
+                                                    <span class="discount-price">£0</span>
+                                                    @endif
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cstm-border"></div>
+
+
+                                        <div class="total-amount">
+                                            <h3>Total</h3>
+                                            <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 </span>
+                                        </h3>
+                                            <span id="totalAmt" class="d-none">{{$first_time_discount}}</span>
+                                            <!-- <p><span id="user_off"></span>%Discount</p> -->
+                                        </div>
+
+                                    <div class="text-dark mt-30 orderText">
+                                        You will receive a monthly delivery of your treatment during the subscription
+                                    </div>
+
+                                        <div class="coupon-area d-none">
+                                    <div class="total-amount">
+                                        <h3>Coupon Discount</h3>
+                                        <h3 class="text-default">- <span id="couponTotal">0</span></h3>
+                                        <!-- <p><span id="user_off"></span>%Discount</p> -->
+                                    </div>
+                                    <div class="total-amount">
+                                        <h3>Order Total</h3>
+                                        <h3 class="text-success"><span id="orderTotal">0</span></h3>
+                                        <!-- <p><span id="user_off"></span>%Discount</p> -->
+                                    </div>
+                                    </div>
+
+
+                                        <div class="cstm-border"></div>
+
+
+                                        <div class="qos-product-text mb-3 mt-2">
+                                            <input type="text" id="coupon_code" class="discount-cls-main"
+                                                name="coupon_code" value="" placeholder="Coupon/Gift Code" >
+                                            <input type="hidden" id="input_couponTotal" value="">
+                                            <input type="hidden" name="total_price" value="{{$total_price}}">
+                                            <input type="hidden" name="session_id" value="{{$sessionId}}">
+
+                                            <div class="qos-product-text"> <button type="button" id="coupon_btn"
+                                                                                    class="btn-d-black">Apply Coupon</button></div>
+
+                                            <p id="coupon_error"></p>
+                                        </div>
+
+
+                                    <!-- </form> -->
+                                </div>
                             </div>
-                            <div class="cstm-border"></div>
-                            <div class="total-amount">
-                                <h3>Total</h3>
-                                <h3 id="final_price" class="text-default"> <span class="text-grey" style="margin: 0"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 <br>
-
-                                </h3>
-                                <!-- <p><span id="user_off"></span>%Discount</p> -->
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="row right-banner banner-img">
+                                <div class="col-12">
+                                        <div class="shipping-details-header">
+                                            <div>Payment</div>
+                                            <div>details</div> 
+                                        </div>
+                                    <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
+                                </div>
                             </div>
-
-                            @if($cc!="")
-                                <div class="total-amount">
-                                    <h3>Coupon Discount</h3>
-                                    <h3>- £{{round(($first_time_discount * .1),2)}}</h3>
+                            <div class="quest-ordrsmry-right">
+                                
+                                <div class="checkout-step">
+                                    <div class="checkout-step1">Account</div>
+                                    <div class="checkout-step1">-</div>
+                                    <div class="checkout-step1 checkout-step1-check"><i class='fa fa-circle-check'></i></div>
+                                    <div class="checkout-step2">-</div>
+                                    <div class="checkout-step2">Shipping</div>
+                                    <div class="checkout-step2">-</div>
+                                    <div class="checkout-step2 checkout-step1-check"><i class='fa fa-circle-check'></i></div>
+                                    <div class="checkout-step2">-</div>
+                                    <div class="checkout-step3">Payment</div>
                                 </div>
-                                <div class="total-amount">
-                                    <h3>Order Total</h3>
-                                    <h3 class="text-success">£{{round(($first_time_discount * .9),2)}}</h3>
-                                </div>
-                            @endif
-                            <div class="cstm-border"></div>
-                        </form>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="button-box">
-                        <!-- form to make the payment through the trust payments -->
-                        <!-- <form method="POST" action="https://payments.securetrading.net/process/payments/choice">
-                                <input type="hidden" name="sitereference" value="test_agenthealth119402">
-                                <input type="hidden" name="stprofile" value="default">
-                                <input type="hidden" name="currencyiso3a" value="GBP">
-                                <input type="hidden" name="mainamount" value="{{ $final_price }}.00">
-
-
-                                <input type="hidden" name="stdefaultprofile" value="st_paymentcardonly">
-
-
-                                <input type=hidden name="ruleidentifier" value="STR-6">
-
-                                <input type=hidden name="successfulurlredirect" value="http://49.249.236.30:3007/agent/public/checkout/success1">
-
-
-                                <input type=hidden name="ruleidentifier" value="STR-13">
-
-                                <input type=hidden name="errorurlredirect" value="http://49.249.236.30:3007/agent/public/checkout/error">
-
-                                <input type="hidden" name="version" value="2">
-                                <input class="white-trans-btn" type="submit" value="Pay">
-                        </form>  -->
-
-                        <!-- <form method="POST" action="https://payments.securetrading.net/process/payments/choice">
-                            <input type="hidden" name="sitereference" value="test_agenthealth119402">
-                            <input type="hidden" name="currencyiso3a" value="GBP">
-                            <input type="hidden" name="mainamount" value="10.00">
-                            <input type="hidden" name="stprofile" value="default">
-                            <input type="hidden" name="version" value="2">
-                            <input type="hidden" name="subscriptionunit" value="MONTH">
-                            <input type="hidden" name="subscriptionfrequency" value="1">
-                            <input type="hidden" name="subscriptionnumber" value="1">
-                            <input type="hidden" name="subscriptionfinalnumber" value="12">
-                            <input type="hidden" name="subscriptiontype" value="RECURRING">
-                            <input type="hidden" name="credentialsonfile" value="1">
-                            <input type="submit" value="Pay">
-                        </form> -->
-
-                        <!-- <form method="POST" action="https://payments.securetrading.net/process/payments/choice">
-                                <input type="hidden" name="sitereference" value="test_agenthealth119402">
-                                <input type="hidden" name="stprofile" value="default">
-                                <input type="hidden" name="currencyiso3a" value="GBP">
-                                <input type="hidden" name="mainamount" value="10.00">
-                                <input type="hidden" name="version" value="2">
-                                <input type="hidden" name="orderedrequesttypedescriptions" value="THREEDQUERY,ACCOUNTCHECK,SUBSCRIPTION">
-                                <input type="hidden" name="subscriptionunit" value="MONTH">
-                                <input type="hidden" name="subscriptionfrequency" value="1">
-                                <input type="hidden" name="subscriptionnumber" value="1">
-                                <input type="hidden" name="subscriptionfinalnumber" value="12">
-                                <input type="hidden" name="subscriptiontype" value="RECURRING">
-                                <input type="hidden" name="credentialsonfile" value="1">
-                                <input type="submit" value="Pay">
-                        </form> -->
-                        <main class="bg-white card-design">
-                            <img src="{{asset('frontend_new/images/payments.png')}}" class="img-fluid mb-5"/>
-
-                            <div id="st-notification-frame"></div>
-                            <form id="st-form">
-
-                                <div class="text-d-c">
-                                    <p class="text-dark"> <i class="fa-solid fa-credit-card"></i> Debit or credit card</p>
-                                </div>
+                                <h4 class="q-orsm-heading mb-30">Payment details</h4>
                                 <div class="row">
-                                    <div class="col-lg-12">
-                                        <div id="st-card-number"></div>
+                                    <!-- <div class="col col-md-12 col-lg-5" style="display: flex; align-items: center;">
+                                        <label for="saved_address">Use saved card</label>
                                     </div>
-                                    <div class="col-lg-6">
-                                        <div id="st-expiration-date"></div>
-                                    </div>
-                                    <div class="col-lg-6">
-                                        <div id="st-security-code"></div>
-                                    </div>
+                                    <div class="col col-md-12 col-lg-7">
+                                        @php
+                                        $user_id = auth()->user()->id;
+                                        $address = DB::table('delivery_address')->where('user_id', $user_id)->orderBy("created_at", "desc")->get();
+                                        @endphp
+                                        <select class="form-control" aria-label="User saved address" name="saved_address" id="saved_address">
+                                            @foreach($address as $adss)
+                                            <option value="{{$adss->id}}">{{$adss->address}}</option>
+                                            @endforeach
+                                        </select>
+                                    </div> -->
                                 </div>
-                                <button type="submit">Pay securely</button>
-                            </form>
-
-                            <p class="mt-4"><small style="font-size: 10px; color: #ccc;">After your initial discounted purchase, automatic billing of the regular subtotal amount will occur in line with your chosen subscription frequency, starting after the current period </small></p>
-                        </main>
-
-                        <div class="d-none d-xs-block d-md-none">
-                        <div class="sm-images" style="background: white; border-radius: 20px; margin-top: 40px; padding: 20px 80px;">
-                            <div class="container">
-                                <section class="container-fluid">
-                                    <div class="row footer-logos-header">
-                                        <div class=" col text-center">
-                                            <h4 style="color: #000;">We are regulated by and associated with</h4>
-                                        </div>
-                                    </div>
-
-                                    <div class="row footer-logos">
-                                        <div class="col-sm-4 col-12 text-center">
-                                            <img src="{{asset('frontend_new/images/mhra.webp')}}" alt="Medicines and Healthcare products Regulatory Agency" class="img-fluid"/>
-                                            {{--        <h6>Medicines and Healthcare products Regulatory Agency</h6>--}}
-                                        </div>
-
-                                        <div class=" col-sm-4 col-12 text-center">
-                                            <img src="{{asset('frontend_new/images/npa.webp')}}" alt="Regulated by the NPA" class="img-fluid"/>
-                                            {{--        <h6>Regulated by the NPA</h6>--}}
-                                        </div>
-
-                                        <div class="col-sm-4 col-12 text-center">
-                                            <img src="{{asset('frontend_new/images/gpc.webp')}}" alt="GPhC Regulated Pharmacy" class="img-fluid"/>
-                                            {{--        <h6>GPhC Regulated Pharmacy</h6>--}}
-                                        </div>
-                                    </div>
-                                </section>
+                                <div style="width: 100%; display: flex; justify-content: flex-end;">
+                                    <img src="/frontend/images/default.png" style="margin:0px 10px;"/>
+                                    <img src="/frontend/images/mastercard.png" style="margin:0px 10px;"/>
+                                    <img src="/frontend/images/visa.png" style="margin:0px 10px;"/>
+                                </div>
+                                <div class="button-box">
+                                    <main class="bg-white card-design">
+                                        
+                                        <div id="st-notification-frame"></div>
+                                        <form id="st-form">
+    
+                                          <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div id="st-card-number"></div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div id="st-expiration-date"></div>
+                                                </div>
+                                                <div class="col-lg-6">
+                                                    <div id="st-security-code"></div>
+                                                </div>
+                                            </div>
+                                            <button type="submit" class="btn_order_pay">Continue</button>
+                                       
+                                        </form>
+                                        <!-- <form id="st-form1">
+                                            <div id="st-google-pay" style="color: black;"></div>
+                                        </form> -->
+    
+                                    </main>
+    
+                                
+                                </div>
+                                
                             </div>
+                            
+                                <!-- <div class="row">
+                                    <div class="col col-12 payment-method-btns">    
+                                        <div class='apple-pay-area' style="display: inline-block;">
+                                            <div id="apple-pay-button"><img src='/frontend/images/applepay.png'  style="height: 4rem;"></div>
+                                        </div>
+                                        <div class='google-pay-area' style="display: inline-block;">
+                                            <div id="google-pay-button">
+                                                <img src='/frontend/images/gpay.png' style="height: 4rem;">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div> -->
                         </div>
-                        </div>
-
-                        <!-- <form method="POST" action="https://payments.securetrading.net/process/payments/choice">
-                            <input type="hidden" name="credentialsonfile" value="1">
-                            <input type="hidden" name="currencyiso3a" value="GBP">
-                            <input type="hidden" name="mainamount" value="{{ $final_price }}.00">
-                            <input type="hidden" name="sitereference" value="test_agenthealth119402">
-                            <input type="hidden" name="sitesecurity" value="59-0051c01ec6601235ee72c033f76863f5dc0de7ab9951fa6b2193615dadd63be9">
-                            <input type="hidden" name="sitesecuritytimestamp" value="2023-08-29 14:22:37">
-                            <input type="hidden" name="stprofile" value="default">
-                            <input type="hidden" name="subscriptionnumber" value="1">
-                            <input type="hidden" name="subscriptiontype" value="RECURRING">
-                            <input type="hidden" name="version" value="2">
-
-                            <input type="hidden" name="stdefaultprofile" value="st_paymentcardonly">
-                            <input type=hidden name="ruleidentifier" value="STR-6">
-                            <input type=hidden name="successfulurlredirect" value="http://49.249.236.30:3007/agent/public/checkout/success1">
-                            <input type=hidden name="ruleidentifier" value="STR-13">
-                            <input type=hidden name="errorurlredirect" value="http://49.249.236.30:3007/agent/public/checkout/error">
-
-                            <input type="submit" value="Pay">
-                        </form> -->
-
-                        <!-- <form method="POST" action="https://payments.securetrading.net/process/payments/choice">
-                                <input type="hidden" name="credentialsonfile" value="1">
-                                <input type="hidden" name="currencyiso3a" value="GBP">
-                                <input type="hidden" name="mainamount" value="100.00">
-                                <input type="hidden" name="sitereference" value="test_agenthealth119402">
-                                <input type="hidden" name="sitesecurity" value="hee879a9ab97753b3a768925d50842f10e19fea03fef0b820026b6df92d415866">
-                                <input type="hidden" name="sitesecuritytimestamp" value="2023-08-22 17:22:37">
-                                <input type="hidden" name="stprofile" value="default">
-                                <input type="hidden" name="subscriptionnumber" value="1">
-                                <input type="hidden" name="subscriptiontype" value="RECURRING">
-                                <input type="hidden" name="version" value="2">
-                                <input type="submit" value="Pay">
-                        </form> -->
                     </div>
                 </div>
-            </div>
-        </div>
-        <!-- form to make the payment through the trust payments -->
+                <!-- form to make the payment through the trust payments -->
 
-    </div>
-
-                <div class=" bg-white" style="border-radius: 20px; margin: 15px; color: #000; padding-top: 40px;">
-                    @include('partials.frontend.above-footer')
-                </div>
             </div>
 
-
-
-
+            <!-- <div class=" bg-white" style="border-radius: 20px; margin: 15px; color: #000; padding-top: 40px;">
+                @include('partials.frontend.above-footer')
+            </div> -->
         </div>
+
+        <!-- <form id="st-form1">
+            <div id="st-google-pay"></div>
+        </form> -->
+
+
     </div>
 
 </section>
@@ -572,8 +589,8 @@
         const amount = finalPrice;
         const accounttypedescription = "ECOM";
         const currencyiso3a = "GBP";
-        const sitereference = "agenthealth119403";
-        // const sitereference = "test_agenthealth119402";
+        // const sitereference = "agenthealth119403";
+        const sitereference = "test_agenthealth119402";
         const subscriptiontype = "RECURRING";
         const subscriptionunit = "MONTH";
         const subscriptionfrequency = subscriptionDuration;
@@ -660,11 +677,87 @@
             });
 
             st.Components()
-
+            
+            var st1 = SecureTrading({
+                jwt: jwt,
+                formId: "st-form1",
+            });
+            st.GooglePay({
+                "buttonOptions": {
+                    "buttonRootNode": "st-google-pay"
+                },
+                "paymentRequest": {
+                    "allowedPaymentMethods": [{
+                    "parameters": {
+                        "allowedAuthMethods": ["PAN_ONLY", "CRYPTOGRAM_3DS"],
+                        "allowedCardNetworks": ["AMEX", "DISCOVER", "JCB", "MASTERCARD", "VISA"]
+                    },
+                    "tokenizationSpecification": {
+                        "parameters": {
+                        "gateway": "trustpayments",
+                        "gatewayMerchantId": "test_agenthealth119402"
+                        },
+                        "type": "PAYMENT_GATEWAY"
+                    },
+                    "type": "CARD"
+                    }],
+                    "environment":"TEST",
+                    "apiVersion": 2,
+                    "apiVersionMinor": 0,
+                    "merchantInfo": {
+                    "merchantId": "BCR2DN4T5GROHDAU"
+                    },
+                    "transactionInfo": {
+                        "countryCode": "UK",
+                        "currencyCode": currencyiso3a,
+                        "checkoutOption": "COMPLETE_IMMEDIATE_PURCHASE",
+                        "totalPriceStatus": "FINAL",
+                        "totalPrice": String(final_price),
+                        "displayItems": [{
+                            "label": "Example item",
+                            "price": "10.00",
+                            "type": "LINE_ITEM",
+                            "status": "FINAL"
+                        }]
+                    }
+                }
+            });
         } catch (error) {
             console.error("Error initializing SecureTrading:", error);
         }
     })();
+
+    $(document.body).ready(function() {
+        function getProductInfo(id) {
+            var monthList = <?php echo json_encode($monthList)?>;
+
+            for(var i = 0 ; i < monthList.length ; i ++) {
+                if(monthList[i].id == id) return monthList[i];
+            }
+        }
+        $("[name='input_product_sub']").click(function() {
+            var productInfo = getProductInfo($(this).attr("product-id"));
+            var total_price =(Math.min(productInfo.price, productInfo.first_time_disc))
+            $(".qos-product .img-fluid").attr("src", $(this).attr("product-img"));
+            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+            $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - productInfo.first_time_disc) : 0)+".00");
+
+            if(productInfo.category_id != 31) 
+                $(".total-amount del").text("£"+productInfo.price)
+            if($("#input_couponTotal").val() > 0) {
+                total_price = total_price - $("#input_couponTotal").val();
+            }
+            $("#dur_label").text(productInfo.subscription_duration);
+            $("#first_time_disc").text("£"+productInfo.first_time_disc)
+            $("#orderTotal").text("£"+total_price);
+            $('#totalAmt').text(total_price)
+            $("[name='subscription_duration']").val(productInfo.subscription_duration);
+            $("[name='product_id']").val(productInfo.id);
+
+            $("[name='total_price']").val(total_price);
+        })
+    })
     </script>
 
 

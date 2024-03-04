@@ -1,7 +1,12 @@
-<?php 
-$savedAddress = [];
-?>
 
+@php
+    $user = DB::table('users')->where('id', Auth::user()->id)->first();
+    
+    $user_name = $user->full_name;
+    $user_tel = $user->phone;
+    $user_email = $user->email;
+    $savedAddress = [];
+@endphp
 <!DOCTYPE HTML>
 <html lang="en-US">
 
@@ -101,17 +106,6 @@ $savedAddress = [];
             #google-pay-button div {
                 display: none !important;
             }
-            .quest-v2-content .form-radio label {
-                padding: 0.5rem 0rem 0.5rem 2.4rem;
-            }
-            .quest-v2-content [type="radio"]:checked + label:before,
-            .quest-v2-content [type="radio"]:not(:checked) + label:before {
-                left: 0px;
-            }
-            .quest-v2-content [type="radio"]:checked + label:after,
-            .quest-v2-content [type="radio"]:not(:checked) + label:after {
-                left: 4px;
-            }
         </style>
 </head>
 
@@ -151,7 +145,7 @@ $savedAddress = [];
                     <div class="quest-v2-step" id="step14">
 
                         <div class="row quest-ordrsmry-wrap">
-                            <div class="col-lg-6 col-md-12 <?php echo Auth::check() ? "logged-in" : "login" ?>">
+                            <div class="col-lg-6 col-md-12">
                                 <input type="hidden" name="session_id" value="{{$sessionId}}">
                                 <input type="hidden" name="total_price" value="{{$total_price}}">
                                 
@@ -331,7 +325,6 @@ $savedAddress = [];
                                         <!-- </form> -->
                                     </div>
                                 </div>
-                                <button class="btn-d-black" id="to_shipping" style="width: 100%; font-size: 1.8rem;">continue</button>
                             </div>
 
                             @if(!Auth::check())
@@ -343,14 +336,6 @@ $savedAddress = [];
                             <div class="col-lg-6 col-md-12 auths" id="signups">
                                 <div class="row banner-img">
                                     <div class="col-12 text-center 2">
-                                        <h1 class="account-signup">
-                                            <div>
-                                                Account 
-                                            </div>
-                                            <div>
-                                                Sign Up
-                                            </div>
-                                        </h1>
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
                                 </div>
@@ -391,16 +376,17 @@ $savedAddress = [];
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
 
-                                        <p class="mb-30 require-comment">We are required to confirm the identity of our members. Any
+                                        <h4 class="q-orsm-heading mb-20">Personal information</h4>
+                                        <p class="mb-30">We are required to confirm the identity of our members. Any
                                             incorrect details will cause delays to your order.</p>
                                         <div class="row">
-                                            <div class="col-5 form-group">
+                                            <div class="col col-lg-5 col-md-12 form-group">
                                                 <label for="first_name">First Name</label>
                                                 <input type="text" class="form-control" name="first_name" value=""
                                                     placeholder="Enter Here">
                                                 <!-- <p class="text-end input-desc">We will let you know via email once your prescription has been issued.</p> -->
                                             </div>
-                                            <div class="col-7 form-group">
+                                            <div class="col col-lg-7 col-md-12 form-group">
                                                 <label for="surname">Surname</label>
                                                 <input type="text" class="form-control" name="surname" value=""
                                                     placeholder="Enter Here">
@@ -426,7 +412,7 @@ $savedAddress = [];
                                             @enderror -->
 
                                         <div class="row">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col col-lg-5 col-md-12">
                                                 <div class="form-group">
                                                     <label for="dob">Date of birth</label>
                                                     <input type="date" class="form-control" id="dob" name="dob" value=""
@@ -437,7 +423,7 @@ $savedAddress = [];
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="col-7 col-md-12">
+                                            <div class="col col-lg-7 col-md-12">
 
                                                 <div class="form-group">
                                                     <label for="number">Phone number</label>
@@ -474,7 +460,7 @@ $savedAddress = [];
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         <div class="row">
-                                            <div class="col-5">
+                                            <div class="col col-md-12 col-lg-5">
                                                 <div class="form-group">
                                                     <label for="postcode">Postcode</label>
                                                     <input type="text" class="form-control" id="zipcode" name="postcode" value=""
@@ -484,7 +470,7 @@ $savedAddress = [];
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="col-7">
+                                            <div class="col col-md-12 col-lg-7">
                                                 <div class="form-group">
                                                     <label for="city">City</label>
                                                     <input type="text" id="city_dropdown" class="form-control" name="city"
@@ -512,20 +498,10 @@ $savedAddress = [];
                             <!--Adress & Order place-->
 
                             @else
-                            @php
-                                $user = DB::table('users')->where('id', Auth::user()->id)->first();
-                                
-                                $user_name = $user->full_name;
-                                $user_tel = $user->phone;
-                                $user_email = $user->email;
-                            @endphp
+
                             <div class="col-lg-6 col-md-12" id="address_order">
                                 <div class="row banner-img">
-                                    <div class="col-12">
-                                        <div class="shipping-details-header">
-                                            <div>Shipping</div>
-                                            <div>details</div> 
-                                        </div>
+                                    <div class="col-12 text-center 2">
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
                                 </div>
@@ -615,40 +591,22 @@ $savedAddress = [];
                                                 <!-- <a class="btn-d-black btn-wt-300 next-button" href="javascript:void(0)">Continue</a> -->
                                                 <!-- <button id="bil_submit" type="submit"
                                                     class="btn-d-black btn-wt-300 next-button">Payment</button> -->
-                                                    <div class="row">
-                                                        @if(isset($login_addreses) && !empty($login_addreses))  
-                                                        <div class="col col-12">
-
-                                                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                                                <div class="debit-btn-pw mt-30" style="margin-top: 20px; width: 100%;">
+                                                    @if(isset($login_addreses) && !empty($login_addreses))  
+                                                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                                                    <div class="debit-btn-pw mt-30" style="margin-top: 20px; width: 100%;">
                                                                     <button type="button"
-                                                                    class="btn-d-black btn-wt-300 next-button"
-                                                                    id="order_btn" >Pay with Card </button>
+                                                                        class="btn-d-black btn-wt-300 next-button me-2"
+                                                                        id="order_btn" >Pay with Card </button>
+                                                                    </div
+                                                                    >
+                                                                    
+                                                                    
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        @else
-                                                        
-                                                        <div class="debit-btn-pw">
-                                                            <button type="submit" class="btn-d-black btn-wt-300 next-button">Please fill your Delivery Address first.</button>
-                                                        </div>
-                                                        @endif
-                                                        @if(Auth::check())
-                                                        <div class="col col-12 col-md-12 col-lg-6">    
-                                                            <div class='apple-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
-                                                                <div id="apple-pay-button" style="width:100%;">
-                                                                <img src='/frontend/images/applepay.png'  style="height: 4rem;">
-                                                            </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col col-12 col-md-12 col-lg-6">
-                                                            <div class='google-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
-                                                                <form id="st-form"></form>
-                                                                <div id="st-google-pay"></div>
-                                                            </div>
-                                                        </div>
-                                                        @endif
+                                                    @else
+                                                    <div class="debit-btn-pw">
+                                                        <button type="submit" class="btn-d-black btn-wt-300 next-button">Please fill your Delivery Address first.</button>
                                                     </div>
+                                                    @endif
                                             </div>
                                         </form>
                                         
@@ -674,15 +632,32 @@ $savedAddress = [];
                                         {{-- <livewire:frontend.checkout.checkout-component /> --}}
                                     </div>
                                 </div>
+                                @if(Auth::check())
+                                <div class="row">
+                                    <div class="col col-12 payment-method-btns" style="padding: 0px 4rem;">    
+                                        <div class='apple-pay-area' style="display: inline-block; width: 45%;">
+                                            <div id="apple-pay-button" style="width:100%;"><img src='/frontend/images/applepay.png'  style="height: 4rem; width: 100%;"></div>
+                                        </div>
+                                        <div class='google-pay-area' style="display: inline-block; width: 45%;">
+                                            <!-- <img src='/frontend/images/gpay.png' style="height: 4rem; width: 100%;"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
 
 
+
+
+
+
+
                     @if(Auth::check())
                     <!--address modal to select the  -->
                     <!-- Modal1 -->
-                    <div class="modal fade d-none" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel"
+                    <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered  address-popup">
                             <div class="modal-content">
@@ -714,7 +689,7 @@ $savedAddress = [];
                         </div>
                     </div>
                     <!-- modal2 -->
-                    <div class="modal fade  d-none" id="addressModal2" tabindex="-1" aria-labelledby="addressModalLabel"
+                    <div class="modal fade" id="addressModal2" tabindex="-1" aria-labelledby="addressModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered  address-popup">
                             <div class="modal-content">
@@ -1277,6 +1252,37 @@ function fillInAddress() {
   address2Field.focus();
 }
 $(document).ready(function() {
+    console.log($("[name='input_product_sub']"))
+    function getProductInfo(id) {
+        var monthList = <?php echo json_encode($monthList)?>;
+
+        for(var i = 0 ; i < monthList.length ; i ++) {
+            if(monthList[i].id == id) return monthList[i];
+        }
+    }
+    $("[name='input_product_sub']").click(function() {
+        var productInfo = getProductInfo($(this).attr("product-id"));
+        var total_price =(Math.min(productInfo.price, productInfo.first_time_disc))
+        $(".img-fluid").attr("src", $(this).attr("product-img"));
+        $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+        $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+        $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - productInfo.first_time_disc) : 0)+".00");
+
+        if(productInfo.category_id != 31) 
+            $(".total-amount del").text("£"+productInfo.price)
+        if($("#input_couponTotal").val() > 0) {
+            total_price = total_price - $("#input_couponTotal").val();
+        }
+        $("#dur_label").text(productInfo.subscription_duration);
+        $("#first_time_disc").text("£"+productInfo.first_time_disc)
+        $("#orderTotal").text("£"+total_price);
+        $('#totalAmt').text(total_price)
+        $("[name='subscription_duration']").val(productInfo.subscription_duration);
+        $("[name='product_id']").val(productInfo.id);
+
+        $("[name='total_price']").val(total_price);
+    })
+
     $("#order_btn").click(function() {
         $("#btn_pay_sub").click();
     });
@@ -1296,10 +1302,6 @@ $(document).ready(function() {
             }
         }
     })
-    $("#to_shipping").click(function() {
-        $(".logged-in").hide();
-        $("#address_order").show();
-    })
 })
 window.initAutocomplete = initAutocomplete;
 window.initAutocomplete();
@@ -1307,43 +1309,9 @@ window.initAutocomplete();
 </script>
 
 
-@if(Auth::check())
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
 <script>
-    $(document).ready(function() {
-        function getProductInfo(id) {
-            var monthList = <?php echo json_encode($monthList)?>;
-
-            for(var i = 0 ; i < monthList.length ; i ++) {
-                if(monthList[i].id == id) return monthList[i];
-            }
-        }
-        $("[name='input_product_sub']").click(function() {
-            var productInfo = getProductInfo($(this).attr("product-id"));
-            var total_price =(Math.min(productInfo.price, productInfo.first_time_disc))
-            $(".qos-product .img-fluid").attr("src", $(this).attr("product-img"));
-            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
-            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
-            $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - productInfo.first_time_disc) : 0)+".00");
-
-            if(productInfo.category_id != 31) 
-                $(".total-amount del").text("£"+productInfo.price)
-            if($("#input_couponTotal").val() > 0) {
-                total_price = total_price - $("#input_couponTotal").val();
-            }
-            $("#dur_label").text(productInfo.subscription_duration);
-            $("#first_time_disc").text("£"+productInfo.first_time_disc)
-            $("#orderTotal").text("£"+total_price);
-            $('#totalAmt').text(total_price)
-            $("[name='subscription_duration']").val(productInfo.subscription_duration);
-            $("[name='product_id']").val(productInfo.id);
-
-            $("[name='total_price']").val(total_price);
-        })
-
-    })
     (function() {
         function formatCurrentDate() {
             const currentDate = new Date();
@@ -1543,4 +1511,3 @@ window.initAutocomplete();
         });
     })()
 </script>
-@endif

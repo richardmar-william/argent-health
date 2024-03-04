@@ -144,8 +144,9 @@ position: absolute;
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="shortcut icon" href="{{ asset('frontend_new/images/logo.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('frontend_new/images/favicon.png') }}" type="image/x-icon">
     <link rel="icon" href="{{ asset('frontend_new/images/favicon.png') }}" type="image/x-icon">
+
 
     <link rel="preload" href="{{ asset('css/app.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ asset('css/app.css') }}"></noscript>
@@ -182,21 +183,28 @@ position: absolute;
 
 
 
-    <link href="/css/css2.css?family=Khand:wght@300;400;500;600;700&family=Yeseva+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Khand:wght@600;700&family=Yeseva+One&display=swap" rel="stylesheet">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="/css/css2.css?family=Poppins:wght@600&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="/css/font-awesome/all.min.css" />
-    <link rel="stylesheet" href="{{ asset('frontend_new/css/bootstrap.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend_new/css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('frontend_new/css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="/css/swiper3.4.1.min.css">
-    <link rel="stylesheet" href="/css/jquery.mCustomScrollbar.min.css">
+    
+    <link rel="preload" href="{{ asset('frontend_new/css/bootstrap.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/bootstrap.min.css') }}"></noscript>
 
-    <link rel="preload" href="{{ asset('frontend_new/css/style.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/style.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('frontend_new/css/owl.carousel.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/owl.carousel.min.css') }}"></noscript>
+
+    <link rel="preload" href="{{ asset('frontend_new/css/owl.theme.default.min.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/owl.theme.default.min.css') }}"></noscript>
+
+
+    <link rel="preload" href="{{ asset('frontend_new/css/merged.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/merged.css') }}"></noscript>
+
+
+
+
+    <link rel="stylesheet" href="{{ asset('frontend_new/css/style.css') }}">
 
     <link rel="preload" href="{{ asset('frontend_new/css/questionnaire.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/questionnaire.css') }}"></noscript>
@@ -205,17 +213,12 @@ position: absolute;
     <link rel="preload" href="{{ asset('frontend_new/css/responsive.css') }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="{{ asset('frontend_new/css/responsive.css') }}"></noscript>
 
+    <script src="{{ asset('frontend/js/vendor/jquery-1.12.0.min.js') }}"></script>
 
     <livewire:styles />
     @yield('style')
-    <livewire:scripts />
-    <script src="{{ asset('vendor/sweetalert/sweetalert.all.js') }}"></script>
-    <x-livewire-alert::flash />
-    <x-livewire-alert::scripts />
-    <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/custom.js') }}"></script>
-    <script src="{{ asset('frontend/js/vendor/modernizr-2.8.3.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/vendor/jquery-1.12.0.min.js') }}"></script>
+    
+    <!-- <script src="{{ asset('frontend/js/vendor/jquery-1.12.0.min.js') }}"></script> -->
     <!-- Add CkEditor -->
 
     <!-- Matomo Tag Manager -->
@@ -241,14 +244,14 @@ position: absolute;
 </head>
 
 <body>
+{{--<div id="loader">--}}
+{{--    <div class="spinner">--}}
+{{--        <svg viewBox="25 25 50 50">--}}
+{{--            <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>--}}
+{{--        </svg>--}}
+{{--    </div>--}}
+{{--</div>--}}
 
-<div id="loader">
-    <div class="spinner">
-        <svg viewBox="25 25 50 50">
-            <circle cx="50" cy="50" r="20" fill="none" class="path"></circle>
-        </svg>
-    </div>
-</div>
 
 <!-- Google Tag Manager (noscript) -->
 <noscript>
@@ -272,30 +275,33 @@ position: absolute;
     </div>
 
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/imagesloaded.pkgd.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script async src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
+    <script async src="{{ asset('frontend/js/isotope.pkgd.min.js') }}"></script>
+    <script async src="{{ asset('frontend/js/imagesloaded.pkgd.min.js') }}"></script>
+    <script async src="{{ asset('frontend/js/jquery.counterup.min.js') }}"></script>
     <script src="{{ asset('frontend/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/ajax-mail.js') }}"></script>
+    <script async src="{{ asset('frontend/js/ajax-mail.js') }}"></script>
     <!-- <script src="{{ asset('frontend/js/owl.carousel.min.js') }}"></script> -->
-    <script src="{{ asset('frontend/js/plugins.js') }}"></script>
+    
     <!-- <script src="{{ asset('frontend/js/main.js') }}"></script> -->
-    <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script>
-    <script src="{{ asset('frontend/js/alert-message.js') }}"></script>
+    <!-- <script src="{{ asset('frontend/js/jquery.magnific-popup.min.js') }}"></script> -->
+    <script async src="{{ asset('frontend/js/alert-message.js') }}"></script>
    <!--  <script src="{{ asset('frontend/js/custom.js') }}"></script> -->
     <script src="{{ url('/js/kit.fontawesome.min.js') }}" crossorigin="anonymous"></script>
+    
+    <script async src="{{ asset('js/custom.js') }}"></script>
     <script src="/js/typeahead.bundle.min.js"></script>
     <!-- Laravel Javascript Validation -->
-    <script type="text/javascript" src="{{ asset('vendor/jsvalidation/js/jsvalidation.js') }}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.20.0/jquery.validate.min.js"></script>
     <script src="/js/popper1.14.3.min.js"></script>
 
     <!-- <script src="{{ asset('frontend_new/js/bootstrap.bundle.min.js') }}"></script> -->
     <script src="{{ asset('frontend_new/js/owl.carousel.min.js') }}"></script>
     <script src="/js/swipter3.4.1.min.js"></script>
     <script src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
-    <script src="/js/apexChart.js"></script>
+    
+    
     <script src="{{ asset('frontend_new/js/custom.js') }}"></script>
 
 <script>
@@ -304,7 +310,7 @@ position: absolute;
                 datumTokenizer: Bloodhound.tokenizers.whitespace,
                 queryTokenizer: Bloodhound.tokenizers.whitespace,
                 remote: {
-                    url: '{{ url('search') }}?productName=%QUERY%', //'/user/find?q=%QUERY%',
+                    url: '{{ url('+search+') }}?productName=%QUERY%', //'/user/find?q=%QUERY%',
                     wildcard: '%QUERY%'
                 },
             });
@@ -328,7 +334,7 @@ position: absolute;
                         '<div class="list-group search-results-dropdown">'
                     ],
                     suggestion: function(data) {
-                        return '<div style="font-weight:normal; width:100%" class="list-group-item"><a href="{{ url('product') }}/' +
+                        return '<div style="font-weight:normal; width:100%" class="list-group-item"><a href="{{ url('+product+') }}/' +
                             data.slug + '">' + data.name + '</a></div></div>'
                     }
                 }
