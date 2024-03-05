@@ -176,12 +176,14 @@
                 @foreach($product1 as $pkey => $products)
                     @php                    
                     $proList = [];
+                    $tags=[];
                     for($i = 0 ; $i < sizeof($productList) ; $i ++) {
                         if($category == 30 || $category == 31 ) {
                             if($productList[$i]["type"] == null || $productList[$i]['type'] == "") continue;
                             if($productList[$i]['type'] == $products->type ) {
                                 if(is_array($productList[$i]['tags']) && sizeof($productList[$i]['tags']) > 0) {
                                     $productList[$i]['tag'] = $productList[$i]['tags'][0]['name'];
+                                    array_push($tags, $productList[$i]['tag']);
                                     array_push($proList, $productList[$i]);
                                 }
                             }
@@ -197,12 +199,14 @@
                                         break;
                                     }
                                 }
-                                if(!$flag)
+                                if(!$flag) {
+                                    array_push($tags, $productList[$i]['tag']);
                                     array_push($proList, $productList[$i]);
+                                }
                             }
                         }
                     }
-                    
+                    array_multisort($tags, SORT_ASC, $proList);
                     @endphp
                         <div class=" product-card swiper-slide">
                             <div class="tag-selector-area">
@@ -296,7 +300,9 @@
                 @foreach($product1 as $pkey => $products)
                     @php                    
                     $proList = [];
+                    $tags = [];
                     if(empty($products->type)) {
+                        array_push($tags, []);
                         array_push($proList, $products);
                     }
                     else for($i = 0 ; $i < sizeof($productList) ; $i ++) {
@@ -305,6 +311,8 @@
                             if($productList[$i]['type'] == $products->type ) {
                                 if(is_array($productList[$i]['tags']) && sizeof($productList[$i]['tags']) > 0) {
                                     $productList[$i]['tag'] = $productList[$i]['tags'][0]['name'];
+
+                                    array_push($tags, $productList[$i]['tag']);
                                     array_push($proList, $productList[$i]);
                                 }
                             }
@@ -320,11 +328,14 @@
                                         break;
                                     }
                                 }
-                                if(!$flag)
+                                if(!$flag) {
+                                    array_push($tags, $productList[$i]['tag']);
                                     array_push($proList, $productList[$i]);
+                                }
                             }
                         }
                     }
+                    array_multisort($tags, SORT_ASC, $proList);
                     @endphp
                         <div class="product-card swiper-slide">
                             <div class="tag-selector-area">
