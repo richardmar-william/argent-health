@@ -26,7 +26,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}"> 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <livewire:styles />
     @yield('style')
@@ -37,9 +38,31 @@
     <script src="{{ asset('frontend/js/vendor/jquery-1.12.0.min.js') }}"></script>
     <!-- Add CkEditor -->
     <style>
+        .swiper {
+            width: 100%;
+        }
+        .swiper-pagination {
+            display: none;
+        }
+        @media screen and (max-width: 992px) {
+            .swiper {
+                width: 95%;
+                margin: 0px;
+                overflow: visible;
+            }
+            .swiper-pagination {
+                display: block;
+            }
+        }
+        @media screen and (min-width: 992px) {
+            .swiper-wrapper {
+                flex-wrap: wrap;
+            }
+        }
         .tablet-100size {
             width: 100%;
         }
+    
     </style>
     <!-- Matomo Tag Manager -->
     <script>
@@ -147,8 +170,8 @@
         }
         $product1 = \App\Models\Product::whereRaw('find_in_set("'.$treat_method.'",treat_method)')->orderBy('id', 'ASC')->get();
         @endphp
-        <div class="carousel slide" data-bs-ride="carousel" id="rec_prod">
-            <div class="row recommended-product-list carousel-inner" style="justify-content: <?php echo sizeof($product1) < 2 ? "center" : "flex-start"?>">
+        <div class="swiper" id="rec_prod">
+            <div class="recommended-product-list swiper-wrapper <?php echo sizeof($product1) == 1 ?  "single" : ""; ?>" >
                 
                 @foreach($product1 as $pkey => $products)
                     @php                    
@@ -181,7 +204,7 @@
                     }
                     
                     @endphp
-                        <div class="col col-6 col-lg-6 col-md-12 product-card carousel-item <?php echo $pkey == 0 ? "active":"";?>">
+                        <div class=" product-card swiper-slide">
                             <div class="tag-selector-area">
                                 <ul class="nav nav-tabs tag-selector"  role="tablist">
                                     <?php
@@ -250,17 +273,7 @@
                         </div>
                 @endforeach
             </div>
-            <div class="carousel-indicators">
-                @foreach($product1 as $pkey => $products)
-                    <button type="button" data-bs-target="#rec_prod" data-bs-slide-to="{{$pkey}}" class="active"></button>
-                @endforeach
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#rec_prod" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#rec_prod" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            <div class="swiper-pagination"></div>
         </div>
         <div class="row asking-all-treatment">
             <div class="col col-12">
@@ -278,8 +291,8 @@
                             
             @endphp
             
-        <div class="carousel slide" data-bs-ride="carousel" id="other_rec_prod">
-            <div class="row other-recommended recommended-product-list carousel-inner" style="justify-content: <?php echo sizeof($product1) < 2 ? "center" : "flex-start"?>">
+        <div class="swiper" id="other_rec_prod">
+            <div class="other-recommended recommended-product-list  swiper-wrapper  <?php echo sizeof($product1) == 1 ? "single" : ""; ?>">
                 @foreach($product1 as $pkey => $products)
                     @php                    
                     $proList = [];
@@ -313,13 +326,13 @@
                         }
                     }
                     @endphp
-                        <div class="col col-6 col-lg-6 col-md-12 product-card carousel-item <?php echo $pkey == 0 ? "active":"";?>">
+                        <div class="product-card swiper-slide">
                             <div class="tag-selector-area">
                                 <ul class="nav nav-tabs tag-selector"  role="tablist">
                                     <?php
                                     foreach($proList as $key => $item) {
                                         echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."'>
-                                                <a class='nav-link' data-bs-toggle='tab' href='#recom_{$products->id}_{$key}'>".($item['tag'] ? $item['tag']:"No Tag")."</a>
+                                                <a class='nav-link' data-bs-toggle='tab' href='#recom_{$products->id}_{$key}'>".($item['tag'] ? $item['tag']:"Tablets")."</a>
                                             </li>";
                                     }
                                     ?>
@@ -382,17 +395,8 @@
                         </div>
                 @endforeach
             </div>
-            <div class="carousel-indicators">
-                @foreach($product1 as $pkey => $products)
-                    <button type="button" data-bs-target="#other_rec_prod" data-bs-slide-to="{{$pkey}}" class="active"></button>
-                @endforeach
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#other_rec_prod" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#other_rec_prod" data-bs-slide="next">
-                <span class="carousel-control-next-icon"></span>
-            </button>
+            
+            <div class="swiper-pagination"></div>
         </div>
     </div>
     
@@ -2405,8 +2409,7 @@
                 </div>
             </div>
         </div>
-    </div>
-    
+    </div>  
     <form action="{{ route('checkout.index') }}" method="POST" id="submit_form">
         @csrf
         <input type="hidden" name="product_ids" id="ProductIds">
@@ -2415,9 +2418,11 @@
 </section>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- <script src="js/custom.js"></script> -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
 </html>
@@ -2432,6 +2437,42 @@
 </script>
 
 
+<script>
+    $(document).ready(function () {
+         var swiper = new Swiper("#rec_prod", {
+            watchSlidesProgress: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            breakpoints: {
+                992: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+
+        
+         var swiper = new Swiper("#other_rec_prod", {
+            watchSlidesProgress: true,
+            slidesPerView: 1,
+            spaceBetween: 0,
+            breakpoints: {
+                992: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                },
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+        });
+    });
+</script>
 
 <!-- saving questionnair -->
 <script>
@@ -2766,7 +2807,7 @@ var productList = <?=json_encode($productList)?>;
             $('#step1').hide();
             $('#step2').show();
 
-$('#step2 .ctsm_radio_box [type="radio"]').change(function(){
+            ('#step2 .ctsm_radio_box [type="radio"]').change(function(){
                 if(this.checked) {
                     $("#cont_2").prop("disabled", false);
                 }
@@ -2901,6 +2942,21 @@ $('#step2 .ctsm_radio_box [type="radio"]').change(function(){
     })
 
     $(document.body).ready(function() {
+
+        const elemRecCarousel = document.getElementById('rec_prod')
+
+        const carousel = new bootstrap.Carousel(elemRecCarousel, {
+            interval: 2000000,
+            touch: true
+        })
+
+        const elemOtherRecCarousel = document.getElementById('other_rec_prod')
+
+        const otherCarousel = new bootstrap.Carousel(elemOtherRecCarousel, {
+            interval: 2000000,
+            touch: true
+        })
+
         $(".tag-selector > li").click(function() {
             $(this).parent().children("li").removeClass("nav-item-selected");
             $(this).addClass("nav-item-selected")
@@ -2966,16 +3022,16 @@ $('#step2 .ctsm_radio_box [type="radio"]').change(function(){
         $(".tablets-item").click(function() {
             var pId = $(this).attr("data-id");
             var productList = <?php echo json_encode($productList); ?>;
-            $(".tablets-item").removeClass("selected");
+            $(this).parent().children(".tablets-item").removeClass("selected");
             $(this).addClass("selected");
-            $(".product-toolbar button").attr("onclick", "AddToCart('"+pId+"')");
+            $(this).parent().parent().parent().children(".product-toolbar button").attr("onclick", "AddToCart('"+pId+"')");
 
             for(var i = 0 ; i < productList.length ; i ++) {
                 if(productList[i].id == pId) {
-                    $(".product-detail-description").html(productList[i].description)
-                    $(".product-highlite").html(productList[i].highlite ? productList[i].highlite : "Pill free option")
-                    $(".product-name").html(productList[i].name)
-                    $(".product-price").html('Starting at £'+productList[i].first_time_disc + " a month")
+                    $(this).parent().parent().parent().children(".product-detail-description").html(productList[i].description)
+                    $(this).parent().parent().parent().children(".product-highlite").html(productList[i].highlite ? productList[i].highlite : "Pill free option")
+                    $(this).parent().parent().parent().children(".product-name").html(productList[i].name)
+                    $(this).parent().parent().parent().children(".product-price").html('Starting at £'+productList[i].first_time_disc + " a month")
                     break;
                 }
             }

@@ -812,10 +812,10 @@
 
                         <div class="quest-v2-step d-none question-final" id="step13">
                             <div class="row">
-                                <div class="col col-md-12 col-lg-6 qe-img">
+                                <div class="col-md-12 col-lg-6 qe-img">
                                     <img src="/frontend/images/questionnaire.jpg">
                                 </div>
-                                <div class="col col-md-12 col-lg-6 qe-content">
+                                <div class="col-md-12 col-lg-6 qe-content">
                                     <div class="v2-1step-cont">
                                         <div>
                                             <h1 class="weare-going-con mb-20 qe-title">

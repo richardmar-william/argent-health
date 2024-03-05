@@ -1296,9 +1296,23 @@ $(document).ready(function() {
             }
         }
     })
-    $("#to_shipping").click(function() {
+    const loggedIn = '<?php echo Auth::check();?>';
+    if(localStorage.getItem("new_user_email") && loggedIn) {
+        localStorage.removeItem("new_user_email");
         $(".logged-in").hide();
         $("#address_order").show();
+    }
+    $("#to_shipping").click(function() {
+        $(".login").hide();
+        if(loggedIn) {
+            $(".logged-in").hide();
+            $("#address_order").show();
+        }
+        else  {
+            $("#signups").show();
+            $("#address_order").hide();
+
+        }
     })
 })
 window.initAutocomplete = initAutocomplete;
@@ -1343,7 +1357,7 @@ window.initAutocomplete();
             $("[name='total_price']").val(total_price);
         })
 
-    })
+    });
     (function() {
         function formatCurrentDate() {
             const currentDate = new Date();
