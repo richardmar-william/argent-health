@@ -44,6 +44,18 @@
         .swiper-pagination {
             display: none;
         }
+        .swiper-button-prev, .swiper-rtl .swiper-button-next {
+            left: var(--swiper-navigation-sides-offset, -5px);
+            right: auto;
+            color: #747575;
+            display: none;
+        }
+        .swiper-button-next, .swiper-rtl .swiper-button-prev {
+            right: var(--swiper-navigation-sides-offset, -5px);
+            left: auto;
+            color: #747575;
+            display: none;
+        }
         @media screen and (max-width: 992px) {
             .swiper {
                 width: 95%;
@@ -53,6 +65,13 @@
             .swiper-pagination {
                 display: block;
             }
+            
+            .swiper-button-prev, .swiper-rtl .swiper-button-next {
+                display: flex;
+            }
+            .swiper-button-next, .swiper-rtl .swiper-button-prev {
+                display: flex;
+            }
         }
         @media screen and (min-width: 992px) {
             .swiper-wrapper {
@@ -61,6 +80,13 @@
         }
         .tablet-100size {
             width: 100%;
+        }
+
+        .swiper-button-prev::after {
+            content: "";
+        }
+        .swiper-button-next::after {
+            content: "";
         }
     
     </style>
@@ -232,8 +258,8 @@
                                 @endphp
                                 <div class="row container tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
                                     <div class="col col-12">
-                                        <figure>
-                                            <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="100%" alt="">
+                                        <figure style="display: flex; justify-content: center">
+                                            <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="75%" alt="">
                                         </figure>
                                     </div>
                                     <div class="col col-12 product-detail-info">
@@ -276,6 +302,14 @@
                             </div>
                         </div>
                 @endforeach
+            </div>
+            <div class="swiper-button-prev"><?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM8,12a2.993,2.993,0,0,1,.752-1.987c.291-.327.574-.637.777-.84L12.353,6.3a1,1,0,0,1,1.426,1.4L10.95,10.58c-.187.188-.441.468-.7.759a1,1,0,0,0,0,1.323c.258.29.512.57.693.752L13.779,16.3a1,1,0,0,1-1.426,1.4L9.524,14.822c-.2-.2-.48-.507-.769-.833A2.99,2.99,0,0,1,8,12Z"/></svg>
+</div>
+            <div class="swiper-button-next">
+                <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
+
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -361,8 +395,8 @@
                                 @endphp
                                 <div class="row container tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
                                     <div class="col col-12">
-                                        <figure>
-                                            <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="100%" alt="">
+                                        <figure style="display: flex; justify-content: center">
+                                            <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="75%" alt="">
                                         </figure>
                                     </div>
                                     <div class="col col-12 product-detail-info">
@@ -407,6 +441,14 @@
                 @endforeach
             </div>
             
+            <div class="swiper-button-prev swiper-button-prev1"><?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM8,12a2.993,2.993,0,0,1,.752-1.987c.291-.327.574-.637.777-.84L12.353,6.3a1,1,0,0,1,1.426,1.4L10.95,10.58c-.187.188-.441.468-.7.759a1,1,0,0,0,0,1.323c.258.29.512.57.693.752L13.779,16.3a1,1,0,0,1-1.426,1.4L9.524,14.822c-.2-.2-.48-.507-.769-.833A2.99,2.99,0,0,1,8,12Z"/></svg>
+</div>
+            <div class="swiper-button-next swiper-button-next1">
+                <?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
+
+            </div>
             <div class="swiper-pagination"></div>
         </div>
     </div>
@@ -2464,13 +2506,18 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
         });
 
         
-         var swiper = new Swiper("#other_rec_prod", {
+         var swiper1 = new Swiper("#other_rec_prod", {
             watchSlidesProgress: true,
             slidesPerView: 1,
             spaceBetween: 0,
+            enabled: window.screen.width < 992,
             breakpoints: {
                 992: {
                     slidesPerView: 2,
@@ -2481,7 +2528,17 @@
                 el: ".swiper-pagination",
                 clickable: true,
             },
+            navigation: {
+                nextEl: ".swiper-button-next1",
+                prevEl: ".swiper-button-prev1",
+            },
         });
+        document.body.onresize = function() {
+            if(window.screen.width < 992 && swiper1)  {
+                swiper1.enable()
+            }
+            else swiper1 && swiper1.disable();
+        }
     });
 </script>
 
@@ -2982,7 +3039,6 @@ var productList = <?=json_encode($productList)?>;
         }
         function checkEmail() {
             var email = $("#email").val();
-            console.log(email)
             if(!email) {
                 alert("Please enter your email address");
                 return;
@@ -3035,7 +3091,7 @@ var productList = <?=json_encode($productList)?>;
             var productList = <?php echo json_encode($productList); ?>;
             $(this).parent().children(".tablets-item").removeClass("selected");
             $(this).addClass("selected");
-            $(this).parent().parent().parent().children(".product-toolbar button").attr("onclick", "AddToCart('"+pId+"')");
+            $(this).parent().parent().parent().children(".product-toolbar").children("button").attr("onclick", "AddToCart('"+pId+"')");
 
             for(var i = 0 ; i < productList.length ; i ++) {
                 if(productList[i].id == pId) {

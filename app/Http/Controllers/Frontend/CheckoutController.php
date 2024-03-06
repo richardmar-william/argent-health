@@ -680,23 +680,23 @@ class CheckoutController extends Controller
 
         $ccnumber = str_replace(' ', '', $request->card_number);
 
-					$update_order = Order::where('ref_id', $order->id)->update(['order_status' => 2]);
+        $update_order = Order::where('ref_id', $order->id)->update(['order_status' => 2]);
 
 
-							DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
+        DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
 
-							$sessionId = $request->session_id;
-							$cc = $request->coupon_code;
-                            
-							return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc'));
+        $sessionId = $request->session_id;
+        $cc = $request->coupon_code;
+        
+        return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc'));
 
-					//  return redirect('checkout/payment-page')->route('payment.page',['user_id'=>$user_id,'order_id'=>$order_id,'final_price'=>$final_price]);
-								// for testing
-							// return view('frontend.checkout.success1',compact('user_id','order_id'));
-							}
-							else{
-									return view('frontend.checkout.error',compact('user_id','order_id'));
-							}
+        //  return redirect('checkout/payment-page')->route('payment.page',['user_id'=>$user_id,'order_id'=>$order_id,'final_price'=>$final_price]);
+        // for testing
+        // return view('frontend.checkout.success1',compact('user_id','order_id'));
+        }
+        else{
+                return view('frontend.checkout.error',compact('user_id','order_id'));
+        }
             // for testing
     }
 
@@ -736,6 +736,7 @@ class CheckoutController extends Controller
 
     public function subscription_update(){
         dd('subscription function');
+        exit;
     }
     public function setTempEmail(Request $request) {
         $session_id = $request->session_id;

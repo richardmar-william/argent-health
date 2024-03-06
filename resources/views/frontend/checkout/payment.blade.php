@@ -22,7 +22,6 @@
         $user_del_add = $user_address1->address;
         $user_del_city = $user_address1->city;
         $user_del_zip = $user_address1->zip_code;
-
 @endphp
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -253,11 +252,13 @@
                                     @endphp
                                     <div class="row">
                                         @foreach($monthList as $month) 
+                                            @php
                                             $img = DB::table('media')->where('mediable_id',$product->id)->first();
+                                            @endphp
                                             @if($category_id == "33" || $category_id == "32") 
                                             <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
-                                                <div class="form-group form-radio">
-                                                    <input type="radio" id="product_sub_month_0" name="input_product_sub" value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                <div class="form-group form-radio" <?php echo $subscription_dur;?>>
+                                                    <input type="radio" id="product_sub_month_0" name="input_product_sub" <?php echo $subscription_dur == 0 ? "checked":""?> value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
                                                     <label class="sub-leb" for="product_sub_month_0">
                                                         <h4>One time treatment plan</h4>
                                                     </label>
@@ -267,7 +268,7 @@
                                             @if($month->subscription_duration == 1)
                                             <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
                                                 <div class="form-group form-radio">
-                                                    <input type="radio" id="product_sub_month_2" name="input_product_sub" <?php if($product->subscription_duration == 1) echo "checked";?> value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                    <input type="radio" id="product_sub_month_2" name="input_product_sub" disabled <?php if($subscription_dur == 1) echo "checked";?> value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
                                                     <label class="sub-leb" for="product_sub_month_2">
                                                         <h4>1 month treatment plan</h4>
                                                     </label>
@@ -276,7 +277,7 @@
                                             @else 
                                             <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
                                                 <div class="form-group form-radio">
-                                                    <input type="radio" id="product_sub_month_3" name="input_product_sub" <?php if($product->subscription_duration == $month->subscription_duration) echo "checked";?> product-id="{{$month->id}}" value="3">
+                                                    <input type="radio" id="product_sub_month_3" name="input_product_sub" disabled <?php if($subscription_dur == $month->subscription_duration) echo "checked";?> product-id="{{$month->id}}" value="3">
                                                     <label class="sub-leb" for="product_sub_month_3">
                                                         <span class="">Recommended</span>
                                                         <h4>{{$month->subscription_duration}} months treatment plan</h4>
@@ -503,6 +504,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
     <script>
+
     function formatCurrentDate() {
         const currentDate = new Date();
 

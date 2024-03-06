@@ -1,5 +1,13 @@
-<?php 
-$savedAddress = [];
+
+<?php
+    if(Auth::check()) {
+        $user = DB::table('users')->where('id', Auth::user()->id)->first();
+    
+        $user_name = $user->full_name;
+        $user_tel = $user->phone;
+        $user_email = $user->email;
+    }
+    $savedAddress = [];
 ?>
 
 <!DOCTYPE HTML>
@@ -112,6 +120,17 @@ $savedAddress = [];
             .quest-v2-content [type="radio"]:not(:checked) + label:after {
                 left: 4px;
             }
+            #apple-pay-button img{
+                height: 4rem;
+            }
+            @media screen and (min-width: 992px) {
+                .logged-in {
+                    display: block !important;
+                }
+                #apple-pay-button img{
+                    height: 3rem;
+                }
+            }
         </style>
 </head>
 
@@ -151,7 +170,7 @@ $savedAddress = [];
                     <div class="quest-v2-step" id="step14">
 
                         <div class="row quest-ordrsmry-wrap">
-                            <div class="col-lg-6 col-md-12 <?php echo Auth::check() ? "logged-in" : "login" ?>">
+                            <div class="col-lg-6 col-md-12 <?php echo Auth::check() ? "logged-in" : "login" ?> <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>">
                                 <input type="hidden" name="session_id" value="{{$sessionId}}">
                                 <input type="hidden" name="total_price" value="{{$total_price}}">
                                 
@@ -186,7 +205,7 @@ $savedAddress = [];
                                                 alt="gent-img2" />
                                         </div>
                                         <h1 class="product-title">{{$name}}</h1>
-                                        <p class="product-desc">{{$desc}}</p>
+                                        <p class="product-desc">{{strip_tags($desc)}}</p>
 
                                         @php
                                         $monthList = DB::table("products")->where('name', $name)->orderBy("subscription_duration")->get()->toArray();
@@ -293,7 +312,7 @@ $savedAddress = [];
                                                 <!-- <p><span id="user_off"></span>%Discount</p> -->
                                             </div>
 
-                                        <div class="text-dark mt-30 orderText">
+                                        <div class="text-dark mt-10 orderText">
                                             You will receive a monthly delivery of your treatment during the subscription
                                         </div>
 
@@ -326,12 +345,10 @@ $savedAddress = [];
 
                                                 <p id="coupon_error"></p>
                                             </div>
-
-
                                         <!-- </form> -->
                                     </div>
                                 </div>
-                                <button class="btn-d-black" id="to_shipping" style="width: 100%; font-size: 1.8rem;">continue</button>
+                                <button class="btn-d-black" id="to_shipping" style="width: 100%; font-size: 1.2rem;">continue</button>
                             </div>
 
                             @if(!Auth::check())
@@ -340,7 +357,7 @@ $savedAddress = [];
                             @if(!empty($successMsg))
                             <div class="alert alert-success"> {{ $successMsg }}</div>
                             @endif
-                            <div class="col-lg-6 col-md-12 auths" id="signups">
+                            <div class="col-lg-6 col-md-12 auths <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>" id="signups">
                                 <div class="row banner-img">
                                     <div class="col-12 text-center 2">
                                         <h1 class="account-signup">
@@ -519,7 +536,7 @@ $savedAddress = [];
                                 $user_tel = $user->phone;
                                 $user_email = $user->email;
                             @endphp
-                            <div class="col-lg-6 col-md-12" id="address_order">
+                            <div class="col-lg-6 col-md-12 <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>" id="address_order">
                                 <div class="row banner-img">
                                     <div class="col-12">
                                         <div class="shipping-details-header">
@@ -550,7 +567,7 @@ $savedAddress = [];
 
                                     <h4 class="q-orsm-heading mb-30">Shipping details</h4>
                                     <div class="row">
-                                        <div class="col col-md-12 col-lg-5" style="align-items: center; display: flex;">
+                                        <div class="col col-md-12 col-lg-5 shipping-address" style="align-items: center; display: flex;">
                                             <label for="saved_address">Use saved address</label>
                                         </div>
                                         <div class="col col-md-12 col-lg-7">
@@ -634,24 +651,24 @@ $savedAddress = [];
                                                         </div>
                                                         @endif
                                                         @if(Auth::check())
-                                                        <div class="col col-12 col-md-12 col-lg-6">    
-                                                            <div class='apple-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
-                                                                <div id="apple-pay-button" style="width:100%;">
-                                                                <img src='/frontend/images/applepay.png'  style="height: 4rem;">
+                                                        <div class='row'>
+                                                            <div class="col col-12 col-md-12 col-lg-6">    
+                                                                <div class='apple-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
+                                                                    <div id="apple-pay-button" style="width:100%;">
+                                                                        <img src='/frontend/images/applepay.png'>
+                                                                    </div>
+                                                                </div>
                                                             </div>
+                                                            <div class="col col-12 col-md-12 col-lg-6">
+                                                                <div class='google-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
+                                                                </div>
+                                                                
                                                             </div>
                                                         </div>
-                                                        <div class="col col-12 col-md-12 col-lg-6">
-                                                            <div class='google-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
-                                                                <form id="st-form"></form>
-                                                                <div id="st-google-pay"></div>
-                                                            </div>
-                                                        </div>
-                                                        @endif
+                                                    @endif
                                                     </div>
-                                            </div>
-                                        </form>
-                                        
+                                                </div>
+                                            </form>
                                         <form id="card_payment" action="{{ route('place.order') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="session_id" value="{{$sessionId}}">
@@ -748,6 +765,8 @@ $savedAddress = [];
                     @endif
 
 
+                    <form id="st-form"></form>
+                    <div id="st-google-pay"></div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -938,16 +957,6 @@ $("#sign_form").validate({
 
 
 
-
-<script type="text/javascript">
-$(document).ready(function() {
-    if(localStorage.getItem("new_user_email") != "") {
-        $("[name='email']").val(localStorage.getItem("new_user_email"));
-    }
-
-});
-</script>
-
 <script>
 $(document).ready(function() {
 
@@ -1013,22 +1022,6 @@ $(document).ready(function() {
 
 <!-- script for subscription update -->
 <script>
-$(document).ready(function() {
-    $('input[type="radio"]').click(function() {
-        var presence = $(this).val();
-        $.ajax({
-            url: "{{ route('subscription.update') }}",
-            method: "POST",
-            data: {
-                '_token': $('input[name=_token]').val(),
-                'presence': presence
-            },
-            success: function(data) {
-                alert('ff');
-            }
-        });
-    });
-});
 </script>
 <!-- script for subscription update-->
 
@@ -1300,6 +1293,8 @@ $(document).ready(function() {
     if(localStorage.getItem("new_user_email") && loggedIn) {
         localStorage.removeItem("new_user_email");
         $(".logged-in").hide();
+        $(".login-in").hide();
+        $("#signups").hide();
         $("#address_order").show();
     }
     $("#to_shipping").click(function() {
@@ -1320,13 +1315,11 @@ window.initAutocomplete();
 
 </script>
 
-
-@if(Auth::check())
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
-<script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
-<script>
-    $(document).ready(function() {
+<script type="text/javascript">
+    $(document).ready(function(){
+        if(localStorage.getItem("new_user_email")) {
+            $("[name='email']").val(localStorage.getItem("new_user_email"))
+        }
         function getProductInfo(id) {
             var monthList = <?php echo json_encode($monthList)?>;
 
@@ -1336,29 +1329,47 @@ window.initAutocomplete();
         }
         $("[name='input_product_sub']").click(function() {
             var productInfo = getProductInfo($(this).attr("product-id"));
-            var total_price =(Math.min(productInfo.price, productInfo.first_time_disc))
-            $(".qos-product .img-fluid").attr("src", $(this).attr("product-img"));
-            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
-            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
-            $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - productInfo.first_time_disc) : 0)+".00");
-
-            if(productInfo.category_id != 31) 
-                $(".total-amount del").text("£"+productInfo.price)
+            var total_price = productInfo.first_time_disc
+            if($(this).val() == 0) {
+                total_price = total_price;
+                $(".discount-price").text("£0.00");
+                $("#first_time_disc").text("£"+productInfo.price+".00");
+                $("#final_price del").text("")
+                $(".final_price del").hide()
+            }
+            else {
+                total = Math.min(productInfo.price, productInfo.first_time_disc)
+                $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - total_price) : 0)+".00");
+                $("#final_price del").text(productInfo.price)
+                $("#final_price del").show()
+                $("#first_time_disc").text("£"+(Math.min(productInfo.price, productInfo.first_time_disc))+".00")
+            }
             if($("#input_couponTotal").val() > 0) {
                 total_price = total_price - $("#input_couponTotal").val();
+                if(productInfo.category_id != 31) 
+                    $("#final_price del").text("£"+productInfo.price)
             }
+            $(".qos-product .img-fluid").attr("src", $(this).attr("product-img"));
+            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+            
             $("#dur_label").text(productInfo.subscription_duration);
-            $("#first_time_disc").text("£"+productInfo.first_time_disc)
             $("#orderTotal").text("£"+total_price);
             $('#totalAmt').text(total_price)
-            $("[name='subscription_duration']").val(productInfo.subscription_duration);
+            $("[name='subscription_duration']").val($(this).val());
             $("[name='product_id']").val(productInfo.id);
 
             $("[name='total_price']").val(total_price);
         })
+    })
+</script>
+@if(Auth::check())
 
-    });
-    (function() {
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+<script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
+<script>
+    $(document).ready(function() {
+
+          
         function formatCurrentDate() {
             const currentDate = new Date();
 
@@ -1497,7 +1508,7 @@ window.initAutocomplete();
             iat: Math.floor(Date.now() / 1000),
             iss: "jwt@agenthealth.com"
         }
-       
+    
         const base64UrlHeader = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
             '_');
         const base64UrlPayload = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
@@ -1513,7 +1524,6 @@ window.initAutocomplete();
             jwt: jwt,
             formId: "st-form",
         });
-        console.log("asdf => ", st, jwt)
         st.Components();
         st.GooglePay({
             "buttonOptions": {
@@ -1555,6 +1565,7 @@ window.initAutocomplete();
                 }
             }
         });
-    })()
+    });
+  
 </script>
 @endif

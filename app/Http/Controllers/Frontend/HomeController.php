@@ -17,6 +17,8 @@ use App\Models\UserAddress;
 use App\Models\Address;
 use App\Models\Delivery_address;
 use App\Models\Billing_address;
+use Session;
+
 
 class HomeController extends Controller
 {
@@ -68,7 +70,7 @@ class HomeController extends Controller
         $user_address->address = $request->address;
         $user_address->city = $request->city;
         $user_address->save();
-
+        Session::put("new_user", "1");
         Auth::login($user, true);
         return redirect()->back();
     }
