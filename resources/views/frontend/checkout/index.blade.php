@@ -1,15 +1,12 @@
 
-<?php
-    if(Auth::check()) {
-        $user = DB::table('users')->where('id', Auth::user()->id)->first();
+@php
+    $user = DB::table('users')->where('id', Auth::user()->id)->first();
     
-        $user_name = $user->full_name;
-        $user_tel = $user->phone;
-        $user_email = $user->email;
-    }
+    $user_name = $user->full_name;
+    $user_tel = $user->phone;
+    $user_email = $user->email;
     $savedAddress = [];
-?>
-
+@endphp
 <!DOCTYPE HTML>
 <html lang="en-US">
 
@@ -109,28 +106,6 @@
             #google-pay-button div {
                 display: none !important;
             }
-            .quest-v2-content .form-radio label {
-                padding: 0.5rem 0rem 0.5rem 2.4rem;
-            }
-            .quest-v2-content [type="radio"]:checked + label:before,
-            .quest-v2-content [type="radio"]:not(:checked) + label:before {
-                left: 0px;
-            }
-            .quest-v2-content [type="radio"]:checked + label:after,
-            .quest-v2-content [type="radio"]:not(:checked) + label:after {
-                left: 4px;
-            }
-            #apple-pay-button img{
-                height: 4rem;
-            }
-            @media screen and (min-width: 992px) {
-                .logged-in {
-                    display: block !important;
-                }
-                #apple-pay-button img{
-                    height: 3rem;
-                }
-            }
         </style>
 </head>
 
@@ -170,7 +145,7 @@
                     <div class="quest-v2-step" id="step14">
 
                         <div class="row quest-ordrsmry-wrap">
-                            <div class="col-lg-6 col-md-12 <?php echo Auth::check() ? "logged-in" : "login" ?> <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>">
+                            <div class="col-lg-6 col-md-12">
                                 <input type="hidden" name="session_id" value="{{$sessionId}}">
                                 <input type="hidden" name="total_price" value="{{$total_price}}">
                                 
@@ -205,7 +180,7 @@
                                                 alt="gent-img2" />
                                         </div>
                                         <h1 class="product-title">{{$name}}</h1>
-                                        <p class="product-desc">{{strip_tags($desc)}}</p>
+                                        <p class="product-desc">{{$desc}}</p>
 
                                         @php
                                         $monthList = DB::table("products")->where('name', $name)->orderBy("subscription_duration")->get()->toArray();
@@ -312,7 +287,7 @@
                                                 <!-- <p><span id="user_off"></span>%Discount</p> -->
                                             </div>
 
-                                        <div class="text-dark mt-10 orderText">
+                                        <div class="text-dark mt-30 orderText">
                                             You will receive a monthly delivery of your treatment during the subscription
                                         </div>
 
@@ -345,10 +320,11 @@
 
                                                 <p id="coupon_error"></p>
                                             </div>
+
+
                                         <!-- </form> -->
                                     </div>
                                 </div>
-                                <button class="btn-d-black" id="to_shipping" style="width: 100%; font-size: 1.2rem;">continue</button>
                             </div>
 
                             @if(!Auth::check())
@@ -357,17 +333,9 @@
                             @if(!empty($successMsg))
                             <div class="alert alert-success"> {{ $successMsg }}</div>
                             @endif
-                            <div class="col-lg-6 col-md-12 auths <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>" id="signups">
+                            <div class="col-lg-6 col-md-12 auths" id="signups">
                                 <div class="row banner-img">
                                     <div class="col-12 text-center 2">
-                                        <h1 class="account-signup">
-                                            <div>
-                                                Account 
-                                            </div>
-                                            <div>
-                                                Sign Up
-                                            </div>
-                                        </h1>
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
                                 </div>
@@ -408,16 +376,17 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
 
-                                        <p class="mb-30 require-comment">We are required to confirm the identity of our members. Any
+                                        <h4 class="q-orsm-heading mb-20">Personal information</h4>
+                                        <p class="mb-30">We are required to confirm the identity of our members. Any
                                             incorrect details will cause delays to your order.</p>
                                         <div class="row">
-                                            <div class="col-5 form-group">
+                                            <div class="col col-lg-5 col-md-12 form-group">
                                                 <label for="first_name">First Name</label>
                                                 <input type="text" class="form-control" name="first_name" value=""
                                                     placeholder="Enter Here">
                                                 <!-- <p class="text-end input-desc">We will let you know via email once your prescription has been issued.</p> -->
                                             </div>
-                                            <div class="col-7 form-group">
+                                            <div class="col col-lg-7 col-md-12 form-group">
                                                 <label for="surname">Surname</label>
                                                 <input type="text" class="form-control" name="surname" value=""
                                                     placeholder="Enter Here">
@@ -443,7 +412,7 @@
                                             @enderror -->
 
                                         <div class="row">
-                                            <div class="col-5 col-md-12">
+                                            <div class="col col-lg-5 col-md-12">
                                                 <div class="form-group">
                                                     <label for="dob">Date of birth</label>
                                                     <input type="date" class="form-control" id="dob" name="dob" value=""
@@ -454,7 +423,7 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="col-7 col-md-12">
+                                            <div class="col col-lg-7 col-md-12">
 
                                                 <div class="form-group">
                                                     <label for="number">Phone number</label>
@@ -491,7 +460,7 @@
                                         <span class="text-danger">{{ $message }}</span>
                                         @enderror
                                         <div class="row">
-                                            <div class="col-5">
+                                            <div class="col col-md-12 col-lg-5">
                                                 <div class="form-group">
                                                     <label for="postcode">Postcode</label>
                                                     <input type="text" class="form-control" id="zipcode" name="postcode" value=""
@@ -501,7 +470,7 @@
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
                                             </div>
-                                            <div class="col-7">
+                                            <div class="col col-md-12 col-lg-7">
                                                 <div class="form-group">
                                                     <label for="city">City</label>
                                                     <input type="text" id="city_dropdown" class="form-control" name="city"
@@ -529,20 +498,10 @@
                             <!--Adress & Order place-->
 
                             @else
-                            @php
-                                $user = DB::table('users')->where('id', Auth::user()->id)->first();
-                                
-                                $user_name = $user->full_name;
-                                $user_tel = $user->phone;
-                                $user_email = $user->email;
-                            @endphp
-                            <div class="col-lg-6 col-md-12 <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>" id="address_order">
+
+                            <div class="col-lg-6 col-md-12" id="address_order">
                                 <div class="row banner-img">
-                                    <div class="col-12">
-                                        <div class="shipping-details-header">
-                                            <div>Shipping</div>
-                                            <div>details</div> 
-                                        </div>
+                                    <div class="col-12 text-center 2">
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
                                 </div>
@@ -567,7 +526,7 @@
 
                                     <h4 class="q-orsm-heading mb-30">Shipping details</h4>
                                     <div class="row">
-                                        <div class="col col-md-12 col-lg-5 shipping-address" style="align-items: center; display: flex;">
+                                        <div class="col col-md-12 col-lg-5" style="align-items: center; display: flex;">
                                             <label for="saved_address">Use saved address</label>
                                         </div>
                                         <div class="col col-md-12 col-lg-7">
@@ -632,43 +591,25 @@
                                                 <!-- <a class="btn-d-black btn-wt-300 next-button" href="javascript:void(0)">Continue</a> -->
                                                 <!-- <button id="bil_submit" type="submit"
                                                     class="btn-d-black btn-wt-300 next-button">Payment</button> -->
-                                                    <div class="row">
-                                                        @if(isset($login_addreses) && !empty($login_addreses))  
-                                                        <div class="col col-12">
-
-                                                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                                                <div class="debit-btn-pw mt-30" style="margin-top: 20px; width: 100%;">
+                                                    @if(isset($login_addreses) && !empty($login_addreses))  
+                                                                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
+                                                                    <div class="debit-btn-pw mt-30" style="margin-top: 20px; width: 100%;">
                                                                     <button type="button"
-                                                                    class="btn-d-black btn-wt-300 next-button"
-                                                                    id="order_btn" >Pay with Card </button>
+                                                                        class="btn-d-black btn-wt-300 next-button me-2"
+                                                                        id="order_btn" >Pay with Card </button>
+                                                                    </div
+                                                                    >
+                                                                    
+                                                                    
                                                                 </div>
-                                                            </div>
-                                                        </div>
-                                                        @else
-                                                        
-                                                        <div class="debit-btn-pw">
-                                                            <button type="submit" class="btn-d-black btn-wt-300 next-button">Please fill your Delivery Address first.</button>
-                                                        </div>
-                                                        @endif
-                                                        @if(Auth::check())
-                                                        <div class='row'>
-                                                            <div class="col col-12 col-md-12 col-lg-6">    
-                                                                <div class='apple-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
-                                                                    <div id="apple-pay-button" style="width:100%;">
-                                                                        <img src='/frontend/images/applepay.png'>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="col col-12 col-md-12 col-lg-6">
-                                                                <div class='google-pay-area' style="display: inline-block; width: 100%; background-color: #111; border-radius: 50px;">
-                                                                </div>
-                                                                
-                                                            </div>
-                                                        </div>
-                                                    @endif
+                                                    @else
+                                                    <div class="debit-btn-pw">
+                                                        <button type="submit" class="btn-d-black btn-wt-300 next-button">Please fill your Delivery Address first.</button>
                                                     </div>
-                                                </div>
-                                            </form>
+                                                    @endif
+                                            </div>
+                                        </form>
+                                        
                                         <form id="card_payment" action="{{ route('place.order') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="session_id" value="{{$sessionId}}">
@@ -691,15 +632,41 @@
                                         {{-- <livewire:frontend.checkout.checkout-component /> --}}
                                     </div>
                                 </div>
+                                @if(Auth::check())
+                                <div class="row">
+                                    <div class="col col-12 payment-method-btns" style="padding: 0px 4rem;">    
+                                        <div class='apple-pay-area' style="display: inline-block; width: 45%;">
+                                            <div id="st-apple-pay" style="width:100%;"></div>
+                                        </div>
+                                        <div class='google-pay-area' style="display: inline-block; width: 45%;">
+                                             <div id="st-notification-frame"></div>
+                                            <form id="st-form" action="/google-payment" method="post">
+                                                @csrf
+                                                <input type="hidden" name="total_price" value="{{$total_price}}">
+                                                <input type="hidden" name="subscription_duration" value="{{$prod_subs}}">
+                                                <input type="hidden" name="product_id" value="{{$product_id}}">
+                                                <input type="hidden" name="session_id" value="{{$sessionId}}">
+                                            </form>
+                                            <div id='st-google-pay'></div>
+                                            <!-- <img src='/frontend/images/gpay.png' style="height: 4rem; width: 100%;"> -->
+                                        </div>
+                                    </div>
+                                </div>
+                                @endif
                             </div>
                         </div>
                     </div>
 
 
+
+
+
+
+
                     @if(Auth::check())
                     <!--address modal to select the  -->
                     <!-- Modal1 -->
-                    <div class="modal fade d-none" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel"
+                    <div class="modal fade" id="addressModal" tabindex="-1" aria-labelledby="addressModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered  address-popup">
                             <div class="modal-content">
@@ -731,7 +698,7 @@
                         </div>
                     </div>
                     <!-- modal2 -->
-                    <div class="modal fade  d-none" id="addressModal2" tabindex="-1" aria-labelledby="addressModalLabel"
+                    <div class="modal fade" id="addressModal2" tabindex="-1" aria-labelledby="addressModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered  address-popup">
                             <div class="modal-content">
@@ -765,8 +732,6 @@
                     @endif
 
 
-                    <form id="st-form"></form>
-                    <div id="st-google-pay"></div>
     </section>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
@@ -957,6 +922,16 @@ $("#sign_form").validate({
 
 
 
+
+<script type="text/javascript">
+$(document).ready(function() {
+    if(localStorage.getItem("new_user_email") != "") {
+        $("[name='email']").val(localStorage.getItem("new_user_email"));
+    }
+
+});
+</script>
+
 <script>
 $(document).ready(function() {
 
@@ -1022,6 +997,22 @@ $(document).ready(function() {
 
 <!-- script for subscription update -->
 <script>
+$(document).ready(function() {
+    $('input[type="radio"]').click(function() {
+        var presence = $(this).val();
+        $.ajax({
+            url: "{{ route('subscription.update') }}",
+            method: "POST",
+            data: {
+                '_token': $('input[name=_token]').val(),
+                'presence': presence
+            },
+            success: function(data) {
+                alert('ff');
+            }
+        });
+    });
+});
 </script>
 <!-- script for subscription update-->
 
@@ -1270,6 +1261,37 @@ function fillInAddress() {
   address2Field.focus();
 }
 $(document).ready(function() {
+    console.log($("[name='input_product_sub']"))
+    function getProductInfo(id) {
+        var monthList = <?php echo json_encode($monthList)?>;
+
+        for(var i = 0 ; i < monthList.length ; i ++) {
+            if(monthList[i].id == id) return monthList[i];
+        }
+    }
+    $("[name='input_product_sub']").click(function() {
+        var productInfo = getProductInfo($(this).attr("product-id"));
+        var total_price =(Math.min(productInfo.price, productInfo.first_time_disc))
+        $(".img-fluid").attr("src", $(this).attr("product-img"));
+        $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+        $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
+        $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - productInfo.first_time_disc) : 0)+".00");
+
+        if(productInfo.category_id != 31) 
+            $(".total-amount del").text("£"+productInfo.price)
+        if($("#input_couponTotal").val() > 0) {
+            total_price = total_price - $("#input_couponTotal").val();
+        }
+        $("#dur_label").text(productInfo.subscription_duration);
+        $("#first_time_disc").text("£"+productInfo.first_time_disc)
+        $("#orderTotal").text("£"+total_price);
+        $('#totalAmt').text(total_price)
+        $("[name='subscription_duration']").val(productInfo.subscription_duration);
+        $("[name='product_id']").val(productInfo.id);
+
+        $("[name='total_price']").val(total_price);
+    })
+
     $("#order_btn").click(function() {
         $("#btn_pay_sub").click();
     });
@@ -1289,87 +1311,17 @@ $(document).ready(function() {
             }
         }
     })
-    const loggedIn = '<?php echo Auth::check();?>';
-    if(localStorage.getItem("new_user_email") && loggedIn) {
-        localStorage.removeItem("new_user_email");
-        $(".logged-in").hide();
-        $(".login-in").hide();
-        $("#signups").hide();
-        $("#address_order").show();
-    }
-    $("#to_shipping").click(function() {
-        $(".login").hide();
-        if(loggedIn) {
-            $(".logged-in").hide();
-            $("#address_order").show();
-        }
-        else  {
-            $("#signups").show();
-            $("#address_order").hide();
-
-        }
-    })
 })
 window.initAutocomplete = initAutocomplete;
 window.initAutocomplete();
 
 </script>
 
-<script type="text/javascript">
-    $(document).ready(function(){
-        if(localStorage.getItem("new_user_email")) {
-            $("[name='email']").val(localStorage.getItem("new_user_email"))
-        }
-        function getProductInfo(id) {
-            var monthList = <?php echo json_encode($monthList)?>;
-
-            for(var i = 0 ; i < monthList.length ; i ++) {
-                if(monthList[i].id == id) return monthList[i];
-            }
-        }
-        $("[name='input_product_sub']").click(function() {
-            var productInfo = getProductInfo($(this).attr("product-id"));
-            var total_price = productInfo.first_time_disc
-            if($(this).val() == 0) {
-                total_price = total_price;
-                $(".discount-price").text("£0.00");
-                $("#first_time_disc").text("£"+productInfo.price+".00");
-                $("#final_price del").text("")
-                $(".final_price del").hide()
-            }
-            else {
-                total = Math.min(productInfo.price, productInfo.first_time_disc)
-                $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - total_price) : 0)+".00");
-                $("#final_price del").text(productInfo.price)
-                $("#final_price del").show()
-                $("#first_time_disc").text("£"+(Math.min(productInfo.price, productInfo.first_time_disc))+".00")
-            }
-            if($("#input_couponTotal").val() > 0) {
-                total_price = total_price - $("#input_couponTotal").val();
-                if(productInfo.category_id != 31) 
-                    $("#final_price del").text("£"+productInfo.price)
-            }
-            $(".qos-product .img-fluid").attr("src", $(this).attr("product-img"));
-            $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
-            
-            $("#dur_label").text(productInfo.subscription_duration);
-            $("#orderTotal").text("£"+total_price);
-            $('#totalAmt').text(total_price)
-            $("[name='subscription_duration']").val($(this).val());
-            $("[name='product_id']").val(productInfo.id);
-
-            $("[name='total_price']").val(total_price);
-        })
-    })
-</script>
-@if(Auth::check())
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
 <script>
-    $(document).ready(function() {
-
-          
+    (function() {
         function formatCurrentDate() {
             const currentDate = new Date();
 
@@ -1437,8 +1389,8 @@ window.initAutocomplete();
         const amount = <?php echo $total_price;?>;
         const accounttypedescription = "ECOM";
         const currencyiso3a = "GBP";
-        // const sitereference = "agenthealth119403";
-        const sitereference = "test_agenthealth119402";
+        const sitereference = "agenthealth119403";
+        // const sitereference = "test_agenthealth119402";
         const googleMerchantId = "BCR2DN4T5GROHDAU"
         const subscriptiontype = "RECURRING";
         const subscriptionunit = "MONTH";
@@ -1480,13 +1432,14 @@ window.initAutocomplete();
                 "subscriptionbegindate": subscriptionbegindate,
                 "credentialsonfile": credentialsonfile,
                 "requesttypedescriptions": requesttypedescriptions,
+                // "walletsoure": "GOOGLEPAY",
                 // orderreference: orderreference,
                 //26oct23
                 "billingfirstname": billingfirstname,
                 "billingtelephone": billingtelephone,
                 // billingstreet: billingstreet,
                 "billingtown": billingtown,
-                "billingpostcode": billingpostcode,
+                // "billingpostcode": billingpostcode,
                 "billingemail": billingemail,
                 "billingpremise": billingpremise,
                 "billingcountryiso2a": billingcountryiso2a,
@@ -1494,7 +1447,7 @@ window.initAutocomplete();
                 "customerfirstname": customerfirstname,
                 "customertelephone": customertelephone,
                 "customertown": customertown,
-                "customerpostcode": customerpostcode,
+                // "customerpostcode": customerpostcode,
                 "customeremail": customeremail,
                 "customerpremise": customerpremise,
                 "customercountryiso2a": customercountryiso2a,
@@ -1508,7 +1461,7 @@ window.initAutocomplete();
             iat: Math.floor(Date.now() / 1000),
             iss: "jwt@agenthealth.com"
         }
-    
+       console.log(payload)
         const base64UrlHeader = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
             '_');
         const base64UrlPayload = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
@@ -1544,7 +1497,7 @@ window.initAutocomplete();
                     },
                     "type": "CARD"
                 }],
-                "environment":"TEST",
+                "environment":"PRODUCTION",
                 "apiVersion": 2,
                 "apiVersionMinor": 0,
                 "merchantInfo": {
@@ -1565,7 +1518,25 @@ window.initAutocomplete();
                 }
             }
         });
-    });
-  
+
+        
+        st.ApplePay({
+          buttonStyle: 'white-outline',
+          buttonText: 'plain',
+          merchantId: 'merchant.agenthealth.uk',
+          paymentRequest: {
+            countryCode: 'UK',
+            currencyCode: currencyiso3a,
+            merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
+            supportedNetworks: ["visa","masterCard","amex"],
+            // requiredBillingContactFields: ["postalAddress"],
+            // requiredShippingContactFields: ["postalAddress","name", "phone", "email"],
+            total: {
+              label: $(".product-title").text(),
+              amount: String(amount)
+            }
+          },
+          buttonPlacement: 'st-apple-pay'
+        });
+    })()
 </script>
-@endif

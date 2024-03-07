@@ -102,8 +102,10 @@ class GooglePayController extends Controller
             }
             // print_r($request->all()); exit;
             $transactions->order_id = $orderId;
-            $transactions->transaction_id = $request['_token'];
-            $transactions->amount = $request['amount'];
+            $transactions->jwt = $request->jwt;
+            $transactions->currencyiso3a = $request->currencyiso3a;
+            $transactions->transaction_id = $request->transactionreference;
+            $transactions->amount = $request->total_price;
             // $transactions->type = $request['data']['paymentMethodData']['tokenizationData']['type'] ?? '';
             // $transactions->type = 1;
             // $transactions->type = 1;
@@ -113,83 +115,27 @@ class GooglePayController extends Controller
             // $transactions->type = 1;
             // $transactions->type = 1;
             if($transactions->save()) {
-             session()->flash('order_id', $order->ref_id);
-                // Mail::send('emails.orders.place_order', ['data'=> $transactions], function($message)use($transactions) {
-                //     $message->to(Auth()->user()->email)->subject('Order Confirmed!')->from(config('mail.from.address'), config('mail.from.name'));
-							$full_name = auth()->user()->full_name;
-							$order_num = $order->ref_id;
-							$this->SendOrderConfirmMail($full_name, $order_num);
+                session()->flash('order_id', $order->ref_id);
+                $full_name = auth()->user()->full_name;
+                $order_num = $order->ref_id;
+                $this->SendOrderConfirmMail($full_name, $order_num);
             }
-            // print_r($transactions); exit;
             
             $fileurl = getcwd()."/storage/response_log.json";
             $fileContent = json_decode(file_get_contents($fileurl));
             array_push($fileContent, $request->all());
             file_put_contents($fileurl, json_encode($fileContent));
 
-            //CURL for trust pay
-            $jsonData = [
-                "alias" => "ws@agenthealth.com",
-                "version" => "1.00",
-                "request" => [
-                    [
-                        "currencyiso3a" => "GBP",
-                        "requesttypedescriptions" => ["AUTH"],
-                        "sitereference" => "test_agenthealth119402",
-                        "baseamount" => $final_price,
-                        "orderreference" => $order_id,
-                        "accounttypedescription" => "ECOM",
-                        "pan" => $ccnumber,
-                        "expirydate" => $formattedDate,
-                        "securitycode" => $request->cvc
-                    ]
-                ]
-            ];
+            
 
-            $headers = [
-                "Content-Type: application/json",
-                "Accept: application/json",
-            ];
-
-            $curl = curl_init();
-
-                    curl_setopt_array($curl, [
-                        CURLOPT_URL => 'https://webservices.securetrading.net/json/',
-                        CURLOPT_RETURNTRANSFER => true,
-                        CURLOPT_USERPWD => 'ws@agenthealth.com:_3d{,Kk[,!dd',
-                        CURLOPT_HTTPHEADER => $headers,
-                        CURLOPT_CUSTOMREQUEST => 'POST',
-                        CURLOPT_POSTFIELDS => json_encode($jsonData),
-                        ]);
-                    $response = curl_exec($curl);
-
-                        if (curl_errno($curl)) {
-
-                        return view('frontend.checkout.error',compact('user_id','order_id'));
-
-                        } else {
-
-                                    $responseData = json_decode($response, true);
-
-                                    $errorcode = $responseData['response'][0]['errorcode'];
-                                    if($errorcode == 0){
-                                        $requestReference = $responseData['requestreference'];
-
-                                        $ResponseCode = $responseData['response'][0]['acquirerresponsecode'];
-                                        $ammount = $responseData['response'][0]['baseamount'];
-                                        $currency = $responseData['response'][0]['currencyiso3a'];
-                                        $merchantname = $responseData['response'][0]['merchantname'];
-                                        $orderreference = $responseData['response'][0]['orderreference'];
-
-                                        return view('frontend.checkout.success',compact('user_id','order_id', 'orderreference', 'currency', 'ammount', 'merchantname'));
-                                    }
-                                    else{
-                                        return view('frontend.checkout.error',compact('user_id','order_id'));
-                                    }
-                            }
-                            curl_close($curl);
-            //curl for payment
-            return response(['success' => true, 'url' => '/checkout/success1']);
+            Session::put('placed_order','placed');
+            Session::forget('sessionid');
+            Session::forget('hair_loss');
+            Session::forget('beard_browth');
+            Session::forget('erectile_dysfunction');
+            Session::forget('premature_ejaculation');
+            return redirect('/checkout/success1');
+            // return response(['success' => true, 'url' => '/checkout/success1']);
 
         }
         catch (Exception $e) {
@@ -199,8 +145,7 @@ class GooglePayController extends Controller
     
     public function setConfig(Request $request) {
         $fileurl = getcwd()."/storage/request_log.json";
-        exit($fileurl);
-        print_r(file_get_contents($fileurl)); exit;
+        // exit($fileurl);
         $fileContent = json_decode(file_get_contents($fileurl));
         array_push($fileContent, $request->all());
         file_put_contents($fileurl, json_encode($fileContent));
