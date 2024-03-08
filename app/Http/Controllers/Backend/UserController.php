@@ -64,6 +64,7 @@ class UserController extends Controller
             'phone' => $request->phone,
             'password' => bcrypt($request->password),
             'status' => $request->status,
+            'dob' => $request->dob,
             'receive_email' => true,
             'user_image' => $userImage ?? NULL,
             'role' =>$request->userRole??NULL,

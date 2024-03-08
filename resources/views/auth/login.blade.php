@@ -18,7 +18,7 @@
     <meta property="og:title" content="html" />
     <meta property="og:description" content="" />
     <meta name="section" content="html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta property="og:type" content="website" />
     <meta property="og:image" content="" />
     <meta property="og:url" content="" />
