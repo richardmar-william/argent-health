@@ -125,6 +125,7 @@ Route::get('/questionnaire/storeHairLoss',[QuestionnaireController::class,'store
 Route::get('/questionnaire/storeerectiledysfunction',[QuestionnaireController::class,'storeerectiledysfunction'])->name('questionnaire.storeerectiledysfunction');
 Route::get('/questionnaire/storeApremature',[QuestionnaireController::class,'storeApremature'])->name('questionnaire.storeApremature');
 Route::get('/user/email/{email}',[UserController::class,'isExist'])->name('user.exist');
+Route::post('/temp/email',[CheckoutController::class,'setTempEmail'])->name('temp_email');
 
 
 Route::get('/questionnaire/{id}',[QuestionnaireController::class,'index'])->name('questionnaire.index');

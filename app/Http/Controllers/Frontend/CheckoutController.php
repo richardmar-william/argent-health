@@ -683,7 +683,7 @@ class CheckoutController extends Controller
         $update_order = Order::where('ref_id', $order->id)->update(['order_status' => 2]);
 
 
-        DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
+        // DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
 
         $sessionId = $request->session_id;
         $cc = $request->coupon_code;
