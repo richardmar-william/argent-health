@@ -1579,7 +1579,7 @@ window.initAutocomplete();
                 buttonText: 'plain',
                 merchantId: 'merchant.agenthealth.uk',
                 paymentRequest: {
-                    countryCode: 'UK',
+                    countryCode: 'US',
                     currencyCode: currencyiso3a,
                     merchantCapabilities: ['supports3DS', 'supportsCredit', 'supportsDebit'],
                     supportedNetworks: ["visa","masterCard","amex"],

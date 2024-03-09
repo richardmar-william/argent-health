@@ -6,6 +6,9 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\QuesAns;
 use App\Models\User;
+
+use App\Models\Temp;
+
 use App\Traits\SMPT2GoTrait;
 use Illuminate\Support\Facades\Http;
 use Mail;
@@ -16,8 +19,9 @@ class PatientController extends Controller
     use SMPT2GoTrait;
      /* fucntion for patient history */
      public function patient_history(){
-        $quationnair = QuesAns::orderBy('id','DESC')->where('userid','!=','')->where('epdf','!=','')->groupBy('session_id')->get();
-        return view('backend.patient.patient_history',compact('quationnair'));
+         $quationnair = QuesAns::orderBy('id','DESC')->where('userid','!=','')->where('epdf','!=','')->groupBy('session_id')->get();
+         $emails = Temp::orderBy('updated_at','DESC')->whereRaw("email is not null or email <> ''")->get();
+         return view('backend.patient.patient_history',compact('quationnair', 'emails'));
     }
 
     /* fucntion for new patient history */
