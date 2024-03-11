@@ -20,7 +20,7 @@ class PatientController extends Controller
      /* fucntion for patient history */
      public function patient_history(){
          $quationnair = QuesAns::orderBy('id','DESC')->where('userid','!=','')->where('epdf','!=','')->groupBy('session_id')->get();
-         $emails = Temp::orderBy('updated_at','DESC')->whereRaw("email is not null or email <> ''")->get();
+         $emails = Temp::orderBy('updated_at','DESC')->whereRaw("email is not null and email <> ''")->get();
          return view('backend.patient.patient_history',compact('quationnair', 'emails'));
     }
 
