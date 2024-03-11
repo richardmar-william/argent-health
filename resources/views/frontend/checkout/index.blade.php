@@ -95,16 +95,19 @@
             }
             .gpay-card-info-container.black.long.en{
                 /* max-height: 44px; */
-                background-color: #111;
+                background-color: #333;
                 color: white;
                 border-radius: 30px;
                 overflow: hidden; 
                 background-image: url(/frontend/images/gpay.png); 
                 background-repeat: no-repeat; 
-                background-size: 100% 100%;
+                background-size: contain;
                 height: 4rem;
                 width: 100%;
                 background-position: center;
+            }
+            .gpay-card-info-animation-container {
+                display: none !important;
             }
             #google-pay-button div {
                 display: none !important;
@@ -636,8 +639,8 @@
                                                         @if(isset($login_addreses) && !empty($login_addreses))  
                                                         <div class="col col-12">
 
-                                                            <div style="display: flex; justify-content: space-between; align-items: center; width: 100%;">
-                                                                <div class="debit-btn-pw mt-30" style="margin-top: 20px; width: 100%;">
+                                                            <div class="row">
+                                                                <div class="col col-12 debit-btn-pw mt-30" style="margin-top: 20px; padding: 0px; width: 100%;">
                                                                     <button type="button"
                                                                     class="btn-d-black btn-wt-300 next-button"
                                                                     id="order_btn" >Pay with Card </button>
@@ -652,13 +655,6 @@
                                                         @endif
                                                         @if(Auth::check())
                                                     <!-- <div id="st-notification-frame"></div> -->
-                                                        <form id="st-form" action="/google-payment" method="post">
-                                                            @csrf
-                                                            <input type="hidden" name="total_price" value="{{$total_price}}">
-                                                            <input type="hidden" name="subscription_duration" value="{{$prod_subs}}">
-                                                            <input type="hidden" name="product_id" value="{{$product_id}}">
-                                                            <input type="hidden" name="session_id" value="{{$sessionId}}">
-                                                        </form>
                                                         <div class="col col-12">
                                                             <div class="row">
                                                                 <div class="col col-12 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">    
@@ -673,6 +669,13 @@
                                                     </div>
                                                 </div>
                                             </form>
+                                        <form id="st-form" action="/google-payment" method="post">
+                                            @csrf
+                                            <input type="hidden" name="total_price" value="{{$total_price}}">
+                                            <input type="hidden" name="subscription_duration" value="{{$prod_subs}}">
+                                            <input type="hidden" name="product_id" value="{{$product_id}}">
+                                            <input type="hidden" name="session_id" value="{{$sessionId}}">
+                                        </form>
                                         <form id="card_payment" action="{{ route('place.order') }}" method="POST">
                                             @csrf
                                             <input type="hidden" name="session_id" value="{{$sessionId}}">
@@ -1449,8 +1452,8 @@ window.initAutocomplete();
             // const subscriptionunit = "DAY";
             const subscriptionunit = "MONTH";
             const subscriptionfrequency = subscription_dur == 0 ? 1: subscription_dur;
-            // const subscriptionfinalnumber = subscription_dur == 0 ? 1 : 12;
-            const subscriptionfinalnumber =  12;
+            const subscriptionfinalnumber = subscription_dur == 0 ? 1 : 12;
+            // const subscriptionfinalnumber =  12;
             const subscriptionbegindate = subscribtionPaymentDate;
             const credentialsonfile = "1";
             const requesttypedescriptions = ["THREEDQUERY", "AUTH", "SUBSCRIPTION"];
@@ -1531,7 +1534,6 @@ window.initAutocomplete();
                 jwt: jwt,
                 formId: "st-form",
             });
-            console.log(payload);
             st.Components();
             st.GooglePay({
                 "buttonOptions": {

@@ -362,13 +362,15 @@
                     $discount_price = 0;
                     $category_id = 0;
                     $price = 0;
+                    $productName = "";
                 }
                 else {
-                    $total_price = $product->first_time_disc;
+                    $total_price = $product->price;
                     $first_time_discount = $product->first_time_disc;
                     $discount_price = $product->price - $product->first_time_disc;
                     $category_id = $product->category_id;
-                    $price = $total_price;
+                    $price = $first_time_discount;
+                    $productName = $product->name;
                 }
                 ?>
                 
@@ -377,7 +379,7 @@
                         <h1>Thank You</h1>
                         <h1>For your order</h1>
                     </div>
-                    <h4 class="product-title">Full Beard Kit with Topical Solutions</h4>
+                    <h4 class="product-title">{{$productName}}</h4>
                         @if($total_price > $first_time_discount)
                     <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
                             £{{$total_price}}.00
@@ -434,9 +436,9 @@
 
                     <div class="total-amount">
                         <h3>Total</h3>
-                        <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 </span>
+                        <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$total_price}}</del></span> @endif <span id="first_time_disc"> £{{$price}}.00 </span>
                     </h3>
-                        <span id="totalAmt" class="d-none">{{$first_time_discount}}</span>
+                        <span id="totalAmt" class="d-none">{{$price}}</span>
                         <!-- <p><span id="user_off"></span>%Discount</p> -->
                     </div>
                 </div>

@@ -153,6 +153,14 @@
         .quest-v2-content [type="radio"]:not(:checked) + label:after {
             left: 4px;
         }
+        .btn_order_pay {
+            width: 100%;
+            border-radius: 50px;
+        }
+        .st-form__group {
+            height: 5rem;
+            margin: 1.5rem 0px;
+        }
     </style>
 
     <livewire:styles />
@@ -432,28 +440,28 @@
                                     </div> -->
                                 </div>
                                 <div style="width: 100%; display: flex; justify-content: flex-end;">
-                                    <img src="/frontend/images/default.png" style="margin:0px 10px;"/>
-                                    <img src="/frontend/images/mastercard.png" style="margin:0px 10px;"/>
-                                    <img src="/frontend/images/visa.png" style="margin:0px 10px;"/>
+                                    <img src="/frontend/images/default.png" style="margin:0px 10px; width: 2.4rem;"/>
+                                    <img src="/frontend/images/mastercard.png" style="margin:0px 10px; width: 2.4rem;"/>
+                                    <img src="/frontend/images/visa.png" style="margin:0px 10px; width: 2.4rem;"/>
                                 </div>
                                 <div class="button-box">
-                                    <main class="bg-white card-design">
+                                    <main class="bg-white card-design" style="padding: 0px;">
                                         
                                         <div id="st-notification-frame"></div>
                                         <form id="st-form">
     
                                           <div class="row">
                                                 <div class="col-lg-12">
-                                                    <div id="st-card-number"></div>
+                                                    <div id="st-card-number" class="st-form__group st-form__iframe-container"></div>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <div id="st-expiration-date"></div>
+                                                    <div id="st-expiration-date" class="st-form__group st-form__iframe-container"></div>
                                                 </div>
                                                 <div class="col-lg-6">
-                                                    <div id="st-security-code"></div>
+                                                    <div id="st-security-code" class="st-form__group st-form__iframe-container"></div>
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn_order_pay">Continue</button>
+                                            <button type="submit" class="btn_order_pay">Pay with Card</button>
                                        
                                         </form>
                                         <!-- <form id="st-form1">
@@ -640,7 +648,7 @@
                 billingtelephone: billingtelephone,
                 // billingstreet: billingstreet,
                 billingtown: billingtown,
-                billingpostcode: billingpostcode,
+                // billingpostcode: billingpostcode,
                 billingemail: billingemail,
                 billingpremise: billingpremise,
                 billingcountryiso2a: billingcountryiso2a,
@@ -649,7 +657,7 @@
                 customertelephone: customertelephone,
                 // customerstreet: customerstreet,
                 customertown: customertown,
-                customerpostcode: customerpostcode,
+                // customerpostcode: customerpostcode,
                 customeremail: customeremail,
                 customerpremise: customerpremise,
                 customercountryiso2a: customercountryiso2a,
@@ -676,54 +684,21 @@
         try {
             var st = SecureTrading({
                 jwt: jwt,
+                placeholders:{
+                    'pan':'Card Number',
+                    'expirydate':'Expiry date',
+                    'securitycode':'CVC/CVV'
+                },
+                styles: {
+                    'background-color-input': '#e2e8f0',
+                    'font-size-label': '18px',
+                    'color-input': '#000',
+                    'border-size-input': "0px",
+                }
             });
 
             st.Components()
             
-            var st1 = SecureTrading({
-                jwt: jwt,
-                formId: "st-form1",
-            });
-            st.GooglePay({
-                "buttonOptions": {
-                    "buttonRootNode": "st-google-pay"
-                },
-                "paymentRequest": {
-                    "allowedPaymentMethods": [{
-                    "parameters": {
-                        "allowedAuthMethods": ["PAN_ONLY", "CRYPTOGRAM_3DS"],
-                        "allowedCardNetworks": ["AMEX", "DISCOVER", "JCB", "MASTERCARD", "VISA"]
-                    },
-                    "tokenizationSpecification": {
-                        "parameters": {
-                        "gateway": "trustpayments",
-                        "gatewayMerchantId": "test_agenthealth119402"
-                        },
-                        "type": "PAYMENT_GATEWAY"
-                    },
-                    "type": "CARD"
-                    }],
-                    "environment":"TEST",
-                    "apiVersion": 2,
-                    "apiVersionMinor": 0,
-                    "merchantInfo": {
-                    "merchantId": "BCR2DN4T5GROHDAU"
-                    },
-                    "transactionInfo": {
-                        "countryCode": "UK",
-                        "currencyCode": currencyiso3a,
-                        "checkoutOption": "COMPLETE_IMMEDIATE_PURCHASE",
-                        "totalPriceStatus": "FINAL",
-                        "totalPrice": String(final_price),
-                        "displayItems": [{
-                            "label": "Example item",
-                            "price": "10.00",
-                            "type": "LINE_ITEM",
-                            "status": "FINAL"
-                        }]
-                    }
-                }
-            });
         } catch (error) {
             console.error("Error initializing SecureTrading:", error);
         }

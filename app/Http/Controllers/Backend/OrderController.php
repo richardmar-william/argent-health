@@ -246,86 +246,8 @@ class OrderController extends Controller
         $shippingCostCharged = $order->shipping;
         $otherCosts = $order->tax;
         $total = $order->total;
-                header("content-type: application/json");
-       print_r(json_encode(array(
-                "items" => array(
-                    array(
-                        "orderReference" => $order->id,
-                        "recipient" => array(
-                            "address" => array(
-                                "fullName" => $fullName,
-                                "addressLine1" => $addressLine1,
-                                "city" => $city,
-                                "county" => "UK",
-                                "postcode" => $postcode,
-                                "countryCode" => "GB" // Corrected the country code to "GB" for the United Kingdom
-                            ),
-                            "phoneNumber" => $userphone,
-                            "emailAddress" => $useremail
-                        ),
-                        
-                        "sender" => array(
-                            "tradingName" => $tradingName,
-                            // "phoneNumber" => $phoneNumber,
-                            "phoneNumber" => $userphone,
-                            "emailAddress" => "info@agenthealth.co.uk"
-                            // "emailAddress" => $emailAddress
-                            // "emailAddress" => $useremail
-                        ),
-                        "billing" => array(
-                            "address" => array(
-                                "fullName" => $fullName,
-                                "addressLine1" => $addressLine1,
-                                "city" => $city,
-                                "county" => "UK",
-                                "postcode" => $postcode,
-                                "countryCode" => "GB" // Corrected the country code to "GB" for the United Kingdom
-                            ),
-                            "phoneNumber" => $userphone,
-                            "emailAddress" => $useremail
-                        ),
-                        "packages" => array(
-                            array(
-                                "weightInGrams" => $weightInGrams,
-                                "packageFormatIdentifier" => "parcel",
-                                "dimensions" => array(
-                                    "heightInMms" => $heightInMms,
-                                    "widthInMms" => $widthInMms,
-                                    "depthInMms" => $depthInMms
-                                ),
-                                "contents" => array(
-                                    array(
-                                        "SKU" => $order->ref_id,
-                                        "quantity" => 1,
-                                        "unitValue" => 4,
-                                        "unitWeightInGrams" => $weightInGrams,
-                                        "requiresExportLicence" => true
-                                    )
-                                )
-                            )
-                        ),
-                        "orderDate" => $orderDate,
-                        "subtotal" => $subtotal,
-                        "shippingCostCharged" => $shippingCostCharged,
-                        "otherCosts" => $otherCosts,
-                        "total" => $total,
-                        "currencyCode" => "GBP", 
-                        "postageDetails" => array(
-                            "sendNotificationsTo" => "sender",
-                            "consequentialLoss" => 0,
-                            "receiveEmailNotification" => true,
-                            "receiveSmsNotification" => true,
-                            "guaranteedSaturdayDelivery" => false,
-                            "requestSignatureUponDelivery" => true,
-                            "isLocalCollect" => true,
-                            "requiresExportLicense" => true
-                        ),
-                        "label" => array(
-                            "includeLabelInResponse" => true,
-                            "includeCN" => true,
-                            "includeReturnsLabel" => true
-                        )
-                ))))); exit;
+        header("content-type: application/json");
+       
 
         $curl = curl_init();
         curl_setopt_array($curl, array(
