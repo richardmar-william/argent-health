@@ -144,6 +144,9 @@
                         <label for="email" class="form-label">Email Address:</label>
                         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
                     </div>
+                    @error('email')
+                    <span class="text-danger">{{ $message }}</span>
+                    @enderror
                     <div class="form-group input-password">
                         <label for="pwd" class="form-label">Password:</label>
                         <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
@@ -3114,6 +3117,14 @@ var productList = <?=json_encode($productList)?>;
         }
     })
 </script>
+
+        @error('email')
+        <script>
+            $(document.body).ready(function() {
+                $(".input-password").show();
+            })
+        </script>
+        @enderror
 
 <!--product add to cart popup -->
 <!-- <script>

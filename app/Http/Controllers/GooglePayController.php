@@ -129,6 +129,7 @@ class GooglePayController extends Controller
             
 
             Session::put('placed_order','placed');
+            Session::put('product_id',$request->product_id);
             Session::forget('sessionid');
             Session::forget('hair_loss');
             Session::forget('beard_browth');

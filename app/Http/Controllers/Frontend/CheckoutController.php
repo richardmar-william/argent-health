@@ -548,6 +548,7 @@ class CheckoutController extends Controller
                 $this->sendOrderConfirmMail($full_name, $order_num);
                 
                 Session::put("order_id", $order_data->ref_id);
+                Session::put("product_id", $data['product_ids']);
                 Session::put('placed_order','placed');
                 Session::forget('sessionid');
                 Session::forget('hair_loss');
