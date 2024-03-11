@@ -461,6 +461,7 @@
                                                     <div id="st-security-code" class="st-form__group st-form__iframe-container"></div>
                                                 </div>
                                             </div>
+                                            <input type='hidden' name='subscription_duration' value="{{$subscription_dur}}">
                                             <button type="submit" class="btn_order_pay">Pay with Card</button>
                                        
                                         </form>
@@ -602,7 +603,7 @@
         // const sitereference = "agenthealth119403";
         const sitereference = "test_agenthealth119402";
         const subscriptiontype = "RECURRING";
-        const subscriptionunit = "MONTH";
+        const subscriptionunit = "DAY";
         const subscriptionfrequency = subscriptionDuration;
         const subscriptionfinalnumber = "12";
         const subscriptionbegindate = subscribtionPaymentDate;
@@ -691,7 +692,8 @@
                 },
                 styles: {
                     'background-color-input': '#e2e8f0',
-                    'font-size-label': '18px',
+                    'font-size-input': '1rem',
+                    'font-size-label': '1rem',
                     'color-input': '#000',
                     'border-size-input': "0px",
                 }

@@ -354,6 +354,7 @@
             <div class="col col-12 col-md-12 col-lg-6 thankyou-right">
                 <?php
                 $product_id = Session::get("product_id");
+                $subscription_duration = Session::get('subscription_duration');
 
                 $product = DB::table('products')->where('id',$product_id)->first();
                 if(empty($product)) {
@@ -367,9 +368,9 @@
                 else {
                     $total_price = $product->price;
                     $first_time_discount = $product->first_time_disc;
-                    $discount_price = $product->price - $product->first_time_disc;
+                    $discount_price = $subscription_duration == 0 ? 0 : $product->price - $product->first_time_disc;
                     $category_id = $product->category_id;
-                    $price = $first_time_discount;
+                    $price = $subscription_duration == 0 ? $total_price: $first_time_discount;
                     $productName = $product->name;
                 }
                 ?>

@@ -549,6 +549,7 @@ class CheckoutController extends Controller
                 
                 Session::put("order_id", $order_data->ref_id);
                 Session::put("product_id", $data['product_ids']);
+                Session::put("subscription_duration", $request->subscription_duration);
                 Session::put('placed_order','placed');
                 Session::forget('sessionid');
                 Session::forget('hair_loss');

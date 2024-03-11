@@ -657,10 +657,10 @@
                                                     <!-- <div id="st-notification-frame"></div> -->
                                                         <div class="col col-12">
                                                             <div class="row">
-                                                                <div class="col col-12 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">    
+                                                                <div class="col col-12 col-md-12 col-lg-6 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">    
                                                                     <div id="st-apple-pay" style="width: 100%"></div>
                                                                 </div>
-                                                                <div class="col col-12 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">
+                                                                <div class="col col-12 col-md-12 col-lg-6 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">
                                                                     <div id='st-google-pay' style="width: 100%"></div>
                                                                 </div>
                                                             </div>
@@ -1337,7 +1337,7 @@ window.initAutocomplete();
             var productInfo = getProductInfo($(this).attr("product-id"));
             var total_price = productInfo.first_time_disc
             if($(this).val() == 0) {
-                total_price = total_price;
+                total_price = productInfo.price;
                 $(".discount-price").text("£0.00");
                 $("#first_time_disc").text("£"+productInfo.price+".00");
                 $("#final_price del").text("")
@@ -1430,12 +1430,12 @@ window.initAutocomplete();
             const formattedCurrentDate = formatCurrentDate();
 
             let subscribtionPaymentDate = null;
-            const subscription_dur = $("[name='input_product_sub']").val();
+            const subscription_dur = $("[name='subscription_duration']").val();
             if(subscription_dur == 3) {
                 subscribtionPaymentDate = formatThreeMonthDate();
             }
 
-
+            console.log('subscription_dur', subscription_dur)
             const header = {
                 alg: "HS256",
                 typ: "JWT"
@@ -1448,15 +1448,9 @@ window.initAutocomplete();
             const sitereference = "agenthealth119403";
             // const sitereference = "test_agenthealth119402";
             const googleMerchantId = "BCR2DN4T5GROHDAU"
-            const subscriptiontype = "RECURRING";
-            // const subscriptionunit = "DAY";
-            const subscriptionunit = "MONTH";
-            const subscriptionfrequency = subscription_dur == 0 ? 1: subscription_dur;
-            const subscriptionfinalnumber = subscription_dur == 0 ? 1 : 12;
-            // const subscriptionfinalnumber =  12;
-            const subscriptionbegindate = subscribtionPaymentDate;
             const credentialsonfile = "1";
-            const requesttypedescriptions = ["THREEDQUERY", "AUTH", "SUBSCRIPTION"];
+            let requesttypedescriptions = ["THREEDQUERY", "AUTH"];
+            if(subscription_dur > 0) requesttypedescriptions.push("SUBSCRIPTION");
             const locale = "en_GB";
             
             //26oct23 delivery details
@@ -1482,14 +1476,9 @@ window.initAutocomplete();
                     "baseamount": amount * 100,
                     "currencyiso3a": currencyiso3a,
                     "sitereference": sitereference,
-                    "subscriptiontype": subscriptiontype,
-                    "subscriptionunit": subscriptionunit,
-                    "subscriptionfrequency": subscriptionfrequency,
-                    "subscriptionnumber": subscriptionnumber,
-                    "subscriptionfinalnumber": subscriptionfinalnumber,
-                    "subscriptionbegindate": subscriptionbegindate,
                     "credentialsonfile": credentialsonfile,
                     "requesttypedescriptions": requesttypedescriptions,
+                    // "subscriptionnumber": subscriptionnumber,
                     // "walletsoure": "GOOGLEPAY",
                     // orderreference: orderreference,
                     //26oct23
@@ -1516,9 +1505,27 @@ window.initAutocomplete();
                     // accounttypedescription:"RECUR",
 
                 },
+
                 iat: Math.floor(Date.now() / 1000),
                 iss: "jwt@agenthealth.com"
             }
+            if(subscription_dur > 0) {
+                const subscriptiontype = "RECURRING";
+                const subscriptionunit = "DAY";
+                // const subscriptionunit = "MONTH";
+                const subscriptionfrequency = subscription_dur == 0 ? 1: subscription_dur;
+                const subscriptionfinalnumber = subscription_dur == 0 ? 1 : 12;
+                // const subscriptionfinalnumber =  12;
+                const subscriptionbegindate = subscribtionPaymentDate;
+                
+                payload.payload.subscriptiontype = subscriptiontype;
+                payload.payload.subscriptionunit = subscriptionunit;
+                payload.payload.subscriptionfrequency = subscriptionfrequency;
+                payload.payload.subscriptionnumber = subscriptionnumber;
+                payload.payload.subscriptionfinalnumber = subscriptionfinalnumber;
+                payload.payload.subscriptionbegindate = subscriptionbegindate;
+            }
+            console.log(payload)
             const base64UrlHeader = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
                 '_');
             const base64UrlPayload = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
