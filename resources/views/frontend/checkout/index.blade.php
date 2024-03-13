@@ -1434,8 +1434,9 @@ window.initAutocomplete();
             if(subscription_dur == 3) {
                 subscribtionPaymentDate = formatThreeMonthDate();
             }
-
-            console.log('subscription_dur', subscription_dur)
+            else (subscription_dur == 1)
+                subscribtionPaymentDate = formatNextMonthDate();
+                
             const header = {
                 alg: "HS256",
                 typ: "JWT"
@@ -1476,7 +1477,6 @@ window.initAutocomplete();
                     "baseamount": amount * 100,
                     "currencyiso3a": currencyiso3a,
                     "sitereference": sitereference,
-                    "credentialsonfile": credentialsonfile,
                     "requesttypedescriptions": requesttypedescriptions,
                     // "subscriptionnumber": subscriptionnumber,
                     // "walletsoure": "GOOGLEPAY",
@@ -1518,6 +1518,7 @@ window.initAutocomplete();
                 // const subscriptionfinalnumber =  12;
                 const subscriptionbegindate = subscribtionPaymentDate;
                 
+                payload.payload.credentialsonfile = credentialsonfile;
                 payload.payload.subscriptiontype = subscriptiontype;
                 payload.payload.subscriptionunit = subscriptionunit;
                 payload.payload.subscriptionfrequency = subscriptionfrequency;
@@ -1525,7 +1526,6 @@ window.initAutocomplete();
                 payload.payload.subscriptionfinalnumber = subscriptionfinalnumber;
                 payload.payload.subscriptionbegindate = subscriptionbegindate;
             }
-            console.log(payload)
             const base64UrlHeader = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
                 '_');
             const base64UrlPayload = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
@@ -1536,7 +1536,7 @@ window.initAutocomplete();
             const base64UrlSignature = CryptoJS.enc.Base64.stringify(signature).replace(/=/g, '').replace(/\+/g, '-')
                 .replace(/\//g, '_');
             const jwt = `${tokenContent}.${base64UrlSignature}`;
-            
+            console.log(payload)
             var st = SecureTrading({
                 jwt: jwt,
                 formId: "st-form",

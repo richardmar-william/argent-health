@@ -112,7 +112,7 @@
 						@endphp
             <tr class="">
                 <!-- <td>{{$quationnairs->id}}</td> -->
-                <td>{{$email->email}}</td>
+                <td><a href='mailto:{{$email->email}}'>{{$email->email}}</td>
                 <td>{{$categoryName}}</td>
                 <td>{{$email->updated_at}}</td>
                 <td>

@@ -600,15 +600,13 @@
         const amount = finalPrice;
         const accounttypedescription = "ECOM";
         const currencyiso3a = "GBP";
-        // const sitereference = "agenthealth119403";
-        const sitereference = "test_agenthealth119402";
-        const subscriptiontype = "RECURRING";
-        const subscriptionunit = "DAY";
-        const subscriptionfrequency = subscriptionDuration;
-        const subscriptionfinalnumber = "12";
-        const subscriptionbegindate = subscribtionPaymentDate;
+        const sitereference = "agenthealth119403";
+        // const sitereference = "test_agenthealth119402";
         const credentialsonfile = "1";
-        const requesttypedescriptions = ["THREEDQUERY", "AUTH", "SUBSCRIPTION"];
+        let requesttypedescriptions = ["THREEDQUERY", "AUTH"];
+        if(subscriptionDuration > 0) {
+            requesttypedescriptions.push("SUBSCRIPTION")
+        }
         const locale = "en_GB";
         const orderreference = "{{ $order_refId }}";
         //26oct23 delivery details
@@ -635,12 +633,6 @@
                 baseamount: amount * 100,
                 currencyiso3a: currencyiso3a,
                 sitereference: sitereference,
-                subscriptiontype: subscriptiontype,
-                subscriptionunit: subscriptionunit,
-                subscriptionfrequency: subscriptionfrequency,
-                subscriptionnumber: subscriptionnumber,
-                subscriptionfinalnumber: subscriptionfinalnumber,
-                subscriptionbegindate: subscriptionbegindate,
                 credentialsonfile: credentialsonfile,
                 requesttypedescriptions: requesttypedescriptions,
                 orderreference: orderreference,
@@ -671,6 +663,23 @@
             iat: Math.floor(Date.now() / 1000),
             iss: "jwt@agenthealth.com"
         };
+        if(subscriptionDuration > 0) {
+            const subscriptiontype = "RECURRING";
+            const subscriptionunit = "DAY";
+            // const subscriptionunit = "MONTH";
+            const subscriptionfrequency = subscriptionDuration == 0 ? 1: subscriptionDuration;
+            const subscriptionfinalnumber = subscriptionDuration == 0 ? 1 : 12;
+            // const subscriptionfinalnumber =  12;
+            const subscriptionbegindate = subscribtionPaymentDate;
+            
+            payload.payload.subscriptiontype = subscriptiontype;
+            payload.payload.subscriptionunit = subscriptionunit;
+            payload.payload.subscriptionfrequency = subscriptionfrequency;
+            payload.payload.subscriptionnumber = subscriptionnumber;
+            payload.payload.subscriptionfinalnumber = subscriptionfinalnumber;
+            payload.payload.subscriptionbegindate = subscriptionbegindate;
+        }
+
         const base64UrlHeader = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
             '_');
         const base64UrlPayload = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g,
