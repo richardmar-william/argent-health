@@ -680,6 +680,9 @@
                                             @csrf
                                             <input type="hidden" name="session_id" value="{{$sessionId}}">
                                             <input type="hidden" name="total_price" value="">
+                                            <input type="hidden" name="billing_street" value="{{$addresses->address}}">
+                                            <input type="hidden" name="billing_city" value="{{$addresses->city}}">
+                                            <input type="hidden" name="billing_zipcode" value="{{$addresses->zip_code}}">
                                             <input type="hidden" id="ass_coupon_code" name="coupon_code"
                                                 value="">
                                             <input type="hidden" id="address_id" type="hidden" name="address_id"
@@ -1200,126 +1203,6 @@ function appendRadioValue(selectedId) {
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6w6K6XGM-FfYNTKiSNmgcWFzwOqXqWaw&libraries=places">
 </script>
-<script>
-const apiKey = "AIzaSyB6w6K6XGM-FfYNTKiSNmgcWFzwOqXqWaw";
-let autocomplete;
-let address1Field;
-let address2Field;
-let postalField;
-
-function initAutocomplete() {
-  address1Field = document.querySelector("#new_address");
-  address2Field = document.querySelector("#city_dropdown");
-  postalField = document.querySelector("#zipcode");
-  // Create the autocomplete object, restricting the search predictions to
-  // addresses in the US and Canada.
-    autocomplete = new google.maps.places.Autocomplete(address1Field, {
-    componentRestrictions: { country: ["uk"] },
-    fields: ["address_components", "geometry"],
-    types: ["address"],
-  });
-  address1Field.focus();
-  // When the user selects an address from the drop-down, populate the
-  // address fields in the form.
-  autocomplete.addListener("place_changed", fillInAddress);
-}
-
-function fillInAddress() {
-  // Get the place details from the autocomplete object.
-  const place = autocomplete.getPlace();
-  let address1 = "";
-  let postcode = "";
-
-  // Get each component of the address from the place details,
-  // and then fill-in the corresponding field on the form.
-  // place.address_components are google.maps.GeocoderAddressComponent objects
-  // which are documented at http://goo.gle/3l5i5Mr
-  for (const component of place.address_components) {
-    // @ts-ignore remove once typings fixed
-    const componentType = component.types[0];
-        switch (componentType) {
-      case "street_number": {
-        address1 = `${component.long_name} ${address1}`;
-        break;
-      }
-
-      case "route": {
-        address1 += component.short_name;
-        break;
-      }
-
-      case "postal_code": 
-      case "postal_code_suffix": 
-    {
-        postcode = component.long_name;
-        break;
-      }
-
-      case "locality":
-      case "postal_town":
-        document.querySelector("#city_dropdown").value = component.long_name;
-        break;
-    //   case "administrative_area_level_1": {
-    //     document.querySelector("#state").value = component.short_name;
-    //     break;
-    //   }
-    //   case "country":
-    //     document.querySelector("#country").value = component.long_name;
-    //     break;
-    }
-  }
-  address1Field.value = address1;
-  postalField.value = postcode;
-  // After filling the form with address components from the Autocomplete
-  // prediction, set cursor focus on the second address line to encourage
-  // entry of subpremise information such as apartment, unit, or floor number.
-  address2Field.focus();
-}
-$(document).ready(function() {
-    $("#order_btn").click(function() {
-        $("#btn_pay_sub").click();
-    });
-    $("#cancel_order").click(function() {
-        window.history.back();
-    });
-
-    $("#saved_address").change(function() {
-        const addresses = <?php echo json_encode($savedAddress);?>;
-
-        for(var i = 0 ; i < addresses.length ; i ++) {
-            if(addresses[i].id == $(this).val()) {
-                $("#new_address").val(addressses[i].address);
-                $("#zipcoe").val(addressses[i].zip_code);
-                $("#city_dropdown").val(addressses[i].city);
-                return;
-            }
-        }
-    })
-    const loggedIn = '<?php echo Auth::check();?>';
-    if(localStorage.getItem("new_user_email") && loggedIn) {
-        localStorage.removeItem("new_user_email");
-        $(".logged-in").hide();
-        $(".login-in").hide();
-        $("#signups").hide();
-        $("#address_order").show();
-    }
-    $("#to_shipping").click(function() {
-        $(".login").hide();
-        if(loggedIn) {
-            $(".logged-in").hide();
-            $("#address_order").show();
-        }
-        else  {
-            $("#signups").show();
-            $("#address_order").hide();
-
-        }
-    })
-})
-window.initAutocomplete = initAutocomplete;
-window.initAutocomplete();
-
-</script>
 
 <script type="text/javascript">
     $(document).ready(function(){
@@ -1368,11 +1251,15 @@ window.initAutocomplete();
         })
     })
 </script>
-@if(Auth::check())
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
 <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
 <script>
+    var st = null;
+    var initST = null;
+    <?php
+    if(Auth::check()) {
+        ?>
     $(document).ready(function() {
         function formatCurrentDate() {
             const currentDate = new Date();
@@ -1423,10 +1310,11 @@ window.initAutocomplete();
 
         }
         $("[name='input_product_sub']").click(function (){
-            $("#st-apple-pay,#st-google-pay").empty();
             initST();
         })
-        function initST() {
+        initST = function () {
+            $("#st-apple-pay,#st-google-pay").empty();
+            if(st) st.destroy();
             const formattedCurrentDate = formatCurrentDate();
 
             let subscribtionPaymentDate = null;
@@ -1486,7 +1374,7 @@ window.initAutocomplete();
                     "billingtelephone": billingtelephone,
                     // billingstreet: billingstreet,
                     "billingtown": billingtown,
-                    // "billingpostcode": billingpostcode,
+                    "billingpostcode": billingpostcode,
                     "billingemail": billingemail,
                     "billingpremise": billingpremise,
                     "billingcountryiso2a": billingcountryiso2a,
@@ -1494,7 +1382,7 @@ window.initAutocomplete();
                     "customerfirstname": customerfirstname,
                     "customertelephone": customertelephone,
                     "customertown": customertown,
-                    // "customerpostcode": customerpostcode,
+                    "customerpostcode": customerpostcode,
                     "customeremail": customeremail,
                     "customerpremise": customerpremise,
                     "customercountryiso2a": customercountryiso2a,
@@ -1511,8 +1399,8 @@ window.initAutocomplete();
             }
             if(subscription_dur > 0) {
                 const subscriptiontype = "RECURRING";
-                const subscriptionunit = "DAY";
-                // const subscriptionunit = "MONTH";
+                // const subscriptionunit = "DAY";
+                const subscriptionunit = "MONTH";
                 const subscriptionfrequency = subscription_dur == 0 ? 1: subscription_dur;
                 const subscriptionfinalnumber = subscription_dur == 0 ? 1 : 12;
                 // const subscriptionfinalnumber =  12;
@@ -1537,7 +1425,7 @@ window.initAutocomplete();
                 .replace(/\//g, '_');
             const jwt = `${tokenContent}.${base64UrlSignature}`;
             console.log(payload)
-            var st = SecureTrading({
+            st = SecureTrading({
                 jwt: jwt,
                 formId: "st-form",
             });
@@ -1605,6 +1493,146 @@ window.initAutocomplete();
         initST()
         
     });
+    
+        <?php
+    }
+    ?>
+    const apiKey = "AIzaSyB6w6K6XGM-FfYNTKiSNmgcWFzwOqXqWaw";
+    let autocomplete;
+    let address1Field;
+    let address2Field;
+    let postalField;
+    function setBillingAddress() {
+        $("[name='billing_street']").val($("#new_address").val())
+        $("[name='billing_city']").val($("#city_dropdown").val())
+        $("[name='billing_zipcode']").val($("#zipcode").val())
+    }
+    $(document.body).ready(function() {
+        var timer = null;
+        console.log($("#city_dropdown,#new_address,#zipcode"))
+        $("#city_dropdown,#new_address,#zipcode").keyup(function() {
+            console.log('df')
+            if(timer) clearTimeout(timer)
+            timer = setTimeout(function() {
+                setBillingAddress();
+                if(initST) initST()
+            }, 500)
+        })
+    })
+    function initAutocomplete() {
+        address1Field = document.querySelector("#new_address");
+        address2Field = document.querySelector("#city_dropdown");
+        postalField = document.querySelector("#zipcode");
+        // Create the autocomplete object, restricting the search predictions to
+        // addresses in the US and Canada.
+            autocomplete = new google.maps.places.Autocomplete(address1Field, {
+            componentRestrictions: { country: ["uk"] },
+            fields: ["address_components", "geometry"],
+            types: ["address"],
+        });
+        address1Field.focus();
+        // When the user selects an address from the drop-down, populate the
+        // address fields in the form.
+        autocomplete.addListener("place_changed", fillInAddress);
+        }
+
+        function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        const place = autocomplete.getPlace();
+        let address1 = "";
+        let postcode = "";
+
+        // Get each component of the address from the place details,
+        // and then fill-in the corresponding field on the form.
+        // place.address_components are google.maps.GeocoderAddressComponent objects
+        // which are documented at http://goo.gle/3l5i5Mr
+        for (const component of place.address_components) {
+            // @ts-ignore remove once typings fixed
+            const componentType = component.types[0];
+            console.log(component, componentType)
+            switch (componentType) {
+            case "street_number": {
+                address1 = `${component.long_name} ${address1}`;
+                break;
+            }
+
+            case "route": {
+                address1 += component.short_name;
+                break;
+            }
+
+            case "postal_code": 
+            case "postal_code_suffix": 
+            {
+                postcode = component.long_name;
+                break;
+            }
+
+            case "locality":
+            case "postal_town":
+                document.querySelector("#city_dropdown").value = component.long_name;
+                break;
+            //   case "administrative_area_level_1": {
+            //     document.querySelector("#state").value = component.short_name;
+            //     break;
+            //   }
+            //   case "country":
+            //     document.querySelector("#country").value = component.long_name;
+            //     break;
+            }
+        }
+        address1Field.value = address1;
+        postalField.value = postcode;
+        // After filling the form with address components from the Autocomplete
+        // prediction, set cursor focus on the second address line to encourage
+        // entry of subpremise information such as apartment, unit, or floor number.
+        address2Field.focus();
+        if(initST) initST();
+        setBillingAddress();
+    }
+    $(document).ready(function() {
+        $("#order_btn").click(function() {
+            $("#btn_pay_sub").click();
+        });
+        $("#cancel_order").click(function() {
+            window.history.back();
+        });
+
+        $("#saved_address").change(function() {
+            const addresses = <?php echo json_encode($savedAddress);?>;
+
+            for(var i = 0 ; i < addresses.length ; i ++) {
+                if(addresses[i].id == $(this).val()) {
+                    $("#new_address").val(addressses[i].address);
+                    $("#zipcoe").val(addressses[i].zip_code);
+                    $("#city_dropdown").val(addressses[i].city);
+                    return;
+                }
+            }
+        })
+        const loggedIn = '<?php echo Auth::check();?>';
+        if(localStorage.getItem("new_user_email") && loggedIn) {
+            localStorage.removeItem("new_user_email");
+            $(".logged-in").hide();
+            $(".login-in").hide();
+            $("#signups").hide();
+            $("#address_order").show();
+        }
+        $("#to_shipping").click(function() {
+            $(".login").hide();
+            if(loggedIn) {
+                $(".logged-in").hide();
+                $("#address_order").show();
+            }
+            else  {
+                $("#signups").show();
+                $("#address_order").hide();
+
+            }
+        })
+    })
+    window.initAutocomplete = initAutocomplete;
+    window.initAutocomplete();
+
   
 </script>
-@endif

@@ -4,6 +4,9 @@
     $user = DB::table('users')->where('id', $user_id)->first();
     $user_address1 =  DB::table('delivery_address')->where('user_id', $user_id)->orderBy('id','DESC')->first();
     $user_address2 =  DB::table('delivery_address')->where('id', $order->user_address_id)->first();
+    if(isset($billing_street) && !empty($billing_street)) $user_address1->address = $billing_street;
+    if(isset($billing_city) && !empty($billing_city)) $user_address1->city = $billing_city;
+    if(isset($billing_zipcode) && !empty($billing_zipcode)) $user_address1->zip_code = $billing_zipcode;
     $user_name = $user->full_name;
     $user_tel = $user->phone;
     $user_email = $user->email;

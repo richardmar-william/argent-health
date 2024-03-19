@@ -564,10 +564,10 @@ class CheckoutController extends Controller
 
         if(Session::has('placed_order')){
             Session::forget('placed_order');
-            session()->flash('message', 'You have already placed this order!');
-            session()->flash('alert-type', 'danger');
-            // toast('You have already placed this order', 'error');
-            return redirect('/shop');
+                session()->flash('message', 'You have already placed this order!');
+                session()->flash('alert-type', 'danger');
+                // toast('You have already placed this order', 'error');
+                return redirect('/shop');
             }
             //  dd($user_id);
             $latestOrder = Order::latest()->first();
@@ -686,11 +686,13 @@ class CheckoutController extends Controller
 
 
         // DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
-
         $sessionId = $request->session_id;
         $cc = $request->coupon_code;
+        $billing_street = isset($request->billing_street) ? $request->billing_street : "";
+        $billing_city = isset($request->billing_city) ? $request->billing_city : "";
+        $billing_zipcode = isset($request->billing_zipcode) ? $request->billing_zipcode : "";
         
-        return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc'));
+        return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc','billing_street','billing_city','billing_zipcode'));
 
         //  return redirect('checkout/payment-page')->route('payment.page',['user_id'=>$user_id,'order_id'=>$order_id,'final_price'=>$final_price]);
         // for testing
