@@ -9,7 +9,7 @@
     <meta name="language" content="en" />
     <meta name="country" content="us" />
     <meta name="robots" content="INDEX, FOLLOW" />
-    <title>Cart Product</title>
+    <title>Order confirmed</title>
     <meta name="keywords" content="" />
     <meta name="description" content="" />
     <meta property="og:title" content="html" />

@@ -126,7 +126,70 @@ class GooglePayController extends Controller
             array_push($fileContent, $request->all());
             file_put_contents($fileurl, json_encode($fileContent));
 
-            
+            if($_SERVER['REMOTE_ADDR'] == "191.178.104.67") {
+                $product = Product::where("id", $request->product_id)->get()->first();
+                $jsonData = [
+                    "alias" => "ws@agenthealth.com",
+                    "version" => "1.0",
+                    "request" => [
+                        [
+                            "requesttypedescriptions" => ["AUTH"],
+                            "subscriptiontype" => "RECURRING",
+                            "subscriptionnumber" => "2",
+                            "credentialsonfile" => "2",
+                            "parenttransactionreference"=> $request->transactionreference,
+                            "sitereference" => "test_agenthealth119402",
+                            "baseamount" => $product->price * 100,
+                            "accounttypedescription" => "RECUR",
+                        ]
+                    ]
+                ];
+
+                $headers = [
+                    "Content-Type: application/json",
+                    "Accept: application/json",
+                ];
+
+                $curl = curl_init();
+
+                curl_setopt_array($curl, [
+                    CURLOPT_URL => 'https://webservices.securetrading.net/json',
+                    CURLOPT_RETURNTRANSFER => true,
+                    CURLOPT_USERPWD => 'ws@agenthealth.com:_3d{,Kk[,!dd',
+                    CURLOPT_HTTPHEADER => $headers,
+                    CURLOPT_CUSTOMREQUEST => 'POST',
+                    CURLOPT_POSTFIELDS => json_encode($jsonData),
+                ]);
+                // print_r($jsonData); exit;
+                $response = curl_exec($curl);
+                print_r($response); exit;
+                if (curl_errno($curl)) {
+
+                    return view('frontend.checkout.error',compact('user_id','order_id'));
+
+                } else {
+                    $responseData = json_decode($response, true);
+                    // print_r($response); exit;
+                    // $errorcode = $responseData['response'][0]['errorcode'];
+                    // if($errorcode == 0){
+                    //     $requestReference = $responseData['requestreference'];
+                    //     if($requestReference) {
+
+                    //         $ResponseCode = $responseData['response'][0]['acquirerresponsecode'];
+                    //         $ammount = $responseData['response'][0]['baseamount'];
+                    //         $currency = $responseData['response'][0]['currencyiso3a'];
+                    //         $merchantname = $responseData['response'][0]['merchantname'];
+                    //         $orderreference = $responseData['response'][0]['orderreference'];
+                    //     }
+
+        
+                    // }
+                    // else{
+                    //     return view('frontend.checkout.error',compact('user_id','order_id'));
+                    // }
+                }
+                curl_close($curl);
+            }
 
             Session::put('placed_order','placed');
             Session::put('product_id',$request->product_id);

@@ -556,9 +556,9 @@ class CheckoutController extends Controller
                 Session::forget('beard_browth');
                 Session::forget('erectile_dysfunction');
                 Session::forget('premature_ejaculation');
-                return redirect('http://agenthealth.co.uk/agent/public/checkout/success1');
+                return redirect('/checkout/success1');
             }else{
-                return redirect('http://agenthealth.co.uk/agent/public/checkout/error');
+                return redirect('/checkout/error');
             }
         }
 
