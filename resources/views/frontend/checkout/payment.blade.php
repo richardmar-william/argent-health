@@ -644,7 +644,7 @@
                 billingtelephone: billingtelephone,
                 // billingstreet: billingstreet,
                 billingtown: billingtown,
-                // billingpostcode: billingpostcode,
+                billingpostcode: billingpostcode,
                 billingemail: billingemail,
                 billingpremise: billingpremise,
                 billingcountryiso2a: billingcountryiso2a,
@@ -653,7 +653,7 @@
                 customertelephone: customertelephone,
                 // customerstreet: customerstreet,
                 customertown: customertown,
-                // customerpostcode: customerpostcode,
+                customerpostcode: customerpostcode,
                 customeremail: customeremail,
                 customerpremise: customerpremise,
                 customercountryiso2a: customercountryiso2a,
@@ -668,13 +668,14 @@
         };
         if(subscriptionDuration > 0) {
             const subscriptiontype = "RECURRING";
-            const subscriptionunit = "DAY";
-            // const subscriptionunit = "MONTH";
+            // const subscriptionunit = "DAY";
+            const subscriptionunit = "MONTH";
             const subscriptionfrequency = subscriptionDuration == 0 ? 1: subscriptionDuration;
             const subscriptionfinalnumber = subscriptionDuration == 0 ? 1 : 12;
             // const subscriptionfinalnumber =  12;
             const subscriptionbegindate = subscribtionPaymentDate;
             
+            payload.payload.credentialsonfile = credentialsonfile;
             payload.payload.subscriptiontype = subscriptiontype;
             payload.payload.subscriptionunit = subscriptionunit;
             payload.payload.subscriptionfrequency = subscriptionfrequency;

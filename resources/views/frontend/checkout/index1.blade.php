@@ -1467,7 +1467,6 @@ window.initAutocomplete();
             jwt: jwt,
             formId: "st-form",
         });
-        console.log("asdf => ", st, jwt)
         st.Components();
         st.GooglePay({
             "buttonOptions": {

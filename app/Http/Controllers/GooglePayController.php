@@ -11,9 +11,6 @@ use App\Models\AffiliateCouponDetails;
 use App\Models\Temp;
 use App\Models\Order;
 use App\Models\Product;
-use App\Models\Media;
-use Illuminate\Support\Facades\Cache;
-use App\Models\UserAddress;
 use App\Traits\SMPT2GoTrait;
 use Session;
 Use DB;
@@ -79,20 +76,13 @@ class GooglePayController extends Controller
                         'user_id' => $user_id,
                         'affiliate_code_id' => isset($coupon_data->id) ? $coupon_data->id : '',
                         'user_address_id' => $request->address_id,
-                    // 'user_address_id' => $request['userAddressId'],
-                    // 'shipping_company_id' => $request['shippingCompanyId'],
-                    // 'payment_method_id' => $request['paymentMethodId'],
                         'subtotal' => $request->total_price,
-                        // 'discount_code' => session()->has('coupon') ? session()->get('coupon')['code'] : NULL,
                         'discount_code' => $request->coupon_code,
-                    // 'discount' => getNumbersOfCart()->get('discount'),
-                    // 'shipping' => getNumbersOfCart()->get('shipping'),
                         'tax' => getNumbersOfCart()->get('productTaxes'),
                         'total' => $final_price,
                         'subscription' => $subscription_dur,
                         'currency' => 'GBP',
                         'order_status' => 0,
-
                         'session_id'=>$request->session_id,
                     ]);
                 $orderId=$order->id;
@@ -106,14 +96,7 @@ class GooglePayController extends Controller
             $transactions->currencyiso3a = $request->currencyiso3a;
             $transactions->transaction_id = $request->transactionreference;
             $transactions->amount = $request->total_price;
-            // $transactions->type = $request['data']['paymentMethodData']['tokenizationData']['type'] ?? '';
-            // $transactions->type = 1;
-            // $transactions->type = 1;
-            // $transactions->type = 1;
-            // $transactions->type = 1;
-            // $transactions->type = 1;
-            // $transactions->type = 1;
-            // $transactions->type = 1;
+
             if($transactions->save()) {
                 session()->flash('order_id', $order->ref_id);
                 $full_name = auth()->user()->full_name;
@@ -155,7 +138,7 @@ class GooglePayController extends Controller
                 curl_setopt_array($curl, [
                     CURLOPT_URL => 'https://webservices.securetrading.net/json',
                     CURLOPT_RETURNTRANSFER => true,
-                    CURLOPT_USERPWD => 'ws@agenthealth.com:_3d{,Kk[,!dd',
+                    CURLOPT_USERPWD => 'ws@agenthealth.com:_3d{,Kk[,!dd^',
                     CURLOPT_HTTPHEADER => $headers,
                     CURLOPT_CUSTOMREQUEST => 'POST',
                     CURLOPT_POSTFIELDS => json_encode($jsonData),

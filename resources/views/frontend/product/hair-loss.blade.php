@@ -69,7 +69,7 @@
                     </div>
 
                     <div class="align-self-sm-center text-center text-md-start" style="margin: 50px 0;">
-                        <a class="pure-white-btn" href="{{ route('questionnaire.index', $products[0]->category_id) }}">Begin your regrowth journey
+                        <a class="pure-white-btn" href="{{ route('questionnaire.index', $products[0]->category_id) }}" style="font-size: 1.3rem !important; box-shadow: 0px 0px 9px yellow;">Begin your regrowth journey
                         </a>
                     </div>
 
@@ -692,7 +692,7 @@
             </div>
             <div class="col-12 pt-40">
                 <div class="bread-start-button">
-                    <a href="https://agenthealth.co.uk/questionnaire/30" class="trans-btn black-btn learn-more-card-btn">Start your journey</a>
+                    <a href="https://agenthealth.co.uk/questionnaire/30" class="trans-btn black-btn learn-more-card-btn" style="font-size: 1.3rem;">Start your journey</a>
                 </div>
             </div>
         </div>
@@ -1372,7 +1372,7 @@
             <div class="col-xl-4 col-sm-6 col-12 ques-col-margin">
                 <div class="bread-journey-box">
                 <div class="to-buttons text-center">
-                     <a class="btn-visit" href="#">Reset</a>
+                     <a class="btn-visit">Reset</a>
                 </div>
                 <?xml version="1.0" standalone="no"?>
                     <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
@@ -1482,7 +1482,7 @@
             <div class="col-xl-4 col-sm-6 col-12 ques-col-margin">
                 <div class="bread-journey-box">
                 <div class="to-buttons text-center">
-                <a class="btn-visit" href="#">Stabilisation</a>
+                <a class="btn-visit">Stabilisation</a>
                  </div>
              <?xml version="1.0" standalone="no"?>
                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"
@@ -1589,7 +1589,7 @@
             <div class="col-xl-4 col-sm-6 col-12 ques-col-margin">
                 <div class="bread-journey-box">
                 <div class="to-buttons  text-center">
-                <a class="btn-visit" href="#">Regrowth</a>
+                <a class="btn-visit">Regrowth</a>
                 </div>
              <?xml version="1.0" standalone="no"?>
                 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 20010904//EN"

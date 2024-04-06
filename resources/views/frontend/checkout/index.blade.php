@@ -231,7 +231,7 @@
                                                 @if($month->subscription_duration == 1)
                                                 <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
                                                     <div class="form-group form-radio">
-                                                        <input type="radio" id="product_sub_month_2" name="input_product_sub" checked="checked" value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                        <input type="radio" id="product_sub_month_2" name="input_product_sub" <?php echo $prod_subs == '1' ? 'checked="checked"' : "";?>  value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
                                                         <label class="sub-leb" for="product_sub_month_2">
                                                             <h4>1 month treatment plan</h4>
                                                         </label>
@@ -240,7 +240,7 @@
                                                 @else 
                                                 <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
                                                     <div class="form-group form-radio">
-                                                        <input type="radio" id="product_sub_month_3" name="input_product_sub" product-id="{{$month->id}}" value="3">
+                                                        <input type="radio" id="product_sub_month_3" name="input_product_sub" <?php echo $prod_subs == '3' ? 'checked="checked"' : "";?> product-id="{{$month->id}}" value="3">
                                                         <label class="sub-leb" for="product_sub_month_3">
                                                             <span class="">Recommended</span>
                                                             <h4>{{$month->subscription_duration}} months treatment plan</h4>
@@ -392,6 +392,10 @@
                                     <form id="sign_form" action="{{ route('register_new') }}" method="POST"
                                         class="pb-30">
                                         @csrf
+                                        <input type="hidden" name="subscription_duration" value="{{$prod_subs}}">
+                                        <input type="hidden" name="total_price" value="{{$total_price}}">
+                                        <input type="hidden" name="product_id" value="{{$product_id}}">
+                                        
                                         <div class="form-group">
                                             <label for="email">Email address</label>
                                             <input type="email" class="form-control" name="email" value=""
@@ -680,9 +684,6 @@
                                             @csrf
                                             <input type="hidden" name="session_id" value="{{$sessionId}}">
                                             <input type="hidden" name="total_price" value="">
-                                            <input type="hidden" name="billing_street" value="{{$addresses->address}}">
-                                            <input type="hidden" name="billing_city" value="{{$addresses->city}}">
-                                            <input type="hidden" name="billing_zipcode" value="{{$addresses->zip_code}}">
                                             <input type="hidden" id="ass_coupon_code" name="coupon_code"
                                                 value="">
                                             <input type="hidden" id="address_id" type="hidden" name="address_id"
@@ -981,7 +982,6 @@ $(document).ready(function() {
     $(".getBillingAddress").click(function(e) {
         e.preventDefault();
         var billing_address = $(this).data('address');
-        console.log(billing_address);
         $('#BillingAddress').val(billing_address);
         $('.dismissModel').click();
     });
@@ -1502,93 +1502,76 @@ function appendRadioValue(selectedId) {
     let address1Field;
     let address2Field;
     let postalField;
-    function setBillingAddress() {
-        $("[name='billing_street']").val($("#new_address").val())
-        $("[name='billing_city']").val($("#city_dropdown").val())
-        $("[name='billing_zipcode']").val($("#zipcode").val())
-    }
-    $(document.body).ready(function() {
-        var timer = null;
-        console.log($("#city_dropdown,#new_address,#zipcode"))
-        $("#city_dropdown,#new_address,#zipcode").keyup(function() {
-            console.log('df')
-            if(timer) clearTimeout(timer)
-            timer = setTimeout(function() {
-                setBillingAddress();
-                if(initST) initST()
-            }, 500)
-        })
-    })
+
     function initAutocomplete() {
-        address1Field = document.querySelector("#new_address");
-        address2Field = document.querySelector("#city_dropdown");
-        postalField = document.querySelector("#zipcode");
-        // Create the autocomplete object, restricting the search predictions to
-        // addresses in the US and Canada.
-            autocomplete = new google.maps.places.Autocomplete(address1Field, {
-            componentRestrictions: { country: ["uk"] },
-            fields: ["address_components", "geometry"],
-            types: ["address"],
-        });
-        address1Field.focus();
-        // When the user selects an address from the drop-down, populate the
-        // address fields in the form.
-        autocomplete.addListener("place_changed", fillInAddress);
+    address1Field = document.querySelector("#new_address");
+    address2Field = document.querySelector("#city_dropdown");
+    postalField = document.querySelector("#zipcode");
+    // Create the autocomplete object, restricting the search predictions to
+    // addresses in the US and Canada.
+        autocomplete = new google.maps.places.Autocomplete(address1Field, {
+        componentRestrictions: { country: ["uk"] },
+        fields: ["address_components", "geometry"],
+        types: ["address"],
+    });
+    address1Field.focus();
+    // When the user selects an address from the drop-down, populate the
+    // address fields in the form.
+    autocomplete.addListener("place_changed", fillInAddress);
+    }
+
+    function fillInAddress() {
+    // Get the place details from the autocomplete object.
+    const place = autocomplete.getPlace();
+    let address1 = "";
+    let postcode = "";
+
+    // Get each component of the address from the place details,
+    // and then fill-in the corresponding field on the form.
+    // place.address_components are google.maps.GeocoderAddressComponent objects
+    // which are documented at http://goo.gle/3l5i5Mr
+    for (const component of place.address_components) {
+        // @ts-ignore remove once typings fixed
+        const componentType = component.types[0];
+        console.log(component, componentType)
+        switch (componentType) {
+        case "street_number": {
+            address1 = `${component.long_name} ${address1}`;
+            break;
         }
 
-        function fillInAddress() {
-        // Get the place details from the autocomplete object.
-        const place = autocomplete.getPlace();
-        let address1 = "";
-        let postcode = "";
-
-        // Get each component of the address from the place details,
-        // and then fill-in the corresponding field on the form.
-        // place.address_components are google.maps.GeocoderAddressComponent objects
-        // which are documented at http://goo.gle/3l5i5Mr
-        for (const component of place.address_components) {
-            // @ts-ignore remove once typings fixed
-            const componentType = component.types[0];
-            console.log(component, componentType)
-            switch (componentType) {
-            case "street_number": {
-                address1 = `${component.long_name} ${address1}`;
-                break;
-            }
-
-            case "route": {
-                address1 += component.short_name;
-                break;
-            }
-
-            case "postal_code": 
-            case "postal_code_suffix": 
-            {
-                postcode = component.long_name;
-                break;
-            }
-
-            case "locality":
-            case "postal_town":
-                document.querySelector("#city_dropdown").value = component.long_name;
-                break;
-            //   case "administrative_area_level_1": {
-            //     document.querySelector("#state").value = component.short_name;
-            //     break;
-            //   }
-            //   case "country":
-            //     document.querySelector("#country").value = component.long_name;
-            //     break;
-            }
+        case "route": {
+            address1 += component.short_name;
+            break;
         }
-        address1Field.value = address1;
-        postalField.value = postcode;
-        // After filling the form with address components from the Autocomplete
-        // prediction, set cursor focus on the second address line to encourage
-        // entry of subpremise information such as apartment, unit, or floor number.
-        address2Field.focus();
-        if(initST) initST();
-        setBillingAddress();
+
+        case "postal_code": 
+        case "postal_code_suffix": 
+        {
+            postcode = component.long_name;
+            break;
+        }
+
+        case "locality":
+        case "postal_town":
+            document.querySelector("#city_dropdown").value = component.long_name;
+            break;
+        //   case "administrative_area_level_1": {
+        //     document.querySelector("#state").value = component.short_name;
+        //     break;
+        //   }
+        //   case "country":
+        //     document.querySelector("#country").value = component.long_name;
+        //     break;
+        }
+    }
+    address1Field.value = address1;
+    postalField.value = postcode;
+    // After filling the form with address components from the Autocomplete
+    // prediction, set cursor focus on the second address line to encourage
+    // entry of subpremise information such as apartment, unit, or floor number.
+    address2Field.focus();
+    if(initST) initST();
     }
     $(document).ready(function() {
         $("#order_btn").click(function() {
@@ -1610,7 +1593,7 @@ function appendRadioValue(selectedId) {
                 }
             }
         })
-        const loggedIn = '<?php echo Auth::check();?>';
+        var loggedIn = '<?php echo Auth::check();?>'
         if(localStorage.getItem("new_user_email") && loggedIn) {
             localStorage.removeItem("new_user_email");
             $(".logged-in").hide();

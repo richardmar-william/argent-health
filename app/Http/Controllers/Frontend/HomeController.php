@@ -71,6 +71,9 @@ class HomeController extends Controller
         $user_address->city = $request->city;
         $user_address->save();
         Session::put("new_user", "1");
+        Session::put("subscription_dur", $request->subscription_duration);
+        Session::put("total_price", $request->total_price);
+        Session::put("product_id", $request->product_id);
         Auth::login($user, true);
         return redirect()->back();
     }

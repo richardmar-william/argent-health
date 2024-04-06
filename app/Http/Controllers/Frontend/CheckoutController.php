@@ -401,6 +401,7 @@ class CheckoutController extends Controller
                     // ]);
                     //dd("$request->session_id");
                     // DB::commit();
+                    Session::forget("new_user");
                     $productList = Product::with('tags')->orderBy("category_id")->orderBy("quantity_mg")->orderBy("quantity")->orderBy("treat_method")->get()->toArray();
                     $mediaList = Media::get()->toArray();
                     return view('frontend.checkout.cart_product', ["category"=>$request->category_id, 'productList' => $productList, "mediaList" => $mediaList, "session_id"=>$request->session_id]);
@@ -470,31 +471,39 @@ class CheckoutController extends Controller
                     }
 
                 }
-
                 $get_data = Temp::where('session_id', $sessionId)->first();
                 if(!isset($get_data) || empty($get_data)){
                     return redirect('/shop');
                 }
                 // $total_price = Product::whereIn('id',explode(',', $get_data->product_ids))->select('price');
                 // print_r($get_data); exit;
+                
+                if(Session::get('product_id')) {
+                    $get_data->product_ids = Session::get("product_id");
+                }
                 $product_detail = Product::whereIn('id',explode(',', $get_data->product_ids))->first();
-                // dd($get_data->product_ids);
                 $product_data = Product::whereRaw("name='{$product_detail['name']}'")->whereRaw("subscription_duration={$get_data->subscription_duration}")->first();
                     
                 if(!isset($product_data) || empty($product_data)){
                     return redirect('/shop');
                 }
                 
-                
 
                 $prod_subs = $product_data['subscription_duration'];
                 $total_price = $product_data['price'];
                 $first_time_disc = $product_data['first_time_disc'];
-     
                 $product_id = $product_data['id'];
-                $product_data = Product::whereIn('id',explode(',',  $product_data['id']))->get();
+                
+                if(Session::get('product_id')) {
+                    $product_id = Session::get("product_id");
+                }
+                $product_data = Product::whereIn('id',explode(',',  $product_id))->get();
+                if(sizeof($product_data) > 0) $prod_subs = $product_data[0]['subscription_duration'];
 
                 $order_id = 0;
+                if($_SERVER['REMOTE_ADDR'] == "191.178.104.67") {
+                    return view('frontend.checkout.index1',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));    
+                }
                 return view('frontend.checkout.index',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));
             } catch (\Illuminate\Session\TokenMismatchException $e) {
     // If a TokenMismatchException is caught, it means the CSRF token validation failed
@@ -564,10 +573,10 @@ class CheckoutController extends Controller
 
         if(Session::has('placed_order')){
             Session::forget('placed_order');
-                session()->flash('message', 'You have already placed this order!');
-                session()->flash('alert-type', 'danger');
-                // toast('You have already placed this order', 'error');
-                return redirect('/shop');
+            session()->flash('message', 'You have already placed this order!');
+            session()->flash('alert-type', 'danger');
+            // toast('You have already placed this order', 'error');
+            return redirect('/shop');
             }
             //  dd($user_id);
             $latestOrder = Order::latest()->first();
@@ -686,6 +695,7 @@ class CheckoutController extends Controller
 
 
         // DB::table('temp')->where('product_ids', NULL)->orWhere('final_price', NULL)->delete();
+
         $sessionId = $request->session_id;
         $cc = $request->coupon_code;
         $billing_street = isset($request->billing_street) ? $request->billing_street : "";

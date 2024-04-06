@@ -108,7 +108,7 @@
                 <div class="align-self-sm-center text-center text-md-start" style="margin: 50px 0;">
 
 
-                    <a href="{{ route('questionnaire.index', $products[0]->category_id) }}" class="pure-white-btn">Start
+                    <a href="{{ route('questionnaire.index', $products[0]->category_id) }}" class="pure-white-btn" style="font-size: 1.3rem !important; box-shadow: 0px 0px 9px yellow;">Start
                         Assessment</a>
 
                 </div>
