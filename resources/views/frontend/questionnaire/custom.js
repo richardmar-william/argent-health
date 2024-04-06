@@ -34,6 +34,7 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
+                console.log("pgro" + progressBarValue);
                 currentSubStep = 0;
                 updateProgressBar();
             }, 400);
