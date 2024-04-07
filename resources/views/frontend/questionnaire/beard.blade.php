@@ -162,6 +162,7 @@
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/font.css') }}">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <meta name="description" content="">
@@ -279,12 +280,12 @@
                                     <div class="quest-progress-bar">
                                         <div class="progress">
                                             <div class="progress-bar" role="progressbar" style="width: 0%;"
-                                                aria-valuenow="1" aria-valuemin="0" aria-valuemax="100"></div>
+                                                aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                     </div>
                                     <div class="v2-2step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q1"
                                                         value="IDENTIFY YOUR BIRTH GENDER">Identify your birth gender</textarea>
@@ -292,13 +293,20 @@
                                                 </h3>
                                                 <div class="quest-v2-btn">
                                                     <!-- <a class="btn-d-trans btn-wt-170 prev-button" href="javascript:void(0)">Back</a> -->
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="{{ url('/shop/beard') }}"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
 
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="quest-v2-quest col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="birth-gender-1" name="Q1_answer" value="Male">
                                                     <label class="next-button" for="birth-gender-1">Male </label>
@@ -307,6 +315,10 @@
                                                     <input type="radio" id="birth-gender-2" name="Q1_answer" value="Female">
                                                     <label class="open-que-error" for="birth-gender-2"
                                                         data-error="Regrettably, Agent's beard growth products are currently designed only for those identified as male at birth. Made a mistake? Please click here to review your answer.">Female</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="{{ url('/shop/beard') }}">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -326,19 +338,26 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <!-- <input class="in_type" type="text" name="PLEASE INDICATE YOUR AGE GROUP" value="PLEASE INDICATE YOUR AGE GROUP"> -->
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q2"
                                                         value="PLEASE INDICATE YOUR AGE GROUP">Please indicate your age group</textarea>
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="quest-v2-quest col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="age-group-1" name="Q2_answer" value="Under 18">
                                                     <label class="open-que-error" for="age-group-1"
@@ -352,6 +371,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="age-group-3" name="Q2_answer" value="Over 65">
                                                     <label class="next-button" for="age-group-3">Over 65 </label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -371,18 +394,25 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q3"
                                                         value="DESCRIBE YOUR CURRENT BEARD GROWTH">Describe your current beard growth</textarea>
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio line_bottom">
                                                     <input type="radio" id=" beard-growth-1" name="Q3_answer"
                                                         value="Slow or patchy growth">
@@ -410,6 +440,10 @@
                                                         data-error="Defined circular areas of hair loss on the beard may suggest a form of alopecia. Consult your GP for further investigation.">Defined
                                                         circular areas of no growth </label>
                                                 </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
+                                                </div>
                                             </div>
                                         </div>
 
@@ -429,18 +463,25 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q4"
                                                         value="HAVE YOU OBSERVED ANY SUDDEN CHANGES IN YOUR BEARD GROWTH?">Have you observed any sudden changes in your beard growth?</textarea>
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="observed-1" name="Q4_answer" value="Yes">
                                                     <label class="open-que-error" for="observed-1"
@@ -450,6 +491,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="observed-2" name="Q4_answer" value="No">
                                                     <label class="next-button" for="observed-2">No</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -469,19 +514,26 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <!-- <input class="in_type" type="text" name="HAVE YOU EXPERIENCED HAIR LOSS ON OTHER PARTS OF YOUR BODY?" value="HAVE YOU EXPERIENCED HAIR LOSS ON OTHER PARTS OF YOUR BODY?">  -->
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q5"
                                                         value="HAVE YOU EXPERIENCED HAIR LOSS ON OTHER PARTS OF YOUR BODY?">Have you experienced hair loss on other parts of your body?</textarea>
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="exp-hair-loss-1" name="Q5_answer" value="Yes">
                                                     <label class="open-sub-step" for="exp-hair-loss-1">Yes </label>
@@ -489,6 +541,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="exp-hair-loss-2" name="Q5_answer" value="No">
                                                     <label class="next-button" for="exp-hair-loss-2">No</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -527,19 +583,26 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <!-- <input class="in_type" type="text" name="HAVE YOU USED MINOXIDIL IN THE PAST 12 MONTHS?" value="HAVE YOU USED MINOXIDIL IN THE PAST 12 MONTHS?">  -->
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q7"
                                                         value="HAVE YOU USED MINOXIDIL IN THE PAST 12 MONTHS?">Have you used minoxidil in the past 12 months?</textarea>
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="minoxidil-1" name="Q7_answer" value="Yes">
                                                     <label class="open-sub-step" for="minoxidil-1">Yes </label>
@@ -547,6 +610,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="minoxidil-2" name="Q7_answer" value="No">
                                                     <label class="next-button" for="minoxidil-2">No</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -585,19 +652,26 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q9"
                                                         value="DO YOU HAVE A KNOWN ALLERGY TO MINOXIDIL?">Do you have a know allergy to minoxidil?</textarea>
                                                     <!-- <input class="in_type" type="text" name="DO YOU HAVE A KNOWN ALLERGY TO MINOXIDIL?" value="DO YOU HAVE A KNOWN ALLERGY TO MINOXIDIL?">  -->
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="allergy-1" name="Q9_answer" value="Yes">
                                                     <label class="open-que-error" for="allergy-1"
@@ -607,6 +681,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="allergy-2" name="Q9_answer" value="No">
                                                     <label class="next-button" for="allergy-2">No</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -626,19 +704,26 @@
                                     </div>
                                     <div class="v2-2step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q10"
                                                         value="DO YOU HAVE SENSITIVE OR DAMAGED SKIN, OR A DIAGNOSED SKIN CONDITION IN THE BEARD AREA?">Do you have senstive or damaged skin, or a diagnosed skin condition in the beard area?</textarea>
                                                     <!-- <input class="in_type" type="text" name="DO YOU HAVE SENSITIVE OR DAMAGED SKIN, OR A DIAGNOSED SKIN CONDITION IN THE BEARD AREA?" value="DO YOU HAVE SENSITIVE OR DAMAGED SKIN, OR A DIAGNOSED SKIN CONDITION IN THE BEARD AREA?">  -->
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="damaged-1" name="10_answer" value="Yes">
                                                     <label class="open-sub-step" for="damaged-1">Yes </label>
@@ -648,7 +733,7 @@
                                                     <label class="next-button" for="damaged-2">No</label>
                                                 </div>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
                                                         href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
@@ -688,19 +773,26 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readon" class="in_type" type="text" name="Q12"
                                                         name="HAVE YOU BEEN DIAGNOSED WITH HIGH OR LOW BLOOD PRESSURE?">Have you been diagnosed with high or low blood pressure?</textarea>
                                                     <!-- <input class="in_type" type="text" name="HAVE YOU BEEN DIAGNOSED WITH HIGH OR LOW BLOOD PRESSURE?" value="HAVE YOU BEEN DIAGNOSED WITH HIGH OR LOW BLOOD PRESSURE?"> -->
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="diagnosed-1" name="Q12_answer" value="Yes">
                                                     <label class="open-que-error" for="diagnosed-1"
@@ -709,6 +801,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="diagnosed-2" name="Q12_answer" value="No">
                                                     <label class="next-button" for="diagnosed-2">No</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -728,19 +824,26 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q13"
                                                         name="DO YOU SMOKE?">Do you smoke?</textarea>
                                                     <!-- <input class="in_type" type="text" name="DO YOU SMOKE?" value="DO YOU SMOKE?"> -->
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="smoke-1" name="Q13_answer" value="Yes">
                                                     <label class="next-button" for="smoke-1">Yes </label>
@@ -748,6 +851,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="smoke-2" name="Q13_answer" value="No">
                                                     <label class="next-button" for="smoke-2">No</label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -767,7 +874,7 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <div>
                                                     <h3 class="quest-v2-subh mb-30">
                                                         <textarea readonly="readonly" class="in_type" type="text" name="Q14"
@@ -785,12 +892,19 @@
                                                         the prescription is safe for you.</p>
                                                 </div>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
-                                            <div class="col-5">
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="safe-1" name="Q14_answer" value="Yes">
                                                     <label class="open-sub-step" for="safe-1">Yes </label>
@@ -798,6 +912,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="safe-2" name="Q14_answer" value="No">
                                                     <label class="next-button" for="safe-2">No </label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -836,18 +954,25 @@
                                     </div>
                                     <div class="v2-3step-cont">
                                         <div class="row">
-                                            <div class="quest-v2-label col-6 d-flex flex-column justify-content-between">
+                                            <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q16"
                                                         value="WOULD YOU LIKE TO INFORM YOUR GP ABOUT THIS CONSULTATION?">Would you like to inform your gp about this consultation?</textarea>
                                                     <!-- <input class="in_type" type="text" name="WOULD YOU LIKE TO INFORM YOUR GP ABOUT THIS CONSULTATION?" value="WOULD YOU LIKE TO INFORM YOUR GP ABOUT THIS CONSULTATION?"> -->
                                                 </h3>
                                                 <div class="quest-v2-btn">
-                                                    <a class="btn-d-trans btn-wt-170 prev-button d-flex justify-content-between"
+                                                    <a class="btn-d-trans btn-wt-170 prev-button"
                                                         href="javascript:void(0)"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar" style="width: 0%;"
+                                                            aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="col-5">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="prefer-1" name="Q16_answer" value="Yes">
@@ -856,6 +981,10 @@
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="prefer-2" name="Q16_answer" value="No">
                                                     <label class="next-button" for="prefer-2">No </label>
+                                                </div>
+                                                <div class="quest-v2-btn">
+                                                    <a class="btn-d-trans btn-wt-170 prev-button mobile"
+                                                        href="javascript:void(0)">Back</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -1003,28 +1132,43 @@
                                         </a>
                                     </div>
                                     <div class="modal-body">
-                                        <div class="error-btn">
-                                            <img src="{{ asset('images/error-icon.svg') }}" alt="">
+                                        <div class="row">
+                                            <div class="col-md-5 col-sm-12 quest-v2-error-modal-label d-flex flex-column justify-content-between">
+                                                <div>
+                                                    <div class="error-btn d-flex flex-row-reverse">
+                                                        <img src="{{ asset('images/error-icon.svg') }}" alt="">
+                                                    </div>
+                                                    <div class="col-9">
+                                                        <h2 class="quest-v2-subh mb-30 font-weight-bold">
+                                                            <div><span class="font-poppins">Your</span> <span class="font-yeseva">safety</span></div>
+                                                            <div><span class="font-poppins">is our top</span></div>
+                                                            <div><span class="font-yeseva">priority</span>.</div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" id="btncheck" class="btn-d-black close-que-modal"
+                                                data-bs-dismiss="modal"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></button>
+                                            </div>
+                                            <div class="col-1"></div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <h5 class="font-poppins-bold">Unfortunately, we can’t offer you any beard growth medication.</h5>
+                                                <p class="font-poppins">No recommended treatment. Based on your answers, there is no treatment
+                                                    suitable for you. If you think you have made an error in your responses,
+                                                    please click below to review your answers.</p>
+                                                <h5 class="font-poppins-bold">Did you make a mistake?</h5>
+                                                    <p>Providing false information can lead to
+                                                        serious harm to your
+                                                        health.</p>
+                                                <div class="form-group form-check mb-30 pb-2" style="text-align: justify">
+                                                    <input class="form-check-input" type="checkbox" name="terms-and-services"
+                                                        id="check">
+                                                    <label class="form-check-label m-0" for="terms-and-services">
+                                                        I agree only to provide accurate answers
+                                                    </label>
+                                                </div>
+                                                <button type="button" id="btncheck" class="btn-d-black close-que-modal-mobile"
+                                                data-bs-dismiss="modal">Back</button>
+                                            </div>
                                         </div>
-                                        <h3 class="quest-v2-subh mb-30">Your safety is our top priority.</h3>
-                                        <h5>Unfortunately, we can’t offer you any beard growth medication.</h5>
-                                        <p>No recommended treatment. Based on your answers, there is no treatment
-                                            suitable for you. If you think you have made an error in your responses,
-                                            please click below to review your answers.</p>
-                                        <p><b>Did you make a mistake?</b> Providing false information can lead to
-                                            serious harm to your
-                                            health.</p>
-                                        <div class="form-group form-check mb-30 pb-2">
-                                            <!-- <input class="form-check-input" type="checkbox" name="terms-and-services"
-                                                    id="terms-and-services"> -->
-                                            <input class="form-check-input" type="checkbox" name="terms-and-services"
-                                                id="check">
-                                            <label class="form-check-label m-0" for="terms-and-services">
-                                                I agree only to provide accurate answers
-                                            </label>
-                                        </div>
-                                        <button type="button" id="btncheck" class="btn-d-black close-que-modal"
-                                            data-bs-dismiss="modal">Review your answers</button>
                                     </div>
                                 </div>
                             </div>
