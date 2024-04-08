@@ -1022,26 +1022,34 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step2">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" type="text" name="Q16"
-                                            value="Our tablets contain minuscule amounts of lactose. If you have previously taken a tablet formulation without any symptoms, it's unlikely that you'll experience adverse effects from the lactose in our tablets.">Our tablets contain minuscule amounts of lactose. If you have previously taken a tablet formulation without any symptoms, it's unlikely that you'll experience adverse effects from the lactose in our tablets.</textarea>
-                                    </h3>
-                                    <div class="form-group form-radio">
-                                        <input class="in_type" readonly="readonly" type="radio" id="tablets-1"
-                                            name="Q16_answer"
-                                            value="I'm comfortable with proceeding to be assessed for a prescription">
-                                        <label class="next-button" for="tablets-1"> I'm comfortable with proceeding to
-                                            be assessed for a prescription </label>
-                                    </div>
-                                    <div class="form-group form-radio">
-                                        <input class="in_type" readonly="readonly" type="radio" id="tablets-2"
-                                            name="Q16_answer" value="I can't tolerate even small amounts of lactose">
-                                        <label class="open-que-error" for="tablets-2">I can't tolerate even small
-                                            amounts of lactose </label>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step" step-val="0"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea class="in_type" readonly="readonly" type="text" name="Q16"
+                                                    value="Our tablets contain minuscule amounts of lactose. If you have previously taken a tablet formulation without any symptoms, it's unlikely that you'll experience adverse effects from the lactose in our tablets.">Our tablets contain minuscule amounts of lactose. If you have previously taken a tablet formulation without any symptoms, it's unlikely that you'll experience adverse effects from the lactose in our tablets.</textarea>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-radio">
+                                                <input class="in_type" readonly="readonly" type="radio" id="tablets-1"
+                                                    name="Q16_answer"
+                                                    value="I'm comfortable with proceeding to be assessed for a prescription">
+                                                <label class="next-button" for="tablets-1"> I'm comfortable with proceeding to
+                                                    be assessed for a prescription </label>
+                                            </div>
+                                            <div class="form-group form-radio">
+                                                <input class="in_type" readonly="readonly" type="radio" id="tablets-2"
+                                                    name="Q16_answer" value="I can't tolerate even small amounts of lactose">
+                                                <label class="open-que-error" for="tablets-2">I can't tolerate even small
+                                                    amounts of lactose </label>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex">
+                                                <a class="btn-d-black btn-wt-170 back-sub-step" step-val="0"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
