@@ -1570,7 +1570,7 @@
                                                     </label>
                                                 </div>
                                                 <button type="button" id="btncheck"
-                                                    class="btn-d-black close-que-modal-mobile"
+                                                    class="btn-d-black close-que-modal mobile"
                                                     data-bs-dismiss="modal">Back</button>
                                             </div>
                                         </div>

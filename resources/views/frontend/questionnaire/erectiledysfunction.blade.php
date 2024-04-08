@@ -906,20 +906,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" type="text" name="Q13"
-                                            value="Please list all your medications you take and any other medical conditions.">Please list all your medications you take and any other medical conditions.</textarea>
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
-                                        <textarea type="text" class="form-control" id="list_all_your_medications" value="" name="Q13_answer"
-                                            placeholder="enter your text"></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea class="in_type" readonly="readonly" type="text" name="Q13"
+                                                    value="Please list all your medications you take and any other medical conditions.">Please list all your medications you take and any other medical conditions.</textarea>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
+                                                <textarea type="text" class="form-control" id="list_all_your_medications" value="" name="Q13_answer"
+                                                    placeholder="enter your text"></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -987,20 +995,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" type="text" name="Q15"
-                                            value="Please list any substances or medicines that you may have allergies to.">Please list any substances or medicines that you may have allergies to.</textarea>
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
-                                        <textarea type="text" class="form-control" id="have_allergies" value="" name="Q15_answer"
-                                            placeholder="enter your text"></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea class="in_type" readonly="readonly" type="text" name="Q15"
+                                                    value="Please list any substances or medicines that you may have allergies to.">Please list any substances or medicines that you may have allergies to.</textarea>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
+                                                <textarea type="text" class="form-control" id="have_allergies" value="" name="Q15_answer"
+                                                    placeholder="enter your text"></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1094,19 +1110,27 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" type="text" name="Q18"
-                                            value="Please provide more information about your condition or medication.">Please provide more information about your condition or medication.</textarea>
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <textarea type="text" class="form-control" id="more_information_about_your_condition" value=""
-                                            name="Q18_answer" placeholder="enter your text"></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea class="in_type" readonly="readonly" type="text" name="Q18"
+                                                    value="Please provide more information about your condition or medication.">Please provide more information about your condition or medication.</textarea>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" id="more_information_about_your_condition" value=""
+                                                    name="Q18_answer" placeholder="enter your text"></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1160,20 +1184,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" type="text" name="Q20"
-                                            value="Please provide your GP's contact information?">Please provide your GP's contact information?</textarea>
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
-                                        <textarea type="text" class="form-control" id="GP's_contact" value="" name="Q20_answer"
-                                            placeholder="enter your text"></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea class="in_type" readonly="readonly" type="text" name="Q20"
+                                                    value="Please provide your GP's contact information?">Please provide your GP's contact information?</textarea>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
+                                                <textarea type="text" class="form-control" id="GP's_contact" value="" name="Q20_answer"
+                                                    placeholder="enter your text"></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1452,7 +1484,7 @@
                                                     </label>
                                                 </div>
                                                 <button type="button" id="btncheck"
-                                                    class="btn-d-black close-que-modal-mobile"
+                                                    class="btn-d-black close-que-modal mobile"
                                                     data-bs-dismiss="modal">Back</button>
                                             </div>
                                         </div>
