@@ -26,8 +26,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}"> 
+    <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="{{asset('css/font.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
 
     <livewire:styles />
     @yield('style')
@@ -65,7 +67,7 @@
             .swiper-pagination {
                 display: block;
             }
-            
+
             .swiper-button-prev, .swiper-rtl .swiper-button-next {
                 display: flex;
             }
@@ -88,7 +90,7 @@
         .swiper-button-next::after {
             content: "";
         }
-    
+
     </style>
     <!-- Matomo Tag Manager -->
     <script>
@@ -155,7 +157,7 @@
                 </form>
             </div>
         </div>
-    
+
     @if($category == "30" || $category == "31" || $category == "32" || $category == "33")
     <div class="container-fluid mt-3 choose-perfer-content authed-view <?php echo (!($category == "30" || $category == "31" || $category == "32" || $category == "33") || !Auth::check()) ? "d-none":""?>">
         <div class="row choose-prefer-contet-header">
@@ -187,7 +189,7 @@
             if(in_array("1 hour before sexual intercourse", $con1)) $treat_method = "1 hour before sexual intercourse";
             else if(in_array("I'd rather not plan and take the tablet beforehand", $con1)) $treat_method = "I'd rather not plan and take the tablet beforehand";
             else $treat_method = "Erectile_Extra";
-            
+
         }
         if($category == 33) {
             if(in_array("Serotonin reuptake inhibitors i.e priligy", $con1)) $treat_method = "Serotonin reuptake inhibitors i.e priligy";
@@ -201,9 +203,9 @@
         @endphp
         <div class="swiper" id="rec_prod">
             <div class="recommended-product-list swiper-wrapper <?php echo sizeof($product1) == 1 ?  "single" : ""; ?>" >
-                
+
                 @foreach($product1 as $pkey => $products)
-                    @php                    
+                    @php
                     $proList = [];
                     $tags=[];
                     for($i = 0 ; $i < sizeof($productList) ; $i ++) {
@@ -222,7 +224,7 @@
                                 $productList[$i]['tag'] = $productList[$i]['quantity_mg']."mg";
                                 $flag = false;
                                 foreach($proList as $proItem) {
-                    
+
                                     if($proItem['quantity_mg'] == $productList[$i]['quantity_mg']) {
                                         $flag = true;
                                         break;
@@ -249,13 +251,13 @@
                                     ?>
                                 </ul>
                             </div>
-                            
+
                             <div class="tab-content">
                             @foreach($proList as $iKey => $proItem)
                                 @php
                                 $media = DB::table('media')->where('mediable_id',$proItem['id'])->first();
                                 $pro_tag = DB::table('product_tags')->where('product_id',$proItem['id'])->first();
-                                $tags = []; 
+                                $tags = [];
                                 if($pro_tag)
                                     $tags = DB::table('tags')->where('id', $pro_tag->tag_id)->first();
                                 @endphp
@@ -285,34 +287,33 @@
                                                 }
                                                 @endphp
 
-                                                @foreach($tablets as $tablet) 
+                                                @foreach($tablets as $tablet)
                                                 <div  class="tablets-item <?php if($tablet['id'] == $proItem['id']) echo "selected"?>" data-id="<?php echo $tablet['id'];?>">
                                                     <div>{{$tablet['quantity']}}</div>
                                                     <div>£{{number_format($tablet['first_time_disc'] /$tablet['quantity'], 2)}}/tablet</div>
                                                 </div>
                                                 @endforeach
-                                                <div></div>
                                             </div>
                                         </div>
                                         @endif
-                                        <div class="product-toolbar">
-                                            <button class="btn-d-black" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                        <div class="product-toolbar d-flex flex-row">
+                                            <button type="button" class="btn-d-black show-product-modal" data-product="{{ json_encode($proItem) }}" data-image = "{{asset('storage/images/products/').'/'.$media->file_name  }}">Learn more</button>
+                                            <button class="btn-d-black checkout-btn" style="margin-left: 24px" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
                                         </div>
                                     </div>
                                 </div>
-                            
+
                             @endforeach
                             </div>
                         </div>
                 @endforeach
             </div>
             <div class="swiper-button-prev"><?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM8,12a2.993,2.993,0,0,1,.752-1.987c.291-.327.574-.637.777-.84L12.353,6.3a1,1,0,0,1,1.426,1.4L10.95,10.58c-.187.188-.441.468-.7.759a1,1,0,0,0,0,1.323c.258.29.512.57.693.752L13.779,16.3a1,1,0,0,1-1.426,1.4L9.524,14.822c-.2-.2-.48-.507-.769-.833A2.99,2.99,0,0,1,8,12Z"/></svg>
-</div>
+                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM8,12a2.993,2.993,0,0,1,.752-1.987c.291-.327.574-.637.777-.84L12.353,6.3a1,1,0,0,1,1.426,1.4L10.95,10.58c-.187.188-.441.468-.7.759a1,1,0,0,0,0,1.323c.258.29.512.57.693.752L13.779,16.3a1,1,0,0,1-1.426,1.4L9.524,14.822c-.2-.2-.48-.507-.769-.833A2.99,2.99,0,0,1,8,12Z"/></svg>
+            </div>
             <div class="swiper-button-next">
                 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
-
+                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
             </div>
             <div class="swiper-pagination"></div>
         </div>
@@ -324,18 +325,18 @@
                 <button class='btn-d-trans all-treatment-btn'>See All Treatment</button>
             </div>
         </div>
-        
+
             @php
 
                 $product1 = \App\Models\Product::whereIn('category_id', [$category])->orderBy('id',
                 'ASC')->where("subscription_duration",'1')->groupBy("type")->get();
-                            
+
             @endphp
-            
-        <div class="swiper" id="other_rec_prod">
+
+        <div class="swiper container" id="other_rec_prod">
             <div class="other-recommended recommended-product-list  swiper-wrapper  <?php echo sizeof($product1) == 1 ? "single" : ""; ?>">
                 @foreach($product1 as $pkey => $products)
-                    @php                    
+                    @php
                     $proList = [];
                     $tags = [];
                     if(empty($products->type)) {
@@ -344,7 +345,7 @@
                     }
                     else for($i = 0 ; $i < sizeof($productList) ; $i ++) {
                         if($category == 30 || $category == 31 ) {
-                            
+
                             if($productList[$i]['type'] == $products->type ) {
                                 if(is_array($productList[$i]['tags']) && sizeof($productList[$i]['tags']) > 0) {
                                     $productList[$i]['tag'] = $productList[$i]['tags'][0]['name'];
@@ -359,7 +360,7 @@
                                 $productList[$i]['tag'] = $productList[$i]['quantity_mg']."mg";
                                 $flag = false;
                                 foreach($proList as $proItem) {
-                    
+
                                     if($proItem['quantity_mg'] == $productList[$i]['quantity_mg']) {
                                         $flag = true;
                                         break;
@@ -386,13 +387,13 @@
                                     ?>
                                 </ul>
                             </div>
-                            
+
                             <div class="tab-content">
                             @foreach($proList as $iKey => $proItem)
                                 @php
                                 $media = DB::table('media')->where('mediable_id',$proItem['id'])->first();
                                 $pro_tag = DB::table('product_tags')->where('product_id',$proItem['id'])->first();
-                                $tags = []; 
+                                $tags = [];
                                 if($pro_tag)
                                     $tags = DB::table('tags')->where('id', $pro_tag->tag_id)->first();
                                 @endphp
@@ -422,7 +423,7 @@
                                                 }
                                                 @endphp
 
-                                                @foreach($tablets as $tablet) 
+                                                @foreach($tablets as $tablet)
                                                 <div  class="tablets-item <?php if($tablet['id'] == $proItem['id']) echo "selected"?>" data-id="<?php echo $tablet['id'];?>">
                                                     <div>{{$tablet['quantity']}}</div>
                                                     <div>£{{number_format($tablet['first_time_disc'] /$tablet['quantity'], 2)}}/tablet</div>
@@ -433,29 +434,79 @@
                                         </div>
                                         @endif
                                         <div class="product-toolbar">
-                                            <button class="btn-d-black" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                            <button class="btn-d-black checkout-btn" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
                                         </div>
                                     </div>
                                 </div>
-                            
+
                             @endforeach
                             </div>
                         </div>
                 @endforeach
             </div>
-            
+
             <div class="swiper-button-prev swiper-button-prev1"><?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM8,12a2.993,2.993,0,0,1,.752-1.987c.291-.327.574-.637.777-.84L12.353,6.3a1,1,0,0,1,1.426,1.4L10.95,10.58c-.187.188-.441.468-.7.759a1,1,0,0,0,0,1.323c.258.29.512.57.693.752L13.779,16.3a1,1,0,0,1-1.426,1.4L9.524,14.822c-.2-.2-.48-.507-.769-.833A2.99,2.99,0,0,1,8,12Z"/></svg>
-</div>
+                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M24,12A12,12,0,1,0,12,24,12.013,12.013,0,0,0,24,12ZM8,12a2.993,2.993,0,0,1,.752-1.987c.291-.327.574-.637.777-.84L12.353,6.3a1,1,0,0,1,1.426,1.4L10.95,10.58c-.187.188-.441.468-.7.759a1,1,0,0,0,0,1.323c.258.29.512.57.693.752L13.779,16.3a1,1,0,0,1-1.426,1.4L9.524,14.822c-.2-.2-.48-.507-.769-.833A2.99,2.99,0,0,1,8,12Z"/></svg>
+            </div>
             <div class="swiper-button-next swiper-button-next1">
                 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
-
+                <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
             </div>
             <div class="swiper-pagination"></div>
         </div>
+        {{-- <div class="brands container mobile mt-5" id="business brands">
+            <div class="d-flex justify-content-center">
+                <div class="d-flex justify-content-between brand-images mobile">
+                    <img src="{{ asset('images/brand-medicine.png') }}">
+                    <p class="font-heavy-green">Licensed & Registered
+                            Medication</p>
+                    <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
+                    <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                </div>
+            </div>
+        </div> --}}
+        <div class="reviews" id="product-review">
+
+        </div>
+        {{-- <div class="brands container mt-5" id="business brands">
+            <div class="d-flex justify-content-center">
+                <div class="d-flex">
+                    <div class="d-flex bg-black brands-rating mr-3">
+                        <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
+                            <div>
+                                <ul class="d-flex">
+                                    <li><i class="ti-star"></i></li>
+                                    <li><i class="ti-star"></i></li>
+                                    <li><i class="ti-star"></i></li>
+                                    <li><i class="ti-star"></i></li>
+                                    <li><i class="ti-star"></i></li>
+                                </ul>
+                                <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
+                            </div>
+                        </div>
+                        <img src="{{ asset('images/brand line.png') }}">
+                        <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
+                           <div>
+                                <h4 class="font-poppins-bold">100+</h4>
+                                <p class="text-white" style="width: max-content">Total ratings</p>
+                           </div>
+                        </div>
+                    </div>
+                    <div class="font-heavy-green brands-title d-flex flex-column justify-content-center">
+                        <p class="font-poppins">Trusted by <b>hundreds</b> of
+                        customers with amazing
+                        results</p>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between brand-images">
+                    <img src="{{ asset('images/brand-medicine.png') }}">
+                    <img src="{{ asset('images/brand-shipping.png') }}">
+                    <img src="{{ asset('images/brand-pause.png') }}">
+                </div>
+            </div>
+        </div> --}}
     </div>
-    
+
     @else
     <div class="quest-v2-content authed-view <?php echo ($category == "30" || $category == "31" || !Auth::check()) ? "d-none":""?>">
         <div class="container-fluid">
@@ -531,7 +582,7 @@
                                                                      height="90px" alt="">
                                                             </figure>
                                                             <div class="r-t-body-cont">
-                                                                
+
 
                                                                 <h5>
                                                                     <p class="add-highlite-main">{{$products->highlite}}</p>
@@ -539,7 +590,7 @@
                                                                                                                                             </h5>
                                                                 <p>{{ strip_tags($products->description) }}</p>
                                                                 <div class="strength">
-                                                                    <h4> 
+                                                                    <h4>
                                                                                 {{ 'Starting at £'.$products->first_time_disc." ".($products->subscription_duration == 1 ? 'a month' : $products->subscription_duration." months") }}
                                                                                  </h4>
 
@@ -566,7 +617,7 @@
                                                     <div class="recmd-tablets-card act mt-30">
                                                         <div class="r-t-card-body">
                                                             @php
-                                                                
+
                                                                 $type = in_array("Minoxidil", $con1) ? "Minoxidil" : "Finasteride";
                                                                 $product_data = \App\Models\Product::whereRaw("find_in_set('$type',treat_method)")->first();
                                                                 $media =
@@ -600,7 +651,7 @@
                                                         </div>
                                                         <!-- <div class="r-t-card-footer"><button type="button" class="btn-d-black" title="Add To Cart"><i class="fa-solid fa-circle-plus me-2"></i>Add</button></div> -->
                                                     </div>
-                                                
+
                                                 @else
                                                     @php
 
@@ -633,7 +684,7 @@
                                                                                                                                                     </h5>
                                                                     <p>{{ strip_tags($products->description) }}</p>
                                                                     <div class="strength">
-                                                                        <h4> 
+                                                                        <h4>
                                                                                     {{ 'Starting at £'.$products->first_time_disc." ".($products->subscription_duration == 1 ? ' a month' : $products->subscription_duration." months") }}
                                                                                         </h4>
 
@@ -989,29 +1040,13 @@
                                                         treatments</a>
                                                     <button class="btn-d-black btn-wt-300 " type="button" id="cont_1">Continue</button>
                                                 </div>
-
-
                                         </div>
-
-
-
-
-
-
                                     </div>
-
-
-
-                                    <!-- recocomndation sec end-->
+                                     <!-- recocomndation sec end-->
                                     <h3 class="quest-v2-subh text-center mt-40 other-recmd">
                                         Other Recommendation for you
                                     </h3>
-
                                     <div class="moon">
-
-
-
-
                                     <!-- all treatment sec start -->
                                     {{-- <livewire:addtocart/> --}}
                                     @if($category == 30)
@@ -1253,7 +1288,7 @@
                                 </div>
                             </div>
 
-                                
+
                     <input type="hidden" name="product_ids" id="ProductIds">
                     <input type="hidden" name="Session_Id" value="{{ $session_id }}">
                             @endif
@@ -1288,7 +1323,7 @@
                                 <div class="col-lg-1 col-md-2 col-6 d-flex justify-content-end"></div>
                             </div>
                         </div>
-                        
+
 
                         @if($category == 30)
                             <div class="text-icon-btn justify-content-center fw-500 mb-40" data-bs-toggle="modal"
@@ -1327,11 +1362,11 @@
                                             </label>
                                         </div>
                                     </div>
-                                    
+
                                 @endforeach
                                         </div>
                                     </div>
-                                
+
                             <div class="ctsm_radio_box" id="comb_pill_sol">
                                 <div class="row">
                                     @php
@@ -1361,7 +1396,7 @@
                                             </label>
                                         </div>
                                     </div>
-                                    
+
                                 @endforeach
                                 </div>
                             </div>
@@ -1422,9 +1457,9 @@
                                             </label>
                                         </div>
                                     </div>
-                                    
+
                                 @endforeach
-                                
+
                                         </div>
                                     </div> -->
                         @elseif($category == 31)
@@ -1462,9 +1497,9 @@
                                             </label>
                                         </div>
                                     </div>
-                                    
+
                                 @endforeach
-                                
+
                                 </div>
                             </div>
 
@@ -1499,7 +1534,7 @@
                                                     </div>
                                                     <div class="dosage-price">
                                                         <h3>from</h3>
-                                                        <h3>£16</h3>
+                                                            <h3>£16</h3>
                                                         <h3 class="hd-p">per month</h3>
                                                     </div>
                                                 </div>
@@ -2465,7 +2500,27 @@
                 </div>
             </div>
         </div>
-    </div>  
+    </div>
+
+    <div class="modal" id="product-modal">
+        <div class="modal-dialog" style="max-width: revert-layer;">
+          <div class="modal-content">
+            <!-- Modal Header -->
+            <!-- Modal body -->
+            <div class="modal-body">
+                <div>
+                    <img class="modal-product-image" style="width: 75%">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="{{ asset('images/close-icon.png') }}"/></button>
+                </div>
+                <div class="modal-product-content">
+                    <h3 class="modal-product-title"></h3>
+                    <p class="modal-product-description"></p>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
     <form action="{{ route('checkout.index') }}" method="POST" id="submit_form">
         @csrf
         <input type="hidden" name="product_ids" id="ProductIds">
@@ -2515,7 +2570,7 @@
             },
         });
 
-        
+
          var swiper1 = new Swiper("#other_rec_prod", {
             watchSlidesProgress: true,
             slidesPerView: 1,
@@ -2802,8 +2857,26 @@
             $("#beard3").hide();
 
         }
-// console.log("product_ids", product_ids);
+
         $("#ProductIds").val(product_ids.join(',')); // Convert the array to a comma-separated string and set the value
+    }
+
+    $('.show-product-modal').click(function(e){
+        e.preventDefault();
+        var data = $(this).data('product')
+        var image = $(this).data('image')
+
+        var modal = $('#product-modal')
+        $('.modal-product-image').attr('src', image);
+        $('.modal-product-title').html(data.name)
+        $('.modal-product-description').html(data.description)
+        modal.modal('show')
+        return false;
+    })
+
+    function OpenModal(product) {
+        console.log(product);
+        return false
     }
 </script>
 
@@ -3032,9 +3105,9 @@ var productList = <?=json_encode($productList)?>;
             $(this).parent().children("li").removeClass("nav-item-selected");
             $(this).addClass("nav-item-selected")
         })
-        $(".product-toolbar button").click(function(){
+        $(".product-toolbar .checkout-btn").click(function(){
             $("#submit_form").submit();
-        }) 
+        })
         function validateEmail(email) {
             // Regular expression for validating email addresses
             const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -3073,7 +3146,7 @@ var productList = <?=json_encode($productList)?>;
                     return;
                 }
                 $(".quest-v21-signin-form").submit();
-           
+
             }
         }
 
@@ -3083,7 +3156,7 @@ var productList = <?=json_encode($productList)?>;
                 checkEmail();
             }
         })
-        
+
         $("#pwd").keyup(function(e) {
             if(e.keyCode == 13) {
                 checkEmail();
