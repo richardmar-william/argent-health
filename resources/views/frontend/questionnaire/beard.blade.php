@@ -553,20 +553,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea readonly="readonly" class="in_type" type="text" name="Q6"
-                                            value="Please specify the areas of your body affected and how long you have been experiencing this hair loss.">Please specify the areas of your body affected and how long you have been experiencing this hair loss.</textarea>
-                                        <!-- <input class="in_type" type="text" name="Please specify the areas of your body affected and how long you have been experiencing this hair loss." value="Please specify the areas of your body affected and how long you have been experiencing this hair loss.">  -->
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                    <textarea type="text" class="form-control" id="experiencing_this_hair_loss"
-                                            value=""  name="Q6_answer" placeholder="enter your text" ></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea readonly="readonly" class="in_type" type="text" name="Q6"
+                                                    value="Please specify the areas of your body affected and how long you have been experiencing this hair loss.">Please specify the areas of your body affected and how long you have been experiencing this hair loss.</textarea>
+                                                <!-- <input class="in_type" type="text" name="Please specify the areas of your body affected and how long you have been experiencing this hair loss." value="Please specify the areas of your body affected and how long you have been experiencing this hair loss.">  -->
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" id="experiencing_this_hair_loss"
+                                                        value=""  name="Q6_answer" placeholder="enter your text" ></textarea>
+                                                </div>
+                                                <div class="quest-v2-btn d-flex flex-row">
+                                                    <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                        href="javascript:void(0)">Continue</a>
+                                                    <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                        href="javascript:void(0)">Back</a>
+                                                </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -622,20 +630,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea readonly="readonly" class="in_type" type="text" name="Q8"
-                                            value="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.">Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.</textarea>
-                                        <!-- <input class="in_type" type="text" name="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects." value="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.">  -->
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <textarea type="text" class="form-control" id="experience_with_minoxidil"
-                                            value="" name="Q8_answer" placeholder="enter your text" ></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea readonly="readonly" class="in_type" type="text" name="Q8"
+                                                    value="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.">Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.</textarea>
+                                                <!-- <input class="in_type" type="text" name="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects." value="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.">  -->
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" id="experience_with_minoxidil"
+                                                    value="" name="Q8_answer" placeholder="enter your text" ></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -743,20 +759,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea readonly="readonly" class="in_type" type="text" name="Q11"
-                                            name="Please provide details about your skin condition, including any diagnosis if applicable.">Please provide details about your skin condition, including any diagnosis if applicable.</textarea>
-                                        <!-- <input class="in_type" type="text" name="Please provide details about your skin condition, including any diagnosis if applicable." value="Please provide details about your skin condition, including any diagnosis if applicable."> -->
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                            <textarea type="text" class="form-control" id="list_applicable"
-                                            value="" name="Q11_answer" placeholder="enter your text" ></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea readonly="readonly" class="in_type" type="text" name="Q11"
+                                                    name="Please provide details about your skin condition, including any diagnosis if applicable.">Please provide details about your skin condition, including any diagnosis if applicable.</textarea>
+                                                <!-- <input class="in_type" type="text" name="Please provide details about your skin condition, including any diagnosis if applicable." value="Please provide details about your skin condition, including any diagnosis if applicable."> -->
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" id="list_applicable"
+                                                value="" name="Q11_answer" placeholder="enter your text" ></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -924,20 +948,28 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea readonly="readonly" class="in_type" type="text" name="Q15"
-                                            value="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you.">Have you had any of the following:Please provide specific details about any or all of the above conditions that apply to you.</textarea>
-                                        <!-- <input class="in_type" type="text" name="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you." value="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you."> -->
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <textarea type="text" class="form-control" id="list_apply_to_you"
-                                            value="" name="Q15_answer" placeholder="enter your text" ></textarea>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea readonly="readonly" class="in_type" type="text" name="Q15"
+                                                    value="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you.">Have you had any of the following:Please provide specific details about any or all of the above conditions that apply to you.</textarea>
+                                                <!-- <input class="in_type" type="text" name="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you." value="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you."> -->
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" id="list_apply_to_you"
+                                                    value="" name="Q15_answer" placeholder="enter your text" ></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -993,22 +1025,29 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea readonly="readonly" class="in_type" type="text" name="Q17"
-                                            value="WOULD YOU LIKE TO INFORM YOUR GP ABOUT THIS CONSULTATION?">Would you like to inform your gp about this consultation?</textarea>
-                                        <!-- <input class="in_type" type="text" name="Please provide your GP's name and the practice's address." value="Please provide your GP's name and the practice's address."> -->
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <textarea type="text" class="form-control" id="list_consultation"
-                                            value="" name="Q17_answer" placeholder="enter your text" ></textarea>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea readonly="readonly" class="in_type" type="text" name="Q17"
+                                                    value="WOULD YOU LIKE TO INFORM YOUR GP ABOUT THIS CONSULTATION?">Would you like to inform your gp about this consultation?</textarea>
+                                                <!-- <input class="in_type" type="text" name="Please provide your GP's name and the practice's address." value="Please provide your GP's name and the practice's address."> -->
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" id="list_consultation"
+                                                    value="" name="Q17_answer" placeholder="enter your text" ></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <input id="submit_question222" class="btn-d-black btn-wt-170 next-button"
+                                                    name="submit" value="Continue">
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="quest-v2-btn">
-                                        <input id="submit_question222" class="btn-d-black btn-wt-170 next-button"
-                                            name="submit" value="Continue">
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>
@@ -1165,7 +1204,7 @@
                                                         I agree only to provide accurate answers
                                                     </label>
                                                 </div>
-                                                <button type="button" id="btncheck" class="btn-d-black close-que-modal-mobile"
+                                                <button type="button" id="btncheck" class="btn-d-black close-que-modal mobile"
                                                 data-bs-dismiss="modal">Back</button>
                                             </div>
                                         </div>
