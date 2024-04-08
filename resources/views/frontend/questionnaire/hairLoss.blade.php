@@ -1204,8 +1204,8 @@
                                                 <input type="radio" id="into-allerg-no" name="Q15_answer" value="No">
                                                 <label class="next-button" for="into-allerg-no">No</label>
                                             </div>
-                                            <div class="quest-v2-btn">
-                                                <a class="btn-d-trans btn-wt-170 back-sub-step"
+                                            <div class="quest-v2-btn d-flex">
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
                                                     href="javascript:void(0)">Back</a>
                                             </div>
                                         </div>
@@ -1379,7 +1379,7 @@
                                     <div class="form-group form-text-field">
                                         <textarea type="text" class="form-control" name="Q21_answer" placeholder="enter your text"></textarea>
                                     </div>
-                                    <div class="quest-v2-btn">
+                                    <div class="quest-v2-btn d-flex flex-row">
                                         <a class="btn-d-black btn-wt-300 mr-20 next-button"
                                             href="javascript:void(0)">Continue</a>
                                         <a class="btn-d-trans btn-wt-170  back-sub-step"
