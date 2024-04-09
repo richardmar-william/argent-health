@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="{{asset('css/font.css')}}">
     <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/cart-product.css') }}">
 
     <livewire:styles />
     @yield('style')
@@ -296,9 +297,13 @@
                                             </div>
                                         </div>
                                         @endif
-                                        <div class="product-toolbar d-flex flex-row">
-                                            <button type="button" class="btn-d-black show-product-modal" data-product="{{ json_encode($proItem) }}" data-image = "{{asset('storage/images/products/').'/'.$media->file_name  }}">Learn more</button>
-                                            <button class="btn-d-black checkout-btn" style="margin-left: 24px" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                        <div class="product-toolbar row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <button type="button" class="btn-d-black show-product-modal" data-product="{{ json_encode($proItem) }}" data-image = "{{asset('storage/images/products/').'/'.$media->file_name  }}">Learn more</button>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <button class="btn-d-black checkout-btn" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -433,8 +438,13 @@
                                             </div>
                                         </div>
                                         @endif
-                                        <div class="product-toolbar">
-                                            <button class="btn-d-black checkout-btn" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                        <div class="product-toolbar row">
+                                            <div class="col-md-6 col-sm-12">
+                                                <button type="button" class="btn-d-black show-product-modal" data-product="{{ json_encode($proItem) }}" data-image = "{{asset('storage/images/products/').'/'.$media->file_name  }}">Learn more</button>
+                                            </div>
+                                            <div class="col-md-6 col-sm-12">
+                                                <button class="btn-d-black checkout-btn" onclick="AddToCart('<?php echo $proItem['id'];?>')" >Continue</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
