@@ -292,7 +292,15 @@
 
                                                 </div>
                                             </div>
-                                            <div class="col-1"></div>
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input class="in_type" readonly="readonly" type="radio"
@@ -334,11 +342,6 @@
                                                 <textarea class="in_type" readonly="readonly" type="text" name="Q2"
                                                     value="Please select all the statements that are applicable to you">Please select all the statements that are applicable to you</textarea>
                                             </h3>
-                                            <div class="quest-v2-btn">
-                                                <a class="btn-d-trans btn-wt-170 back-sub-step d-flex justify-content-between"
-                                                    href="javascript:void(0)"><span>Back</span><i
-                                                        class="ti-arrow-left quetions-icon"></i></a>
-                                            </div>
                                         </div>
                                         <div class="col-1">
 
@@ -367,6 +370,10 @@
                                                 <label class="next-button" for="applicable-3">I have previously been
                                                     able to
                                                     maintain an erection, but I'm now unable to do so reliably.</label>
+                                            </div>
+                                            <div class="quest-v2-btn">
+                                                <a class="btn-d-black btn-wt-170 back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
                                             </div>
                                         </div>
                                     </div>
@@ -472,8 +479,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 10%;" aria-valuenow="10" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -587,8 +600,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 20%;" aria-valuenow="20" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -661,8 +680,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 30%;" aria-valuenow="30" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -721,8 +746,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 40%;" aria-valuenow="40" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -777,8 +808,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 49%;" aria-valuenow="49" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -832,8 +869,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 58%;" aria-valuenow="58" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -881,8 +924,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 68%;" aria-valuenow="68" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -956,8 +1005,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 75%;" aria-valuenow="75" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -1078,8 +1133,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 83%;" aria-valuenow="83" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -1167,8 +1228,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 92%;" aria-valuenow="92" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -1242,8 +1309,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 97%;" aria-valuenow="97" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -1321,8 +1394,14 @@
                                                             class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
-                                            <div class="col-1">
-
+                                            <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
 

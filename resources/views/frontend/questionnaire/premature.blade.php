@@ -266,6 +266,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio ">
@@ -318,6 +325,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 7%;" aria-valuenow="7" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -370,6 +384,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 13%;" aria-valuenow="13" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -424,6 +445,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 18%;" aria-valuenow="18" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -483,6 +511,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 25%;" aria-valuenow="25" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio ">
@@ -538,6 +573,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 30%;" aria-valuenow="30" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio ">
@@ -587,6 +629,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 38%;" aria-valuenow="38" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio ">
@@ -692,6 +741,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 47%;" aria-valuenow="47" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio  ">
@@ -867,6 +923,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 55%;" aria-valuenow="55" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -910,6 +973,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 61%;" aria-valuenow="61" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio line_bottom">
@@ -1082,6 +1152,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 73%;" aria-valuenow="73" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio line_bottom">
@@ -1268,6 +1345,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 82%;" aria-valuenow="82" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio line_bottom">
@@ -1372,6 +1456,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 92%;" aria-valuenow="92" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
@@ -1450,6 +1541,13 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">
+                                                <div class="quest-progress-bar mobile">
+                                                    <div class="progress">
+                                                        <div class="progress-bar" role="progressbar"
+                                                            style="width: 100%;" aria-valuenow="100" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
