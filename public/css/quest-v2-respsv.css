@@ -1,0 +1,993 @@
+@media (max-width: 1920px) {
+    .tablets-list-box p {
+        text-align: end;
+    }
+}
+
+@media (max-width: 1439px) {
+    .weare-going-con {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .list-heading {
+        line-height: 2;
+    }
+
+    .quest-v2-list li {
+        font-size: 16px;
+        line-height: 2.1;
+    }
+
+    .btn-d-black,
+    .btn-d-trans {
+        font-size: 16px;
+    }
+
+    .tablets-list-box {
+        width: 50%;
+        flex: 0 0 50%;
+        margin-bottom: 20px;
+    }
+
+    .qos-product {
+        flex-direction: column;
+    }
+
+    .qos-product-cont {
+        text-align: center;
+    }
+
+    .total-amount h3 {
+        font-size: 24px;
+        line-height: 1.2;
+    }
+
+    /* .offer-price-btn {
+        flex-direction: column;
+    } */
+
+    /* .ofr-add-btn {
+        margin-top: 20px;
+    } */
+
+    .smlprdt-offer .ofr-add-btn .btn-d-black {
+        padding: 8px 32px;
+    }
+
+    .quest-lfc-btn li a {
+        padding: 20px 28px;
+        font-size: 16px;
+    }
+
+    .quest-lfc-btn li a img,
+    .quest-lfc-btn li a svg {
+        height: 45px;
+        width: 39px;
+        margin-right: 23px;
+    }
+    .quest-v2-list li:after {
+        top: 16px;
+        left: -12px;
+    }
+    .back-btn-content .quest-v2-subh {
+        font-size: 24px;
+    }
+    .quest-v2-content .ctsm_radio_box .form-radio label {
+        padding: 17px 30px;
+    }
+    .qos-product-text .list-group-item {
+        font-size: 12px;
+    }
+}
+@media (max-width: 1199px) {
+    .qos-product-text {
+        font-size: 15px;
+    }
+    .discount-cls-main {
+        font-size: 12px;
+    }
+    .qos-product-text .list-group-item {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 991px) {
+    .qos-product-text .list-group-item {
+        font-size: 18px;
+    }
+
+    .quest-v2-content .ctsm_radio_box .form-radio label {
+        padding: 20px 14px;
+    }
+    .weare-going-con {
+        font-size: 20px;
+    }
+
+    .list-heading {
+        font-size: 20px;
+        line-height: 1.6;
+    }
+
+    .quest-v2-list li {
+        font-size: 14px;
+        line-height: 2;
+    }
+
+    /* .btn-d-trans {
+        margin-top: 20px;
+    } */
+
+    .quest-lfc-btn li a {
+        padding: 20px 17px;
+        font-size: 15px;
+    }
+
+    .quest-v2-subh {
+        font-size: 16px;
+        margin-bottom: 45px;
+    }
+
+    .tablets-list-box h5 {
+        font-size: 18px;
+    }
+
+    .pre-tm-dosage-mg {
+        padding: 31px 30px;
+    }
+
+    .quest-ordrsmry-left {
+        max-width: 100%;
+        padding-right: 0px;
+    }
+
+    .card-design .card-heading {
+        text-align: center;
+    }
+
+    .offer-tablet-name {
+        justify-content: center;
+    }
+
+    .quest-lfc-btn li a {
+        justify-content: left;
+    }
+
+    .phone-none {
+        display: none;
+    }
+
+    .desktop-none {
+        display: block;
+    }
+
+    .quest-lfc-btn {
+        text-align: left;
+    }
+    .pre-tm-dosage-mg h4 {
+        font-size: 30px;
+    }
+    .pre-tm-dosage-mg h6 {
+        font-size: 12px;
+    }
+    .dosage-price h3 {
+        font-size: 33px;
+    }
+    .pre-tretmt-dosage {
+        padding: 15px;
+    }
+    .r-t-card-body {
+        flex-wrap: nowrap;
+    }
+
+    .btn-wt-300 {
+        min-width: 170px;
+    }
+    /* .quest-v2-step {
+        padding: 20px 0;
+    }
+    .quest-progress-bar {
+        margin-bottom: 15px;
+    }
+    .questionnaire-v2-main .container-fluid {
+        padding: 0 25px;
+    } */
+    /* .quest-v2-content .inner-form-group {
+        padding: 15px;
+    } */
+    .quest-v2-list li:after {
+        top: 14px;
+        left: -12px;
+        height: 3px;
+        width: 3px;
+    }
+    .list ul {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+    }
+    .r-t-card-body {
+        margin: 0 -15px 7px;
+    }
+    .brands.container.mobile{
+        display: block;
+    }
+    .brand-images.mobile p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .brands.container{
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .orderText {
+        font-size: 9px;
+    }
+
+    .ico-cus-div {
+        border-bottom: 1px solid rgba(204, 204, 204, 0.41);
+    }
+    .ctsm_radio_box .col-md-6.myBtn {
+        padding-bottom: 20px;
+    }
+    .questionnaire-v2-main .container-fluid {
+        padding: 0 24px;
+    }
+
+    .quest-progress-bar.mobile {
+        display: block;
+        margin-top: 30px;
+    }
+
+    .quest-progress-bar {
+        display: none;
+    }
+
+    .quest-v2-error-modal-label {
+        background-color: #000;
+    }
+
+    .quest-v2-error-modal-label .quest-v2-subh {
+        font-size: 32px;
+        padding-top: 10px;
+        color: #fff;
+    }
+
+    .quest-v2-content [type="radio"]:checked + label:before,
+    .quest-v2-content [type="radio"]:not(:checked) + label:before {
+        width: 25px;
+        height: 25px;
+    }
+
+    .quest-v2-content [type="radio"]:checked + label:after,
+    .quest-v2-content [type="radio"]:not(:checked) + label:after {
+        width: 17px;
+        height: 17px;
+    }
+
+    .quest-v2-content .form-radio label {
+        font-size: 13px;
+        padding: 18px 18px 18px 74px;
+    }
+
+    .quest-v2-content .form-radio {
+        margin-bottom: 20px;
+    }
+
+    .quest-lfc-btn {
+        text-align: left;
+        padding: 10px;
+    }
+
+    .quest-lfc-btn li a {
+        padding: 16px 8px;
+        font-size: 15px;
+        justify-content: left;
+        line-height: 1.4;
+    }
+
+    .quest-lfc-btn li a img,
+    .quest-lfc-btn li a svg {
+        height: 44px;
+        width: 44px;
+        margin-right: 26px;
+    }
+
+    .btn-wt-300 {
+        min-width: 250px;
+    }
+
+    .quest-v2-error .modal-body .error-btn img {
+        width: 72px;
+    }
+
+    .quest-v2-error .modal-body {
+        padding: 40px 19px;
+    }
+
+    .quest-v2-error .modal-body h5 {
+        font-weight: 600;
+        font-size: 14px;
+    }
+
+    .quest-v2-error .modal-body p {
+        font-size: 15px;
+        line-height: 1.4;
+    }
+
+    .form-group.form-check {
+        padding-left: 0;
+    }
+
+    .quest-v2-error .modal-body .form-check .form-check-input {
+        margin-left: 0.5em;
+        margin-right: 0px;
+    }
+
+    .close-que-modal {
+        display: none;
+    }
+
+    .close-que-modal.mobile {
+        width: 60%;
+        margin: auto;
+        display: block;
+        color: #fff;
+        background-color: #3f453f;
+        margin-bottom: 30px;
+    }
+
+    .btn-d-black {
+        padding: 13px 30px;
+    }
+
+    .quest-v2-content .form-text-field .form-control {
+        padding: 18px;
+    }
+
+    .tablets-list-box {
+        width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 15px;
+    }
+
+    .v2-5step-cont .btn-d-trans {
+        margin: 0px;
+        margin-bottom: 20px;
+    }
+
+    .dosage-mg {
+        margin-bottom: 7px;
+    }
+
+    /* .pre-tm-dosage-mg h3 {
+        font-size: 38px;
+    } */
+
+    .pre-tm-tablet {
+        margin: auto;
+        max-width: 329px;
+    }
+
+    .pre-tm-dosage-mg {
+        margin: auto;
+        max-width: 329px;
+    }
+
+    .pre-tretmt-dosage .col-md-4.col-sm-12 {
+        margin-bottom: 20px;
+    }
+
+    /* .offer-price-btn {
+        flex-direction: column;
+    } */
+
+    .offer-price-btn .ofr-price {
+        margin-right: 0px;
+    }
+
+    .ofr-add-btn {
+        margin-top: 27px;
+    }
+
+    .offer-price-btn .btn-d-black {
+        padding: 8px 35px;
+    }
+
+    .loading-text {
+        font-size: 15px;
+        line-height: 1.4;
+        margin-top: 2px;
+        padding-top: 30px;
+    }
+
+    .offer-tablet-name h5 {
+        font-size: 20px;
+        line-height: 1;
+    }
+
+    .recmd-discount-box .discount-percntg {
+        right: -58px;
+        top: -14px;
+    }
+
+    .card-design .card-heading {
+        font-size: 25px;
+        margin-bottom: 13px;
+    }
+
+    .smlprdt-offer .ofr-add-btn .btn-learn-more {
+        margin: 0px;
+    }
+
+    .smlprdt-offer .ofr-add-btn .btn-d-black {
+        padding: 7px 21px;
+    }
+
+    .order-ph-1 {
+        order: 1;
+    }
+
+    .order-ph-2 {
+        order: 2;
+    }
+
+    .order-ph-3 {
+        order: 3;
+    }
+
+    .recmd-tablets-card {
+        padding: 20px 15px;
+    }
+
+    .r-t-body-cont {
+        /*width: calc(100% - 125px);*/
+        /*flex: 0 0 calc(100% - 125px);*/
+        width: 100%;
+    }
+
+    .weare-going-con {
+        font-size: 18px;
+    }
+
+    .list-heading {
+        font-size: 18px;
+        line-height: 1.6;
+        margin-bottom: 8px;
+    }
+
+    .quest-v2-list li {
+        margin-bottom: 10px;
+    }
+
+    ul.quest-v2-list.pb-30.mb-30 {
+        margin-bottom: 0px;
+    }
+
+    .quest-logo img {
+        max-width: 86px;
+    }
+
+    .offer-tablet-name {
+        justify-content: unset;
+    }
+
+    .offer-tablet-name h5 {
+        font-size: 15px;
+    }
+
+    .offer-price-btn .ofr-price {
+        font-size: 24px;
+    }
+
+    .offer-price-btn .ofr-price span {
+        font-size: 14px;
+    }
+
+    .offer-desc {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .qos-product-text {
+        grid-gap: 15px;
+        margin-bottom: 5px !important;
+    }
+
+    .cstm-border {
+        margin: 11px 0;
+    }
+
+    .total-amount h3 {
+        font-size: 18px;
+    }
+    .quest-v2-error .modal-body .form-check .form-check-input {
+        margin-left: 0px;
+        margin-right: 0px;
+        width: 20px;
+        height: 20px;
+        margin-top: 2px;
+    }
+    .form-group.form-check.mb-30.pb-2 {
+        /* display: flex;
+        flex-direction: column;
+        align-items: center; */
+    }
+
+    .hair-loss-content {
+        display: none;
+    }
+
+    .hair-loss-mobile {
+        display: flex;
+    }
+
+    .quest-v2-error .modal-body .form-check label {
+        width: 100%;
+        padding-top: 4px;
+        color: #000;
+    }
+
+    .ordr-3 {
+        order: 3;
+    }
+    .quest-v2-step {
+        padding: 20px 0 32px;
+    }
+
+    .list-heading {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    .quest-v2-list li {
+        margin-bottom: 6px;
+        line-height: 1.6;
+        font-size: 12px;
+    }
+
+    .quest-lfc-btn li {
+        margin-bottom: 12px;
+    }
+    .btn-wt-300 {
+        min-width: 120px;
+    }
+    .btn-wt-170 {
+        min-width: 120px;
+    }
+
+    .quest-lfc-btn li a img,
+    .quest-lfc-btn li a svg {
+        height: 30px;
+        width: 30px;
+        margin-right: 12px;
+    }
+    .mb-30 {
+        margin-bottom: 12px;
+    }
+    .mb-20 {
+        margin-bottom: 10px;
+    }
+    .pb-30 {
+        padding-bottom: 10px;
+    }
+    .mr-20 {
+        margin-right: 10px;
+    }
+    .quest-lfc-btn li {
+        margin-bottom: 20px;
+    }
+    .btn-d-black,
+    .btn-d-trans {
+        font-size: 13px;
+        font-weight: 500;
+        padding: 10px 15px;
+    }
+    .quest-progress-bar h3 {
+        font-size: 14px;
+    }
+    .quest-lfc-btn li a {
+        padding: 15px 20px;
+    }
+    .quest-v2-list li:after {
+        top: 10px;
+    }
+    .quest-progress-bar {
+        margin-bottom: 15px;
+    }
+    .quest-progress-bar .progress {
+        height: 5px !important;
+    }
+    .quest-v2-header {
+        padding: 12px 0;
+    }
+    .quest-logo img {
+        max-width: 70px;
+    }
+
+    .btn-d-trans.btn-wt-170.prev-button:not(:last-of-type) {
+        display: none;
+    }
+
+    .prev-button.mobile {
+        display: block;
+        width: 100% !important;
+        background: #000;
+        color: #fff;
+        margin: auto;
+    }
+
+    .quest-v2-content [type="radio"]:checked + label:before,
+    .quest-v2-content [type="radio"]:not(:checked) + label:before {
+        width: 20px;
+        height: 20px;
+    }
+    .quest-v2-content [type="radio"]:checked + label:after,
+    .quest-v2-content [type="radio"]:not(:checked) + label:after {
+        width: 12px;
+        height: 12px;
+    }
+    .quest-v2-content .form-text-field .form-control {
+        padding: 10px;
+    }
+    .quest-v2-error .modal-body {
+        padding: 17px 19px;
+        background-color: #fff;
+    }
+    .quest-v2-error .modal-body .error-btn {
+        margin-bottom: 20px;
+    }
+    .quest-v2-error .modal-body .error-btn img {
+        width: 56px;
+    }
+    .quest-v2-error .modal-body h5 {
+        line-height: 1.6;
+        margin-bottom: 10px;
+    }
+    .quest-v2-error .modal-body p {
+        line-height: 1.6;
+        margin-bottom: 14px;
+        color: #000;
+    }
+    .quest-v2-error .form-group.form-check {
+        margin-bottom: 10px;
+    }
+    .quest-v2-errorstep {
+        padding: 10px 0px;
+    }
+
+    .mb-40 {
+        margin-bottom: 20px;
+    }
+    h4.prefer-diff-tm.mb-30.text-center {
+        font-size: 16px;
+    }
+    .quest-v2-error .modal-body p {
+        font-size: 13px;
+    }
+    .quest-v2-error .modal-body h5 {
+        font-size: 16px;
+        margin-top: 50px;
+        color: #000;
+    }
+
+    .pre-tretmt-dosage {
+        padding: 20px;
+    }
+    .quest-desc {
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 10px;
+    }
+    .quest-v2-btn.text-center.mt-30.pt-30 {
+        margin-top: 10px;
+        padding-top: 10px;
+    }
+    .pre-tm-dosage-mg {
+        padding: 15px 20px;
+    }
+    .pre-tretmt-dosage .col-md-4.col-sm-4.col-12 {
+        margin-bottom: 15px;
+    }
+
+    .card-design {
+        padding: 20px;
+        margin-top: 0px;
+    }
+    .loading-user-img.recmd-user {
+        margin-bottom: 16px;
+    }
+    .offer-tablet-name figure {
+        margin-right: 7px;
+        width: 48px;
+        flex: 0 0 48px;
+    }
+    .pb-20 {
+        padding-bottom: 10px;
+    }
+
+    .ofr-add-btn {
+        margin-top: 0px;
+    }
+
+    .card-design {
+        padding: 15px;
+    }
+    .quest-ordrsmry-right form .form-group {
+        margin-bottom: 15px;
+    }
+    .q-orsm-heading {
+        font-size: 19px;
+    }
+
+    .pre-tretmt-dosage figure {
+        text-align: center;
+    }
+    .pre-tretmt-dosage h3 {
+        text-align: center;
+    }
+    .quest-v2-list li:after {
+        top: 9px;
+        left: -10px;
+    }
+    .list h3 {
+        font-size: 20px;
+    }
+    label.sub-leb h4 {
+        font-size: 13px;
+    }
+    label.sub-leb span.discount-percntg {
+        right: -90px;
+        top: 1px;
+        padding: 32px 87px 4px;
+        font-size: 10px;
+    }
+    .qos-product-text li.list-group-item {
+        font-size: 15px;
+    }
+    .text-success {
+        color: #198754 !important;
+        font-size: 13px;
+    }
+
+    .sub-text-leb span,
+    .sub-leb p {
+        font-size: 10px;
+    }
+
+    .tablet-100size {
+        max-width: 121px;
+    }
+    #sign_form .form-group.form-check {
+        display: flex;
+    }
+    #sign_form .form-check-input {
+        margin-left: -0.2em;
+    }
+    #sign_form .form-check-label {
+        padding-left: 10px;
+    }
+
+    .brands {
+        padding: 16px 8px 16px 16px;
+    }
+
+    .brand-images{
+        padding: 8px;
+    }
+
+    .brand-images.mobile p {
+        display: none;
+
+    }
+}
+
+@media (max-width: 575px) {
+    .quest-v2-error .modal-body .form-check .form-check-input {
+        width: 16px;
+        height: 16px;
+    }
+
+    .r-t-card-body {
+        margin: 0 -8px 25px;
+    }
+
+    .r-t-card-body figure {
+        margin: 0;
+        /*width: 86px;*/
+        /*flex: 0 0 86px;*/
+        width: 100%;
+        padding: 0 8px;
+    }
+
+    .r-t-body-cont {
+        flex-grow: 1;
+        padding: 0 8px;
+        width: calc(100% - 86px);
+        flex: 0 0 calc(100% - 86px);
+    }
+
+    .r-t-body-cont h4 {
+        font-size: 14px;
+    }
+
+    .r-t-body-cont p {
+        font-size: 12px;
+        line-height: 1.6;
+        margin: 5px 0 8px;
+    }
+
+    .r-t-body-cont h5 {
+        font-size: 16px;
+    }
+
+    .tablets-list-box {
+        padding: 0 15px;
+    }
+
+    .tablets-list-box figure {
+        margin-bottom: 10px;
+    }
+
+    .tablets-list-box h5 {
+        font-size: 14px;
+    }
+
+    .tablets-list-box p {
+        margin-bottom: 10px;
+    }
+
+    .tablets-list-box p {
+        font-size: 12px;
+    }
+
+    .tablets-list-box .row {
+        padding: 10px 5px;
+    }
+
+    .btn-d-black,
+    .btn-d-trans {
+        font-size: 14px;
+        font-weight: 500;
+        padding: 10px 9px;
+    }
+
+    .offer-price-btn .ofr-price,
+    .smlprdt-offer .offer-price-btn .ofr-price {
+        font-size: 16px;
+    }
+    .offer-price-btn .ofr-price span {
+        font-size: 12px;
+    }
+    .mr-30 {
+        margin-right: 0px;
+    }
+    .offer-price-btn .btn-d-black {
+        padding: 4px 16px;
+    }
+    .btn-learn-more {
+        font-size: 14px;
+    }
+    .btn-d-black,
+    .btn-d-trans {
+        font-size: 11px;
+    }
+    .loading-text {
+        padding-top: 16px;
+    }
+    /* .offer-price-btn .ofr-price span,
+    .smlprdt-offer .offer-price-btn .ofr-price span
+    {
+        padding-left: 0px;
+    } */
+    .qos-product-text {
+        margin-bottom: 5px !important;
+    }
+    .cstm-border {
+        margin: 11px 0;
+    }
+    .me-2 {
+        margin-right: 0.5rem !important;
+    }
+    .smlprdt-offer .ofr-add-btn .btn-d-black {
+        padding: 3px 12px;
+    }
+    .smlprdt-offer .offer-price-btn .ofr-price {
+        margin-right: 4px;
+    }
+    .smlprdt-offer .ofr-add-btn .btn-d-black {
+        font-size: 11px;
+    }
+    .q-orsm-heading {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    .login-btn-pw {
+        padding-top: 10px;
+    }
+    .login-btn-pw a {
+        font-size: 16px;
+        line-height: 1.5;
+        margin-top: 13px;
+    }
+    .mb-20 {
+        margin-bottom: 10px;
+    }
+    .quest-ordrsmry-right p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+    p.input-desc {
+        margin: 10px 0px 0;
+    }
+    .quest-ordrsmry-right form .form-group {
+        margin-bottom: 16px;
+    }
+    .form-group.form-check .form-check-label {
+        font-size: 14px;
+    }
+    .smlprdt-offer .ofr-add-btn .btn-learn-more {
+        font-size: 12px;
+    }
+    .smlprdt-offer .offer-price-btn .ofr-price span {
+        font-size: 13px;
+        padding-left: 8px;
+    }
+    .payment-method-card h5 {
+        font-size: 15px;
+    }
+    .payment-method-card svg {
+        height: 30px;
+        width: 30px;
+        margin-right: 8px;
+    }
+    .card-image img {
+        max-width: 50px;
+    }
+    .debit-text {
+        font-size: 12px;
+        line-height: 1.2;
+    }
+    .back-btn-content .quest-v2-subh {
+        font-size: 18px;
+    }
+    .recmd-tablets-card .r-t-card-body {
+        flex-direction: column;
+    }
+    .recmd-tablets-card {
+        padding: 14px 0px;
+    }
+    .recmd-tablets-card .add-highlite-main {
+        padding: 4px 14px;
+        border-radius: 25px;
+    }
+    .recmd-tablets-card .r-t-card-footer {
+        justify-content: center;
+    }
+    .recmd-tablets-card a.trans-btn.black-btn.learn-more-card-btn.detailbtn {
+        padding: 7px 45px;
+    }
+    .recmd-tablets-card .add-highlite-main {
+        width: unset;
+    }
+    .recmd-tablets-card .r-t-body-cont {
+        text-align: center;
+    }
+    h4.sub-text-leb span,
+    label.sub-leb p {
+        font-size: 14px;
+    }
+    label.sub-leb p {
+        font-size: 14px;
+        max-width: 130px;
+    }
+    a.trans-btn.black-btn.learn-more-card-btn.detailbtn {
+        font-size: 12px;
+    }
+    .qos-product-text li.list-group-item {
+        font-size: 11px;
+    }
+}

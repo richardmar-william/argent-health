@@ -1,0 +1,185 @@
+@media (min-width: 1720px) {
+    .container-xxl {
+        max-width: 1720px;
+    }
+}
+
+body header {
+    position: fixed !important;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+
+body footer {
+    position: fixed !important;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    z-index:999;
+}
+
+.login-signup {
+    margin: 0;
+}
+
+a.navbar-brand.navbar-brand-mob {
+    display: none;
+}
+
+.messenger.agent-messenger {
+    padding: 125px 0 0 !important;
+}
+
+.messenger-listView,
+.messenger-messagingView {
+    height: calc(100vh - 150px) !important;
+}
+
+/* #242423 */
+
+.messenger-listView::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.messenger-listView::-webkit-scrollbar-track {
+    background: #24242334;
+}
+
+.messenger-listView::-webkit-scrollbar-thumb {
+    background: #242423d8;
+}
+
+body .m-list-active,
+body .m-list-active:hover,
+body .m-list-active:focus,
+body .message-card.mc-sender .message {
+    background: #242423 !important;
+}
+
+.messenger.agent-messenger .messenger-list-item td p {
+    margin-bottom: 0;
+}
+
+.messenger.agent-messenger .m-header svg {
+    color: #242423 !important;
+}
+
+.messenger.agent-messenger .m-header nav a {
+    display: flex;
+}
+
+body .main-layout {
+    min-height: auto !important;
+}
+
+
+nav.m-header-right {
+    display: none;
+}
+
+body .messenger-sendCard .send-button svg {
+    color: #242423;
+}
+
+
+
+.l-s-details-inr ul.c-w-sociallinks {
+    display: none;
+}
+
+
+
+@media (max-width: 1650px) {
+    .messenger.agent-messenger {
+        padding: 103px 0 0 !important;
+    }
+}
+
+@media (max-width: 1439px) {
+    .messenger.agent-messenger {
+        padding: 103px 0 0 !important;
+    }
+
+    .messenger.agent-messenger {
+        padding: 85px 0 0 !important;
+    }
+
+    .messenger-listView,
+    .messenger-messagingView {
+        height: calc(100vh - 92px) !important;
+    }
+}
+
+@media (max-width: 1199px) {
+
+    .messenger-listView,
+    .messenger-messagingView {
+        height: calc(100vh - 120px) !important;
+    }
+
+    .message-card .message {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 980px) {
+    .messenger-listView {
+        top: 80px;
+    }
+}
+
+@media (max-width: 767px) {
+    footer {
+        padding: 15px 0 5px;
+    }
+
+    footer .footer-upper ul {
+        flex-wrap: wrap;
+        margin-bottom: 0px;
+    }
+}
+
+@media (max-width: 680px) {
+    .agent-messenger .messenger-messagingView {
+        position: static;
+    }
+}
+
+@media (max-width: 575px) {
+    .messenger.agent-messenger {
+        padding: 70px 0 0 !important;
+    }
+
+    .messenger-listView,
+    .messenger-messagingView {
+        height: calc(100vh - 130px) !important;
+    }
+
+    .message-card .message {
+        font-size: 12px;
+    }
+
+    .messenger-listView {
+        top: 70px;
+    }
+}
+
+@media (max-width: 553px) {
+
+    .messenger-listView,
+    .messenger-messagingView {
+        height: calc(100vh - 150px) !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .messenger.agent-messenger {
+        padding: 60px 0 0 !important;
+    }
+
+    .messenger-listView {
+        top: 60px;
+    }
+}

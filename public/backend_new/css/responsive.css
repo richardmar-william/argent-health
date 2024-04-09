@@ -1,0 +1,9 @@
+
+@media (max-width: 767px) {
+    .sidebar .sidebar-brand .sidebar-brand-text img {
+        height: 40px;
+    }
+    .content-wrapper .rounded-circle .btn {
+        padding: 8px 21px;
+    }
+}

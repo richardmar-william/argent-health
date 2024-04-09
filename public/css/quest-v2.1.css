@@ -1,0 +1,1325 @@
+:root {
+    font-size: 18px;
+}
+body {
+    background-color: #e4e4e4;
+}
+.before-submit-area::-webkit-scrollbar {
+    width: 5px;
+    background-color: white;
+}
+.before-submit-area::-webkit-scrollbar-thumb {
+    width: 5px;
+    border-radius: 3px;
+    background-color: rgb(165, 165, 165);
+}
+.bg-image {
+    padding: 4rem;
+}
+.ques-lfc {
+    padding: 0px 2rem;
+    font-size: 0.8rem;
+}
+
+@media screen and (max-width: 1660px) {
+    :root {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1570px) {
+    :root {
+        font-size: 17px;
+    }
+}
+@media screen and (max-width: 1440px) {
+    :root {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 1200px) {
+    :root {
+        font-size: 15px;
+    }
+}
+@media screen and (max-width: 991px) {
+    :root {
+        font-size: 18px;
+    }
+}
+@media screen and (max-width: 768px) {
+    :root {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 586px) {
+    :root {
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 480px) {
+    :root {
+        font-size: 12px;
+    }
+}
+@media screen and (max-width: 420px) {
+    :root {
+        font-size: 11px;
+    }
+}
+@media screen and (max-width: 360px) {
+    :root {
+        font-size: 10px;
+    }
+}
+.quest-ordrsmry-right col label {
+    font-size: 1rem;
+}
+.quest-lfc-btn {
+    display: flex;
+    flex-direction: row;
+}
+.ques-footer {
+    padding: 40px 0px;
+}
+.qe-img {
+    display: flex;
+    justify-content: center;
+}
+
+.qe-img img {
+    border-radius: 22.5px;
+    width: 100%;
+}
+.qe-title {
+    margin: 3rem 0rem;
+    color: black;
+    font-weight: bold;
+    font-size: 3.2rem;
+}
+.qe-content p.mb-30 {
+    line-height: 1.5rem;
+    letter-spacing: 1px;
+    font-size: 1rem;
+    text-align: justify;
+}
+.quest-v2-list.before-submit-area li {
+    line-height: 1.5;
+    font-size: 0.8rem;
+}
+.qe-content {
+    height: 100%;
+}
+
+.list-heading.mb-30 {
+    margin-top: 2rem;
+    margin-bottom: 0px;
+}
+.qe-content .list-heading {
+    font-weight: bold;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+    letter-spacing: 1px;
+    color: black;
+    font-family: poppins;
+}
+.qe-content .before-submit-area {
+    padding: 20px 20px 20px 40px;
+    color: black;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: normal;
+}
+.quest-v21-signin-form .form-group label {
+    padding: 0.8rem 0px;
+    font-size: 1.2rem;
+}
+.qe-img {
+    padding: 0px 2rem 0px 4rem;
+}
+.qe-content {
+    padding: 0px 4rem 0px 2rem;
+}
+.quest-v2-list li {
+    color: black;
+}
+.card-design .product-desc {
+    margin: 1rem 0px;
+}
+.question-final {
+    border-radius: 51px;
+    margin: 108px 26px 100px 26px;
+    background-color: white;
+    padding: 64px 0px 0px;
+    color: black;
+}
+.row.recommended-product-list {
+    justify-content: space-start;
+}
+.choose-tablets {
+    padding-top: 2rem;
+    width: 100%;
+}
+.choose-tablets h4 {
+    font-size: 1rem;
+}
+.tablets-items {
+    display: flex;
+    margin-top: 1rem;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow: auto;
+}
+.tablets-item {
+    border: 2px solid silver;
+    flex: 1;
+    padding: 0.5rem 0rem;
+}
+.tablets-item.selected {
+    border: 3px solid #141c2c;
+    background-color: rgb(255 250 228);
+    z-index: 10;
+}
+.tablets-item div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.tablets-item div:first-child {
+    font-weight: bold;
+    padding: 0.4rem;
+    font-size: 2rem;
+}
+.tablets-item div:last-child {
+    font-size: 0.8rem;
+    color: rgb(117, 117, 117);
+}
+.tablets-item:not(:first-child) {
+    margin-left: -2px;
+}
+/* .quest-v2-content .form-radio label {
+    padding: 1rem 1rem 1rem 5rem;
+} */
+.ques-final-thankyou {
+    font-family: "Yeseva one";
+}
+.ques-final-answering {
+    font-family: "Poppins";
+}
+.ques-final-thankyou,
+.ques-final-answering {
+    line-height: 3rem;
+}
+.qe-contet .v2-1step-cont {
+    position: absolute;
+}
+.before-submit-area {
+    background-color: #f5f5f5;
+    padding: 20px;
+    padding-left: 40px;
+    max-height: 20vw;
+    overflow: auto;
+}
+#btn_email {
+    margin-bottom: 1.2rem;
+}
+.quest-lfc-btn {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 32px 20px 20px;
+    text-align: left;
+}
+.quest-lfc-btn {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 0;
+}
+.quest-lfc-btn img {
+    width: 3rem;
+}
+.question-final .quest-lfc-btn div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.quest-lfc-btn div:last-child {
+    margin-right: 20px;
+}
+.quest-lfc-btn div span {
+    --bs-gutter-x: 0.5rem;
+}
+.v2-1step-cont {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+.before-submit-area {
+    overflow: auto;
+}
+.question-final .quest-lfc-btn img {
+    width: 3rem;
+    height: 3rem;
+    padding: 0.5rem;
+    margin-right: 0px;
+}
+
+.ques-footer .quest-v2-btn .btn-d-black {
+    width: fit-content;
+}
+
+.ques-footer .quest-v2-btn {
+    display: flex;
+    margin: 1rem 4rem 1rem 2rem;
+    justify-content: space-between;
+}
+.quest-v2-btn * {
+    font-size: 1rem;
+}
+
+.sub-step .quest-v2-btn {
+    display: flex;
+    flex-direction: row;
+}
+
+.question-final .prev-button.mobile {
+    color: white;
+    background-color: #242423;
+}
+
+.question-final .prev-button {
+    border: 1px solid #242423;
+    color: #242423;
+}
+
+.quest-v21-signin {
+    margin: auto;
+    margin-top: 4.5rem;
+    margin-bottom: 4.5rem;
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+    color: #3f453f;
+    overflow: hidden;
+    border-radius: 45px;
+    background-color: white;
+}
+.quest-v21-signin .img-view,
+.quest-v21-signin .quest-v21-signin-form {
+    width: 50%;
+}
+.quest-v21-signin .quest-v21-signin-form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 2.2rem;
+    padding-bottom: 4rem;
+}
+.quest-v21-signin .quest-v21-signin-form h1 {
+    margin-top: 1rem;
+    font-size: 3rem;
+    line-height: 2.8rem;
+    letter-spacing: -0.3rem;
+    padding-bottom: 0px;
+    font-weight: bold;
+}
+.quest-v21-signin .quest-v21-signin-form h4 {
+    margin-top: 0rem;
+    padding-top: 0px;
+    font-family: Poppins;
+    margin-bottom: 2rem;
+}
+.quest-v21-signin .quest-v21-signin-form h1 span {
+    display: block;
+    font-size: 2.6rem;
+    font-weight: 300;
+    font-family: "yeseva one";
+}
+.quest-v21-signin .quest-v21-signin-form > * {
+    padding: 0px;
+    padding-bottom: 0.4rem;
+}
+.quest-v21-signin .quest-v21-signin-form .form-group input {
+    padding: 1rem;
+    background-color: #e2e8f0;
+    width: 100%;
+    font-size: 1rem;
+    border-radius: 50px;
+}
+.quest-ordrsmry-right form label {
+    margin-left: 0px;
+}
+.quest-v21-signin .quest-v21-signin-form button {
+    padding: 1.5rem;
+}
+.quest-v21-signin .img-view img {
+    width: 100%;
+}
+.input-password {
+    display: none;
+}
+.choose-prefer {
+    color: black;
+    font-size: 3rem;
+    line-height: 2.8rem;
+}
+
+.choose-prefer div {
+    font-family: "Yeseva One";
+}
+.choose-prefer .choose-prefer-title {
+    font-family: "Poppins";
+    font-weight: bold;
+}
+.choose-prefer-title {
+    font-weight: bold;
+}
+.tag-selector .nav-item a {
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+    font-size: 1.4rem;
+}
+.choose-prefer-contet-header {
+    padding: 2.4rem 3rem 0px;
+}
+/* .recommended-product-list {
+    flex-wrap: wrap;
+    overflow: auto;
+} */
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+    border: none;
+}
+.questionnaire-v2-main .container-fluid.choose-perfer-content {
+    padding: 0px 20px;
+    margin-bottom: 5rem;
+    overflow: hidden;
+}
+.product-card {
+    padding: 3rem;
+}
+.product-info img {
+    border-radius: 59px;
+}
+.tag-selector-area {
+    padding: 2rem 3rem;
+    width: 100%;
+    overflow: auto;
+}
+
+.asking-all-treatment > .col {
+    display: flex;
+    justify-content: center;
+}
+/* .tab-pane.product-info.active {
+    transition: opacity 0.5s;
+} */
+
+.product-card .tab-content {
+    display: flex;
+    justify-content: center;
+    height: calc(100% - 7.5rem);
+}
+.tab-content > .active {
+    display: flex;
+}
+.asking-all-treatment > .col strong {
+    display: flex;
+    color: black;
+    font-size: 1.2rem;
+    margin: 20px;
+    justify-content: center;
+}
+.all-treatment-btn {
+    color: black;
+    border: 1px solid black;
+}
+.tag-selector {
+    background-color: #cfcfcf;
+    border-radius: 50px;
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: auto;
+    justify-content: space-around;
+}
+.tag-selector > li {
+    font-size: 1.1rem;
+    min-width: 50%;
+    width: max-content;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 0px 2rem;
+    border-radius: 50px;
+}
+.tag-selector > li.nav-item-selected {
+    background-color: white;
+}
+.product-highlite {
+    padding: 1rem 3rem;
+    border-radius: 50px;
+    font-size: 1.2rem;
+    color: white;
+    background-color: #b2b2b2;
+}
+.product-title {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+.product-info {
+    background-color: white;
+    color: black;
+    padding: 2rem;
+    border-radius: 51px;
+    margin: 1rem 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+.product-desc {
+    font-size: 0.8rem;
+    line-height: 1.8rem;
+    font-weight: bold;
+}
+.product-price {
+    font-size: 1rem;
+    font-weight: bold;
+}
+.product-detail-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* padding: 0px 2.2rem; */
+}
+.product-detail-description {
+    font-size: 0.9rem;
+}
+.product-detail-info p {
+    margin: 1.2rem 0px;
+}
+.product-detail-info h1 {
+    margin: 2rem 0px;
+}
+.product-toolbar {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.tag-selector.nav-tabs .nav-link:focus,
+.tag-selector.nav-tabs .nav-link:hover {
+    border: none;
+}
+.tag-selector.nav-tabs .nav-item.show .nav-link,
+.tag-selector.nav-tabs .nav-link.active {
+    background: none;
+}
+.product-toolbar button {
+    margin: 1rem 0px;
+}
+.recommend-button {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+#other_rec_prod {
+    display: none;
+}
+.card-heading {
+    font-size: 3.6rem;
+    min-height: 9rem;
+    font-weight: bold;
+    color: black;
+    padding: 0px 3rem;
+}
+
+.banner-img,
+.card-heading,
+.right-banner {
+    height: 13vw;
+}
+.quest-ordrsmry-left .card-heading div:first-child {
+    font-family: Poppins;
+}
+.quest-ordrsmry-left .card-heading div:last-child {
+    font-family: "Yeseva one";
+}
+.card-design {
+    border-radius: 46px;
+    padding: 3rem;
+}
+.btn_order_pay {
+    border-radius: 1.2rem;
+    padding: 1.5rem;
+}
+.card-design > .clearText {
+    font-family: Poppins;
+}
+.quest-ordrsmry-wrap > div {
+    padding: 2rem;
+}
+.quest-ordrsmry-wrap > div.auth {
+    padding: 3rem 3rem 3rem 0px;
+}
+.card-design .product-title {
+    color: black;
+    font-size: 2rem;
+    margin-top: 3rem;
+    font-weight: bold;
+}
+.card-design .product-desc {
+    color: black;
+    font-family: Poppins;
+    font-weight: normal;
+}
+.btn-wt-300 {
+    min-width: 50px;
+}
+.product-subtotal {
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.duration-label,
+.text-success {
+    color: #1e771d;
+}
+.qos-product {
+    margin: -1rem;
+    border-radius: 2rem;
+    display: flex;
+    justify-content: center;
+}
+.quest-v2-list.pb-30 li,
+.quest-v2-list.pb-30.mb-10 li,
+.quest-v2-list.pb-30.mb-20 li,
+.quest-v2-list.pb-30.mb-30 li {
+    color: white;
+}
+.before-submit-area.quest-v2-list.pb-30.mb-20 li {
+    color: black;
+}
+.qos-product .img-fluid {
+    border-radius: 2rem;
+    width: 75%;
+}
+.one-month-sb {
+    background-color: #d9d9d9;
+    border-radius: 2rem;
+}
+.over-one-month-sb {
+    background-color: #3f453f;
+
+    border-radius: 2rem;
+}
+.over-one-month-sb *,
+h4.sub-text-leb span,
+label.sub-leb p {
+    color: white;
+}
+.one-month-sb .form-radio label,
+.over-one-month-sb .form-radio label {
+    background: none;
+    padding: none;
+}
+.total-amount {
+    font-size: 1.3rem;
+    padding: 15px 0px;
+}
+.cstm-border {
+    margin: 0.8rem 0px;
+    height: 1px;
+    background-color: black;
+}
+.quest-ordrsmry-right {
+    background-color: white;
+    /* border: 1px solid black; */
+    color: black;
+    padding: 3rem;
+    border-radius: 46px;
+}
+.checkout-step {
+    display: flex;
+    font-size: 1.4rem;
+    justify-content: space-between;
+    margin: 1rem 0px 3rem;
+}
+.quest-ordrsmry-right form label {
+    color: #718096;
+}
+.checkout-step .disabled {
+    color: #b3b3b3;
+}
+.signin-desc {
+    margin: 2rem 0rem;
+}
+.quest-ordrsmry-right label {
+    margin-left: 0px;
+}
+.shipping-details-header div:last-child {
+    font-family: "Yeseva One";
+}
+.quest-ordrsmry-right input,
+.quest-ordrsmry-right select,
+.quest-ordrsmry-right .form-control,
+.quest-ordrsmry-right form .form-control {
+    background-color: #e2e8f0;
+    border-radius: 6px;
+    font-size: 1.2rem;
+}
+.product-name {
+    font-size: 2rem;
+    min-height: 5rem;
+    font-family: "Yeseva One";
+}
+.product-title {
+    font-family: "Yeseva One";
+}
+.recommend-button .btn-d-trans {
+    background-color: transparent;
+    border: 1px solid black;
+    color: black;
+}
+.quest-ordrsmry-right .form-control {
+    margin: 0.5rem;
+}
+.form-btns {
+    display: flex;
+    justify-content: flex-end;
+}
+.quest-ordrsmry-right form .form-control {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.form-btns #valid {
+    border-radius: 14px;
+    background-color: #40453f;
+}
+#cancel_order {
+    background-color: transparent;
+    color: #4a5568;
+}
+.q-orsm-heading {
+    color: black;
+    font-size: 1rem;
+}
+.pay-btn {
+    display: flex;
+    justify-content: center;
+}
+.pay-btn button {
+    padding: 1.2rem 3rem;
+}
+p.input-desc {
+    margin: 4px;
+}
+.thankyou-right h1 {
+    font-weight: bold;
+}
+.qe-content p.mb-30 {
+    margin-bottom: 0px;
+}
+
+#order_btn {
+    width: 100%;
+}
+.banner-img .account-signup {
+    display: none;
+}
+.banner-img .img-fluid {
+    display: block;
+}
+.quest-v2-content .form-radio label {
+    font-size: 1rem;
+}
+label.sub-leb p {
+    font-size: 0.8rem;
+    max-width: 100%;
+}
+
+#to_shipping {
+    display: none;
+}
+.shipping-details-header {
+    color: black;
+    font-size: 3rem;
+    font-weight: bold;
+    line-height: 3rem;
+    letter-spacing: -2px;
+}
+.banner-img .img-fluid {
+    max-width: 85%;
+}
+.shipping-details-header {
+    margin-bottom: 2rem;
+    display: none;
+}
+
+.recommended-product-list {
+    justify-content: flex-start;
+}
+.recommended-product-list.single {
+    justify-content: center;
+}
+label.sub-leb h4 {
+    font-size: 1rem;
+}
+.quest-ordrsmry-left {
+    padding-right: 3rem;
+    max-width: 100%;
+}
+.product-detail-description {
+    min-height: 6rem;
+}
+.btn_order_pay label {
+    font-size: 1.2rem;
+    padding: 1rem 3rem;
+}
+.quest-v2-step {
+    padding-top: 1.8rem;
+}
+
+.card-design .row .form-group.form-radio .sub-leb span {
+    font-size: 0.7rem;
+    font-weight: 100;
+}
+.quest-v2-btn.pay-btn > .row {
+    width: 100%;
+    margin-right: 0px;
+    margin-left: 0px;
+}
+.shipping-address {
+    font-size: 0.8rem;
+}
+/* .container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+    margin-left: 1rem;
+    margin-right: 1rem;
+} */
+.btn-d-trans:active,
+.btn-d-trans:focus {
+    color: white !important;
+}
+@media screen and (max-width: 1660px) {
+    .before-submit-area {
+        background-color: #f5f5f5;
+        padding: 20px;
+        padding-left: 40px;
+        max-height: 17vw;
+    }
+
+    .qe-title {
+        margin: 2.8rem 0px;
+        font-size: 2.6rem;
+    }
+    .qe-content p.mb-30 {
+        line-height: 1.4rem;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .quest-v21-signin {
+        width: 80%;
+    }
+    .quest-ordrsmry-wrap > div.login {
+        padding: 2rem;
+    }
+    .qe-title {
+        margin: 2.8rem 0px;
+        font-size: 2.6rem;
+    }
+    .qe-content .list-heading {
+        font-size: 1rem;
+    }
+    .qe-content p.mb-30 {
+        line-height: 1.4rem;
+    }
+    .product-name {
+        font-size: 1.8rem;
+    }
+    .before-submit-area {
+        background-color: #f5f5f5;
+        padding: 20px;
+        padding-left: 40px;
+        max-height: 14vw;
+    }
+    .quest-v21-signin .quest-v21-signin-form h1 {
+        margin-top: 1.8rem;
+        font-size: 3.6rem;
+    }
+    .quest-v21-signin .quest-v21-signin-form > * {
+        padding: 0rem;
+        padding-bottom: 0.4rem;
+    }
+    .card-heading {
+        font-size: 3.2rem;
+    }
+}
+@media screen and (max-width: 1200px) {
+    .quest-v21-signin {
+        width: 90%;
+    }
+    .card-design .product-title {
+        font-size: 1.6rem;
+    }
+    .checkout-step {
+        font-size: 1rem;
+    }
+    .quest-ordrsmry-wrap > div.login {
+        padding: 1.4rem;
+    }
+    .quest-v21-signin .quest-v21-signin-form h1 {
+        margin-top: 1.4rem;
+        font-size: 3.2rem;
+    }
+    .qe-title {
+        margin: 2rem 0px;
+        font-size: 2.4rem;
+    }
+    .qe-content p.mb-30 {
+        line-height: 1.2rem;
+    }
+    .quest-v21-signin .quest-v21-signin-form > * {
+        padding: 0rem;
+        padding-bottom: 0.4rem;
+    }
+    .before-submit-area {
+        background-color: #f5f5f5;
+        padding: 20px;
+        padding-left: 40px;
+        max-height: 12vw;
+    }
+    .product-card {
+        padding: 2rem;
+    }
+    .recommend-button {
+        font-size: 1rem;
+    }
+    .qe-title {
+        font-size: 2.8rem 0px;
+    }
+    .card-heading {
+        font-size: 3rem;
+    }
+    .quest-ordrsmry-left {
+        padding-right: 2rem;
+    }
+    .tag-selector .nav-item a {
+        font-size: 1.2rem;
+        font-weight: normal;
+    }
+    .tag-selector-area {
+        padding: 0rem 2.4rem 1rem 2.4rem;
+    }
+    .product-highlite {
+        padding: 0.8rem 2.4rem;
+    }
+    .product-detail-info h1 {
+        margin: 1rem 0rem;
+    }
+}
+
+@media screen and (max-width: 991px) {
+    .quest-v2-content {
+        height: calc(100% - 65px);
+    }
+    .quest-ordrsmry-left {
+        padding-right: 0px;
+    }
+    .login {
+        display: block;
+    }
+    #address_order {
+        display: none;
+    }
+    .logged-in.new-user-auth {
+        display: none;
+    }
+    .auths.new-user-auth {
+        display: flex;
+    }
+    .new-user-auth#address_order {
+        display: block;
+    }
+    .qe-img {
+        padding: 0px 4rem;
+    }
+    .shipping-address {
+        font-size: 0.8rem;
+    }
+    .shipping-details-header {
+        display: block;
+    }
+    .choose-prefer {
+        font-size: 2.4rem;
+    }
+    .card-design {
+        border-radius: 20px;
+    }
+    #to_shipping {
+        display: block;
+    }
+    .btn_order_pay {
+        width: 100%;
+        font-size: 1.6rem;
+    }
+    .order-detail {
+        display: none;
+    }
+    .checkout-step {
+        font-size: 1rem;
+        margin: 1rem 0px 2rem;
+    }
+    #address_order {
+        display: none;
+    }
+
+    .recommended-product-list.single {
+        justify-content: flex-start;
+    }
+    /* .banner-img .img-fluid {
+        display: none;
+    } */
+    .banner-img .account-signup {
+        display: flex;
+        color: black;
+        align-items: flex-start;
+        flex-direction: column;
+        font-weight: bold;
+        font-size: 3rem;
+        padding-left: 1.2rem;
+        line-height: 2.6rem;
+    }
+    .banner-img .account-signup div:first-child {
+        font-weight: bold;
+        font-family: Poppins;
+    }
+    .banner-img .account-signup div:last-child {
+        font-weight: bold;
+        font-family: "Yeseva bold";
+    }
+    .quest-ordrsmry-wrap #signups {
+        display: none;
+    }
+    .product-card .tab-content {
+        display: flex;
+        justify-content: center;
+        height: calc(100% - 5rem);
+    }
+    .ques-footer .quest-v2-btn {
+        margin: 1rem 3rem;
+    }
+    .asking-all-treatment > .col {
+        padding: 0px 3rem;
+    }
+    .all-treatment-btn {
+        width: 100%;
+        font-size: 1.6rem;
+        padding: 1rem;
+    }
+    .tag-selector .nav-item a {
+        font-size: 1.2rem;
+        font-weight: 500;
+    }
+    .nav.nav-tabs.tag-selector {
+        padding: 0.4rem;
+    }
+    .qe-content {
+        padding: 0px 4rem;
+    }
+    .card-heading {
+        min-height: 8rem;
+        font-size: 3rem;
+        padding: 0px 1.6rem;
+        line-height: 3rem;
+    }
+    .banner-img {
+        height: 50vw !important;
+    }
+    .signin {
+        border-radius: 39px;
+    }
+    .quest-v21-signin .img-view img {
+        width: 100%;
+        border-radius: 20px;
+    }
+    .choose-prefer-contet-header {
+        flex-direction: column;
+        padding: 2.4rem 2rem 0px;
+    }
+    .product-toolbar button {
+        width: 100%;
+    }
+    .recommend-button {
+        justify-content: flex-start;
+    }
+    .quest-v2-btn {
+        flex-direction: column-reverse;
+    }
+    .quest-v2-btn #relyimpohl-btn {
+        width: 100%;
+        margin: 1rem 0px;
+        font-size: 1.2rem;
+    }
+    .quest-v2-step.question-final {
+        margin: 3.3rem 0.9rem 0.9rem 0.9rem;
+    }
+    .qe-title {
+        font-size: 2.4rem;
+        margin-top: 2rem;
+    }
+    .quest-v2-step.question-final {
+        margin-bottom: 15rem;
+    }
+    .quest-v21-signin .quest-v21-signin-form {
+        margin-top: 3.5rem;
+    }
+    .question-final .ques-footer .quest-v2-btn * {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+    .quest-v21-signin .quest-v21-signin-form h4 {
+        padding: 1.5rem 0px;
+        font-size: 1.2rem;
+        margin: 0px;
+    }
+    .quest-v21-signin .quest-v21-signin-form > * {
+        padding: 1.5rem 0px;
+        font-size: 1.2rem;
+    }
+    .quest-v21-signin .quest-v21-signin-form button {
+        margin-top: 1.2rem;
+    }
+    .tag-selector-area {
+        padding: 0rem 0rem 1rem;
+    }
+    .tab-content {
+        --bs-gutter-x: 0px;
+    }
+    .tag-selector > li {
+        padding: 0px 1.2rem;
+    }
+    .product-info {
+        border-radius: 20px;
+    }
+    .product-card {
+        padding: 2.4rem;
+    }
+    .product-info img {
+        border-radius: 24px;
+    }
+    .product-detail-info h1 {
+        margin: 1px 0px;
+    }
+    /* .recommended-product-list {
+        flex-wrap: nowrap;
+    } */
+    .quest-v21-signin {
+        padding: 2.8rem;
+        width: 84%;
+        flex-direction: column;
+    }
+    .quest-v21-signin .img-view,
+    .quest-v21-signin .quest-v21-signin-form {
+        width: 100%;
+        padding: 0px;
+    }
+    .quest-v21-signin .quest-v21-signin-form h1 {
+        width: 100%;
+        font-size: 3rem;
+        padding: 0px;
+    }
+    .quest-v21-signin .quest-v21-signin-form h1 span {
+        font-size: 2.8rem;
+    }
+    /* .col-md-12.product-card {
+        width: 90%;
+    } */
+    .list-heading.mb-30 {
+        margin-top: 20px;
+    }
+    .before-submit-area {
+        padding-left: 40px;
+        max-height: 100%;
+    }
+    .ques-lfc {
+        height: 0px;
+        padding: 0px;
+    }
+    .quest-lfc-btn div:last-child {
+        margin-right: 0px;
+    }
+    .quest-lfc-btn {
+        position: relative;
+        top: 200px;
+        background-color: white;
+        border-radius: 26px;
+        margin: 3rem 0.5rem;
+    }
+    .signin-desc {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    .form-group .input-desc {
+        font-size: 0.6rem;
+    }
+    .quest-ordrsmry-right form label {
+        margin-bottom: 0px;
+    }
+    .require-comment {
+        margin: 0.8rem 0px;
+        font-size: 1rem;
+    }
+    .ques-footer {
+        padding: 20px 0px;
+    }
+    .quest-ordrsmry-right form .form-group {
+        margin-bottom: 0.2rem;
+    }
+    .quest-ordrsmry-right form label {
+        font-size: 0.8rem;
+    }
+    .quest-ordrsmry-right {
+        border-radius: 20px;
+    }
+    #signups .img-fluid {
+        display: none;
+    }
+    #signups .banner-img {
+        height: 20vw !important;
+    }
+    #cancel_order {
+        display: none;
+    }
+    .form-btns #valid {
+        font-size: 1.6rem;
+        margin-top: 2rem;
+        background-color: black;
+        border-radius: 50px;
+    }
+    #coupon_btn,
+    #coupon_code {
+        font-size: 0.8rem;
+    }
+    .discount-cls-main {
+        max-width: 10rem;
+    }
+    h4.sub-text-leb span,
+    label.sub-leb p .card-design .product-title {
+        letter-spacing: -1px;
+    }
+
+    .product-desc {
+        line-height: 1.6rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .quest-ordrsmry-right {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .list-heading.mb-30 {
+        margin-top: 10px;
+    }
+    .qe-title {
+        font-size: 2.1rem;
+    }
+    .ques-lfc .quest-lfc-btn div span {
+        font-size: 0.7rem;
+    }
+    .quest-ordrsmry-right p {
+        font-size: 1rem;
+        line-height: 1.2;
+    }
+    .me-2 {
+        margin-right: 0px !important;
+    }
+    .quest-ordrsmry-right input,
+    .quest-ordrsmry-right select,
+    .quest-ordrsmry-right .form-control,
+    .quest-ordrsmry-right form .form-control {
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        border-radius: 3px;
+    }
+    .quest-ordrsmry-right .form-control {
+        margin: 0px;
+    }
+    .quest-ordrsmry-right form .form-control {
+        height: auto;
+    }
+    .btn_order_pay {
+        width: 100%;
+        font-size: 1.2rem;
+        padding: 0px;
+    }
+    .tablets-item div:first-child {
+        font-size: 1.6rem;
+        padding: 0px 1rem;
+    }
+    .tablets-item div:last-child {
+        font-size: 0.7rem;
+    }
+    .tablets-item {
+        padding: 0.5rem 0rem;
+    }
+    .card-design .duration-label {
+        font-size: 1rem;
+    }
+    .card-design .qos-product-text li.list-group-item,
+    .card-design .qos-product-text li.list-group-item .text-success {
+        font-size: 0.7rem;
+    }
+    .total-amount h3 {
+        font-size: 1.2rem;
+    }
+    .card-design span.text-grey {
+        font-size: 1.4rem;
+    }
+    .product-name {
+        font-size: 1.7rem;
+    }
+    .product-desc {
+        line-height: 1.4rem;
+    }
+}
+@media screen and (max-width: 480px) {
+    .product-info {
+        padding: 1.2rem;
+    }
+    .tablets-item div:last-child {
+        font-size: 0.6rem;
+    }
+    .product-card .tab-content {
+        height: calc(100% - 5rem);
+    }
+    .product-name {
+        font-size: 1.6rem;
+    }
+    .choose-prefer {
+        color: black;
+        font-size: 2.6rem;
+        letter-spacing: -2px;
+        line-height: 2.8rem;
+    }
+    .qe-title {
+        font-size: 2rem;
+    }
+    label.sub-leb p {
+        font-size: 0.7rem;
+    }
+    #coupon_btn,
+    #coupon_code {
+        font-size: 0.7rem;
+    }
+}

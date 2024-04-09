@@ -1,0 +1,46 @@
+
+.review-user-name{
+    color: #484f47;
+}
+.review-content {
+    color: #979caa;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide .card {
+    width: 70%;
+    padding: 30px;
+    border-radius: 29px;
+}
+
+.swiper-wrapper {
+    transition-timing-function: linear;
+  }
+
+.review-card .card-header {
+    border: none;
+}
+
+.review-card .card-footer {
+    border: none;
+}
+
+.review-brand-content {
+    margin-bottom: 32px;
+}
+
+@media (max-width: 575px) {
+    .swiper-slide .card  {
+        width: 100%;
+        margin-right: 32px;
+    }
+}
+
+@media (max-width: 320px) {
+    .brands.container.mobile {
+        padding: 32px 16px 32px 16px;
+    }
+}

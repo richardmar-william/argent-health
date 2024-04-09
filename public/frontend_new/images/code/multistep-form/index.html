@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Import Single File According to Component ID</title>
+   <link rel="stylesheet" href="https://use.typekit.net/tcp5eab.css" />
+   <meta name="component-id"
+      content="hv-new-header, hv-bottom-area, hv-footer, hv-new-conversations-sec, hv-new-up-next, hv-new-multiple-cta, hv-platform-card-sec, hv-banner-sec" />
+   <link rel="stylesheet" href="./assets/css/style.css">
+   <script src="./assets/js/hv-test-script.js"></script>
+</head>
+
+<body>
+    <style>
+        /* Hide all steps except the first one */
+
+.step{
+    display: none;
+}
+
+/* Show the active step */
+.step.active {
+  display: block;
+}
+
+    </style>
+    <section class="multi-step-form-layout">
+      <div class="container">
+        <form id="multi-step-form">
+            <div class="step active">
+              <h2>Step 1</h2>
+              <input type="text" name="name" placeholder="Name">
+              <button class="next">Next</button>
+            </div>
+            <div class="step">
+              <h2>Step 2</h2>
+              <input type="email" name="email" placeholder="Email">
+              <button class="prev">Previous</button>
+              <button class="next">Next</button>
+            </div>
+            <div class="step">
+              <h2>Step 3</h2>
+              <input type="password" name="password" placeholder="Password">
+              <button class="prev">Previous</button>
+              <button type="submit">Submit</button>
+            </div>
+          </form>
+          
+      </div>
+    </section>
+   <!-- Script -->
+   <script>
+// Get all the steps and store them in an array
+    const steps = document.querySelectorAll('.step');
+    console.log("steps", steps);
+
+    // Add event listeners to the "next" buttons
+    const nextBtns = document.querySelectorAll('.next');
+    nextBtns.forEach((btn, i) => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        steps[i].classList.remove('active');
+        steps[i+1].classList.add('active');
+    });
+    });
+
+    // Add event listeners to the "previous" buttons
+    const prevBtns = document.querySelectorAll('.prev');
+    prevBtns.forEach((btn, i) => {
+    btn.addEventListener('click', e => {
+        e.preventDefault();
+        steps[i].classList.remove('active');
+        steps[i-1].classList.add('active');
+    });
+    });
+
+
+   </script>
+</body>
+
+</html>

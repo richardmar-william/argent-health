@@ -1,0 +1,1134 @@
+/*===============questinnaire-css-start ===============*/
+.questinnaire-main {
+    background: #F5F5F5;
+}
+.questinnaire-main {
+    padding-top: 90px;
+}
+.questinnaire-main .qtnr-inner {
+    padding: 120px 0px ;
+}
+
+.questinnaire-main .questinnaire-heading {
+    font-family: 'Yeseva One', cursive;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.questinnaire-main .questinnaire-desc {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.4;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #242423B2;
+}
+
+.questinnaire-main .form-group {
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.pw-show-btn {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translatey(-50%);
+    border: none;
+    background: transparent;
+}
+
+.pw-hide-btn {
+    position: absolute;
+    right: 50px;
+    top: 50%;
+    transform: translatey(-50%);
+    border: none;
+    background: transparent;
+}
+
+.questinnaire-main .form-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 40px 0px 20px 0px;
+}
+
+.questinnaire-main .form-section .form-radio label {
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: left;
+    font-weight: 500;
+    color: #242423;
+    background: #fff;
+    border-radius: 40px;
+    padding: 38px 40px 38px 104px;
+    width: 100%;
+}
+
+.questinnaire-main .form-section .form-group input.form-control {
+    font-size: 18px;
+    line-height: 1.4;
+    font-weight: 500;
+    color: #242423;
+    background: #fff;
+    border-radius: 40px;
+    width: 100%;
+    padding: 25px 50px;
+    height: 90px;
+    border: 1px solid #fff;
+}
+
+.questinnaire-main .form-section .form-group input.form-control:focus {
+    border: 1px solid #80808063;
+}
+
+.questinnaire-main .questinnaire-button {
+    display: flex;
+    justify-content: center;
+}
+
+.questinnaire-main .questinnaire-button a {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 1.3;
+    text-align: center;
+    text-transform: capitalize;
+    padding: 14px 40px 12px;
+    background: #fff;
+    border-radius: 36px;
+    color: #242423;
+    text-decoration: none;
+    margin: 0px 10px;
+    transition: .5s;
+    border: 1px solid #242423;
+}
+
+.questinnaire-main .questinnaire-button a:hover {
+    background-color: #242423;
+    color: #fff;
+}
+
+.questinnaire-main [type="radio"]:checked,
+.questinnaire-main [type="radio"]:not(:checked) {
+    position: absolute;
+    left: -9999px;
+}
+
+.questinnaire-main [type="radio"]:checked+label,
+.questinnaire-main [type="radio"]:not(:checked)+label {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    color: #242423;
+}
+
+.questinnaire-main [type="radio"]:checked+label:before,
+.questinnaire-main [type="radio"]:not(:checked)+label:before {
+    content: '';
+    position: absolute;
+    left: 40px;
+    top: 50%;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #242423;
+    border-radius: 100%;
+    background: #fff;
+    transform: translateY(-50%);
+}
+
+.questinnaire-main [type="radio"]:checked+label:after,
+.questinnaire-main [type="radio"]:not(:checked)+label:after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    background: #242423;
+    position: absolute;
+    top: 50%;
+    left: 44px;
+    border-radius: 100%;
+    transition: all 0.2s ease;
+    transform: translateY(-50%);
+}
+
+.questinnaire-main [type="radio"]:not(:checked)+label:after {
+    opacity: 0;
+}
+
+.questinnaire-main [type="radio"]:checked+label:after {
+    opacity: 1;
+}
+
+.questinnaire-main [type="radio"]:checked+label {
+    border: 1px solid #80808063;
+}
+
+.questinnaire-main [type="radio"]:not(:checked)+label {
+    border: 1px solid #fff;
+}
+
+.quickview-btn-wishlist>a {
+    padding: 10px 18px 7px;
+}
+/*===============questinnaire-css-end ===============*/
+
+/* Beard Growth css */
+.beard-problem-sec {
+    padding: 100px 0px;
+}
+.pro_heading_desc {
+    padding-bottom: 70px;
+}
+.pro_heading_desc h2 {
+    font-family: 'Yeseva One', cursive;
+    font-weight: 400;
+    font-size: 52px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: #242423;
+}
+.beard-problem-sec .bread-pro-box {
+    background: #FFFFFF;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+    padding: 35px 80px 80px;
+    width: 100%;
+    height: 100%;
+}
+.beard-problem-sec .bread-pro-box figure {
+    text-align: center;
+    margin: 0 auto 40px;
+    border-radius: 0;
+}
+.beard-problem-sec .bread-pro-box figure img {
+    max-width: 600px;
+    width: 80%;
+}
+.beard-problem-sec .bread-pro-box .bread-pro-heading h4 {
+    font-weight: 600;
+    font-size: 34px;
+    line-height: 38px;
+    text-align: center;
+    text-transform: capitalize;
+    color: #242423;
+    margin-bottom: 15px;
+}
+
+.pro_desc {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    color: #424242;
+    line-height: 21px;
+}
+.beard-problem-sec .bread-pro-box .bread-pro-heading .pro_desc a {
+    color: #242423B2;
+    display: inline-block;
+    padding-top: 30px;
+    text-decoration: underline !important;
+}
+.beard-problem-sec .bread-pro-box .bread-pro-heading .pro_desc a b {
+    color: #242423;
+}
+/* Beard Growth css end */
+/* men-getting-sec css start */
+.men-getting-sec {
+    padding-bottom: 120px;
+}
+.men-getting-star {
+    padding: 0 0 30px;
+}
+.men-getting-sec .stars {
+    text-align: center;
+}
+.men-getting-star .pro_desc {
+    font-weight: 500;
+    line-height: 1.3;
+}
+.men-getting-sec .stars i {
+    margin: 0 4px;
+    font-size: 32px;
+    color: #FF8A00;
+}
+.men-getting-sec .men-get-box {
+    display: flex;
+    width: 100%;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    padding: 20px;
+    height: 100%;
+    align-items: center;
+    /* justify-content: space-between; */
+}
+.men-getting-sec .men-get-text {
+    width: calc(100% - 170px);
+    flex: 0 0 calc(100% - 170px);
+    padding-right: 30px;
+    text-align: center;
+}
+.men-getting-sec .men-get-text h4 {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.3;
+    color: #242423;
+}
+.men-getting-sec .men-get-text h6 span svg {
+    width: 10px;
+    height: 10px;
+    fill: #24242380;
+    margin-left: 5px;
+}
+
+.quotes-img svg {
+    fill: #FF8A00;
+    height: 50px;
+    width: 50px;
+    margin: 22px 0 10px;
+}
+.men-getting-sec .men-get-text h6 {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: rgba(36, 36, 35, 0.5);
+}
+.men-getting-sec .men-get-text figure {
+    width: 60px;
+    height: 60px;
+    padding: 7px 0px 23px 0px;
+}
+.men-getting-sec .men-get-text figure img {
+    width: 100%;
+}
+.swiper-slide {
+    height: unset  !important;
+}
+.men-getting-sec .men-get-text p {
+    /*font-weight: 500; */
+font-size: 17px;
+    line-height: 137%;
+    text-transform: capitalize;
+    color: #242423;
+    padding: 10px 0px;
+    font-style: italic;
+}
+.men-getting-sec .men-get-image {
+    width: 170px;
+    flex: 0 0 170px;
+    height: 375px;
+    overflow-y: auto;
+}
+
+.men-getting-sec .men-get-image::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+.men-getting-sec .men-get-image::-webkit-scrollbar-track {
+    background: #24242334;
+}
+
+.men-getting-sec .men-get-image::-webkit-scrollbar-thumb {
+    background: #242423;
+}
+
+.men-getting-sec .men-get-image img {
+    border-radius: 10px;
+    max-width: 150px;
+    height: 170px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.men-getting-sec .men-get-image img:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+/* men-getting-sec css end */
+/* Treatment options css start */
+.Treatment-opt-sec {
+    padding: 120px 0px;
+}
+
+.Treatment-opt-sec .Treatment-opt {
+    display: flex;
+    align-items: center;
+    border: 2px solid #242423;
+    border-radius: 20px;
+    width: 100%;
+    justify-content: space-between;
+    padding: 30px 40px;
+    background: #fff;
+    transition: all 0.5s ease-in-out;
+}
+.Treatment-opt-sec .Treatment-opt:not(:last-child) {
+    margin-bottom: 50px;
+}
+.Treatment-opt-sec .Treatment-opt:hover {
+    background: #242423;
+    transition: all 0.5s ease-in-out;
+}
+.Treatment-opt-sec li.to-content {
+    display: block;
+    flex-grow: 1;
+    padding-left: 30px;
+    transition: all 0.5s ease-in-out;
+}
+.Treatment-opt-sec .Treatment-opt:hover  li.to-content p {
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+.Treatment-opt-sec .to-content p {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    transition: all 0.5s ease-in-out;
+}
+.to-buttons a {
+    font-size: 18px;
+    font-weight: 500;
+    padding: 13px 25px;
+    transition: all 0.5s ease-in-out;
+    border-radius: 36px;
+    min-width: 170px;
+    display: inline-block;
+    text-align: center;
+}
+
+.to-buttons .btn-visit {
+    background: #242423;
+    border: 1px solid #242423;
+    color: #FFFFFF;
+    margin-right: 25px;
+}
+
+.Treatment-opt-sec .Treatment-opt:hover .to-buttons .btn-visit {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #242423;
+    transition: all 0.5s ease-in-out;
+}
+.Treatment-opt-sec .Treatment-opt .to-buttons .btn-visit:hover {
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+}
+.to-buttons .btn-more {
+    background: transparent;
+    border: 1px solid #242423;
+    color: #242423;
+}
+
+.Treatment-opt-sec .Treatment-opt:hover .to-buttons .btn-more {
+    color: #FFFFFF;
+    border: 1px solid #fff;
+    transition: all 0.5s ease-in-out;
+}
+.Treatment-opt-sec .Treatment-opt .to-buttons .btn-more:hover {
+    background: #fff;
+    border: 1px solid #fff;
+    color: #242423;
+
+}
+.Treatment-opt-sec ul.Treatment-opt figure img {
+    max-width: 100%;
+}
+/* Treatment options css End */
+/* How you get started  css start */
+.product-get-start-sec {
+    padding-bottom: 120px;
+}
+
+.product-get-start-sec .ques-text {
+    display: flex;
+    align-items: center;
+}
+.product-get-start-sec .ques-text span {
+    border: 8px solid #242423;
+    padding: 10px;
+    background: #fff;
+    display: inline-block;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+.product-get-start .ques-text h4 {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: #242423;
+}
+.product-get-main {
+    position: relative;
+}
+.product-get-main:before {
+    content: '';
+    position: absolute;
+    left: 18px;
+    top: 18px;
+    height: 92%;
+    width: 1px;
+    background: #242423B2;
+    z-index: -1;
+}
+.product-get-start {
+    padding-bottom: 50px;
+}
+
+.product-get-start .ques-image {
+    display: flex;
+    align-items: center;
+    padding-left: 70px;
+}
+.product-get-start .ques-image figure {
+    margin-right: 35px;
+}
+
+.product-get-start .ques-image img {
+    width: 170px;
+}
+
+.product-get-start-sec .product-get-button {
+    margin-top: 50px;
+}
+.product-get-start-sec .product-get-button a {
+    display: inline-block;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 1.6;
+    text-align: center;
+    text-transform: capitalize;
+    color: #242423;
+    padding: 13px 38px 14px 39px;
+    border: 1px solid #242423;
+    border-radius: 36px;
+    transition: all .4s ease-in-out;
+}
+.product-get-start-sec .product-get-button a:hover {
+    background-color: #000;
+    color: #fff;
+}
+/* How you get started  css start */
+
+/*  Bread Growth treatment journey css start*/
+.bread-journey-sec {
+    padding-bottom: 130px;
+    padding-top: 50px;
+}
+
+.bread-journey-sec .text-white p {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 2;
+    text-align: center;
+    text-transform: capitalize;
+    color: #242423;
+}
+.modal-body {
+    color: #000;
+}
+
+.bread-journey-box figure {
+    text-align: center;
+}
+.bread-journey-box figure img {
+    max-width: 480px;
+    width: 80%;
+}
+.bread-journey-sec .bread-journey-box {
+    width: 100%;
+}
+.bread-journey-sec .bread-journey-heading {
+    padding: 28px 45px;
+    text-align: center;
+}
+/*Bread Growth treatment journey start end  */
+.pro-get-started .get-started-inr {
+    background: #242423;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 44px 30px;
+}
+.pro-get-started .get-started-inr h2 {
+    margin-right: 7%;
+    font-size: 32px;
+    font-weight: 600;
+}
+.pro-get-started .get-started-inr .pure-white-btn {
+    padding: 15px 55px;
+}
+/* .pro-get-started {
+    margin: 80px 0;
+} */
+
+/* Hair loss */
+/* Save-hair  css*/
+.Save-hair-banner {
+    position: relative;
+    overflow-x: clip;
+    background-position: bottom right;
+    background-size: cover;
+    padding-top: 200px;
+    padding-bottom: 90px;
+}
+.Save-hair-banner .pro_heading_desc {
+    padding-bottom: 20px !important;
+}
+.Save-hair-banner .save-hair-content {
+    background: #00000087;
+    box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 32px 40px 45px;
+    max-width: 640px;
+    margin-bottom: 100px;
+}
+ .text-color h2 {
+    color: #fff !important;
+}
+.text-color .pro_desc{
+    color: #fff;
+}
+.Save-hair-banner  .pro_desc {
+    font-weight: 400;
+}
+
+.Save-hair-banner .pure-white-btn {
+    display: inline-block;
+    background: #fff;
+    transition: all .3s ease-in-out;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 1.7;
+    text-align: center;
+    text-transform: capitalize;
+    color: #242423;
+    padding: 10px 30px 10px 30px;
+    border: 1px solid #242423;
+    border-radius: 36px;
+    margin-top: 26px;
+    min-width: 240px;
+}
+.Save-hair-banner .pure-white-btn:hover{
+    background: #242423;
+    border: 1px solid #242423;
+    color: #FFFFFF;
+}
+.hair-banner-inr {
+    display: flex;
+    align-items: center;
+    padding: 14px 0;
+}
+.hair-banner-inr svg {
+    /*margin-right: 20px;*/
+    /*height: 40px;*/
+    /*width: 40px;*/
+    /*flex: 0 0 40px;*/
+    height: 30px;
+    width: 30px;
+}
+}
+.save-hair-content p.pro_desc {
+    line-height: 1.6;
+}
+.save-hair-image figure {
+    text-align: right;
+}
+
+.save-hair-image figure img {
+    max-width: 500px;
+    width: 100%;
+}
+/* Save-hair  css end*/
+/* hair-treatment css   */
+.hair-treatment-sec {
+    padding-bottom: 120px;
+    padding-top: 0px;
+}
+.hair-treatment-sec .bread-journey-box {
+    padding: 0 10px;
+}
+.hair-treatment-sec .pro_heading_desc {
+    padding-bottom: 57px;
+}
+.hair-treatment-sec .bread-journey-box figure {
+    margin-bottom: 40px;
+}
+.hair-treatment-sec .bread-journey-box figure img {
+    max-width: 300px;
+    width: 80%;
+}
+.hair-treatment-sec .bread-journey-box h4 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+    color: #242423;
+    text-transform: capitalize;
+}
+/*  hair-treatment  css end*/
+
+/*Men getting start  */
+.men-get-sec{
+    padding: 100px 0px;
+}
+.men-get-se .pro_heading_desc {
+    padding-bottom: 60px;
+}
+/* Men getting  end */
+/* Science Behind How Our Treatments Work css */
+.sci-behind-sec {
+   padding: 120px 0px;
+}
+.sci-behind-sec .bread-journey-box {
+    padding: 40px;
+    background: #FFFFFF;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.06);
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.sci-behind-sec .pro_heading_desc {
+    padding-bottom: 60px;
+}
+.sci-behind-sec .pro_heading_desc h4{
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 1.3;
+    text-transform: capitalize;
+    color: #242423;
+    margin-top: 25px;
+}
+.sci-behind-sec .bread-journey-box figure  {
+    text-align: center;
+    margin-bottom: 40px;
+    min-height: 300px;
+}
+
+.sci-behind-sec .bread-journey-box figure img {
+    max-width: 300px;
+    width: 90%;
+}
+.sci-behind-sec .bread-journey-heading {
+    padding: 0px;
+    text-align: left;
+}
+.sci-behind-sec .pro_desc {
+    margin-top: 10px;
+}
+/*Science Behind How Our Treatments Work css  end*/
+/* Clinically proven treatment to stop hair loss css */
+.improve-growth-banner {
+    padding-top: 0px;
+    padding-bottom: 120px;
+}
+.improve-growth-banner .pro_heading_desc h4 {
+    font-weight: 400;
+    font-size: 46px;
+    line-height: 1.4;
+    text-transform: capitalize;
+    color: #242423;
+    padding-bottom: 10px;
+}
+.improve-growth-banner .pro_heading_desc p{
+    font-size: 28px;
+    line-height: 1.6;
+    text-transform: capitalize;
+    color: #242423;
+}
+.improve-growth-banner .accordion {
+    width: 100%;
+}
+.improve-growth-banner .save-hair-image{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.improve-growth-banner .save-hair-image{
+    width: 100%;
+}
+.improve-growth-banner .save-hair-image img{
+    max-width: 861px;
+    width: 100%;
+}
+.improve-growth-banner .mprove-grow-inner a {
+    display: flex;
+}
+.improve-growth-banner .mprove-grow-inner a span{
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 2;
+    text-decoration-line: underline;
+    text-transform: capitalize;
+    color: rgba(36, 36, 35, 0.7);
+    margin-left: 10px;
+}
+.improve-growth-banner  .accordion-button::after {
+    position: absolute;
+    right: 44px;
+}
+/* Clinically proven treatment to stop hair loss css end */
+/* hair-regrow css */
+.hair-regrow-sec {
+    padding-bottom: 120px;
+    padding-top: 0px;
+}
+.hair-regrow-sec .bread-journey-box figure img {
+    max-width: 392px;
+    width: 80%;
+}
+.hair-regrow-sec .bread-journey-box {
+    padding: 20px 10px;
+    background: #FFFFFF;
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+.hair-regrow-sec figure {
+    margin: 35px 0px;
+}
+.hair-regrow-sec figure{
+    margin-bottom: 30px;
+}
+/* hair-regrow css end */
+.mprove-grow .mprove-grow-inner {
+    display: flex;
+    margin-top: 15px;
+    align-items: flex-start;
+}
+
+.mprove-grow .mprove-grow-inner a svg {
+    width: 18px;
+    flex: 0 0 22px;
+    height: 18px;
+    margin-top: 8px;
+}
+.hair-regrow-sec a.btn-visit:hover {
+    background: #fff;
+    border: 1px solid #242423;
+    color: #242423;
+}
+
+.sci-behind-sec .row .ques-col-margin {
+    margin-bottom: 40px;
+}
+.sci-behind-sec .bread-journey-box {
+    margin: 0;
+}
+.hair-regrow-sec .row .ques-col-margin {
+    margin-bottom: 40px;
+}
+
+/* Premature Ejaculation */
+.premature-other-sec {
+    padding-bottom: 120px;
+    padding-top: 50px;
+}
+.premature-erectile-sec .row.happens-row-gap {
+    align-items: center;
+}
+.premature-hero-banner svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    margin-right: 20px;
+}
+.premature-other-sec .cards{
+    background: none;
+    border: none;
+}
+.premature-other-sec .premature-btns-crousel {
+    justify-content: space-around;
+}
+.premature-other-sec .pre-crou-head {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    min-height: auto !important;
+    margin-top: 18px;
+    padding: 0px;
+}
+
+/* THANK YOU PAGE */
+.questinnaire-thankyou {
+    max-width: 644px;
+    margin: 0px auto;
+    text-align: center;
+    background: rgb(0 128 0 / 20%);
+    box-shadow: 1px 10px 30px 0px rgb(0 128 0 / 20%);
+}
+.success {
+    font-size: 100px;
+    color: green;
+    margin-bottom: 30px;
+}
+.questinnaire-main .questinnaire-heading {
+    font-family: 'Yeseva One', cursive;
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.2;
+    text-transform: capitalize;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.agent-section{
+    padding-top: 116px !important;
+}
+
+.body-main{
+    min-height: calc(100% - 101px);
+}
+
+.Treatment-opt li.to-image {
+    width: 200px;
+    flex: 0 0 200px;
+}
+.Treatment-opt li.to-buttons {
+    width: 370px;
+    flex: 0 0 370px;
+    text-align: right;
+}
+.Treatment-opt-sec li.to-content {
+    padding: 0 25px;
+}
+.Treatment-opt-sec .to-content p {
+    font-size: 32px;
+}
+
+.questinnaire-main .questinnaire-heading+p {
+    max-width: 600px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+.questinnaire-main .ques-list-sec {
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+.questinnaire-main .ques-list-sec li {
+    margin-bottom: 10px;
+    list-style: disc;
+    font-size: 16px;
+}
+.questinnaire-main .ques-list-sec li.list-heading {
+    list-style: none;
+}
+.questinnaire-main .ques-list-sec li.list-heading {
+    list-style: none;
+    transform: translateX(-25px);
+    margin-bottom: 15px !important;
+}
+.questinnaire-main .form-section .form-group select{
+    line-height: 1.4;
+    font-weight: 500;
+    color: #242423;
+    background: #fff;
+    border-radius: 40px;
+    width: 100%;
+    padding: 25px 50px;
+    height: 90px;
+    border: 1px solid #fff;
+    font-size: 18px;
+}
+.quest-sub-heading {
+    padding-bottom: 10px;
+}
+.quest-sub-heading h3 {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+.quest-sub-heading ul {
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+.quest-sub-heading ul li {
+    list-style-type: disc;
+    font-size: 18px;
+}
+.questinnaire-laststep .row.treatment-row {
+    margin: 0;
+}
+
+
+
+/* responsive start*/
+@media (max-width: 1599px) {
+    .save-hair-image figure img {
+        max-width: 400px;
+    }
+
+    .Treatment-opt-sec .Treatment-opt {
+        padding: 25px 30px;
+    }
+    .Treatment-opt li.to-image {
+        width: 170px;
+        flex: 0 0 170px;
+    }
+    .to-buttons .btn-visit {
+        margin-right: 12px;
+    }
+    .Treatment-opt-sec .to-content p {
+        font-size: 26px;
+    }
+    .to-buttons a {
+        font-size: 15px;
+        padding: 10px 20px;
+        min-width: 140px;
+    }
+    .Treatment-opt li.to-buttons {
+        width: 300px;
+        flex: 0 0 300px;
+    }
+}
+
+
+@media (max-width: 1439px) {
+    .save-hair-image figure img {
+        max-width: 400px;
+    }
+
+}
+/* responsive end */
+
+/* responsive */
+@media (max-width:1199px){
+    .improve-growth-banner .save-hair-image {
+        margin-top: 16px;
+    }
+    .Save-hair-banner .save-hair-content{
+        padding: 30px 25px 35px;
+    }
+    .Save-hair-banner .pure-white-btn {
+        padding: 9px 30px;
+        min-width: 190px;
+        font-size: 12px;
+        margin-top: 15px;
+        color: var(--0-d-0-d-0-d, #0D0D0D);
+
+        font-family: Poppins;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 150%; /* 12.544px */
+    }
+    .improve-growth-banner .save-hair-image img {
+        width: 70%;
+    }
+    .hair-banner-inr {
+        padding: 12px 0;
+    }
+    .Save-hair-banner {
+        padding-top: 160px;
+        padding-bottom: 65px;
+    }
+}
+
+@media( max-width:991px){
+
+    section.Save-hair-banner::after {
+        height: 102px !important;
+    }
+    .hair-banner-inr {
+        display: -webkit-inline-box;
+    }
+    section.Save-hair-banner::before {
+        display: none;
+    }
+    .Save-hair-banner .order-img-1{
+        order: 1;
+    }
+    .Save-hair-banner .order-img-2 {
+        order: 2;
+        margin-top: 45px;
+    }
+    .save-hair-image figure img {
+        width: 60%;
+    }
+    .save-hair-image figure {
+        text-align: center;
+    }
+
+}
+
+@media (max-width:767px){
+    .Save-hair-banner.hair-banner-before {
+        background-image: url(https://agenthealth.co.uk/agent/public/frontend_new/images/hair-mob.jpg) !important;
+        padding-top: 140px;
+        padding-bottom: 50px;
+        min-height: 100vh;
+        background-position: bottom left;
+    }
+    .Save-hair-banner .save-hair-content {
+        margin: 0 auto;
+    }
+    .Save-hair-banner .save-hair-content {
+        padding: 40px;
+    }
+    .hair-treatment-sec .bread-journey-box h4 {
+        font-size: 29px;
+    }
+    .sci-behind-sec .pro_heading_desc h4 {
+        font-size: 26px;
+        line-height: 1.3;
+        margin-top: 13px;
+    }
+    .sci-behind-sec .bread-journey-box {
+        padding: 25px 20px 15px;
+    }
+    .sci-behind-sec .bread-journey-box figure img {
+        min-height: 180px;
+    }
+    .improve-growth-banner .pro_heading_desc h4 {
+        font-size: 25px;
+    }
+    .improve-growth-banner .pro_heading_desc p {
+        font-size: 15px;
+    }
+    .improve-growth-banner .save-hair-image img {
+        max-width: 861px;
+        width: 90%;
+    }
+    .hair-regrow-sec  .bread-journey-heading {
+        padding: 16px 18px;
+    }
+    .improve-growth-banner .accordion-button::after {
+        position: absolute;
+        right: 4px;
+    }
+    .improve-growth-banner .mprove-grow-inner a span {
+        font-size: 13px;
+    }
+    .mprove-grow .mprove-grow-inner a svg {
+        /* width: auto; */
+        /* height: 20px; */
+        margin-top: 4px;
+    }
+    .bread-journey-sec .bread-journey-box {
+        margin-bottom: 40px;
+    }
+    .hair-treatment-sec .bread-journey-box figure {
+        margin-bottom: 20px;
+    }
+    .hair-treatment-sec .bread-journey-box h4 {
+        margin-bottom: 0px;
+    }   
+
+}
+
+

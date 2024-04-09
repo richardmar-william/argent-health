@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Trust Payments</title>
+    <meta name="description" content="Trust Payments example page with form">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        main {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        #expiry {
+            margin-left: 0.9rem;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <div id="st-notification-frame"></div>
+        <form id="st-form">
+            <div id="st-card-number"></div>
+            <div id="st-expiration-date"></div>
+            <div id="st-security-code"></div>
+            <button type="submit">Pay securely</button>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
+    <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
+
+
+
+    <script>
+        (function () {
+            // Header
+            const header = {
+                alg: "HS256",
+                typ: "JWT"
+            };
+
+            // Payload
+            const amount = 1443
+            var payload = {
+                payload: {
+                    accounttypedescription: "ECOM",
+                    baseamount: amount * 100,
+                    currencyiso3a: "GBP",
+                    sitereference: "test_agenthealth119402",
+                    subscriptiontype: "RECURRING",
+                    subscriptionunit: "MONTH",
+                    subscriptionfrequency: "1",  // for 1 month
+                    // subscriptionfrequency: "3",  // for 3 month
+                    // subscriptionfrequency: "6",  // for 6 month
+                    subscriptionnumber: "1",
+                    subscriptionfinalnumber: "12", //for 1 month
+                    // subscriptionfinalnumber: "4", // for 3 month
+                    // subscriptionfinalnumber: "2", //for 6 month
+                    subscriptionbegindate: "2023-08-28",
+                    credentialsonfile: "1",
+                    requesttypedescriptions: ["THREEDQUERY", "AUTH", "SUBSCRIPTION"],
+                    locale: "en_GB"
+                },
+                iat: Math.floor(Date.now() / 1000),
+                iss: "jwt@agenthealth.com"
+            };
+
+            // Convert the header and payload to Base64URL format
+            const base64UrlHeader = btoa(JSON.stringify(header)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+            const base64UrlPayload = btoa(JSON.stringify(payload)).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+
+            // Combine the header and payload with a period
+            const tokenContent = `${base64UrlHeader}.${base64UrlPayload}`;
+
+            // Your secret key (base64-encoded)
+            const secret = "59-0051c01ec6601235ee72c033f76863f5dc0de7ab9951fa6b2193615dadd63be9";
+
+
+            // Create the signature using HMAC-SHA256
+            const signature = CryptoJS.HmacSHA256(tokenContent, secret);
+
+            // Convert the signature to Base64URL format
+            const base64UrlSignature = CryptoJS.enc.Base64.stringify(signature).replace(/=/g, '').replace(/\+/g, '-').replace(/\//g, '_');
+
+            // The final JWT
+            // const jwt = `${tokenContent}.${base64UrlSignature}`;
+            const jwt = `${tokenContent}.${base64UrlSignature}`;
+
+            console.log("JWT Token are:------", jwt);
+
+            try {
+                // Make sure SecureTrading is defined and initialized before using it
+                var st = SecureTrading({
+                    jwt: jwt,
+                });
+
+                st.Components()
+
+            } catch (error) {
+                console.error("Error initializing SecureTrading:", error);
+            }
+
+        })();
+
+
+    </script>
+
+
+</body>

@@ -1,0 +1,4480 @@
+.container-xxl.container.slider_container {
+    max-width: calc(100% - ((100% - 1720px) / 2) - 15px);
+    margin-left: auto !important;
+    margin: 0;
+    overflow-x: clip;
+}
+#orderText {
+    font-size: 20px;
+}
+@media (min-width: 576px) {
+    .container-xxl.container.slider_container {
+        max-width: calc(100% - ((100% - 540px) / 2) - 15px);
+    }
+}
+@media (min-width: 768px) {
+    .container-xxl.container.slider_container {
+        max-width: calc(100% - ((100% - 720px) / 2) - 15px);
+    }
+    .footer-logos img {
+        max-width: 300px !important;
+    }
+    .footer-logos {
+        padding: 40px 0;
+    }
+    body
+        > div
+        > div.main-layout
+        > section.black-sec.home-free-cnslt
+        > div
+        > div
+        > div
+        > h2 {
+        zoom: 0.4;
+    }
+}
+@media (min-width: 992px) {
+    .container-xxl.container.slider_container {
+        max-width: calc(100% - ((100% - 960px) / 2) - 15px);
+    }
+}
+@media (min-width: 1200px) {
+    .container-xxl.container.slider_container {
+        max-width: calc(100% - ((100% - 1140px) / 2) - 15px);
+    }
+}
+@media (min-width: 1400px) {
+    .container-xxl.container.slider_container {
+        max-width: calc(100% - ((100% - 1320px) / 2) - 15px);
+    }
+}
+@media (min-width: 1720px) {
+    .container-xxl.container.slider_container {
+        max-width: calc(100% - ((100% - 1720px) / 2) - 15px);
+    }
+}
+@media (min-width: 1720px) {
+    .container-xxl {
+        max-width: 1720px;
+    }
+    .top-div h1 {
+        font-size: 78px;
+        color: #fff;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -5.94px;
+    }
+    .sans-heading {
+        font-size: 78px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 90%;
+        letter-spacing: -4.8px;
+    }
+    .top-div ul {
+        padding: 43px 0 50px;
+    }
+    .top-div ul li:not(:last-child) {
+        margin-bottom: 33px;
+    }
+}
+@media (max-width: 1719px) {
+    .partners .partner-link {
+        width: 125px;
+    }
+    .cards {
+        padding: 30px 20px;
+    }
+    .card-heading h4 {
+        font-size: 25px;
+        line-height: 35px;
+    }
+    .treatment-option-div .row .trans-btn {
+        padding: 14px 19px;
+        font-size: 16px;
+    }
+    .treatment-btns a {
+        margin-bottom: 10px !important;
+    }
+    .erectile-black .white-btn {
+        padding: 13px 130px;
+    }
+    .gent-hub-last .trans-btn {
+        padding: 9px 18px;
+        font-size: 16px;
+    }
+    .top-div h1 {
+        font-size: 92px;
+    }
+    .form-wedlove-sec .form-main {
+        max-width: 630px;
+    }
+}
+@media (max-width: 1650px) {
+    .header ul li a {
+        font-size: 18px;
+    }
+    .login-signup a {
+        font-size: 18px;
+    }
+    .card-heading h4 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .top-div h1 {
+        font-size: 68px;
+        color: #fff;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 90%;
+        letter-spacing: -5.94px;
+    }
+    .accordion-body {
+        line-height: 44px;
+    }
+    .consult-heading h4 {
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .words-sec .consult-div {
+        padding: 36px 13px;
+    }
+    .main-heading h2 {
+        font-size: 46px;
+        line-height: 1.3;
+    }
+    .white-btn,
+    .white-btn span .pure-white-btn {
+        padding: 10px 69px 10px 45px;
+    }
+    .top-div h4 {
+        font-size: 26px;
+        margin-top: 10px;
+    }
+    .top-div.erectile-top-div h1 {
+        font-size: 70px;
+        line-height: 95px;
+    }
+    .top-div.erectile-top-div ul {
+        padding: 50px 0 43px;
+    }
+    .top-div.erectile-top-div ul li:not(:last-child) {
+        margin-bottom: 28px;
+    }
+    .treatment-head {
+        padding-top: 125px;
+        padding-bottom: 81px;
+    }
+    .treatment-option-div h2 {
+        font-size: 40px;
+    }
+    .treatment-option-div p {
+        font-size: 14px;
+        line-height: 1.7;
+    }
+    .treatment-option-div ul li p span {
+        font-size: 14px;
+    }
+    .star-reviews span {
+        font-size: 17px;
+    }
+    .treatment-option-div .star-reviews .stars i {
+        font-size: 19px;
+    }
+    .best-treatment {
+        margin-bottom: 100px;
+    }
+    .agent-div h2 {
+        font-size: 55px;
+        line-height: 98px;
+    }
+    .agent-div p {
+        line-height: 32px;
+        padding: 33px 0 0;
+    }
+    .how-its-head {
+        margin-top: 100px;
+    }
+    .how-its-workdiv figcaption {
+        margin: 20px 0 25px;
+    }
+    .how-its-workdiv figure {
+        height: 434px;
+    }
+    .what-erectile-head {
+        margin-top: 94px;
+        margin-bottom: 27px;
+    }
+    .main-heading h2 {
+        font-size: 44px;
+    }
+    .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        font-size: 53px;
+    }
+    .free-cons-head {
+        margin-top: 199px;
+        margin-bottom: 110px;
+    }
+    .gent-sec .cards .card-heading p {
+        font-size: 19px;
+    }
+    .gent-hub-last .trans-btn {
+        font-size: 15px;
+    }
+    .gent-hub-last {
+        margin-bottom: 123px;
+    }
+    .treatment-option-div {
+        margin-bottom: 67px;
+    }
+    .treatment-row {
+        margin-bottom: 80px;
+    }
+    .erectile-black .white-btn {
+        padding: 12px 79px;
+    }
+    .unsure-div h2,
+    .unsure-div h2 span,
+    .big-heading,
+    .big-heading span {
+        font-size: 65px;
+        text-transform: capitalize;
+    }
+    .black-sec.erectile-black {
+        padding: 35px 42px;
+    }
+    .how-its-workdiv figcaption p {
+        font-size: 15px;
+        line-height: 30px;
+    }
+    .trans-btn {
+        padding: 11px 32px;
+        font-size: 17px;
+        line-height: 26px;
+    }
+    .erectile-info p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .erectile-sec .black-btn {
+        font-size: 18px;
+        line-height: 29px;
+    }
+    .faq-head {
+        margin-top: 129px;
+    }
+    .sildenafil-banner {
+        margin-top: 200px;
+    }
+    .silden-head {
+        font-size: 82px;
+        line-height: 95px;
+        padding-bottom: 11px;
+    }
+    .sildenafil-right .stars.treatment-stars {
+        margin: 23px 0px;
+    }
+    .slider-text {
+        font-size: 16px;
+        line-height: 36px;
+        margin-bottom: 25px;
+    }
+    .silder-list li {
+        font-size: 28px;
+        font-weight: 500;
+        line-height: 35px;
+        letter-spacing: 0em;
+        text-align: left;
+        padding-bottom: 16px;
+    }
+    .silder-list {
+        margin-bottom: 16px;
+    }
+    .silden-icon-upper.pt-120 {
+        padding-top: 90px;
+    }
+    .sildenafil-inner {
+        margin-bottom: 90px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        font-size: 52px;
+        line-height: 88px;
+    }
+    .how-its-row .how-its-workdiv figure {
+        height: 415px;
+    }
+    .consultation-row {
+        margin-bottom: 178px;
+        margin-top: 111px;
+    }
+    .consultation-head {
+        font-size: 62px;
+        line-height: 94px;
+        margin-bottom: 10px;
+    }
+    .consultation-text {
+        font-size: 23px;
+        font-weight: 500;
+        line-height: 46px;
+    }
+    .consultation-right-text {
+        font-size: 22px;
+    }
+    .consultation-right-head {
+        font-size: 38px;
+        line-height: 58px;
+        margin-bottom: 11px;
+    }
+    .consultation-right-table tr td:first-child {
+        font-size: 23px;
+        font-weight: 500;
+        line-height: 38px;
+    }
+    .consultation-right-table tr td {
+        padding-top: 20px;
+        padding-bottom: 6px;
+    }
+    .consultation-right-table tr td:last-child {
+        text-align: end;
+        font-size: 20px;
+    }
+    .what-silidar-head {
+        font-size: 58px;
+        line-height: 112px;
+        color: #242423;
+    }
+    .what-silidar-text {
+        font-size: 24px;
+        line-height: 43px;
+        max-width: 711px;
+    }
+    .what-silidar-main {
+        margin-bottom: 156px;
+    }
+    .slide-medical.pt-120 {
+        padding-top: 153px;
+    }
+    .question-acco {
+        margin-bottom: 182px !important;
+    }
+    .premature-banner .top-div h1 {
+        font-size: 54px;
+        line-height: 37px;
+    }
+    .premature-banner .erectile-top-div {
+        font-size: 51px;
+    }
+    .premature-banner.electile-main {
+        padding-bottom: 108px;
+        padding-top: 326px;
+    }
+    .premature-secont-sec.pt-120 {
+        padding-top: 158px;
+    }
+    .consultation-sec.premature-secont-sec .cstm-row {
+        padding-bottom: 137px;
+    }
+    .premature-sec-3 .what-erectile-head {
+        margin-top: 0px;
+        margin-bottom: 40px;
+    }
+    .premature-sec-3 .happens-row-gap {
+        margin-bottom: 100px;
+    }
+    .premature-sec-4 {
+        padding-bottom: 144px;
+    }
+    .premature-sec-4.pt-120 {
+        padding-top: 48px;
+    }
+    .pre-crou-head {
+        font-size: 23px;
+        line-height: 27px;
+        padding-top: 40px;
+    }
+    .premature-slide .other-item figcaption p {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 23px;
+        color: #383838;
+    }
+    .premature-slide .trans-btn {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    .premature-btns-crousel .trans-btn {
+        padding: 8px 28px;
+    }
+    .black-outer-premature {
+        padding: 40px 110px;
+        margin-bottom: 107px;
+    }
+    .premature-sec-3 .erectile-info:not(:last-child) {
+        margin-bottom: 64px;
+        margin-top: 66px;
+    }
+    .header .navbar-brand img {
+        max-width: 130px;
+        padding: 14px;
+        padding-left: 0;
+    }
+    footer .ftr-logo {
+        max-width: 110px;
+    }
+    .header .navbar-nav li.nav-item.dropdown {
+        margin-right: 45px;
+    }
+    .white-btn span svg {
+        height: 30px;
+        width: 30px;
+    }
+    .questinnaire-main .qtnr-inner {
+        padding: 85px 0px;
+    }
+    .questinnaire-main .new-qtnr-inner {
+        padding: 85px 0px;
+    }
+    .agent-offer .agent-div h2 {
+        font-size: 38px;
+        line-height: 1.5;
+    }
+    .agent-div p {
+        line-height: 30px;
+        padding: 20px 0 0;
+        font-size: 26px;
+    }
+    .agent-offer .agent-div {
+        padding-bottom: 180px;
+    }
+    .medical-sec figure.mob img {
+        max-width: 300px;
+    }
+    footer {
+        padding: 20px 0;
+    }
+}
+@media (max-width: 1439px) {
+    .card-heading h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .cards figure {
+        margin: 0 auto 29px;
+        height: 205px;
+    }
+    .cards {
+        padding: 19px 13px;
+    }
+    .consult-heading h4 {
+        font-size: 13px;
+        line-height: 24px;
+    }
+    .hands-card .card-heading p {
+        font-size: 16px;
+        line-height: 25px;
+    }
+    .hands-card .card-heading h4 {
+        font-size: 23px;
+        line-height: 26px;
+        margin-bottom: 19px;
+    }
+    .hands-card {
+        padding: 20px 25px;
+        width: 85%;
+    }
+    .beared-item figcaption h6 {
+        text-transform: capitalize;
+    }
+    .beared-btns .pure-white-btn,
+    .beared-btns .white-trans-btn {
+        padding: 13px 26px;
+    }
+    .other-item figcaption p {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 27px;
+    }
+    .top-div h1 {
+        font-size: 64px;
+        line-height: 78px;
+    }
+    .white-btn:not(:last-child),
+    .pure-white-btn:not(:last-child) {
+        margin-right: 19px;
+    }
+    .white-btn,
+    .white-btn span .pure-white-btn {
+        padding: 11px 39px;
+    }
+    .cards figure {
+        margin: 0 auto 5px;
+        height: 198px;
+    }
+    .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        font-size: 51px;
+        line-height: 66px;
+    }
+    .unsure-div .white-trans-btn {
+        padding: 15px 40px 14px;
+    }
+    .white-trans-btn {
+        padding: 7px 27px;
+        font-size: 17px;
+    }
+    .main-heading p {
+        font-size: 18px;
+    }
+    .hands-card .card-heading p {
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .hands-card .card-heading h4 {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 13px;
+    }
+    .beared-item figcaption h6 {
+        font-size: 20px;
+        line-height: 26px;
+    }
+    .beared-btns {
+        padding-top: 15px;
+    }
+    .beared-btns .pure-white-btn,
+    .beared-btns .white-trans-btn {
+        padding: 9px 21px;
+    }
+    .white-trans-btn {
+        font-size: 15px;
+    }
+    .pure-white-btn {
+        font-size: 15px;
+    }
+    .trans-btn {
+        padding: 9px 28px;
+        font-size: 13px;
+    }
+    .words-sec .consult-div figure {
+        height: 58px;
+        width: 58px;
+    }
+    .consult-heading h4 {
+        font-size: 11px;
+        line-height: 21px;
+    }
+    .main-heading h2 {
+        font-size: 34px;
+    }
+    .main-heading p {
+        font-size: 16px;
+    }
+    .pb-120 {
+        padding-bottom: 80px;
+    }
+    .pt-120 {
+        padding-top: 80px;
+    }
+    .accordion-body {
+        line-height: 33px;
+    }
+    .unsure-div h2,
+    .unsure-div h2 span,
+    .big-heading,
+    .big-heading span {
+        font-size: 60px;
+        line-height: 52px;
+    }
+    .unsure-div p {
+        font-size: 15px;
+        line-height: 26px;
+    }
+    .white-btn,
+    .white-btn span .pure-white-btn {
+        padding: 10px 40px;
+    }
+    .white-btn span svg {
+        height: 26px;
+        width: 26px;
+    }
+    .white-btn,
+    .white-btn span .pure-white-btn {
+        font-size: 14px;
+    }
+    .gent-sec .cards .date-time {
+        font-size: 11px;
+        line-height: 17px;
+        padding: 12px 10px;
+    }
+    .gent-sec .cards .card-heading {
+        padding: 15px 10px;
+        text-align: center;
+    }
+    .gent-sec .cards .card-heading p {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 24px;
+        transition: all 0.3s ease-in-out;
+    }
+    footer ul li a {
+        font-size: 14px;
+    }
+    .gent-sec .cards figure {
+        height: 207px;
+    }
+    .black-sec {
+        padding: 54px 33px;
+    }
+    .header .navbar-brand img {
+        max-width: 110px;
+        padding: 10px;
+        padding-left: 0;
+    }
+    .login-signup a {
+        font-size: 16px;
+    }
+    .header ul li a {
+        font-size: 16px;
+    }
+    header .navbar .navbar-nav .dropdown-menu li a {
+        font-size: 15px;
+        padding: 6px 13px !important;
+    }
+    .top-div.erectile-top-div h1 {
+        font-size: 64px;
+        line-height: 83px;
+    }
+    .top-div.erectile-top-div ul li:not(:last-child) {
+        margin-bottom: 25px;
+    }
+    .electile-main {
+        padding-bottom: 64px;
+    }
+    .treatment-head {
+        padding-top: 87px;
+        padding-bottom: 64px;
+    }
+    .treatment-option-div h2 {
+        font-size: 33px;
+    }
+    .treatment-option-div p {
+        font-size: 16px;
+        line-height: 31px;
+    }
+    .agent-div h2 {
+        font-size: 52px;
+        line-height: 83px;
+    }
+    .agent-div p {
+        font-weight: 400;
+        font-size: 26px;
+    }
+    .agent-offer figure {
+        height: 722px;
+    }
+    .main-heading {
+        padding-bottom: 50px;
+    }
+    .how-its-head {
+        margin-top: 88px;
+    }
+    .how-its-workdiv figure {
+        height: 337px;
+    }
+    .erectile-info p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 34px;
+    }
+    .erectile-sec .black-btn {
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .accordion-body {
+        line-height: 30px;
+    }
+    .partners .partner-link {
+        width: 102px;
+    }
+    .best-treatment .black-sec .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-bottom: 30px;
+        font-size: 60px;
+        line-height: 52px;
+    }
+    .silden-head {
+        font-size: 76px;
+        line-height: 95px;
+        padding-bottom: 3px;
+    }
+    .sildenafil-inner {
+        margin-bottom: 66px;
+    }
+    .silden-icon .consult-div figure {
+        width: 70px;
+        height: 70px;
+    }
+    .silden-icon .consult-heading h4 {
+        font-size: 19px;
+        line-height: 32px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        font-size: 45px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption p {
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 31px;
+    }
+    .consultation-text {
+        font-size: 21px;
+        font-weight: 500;
+        line-height: 43px;
+    }
+    .consultation-right-text {
+        font-size: 24px;
+        font-weight: 500;
+        line-height: 37px;
+        margin-bottom: 40px;
+    }
+    .consultation-right-table tr td:first-child {
+        font-size: 21px;
+    }
+    .consultation-right-table tr td {
+        padding-top: 8px;
+        padding-bottom: 6px;
+    }
+    .consultation-row {
+        margin-bottom: 140px;
+    }
+    .what-silidar-head {
+        font-size: 53px;
+        line-height: 79px;
+    }
+    .what-silidar-text {
+        font-size: 21px;
+        line-height: 37px;
+    }
+    .what-silidar {
+        margin-bottom: 56px;
+    }
+    .what-silidar-main {
+        margin-bottom: 109px;
+    }
+    .slide-medical.pt-120 {
+        padding-top: 119px;
+    }
+    .faq-head {
+        margin-top: 55px;
+    }
+    .faq-head p {
+        margin-top: 17px;
+    }
+    .question-acco {
+        margin-bottom: 138px !important;
+    }
+    .premature-banner.electile-main {
+        padding-bottom: 82px;
+        padding-top: 252px;
+    }
+    .top-div.erectile-top-div h1 {
+        font-size: 53px;
+        line-height: 51px;
+    }
+    .premature-secont-sec.pt-120 {
+        padding-top: 116px;
+    }
+    .consultation-sec.premature-secont-sec .cstm-row {
+        padding-bottom: 101px;
+    }
+    .premature-sec-3.erectile-sec figure {
+        height: auto;
+        width: auto;
+    }
+    .premature-sec-4.pt-120 {
+        padding-top: 15px;
+    }
+    .premature-btns-crousel .trans-btn {
+        padding: 8px 21px;
+    }
+    .premature-slide .other-item {
+        padding: 23px;
+        overflow: hidden;
+        margin-bottom: 30px;
+    }
+    .premature-slide .other-item figcaption p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 33px;
+    }
+    .pre-crou-head {
+        font-size: 22px;
+        line-height: 27px;
+        padding-top: 16px;
+    }
+    .premature-sec-4 {
+        padding-bottom: 116px;
+    }
+    .black-outer-premature .black-inner h2 {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 70px;
+    }
+    .premature-free.free-cons-head {
+        margin-top: 128px;
+        margin-bottom: 98px;
+    }
+    .white-btn span {
+        font-size: 13px;
+        padding: 5px 20px;
+    }
+    .header .navbar-nav li.nav-item.dropdown {
+        margin-right: 36px;
+    }
+    .questions-sec .accordion .accordion-body {
+        line-height: 30px;
+    }
+    .questions-sec .accordion .accordion-item {
+        padding-bottom: 15px;
+        margin-bottom: 15px;
+    }
+    footer {
+        padding: 22px 0;
+    }
+    footer p {
+        font-size: 14px;
+    }
+    .beared-item figcaption {
+        padding: 6px 20px 20px;
+    }
+    .treatments-sec .cards figure {
+        margin: 0 auto 15px;
+    }
+    .other-sec .stars {
+        margin: 10px auto 20px;
+    }
+    .other-sec .cards figure {
+        margin: 0 auto 5px;
+    }
+    .sildenafil-right .silden-head {
+        padding-bottom: 20px;
+    }
+    header .navbar .login-signup li .dropdown-menu a {
+        font-size: 15px;
+        padding: 6px 13px !important;
+    }
+    header .navbar .login-signup li .dropdown-menu a i {
+        width: 12px;
+        margin-right: 9px !important;
+    }
+    header .navbar .navbar-nav .dropdown-menu li:last-child {
+        border-bottom: unset;
+    }
+    footer .ftr-logo {
+        max-width: 100px;
+    }
+    .men-getting-sec .men-get-image img {
+        height: 154px;
+    }
+    .sildenafil-wrap .main-heading p {
+        font-size: 21px;
+    }
+    .questinnaire-main .questinnaire-heading {
+        font-size: 46px;
+    }
+    .questinnaire-main {
+        padding-top: 70px;
+    }
+    .pro_heading_desc h2 {
+        font-size: 34px;
+    }
+    .hair-treatment-sec .pro_heading_desc {
+        padding-bottom: 50px;
+    }
+    .hair-treatment-sec .bread-journey-box {
+        padding: 19px 19px;
+        width: 99%;
+    }
+    .hair-treatment-sec .bread-journey-box figure {
+        margin: 0 auto 25px;
+    }
+    .hair-treatment-sec .bread-journey-box figure img {
+        max-width: 252px;
+    }
+    .bread-journey-box h4 {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 13px;
+    }
+    .pro_desc {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    .save-hair-image figure img {
+        width: 80%;
+    }
+    .hair-treatment-sec {
+        padding: 80px 0px;
+    }
+    section.hair-banner-before::after {
+        bottom: 59px;
+    }
+    .agent-offer .agent-div h2 {
+        font-size: 32px;
+    }
+    section.improve-growth-banner {
+        padding-top: 0;
+        padding-bottom: 100px;
+    }
+    .bread-journey-v2 .bread-journey-box svg {
+        max-width: 260px;
+        margin-bottom: 10px;
+    }
+    .hair-treatment-sec .bread-journey-box h4 {
+        font-size: 28px;
+    }
+    .top-div.erectile-top-div h1 {
+        margin-bottom: 12px;
+    }
+    .medical-sec figure.mob img {
+        max-width: 250px;
+    }
+    .sci-behind-sec .pro_heading_desc h4 {
+        font-size: 30px;
+    }
+    .sci-behind-sec .bread-journey-box figure {
+        margin-bottom: 30px;
+        min-height: 241px;
+    }
+    .medical-sec figure.mob img {
+        border-radius: 40px;
+        max-width: 215px;
+    }
+    .pages-content.inner-pages-design {
+        padding: 20px 0 50px;
+    }
+    .men-getting-sec .men-get-text p {
+        font-size: 18px;
+    }
+}
+@media (max-width: 1399px) {
+    .beard-problem-sec .bread-pro-box {
+        padding: 30px 60px 60px;
+    }
+    .pro_heading_desc h2 {
+        font-size: 42px;
+        margin-bottom: 10px;
+    }
+    .Treatment-opt-sec .to-content p {
+        font-size: 24px;
+    }
+    .mission-sec {
+        padding: 170px 0 80px;
+    }
+    .themselves-sec {
+        padding: 80px 0;
+    }
+    .as-agent-sec {
+        padding: 80px 0;
+    }
+    .as-agent-inr .about-desc {
+        line-height: 2.5;
+    }
+    .about-us-page .pure-white-btn {
+        padding: 9px 28px;
+        font-size: 15px;
+    }
+    .about-us-page .trans-btn {
+        padding: 9px 28px;
+        font-size: 15px;
+    }
+    .about-desc {
+        font-size: 18px;
+    }
+    .main-pharmacy-sec p {
+        font-size: 18px;
+    }
+    .main-pharmacy-sec p span {
+        font-size: 26px;
+    }
+    .hair-treatment-sec .bread-journey-box svg {
+        margin-bottom: 30px;
+    }
+    .bread-journey-box svg {
+        max-width: 290px;
+    }
+    body .swiper-design {
+        margin-bottom: 80px;
+        padding-bottom: 120px;
+    }
+    .Treatment-opt li.to-image {
+        width: 150px;
+        flex: 0 0 150px;
+    }
+    .bread-pro-box svg {
+        max-width: 300px;
+        margin-bottom: 30px;
+    }
+    .beard-problem-sec {
+        padding: 130px 0px;
+    }
+    .how-its-work .row {
+        width: 100%;
+    }
+}
+@media (max-width: 1199px) {
+    .questinnaire-laststep .questinnaire-thankyou .questinnaire-heading {
+        font-size: 34px;
+    }
+    .top-div h1 {
+        font-size: 54px;
+        line-height: 65px;
+    }
+    .top-div h4 {
+        font-size: 22px;
+    }
+    .white-btn span img {
+        height: 22px;
+        width: 22px;
+    }
+    .consult-div figure {
+        height: 50px;
+        width: 50px;
+    }
+    .hands-card figure img {
+        object-fit: contain;
+    }
+    .other-item figcaption p {
+        font-weight: 500;
+        font-size: 17px;
+        line-height: 23px;
+    }
+    .stars {
+        margin: 10px auto 17px;
+    }
+    .cards figure {
+        margin: 0 auto 5px;
+        height: 175px;
+    }
+    .gent-sec .cards .card-heading p {
+        font-weight: 500;
+        font-size: 13px;
+        line-height: 23px;
+        transition: all 0.3s ease-in-out;
+    }
+    .partners .partner-link:not(:last-child) {
+        margin-right: 5px;
+    }
+    .partners .partner-link img {
+        width: 75%;
+        object-fit: contain;
+        height: 100%;
+    }
+    .hands-card {
+        padding: 19px 19px;
+        width: 99%;
+    }
+    .hands-card .card-heading p {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    .partners .partner-link {
+        width: 103px;
+    }
+    .top-div.erectile-top-div h1 {
+        font-size: 50px;
+        line-height: 1.2;
+    }
+    .top-div.erectile-top-div ul {
+        padding: 30px 0 45px;
+    }
+    .treatment-option-div h2 {
+        font-size: 30px;
+    }
+    .treatment-option-div {
+        padding: 25px;
+    }
+    .treatment-option-div ul li p span {
+        font-size: 16px;
+    }
+    .treatment-option-div ul {
+        margin-top: 20px;
+        padding: 20px 0 25px;
+    }
+    .best-treatment .black-sec .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-bottom: 15px;
+        font-size: 30px;
+        line-height: 60px;
+    }
+    .agent-div h2 {
+        font-size: 41px;
+        line-height: 63px;
+    }
+    .agent-div p {
+        font-size: 22px;
+    }
+    .agent-offer figure {
+        height: 598px;
+    }
+    .erectile-black .white-btn {
+        padding: 12px 29px;
+    }
+    .unsure-div h2,
+    .unsure-div h2 span,
+    .big-heading,
+    .big-heading span {
+        font-size: 50px;
+        line-height: 42px;
+    }
+    .erectile-black figure {
+        height: 80px;
+        width: 80px;
+        margin-right: 27px;
+    }
+    .how-its-head {
+        margin-top: 78px;
+    }
+    .how-its-workdiv figure {
+        height: 256px;
+    }
+    .how-its-workdiv figcaption h4 {
+        font-weight: 500;
+        font-size: 19px;
+        line-height: 14px;
+    }
+    .how-its-workdiv figcaption p {
+        font-size: 15px;
+        line-height: 26px;
+    }
+    .faq form .input-group .form-control {
+        padding: 9px 16px 9px 59px;
+        font-size: 18px;
+    }
+    .accordion-item .accordion-button {
+        font-size: 22px;
+    }
+    .black-sec {
+        padding: 42px 26px;
+    }
+    .free-cons-head {
+        margin-top: 103px;
+        margin-bottom: 94px;
+    }
+    .gent-sec .cards .read-more {
+        position: absolute;
+        bottom: 15px;
+        left: 20px;
+        right: 28px;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .gent-hub-last .trans-btn {
+        padding: 4px 15px;
+    }
+    .gent-hub-last .trans-btn {
+        font-size: 13px;
+    }
+    .treatment-option-div .row .trans-btn {
+        padding: 9px 13px;
+        font-size: 15px;
+    }
+    .sildenafil-banner {
+        margin-top: 144px;
+    }
+    .silden-head {
+        font-size: 67px;
+        line-height: 79px;
+        padding-bottom: 3px;
+    }
+    .sildenafil-right .stars.treatment-stars {
+        margin: 18px 0px;
+    }
+    .silder-list li {
+        font-size: 26px;
+        line-height: 35px;
+        padding-bottom: 10px;
+    }
+    .silden-icon-upper.pt-120 {
+        padding-top: 60px;
+    }
+    .silden-icon .consult-heading h4 {
+        font-size: 18px;
+        line-height: 27px;
+    }
+    .silden-icon .consult-div figure {
+        width: 60px;
+        height: 60px;
+    }
+    .how-its-head {
+        margin-top: 74px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        font-size: 43px;
+        line-height: 1.2;
+    }
+    .how-its-row .how-its-workdiv figure {
+        height: 265px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption h4 {
+        font-size: 28px;
+        line-height: 1.2;
+        margin-bottom: 10px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption p {
+        font-size: 15px;
+        line-height: 29px;
+    }
+    .consultation-row {
+        margin-top: 62px;
+    }
+    .consultation-head {
+        font-size: 43px;
+        line-height: 54px;
+        margin-bottom: 12px;
+    }
+    .consultation-text {
+        font-size: 20px;
+        font-weight: 500;
+        line-height: 39px;
+        padding-bottom: 33px;
+    }
+    .consultation-right-head {
+        font-size: 33px;
+        margin-bottom: 5px;
+    }
+    .consultation-right-text {
+        font-size: 22px;
+        font-weight: 500;
+        line-height: 32px;
+        margin-bottom: 26px;
+    }
+    .consultation-right-table tr td:first-child {
+        font-size: 20px;
+    }
+    .consultation-right-table tr td:last-child {
+        text-align: end;
+        font-size: 18px;
+        line-height: 26px;
+    }
+    .what-silidar-head {
+        font-size: 50px;
+        line-height: 54px;
+    }
+    .what-silidar-text {
+        font-size: 19px;
+        line-height: 34px;
+    }
+    .what-silidar {
+        margin-bottom: 39px;
+    }
+    .what-silidar-main {
+        margin-bottom: 95px;
+    }
+    .faq-head {
+        margin-top: 26px;
+    }
+    .slide-medical.pt-120 {
+        padding-top: 90px;
+    }
+    .premature-banner.electile-main {
+        padding-bottom: 25px;
+        padding-top: 221px;
+    }
+    .premature-banner .top-div.erectile-top-div ul {
+        padding: 24px 0 11px;
+    }
+    .premature-banner .top-div.erectile-top-div h1 {
+        font-size: 46px;
+        line-height: 74px;
+    }
+    .premature-secont-sec.pt-120 {
+        padding-top: 98px;
+    }
+    .consultation-sec.premature-secont-sec .cstm-row {
+        padding-bottom: 88px;
+    }
+    .premature-sec-3 .erectile-info p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 30px;
+    }
+    .premature-slide .other-item figcaption p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .premature-slide .trans-btn {
+        font-size: 15px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    .black-outer-premature {
+        padding: 32px 32px;
+        margin-bottom: 87px;
+    }
+    .black-outer-premature .black-inner .white-btn {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 7px;
+        padding: 9px 42px;
+        height: 50px;
+        align-items: center;
+        display: flex;
+    }
+    .premature-free.free-cons-head {
+        margin-top: 85px;
+        margin-bottom: 75px;
+    }
+    .owl-theme .owl-dots .owl-dot span {
+        width: 17px;
+        height: 17px;
+    }
+    .owl-theme .owl-dots .owl-dot:nth-child(2) span {
+        height: 15px;
+        width: 15px;
+    }
+    .owl-theme .owl-dots .owl-dot:not(:last-child) span {
+        margin-right: 14px;
+    }
+    .treatment-option-div h4 {
+        font-size: 22px;
+    }
+    .treatment-head {
+        padding-top: 30px;
+    }
+    .treatment-option-div {
+        margin-bottom: 40px;
+    }
+    .treatment-option-sec .treatment-row {
+        margin-bottom: 10px;
+    }
+    .pb-100 {
+        padding-bottom: 70px;
+    }
+    .best-treatment {
+        margin-bottom: 70px;
+    }
+    .gent-hub-last {
+        margin-bottom: 60px;
+    }
+    .pt-100 {
+        padding-top: 40px;
+    }
+    .white-trans-btn {
+        padding: 9px 20px;
+    }
+    .sildenafil-right .silden-head {
+        font-size: 40px !important;
+    }
+    .main-div.homepage-banner .top-div {
+        padding-top: 0;
+    }
+    .medical-sec .expert {
+        margin-bottom: 40px;
+    }
+    .gent-sec .cards {
+        padding-bottom: 60px;
+    }
+    .medical-sec .expert:before {
+        border: 8px solid rgba(255, 255, 255, 0.7);
+    }
+    footer .ftr-logo {
+        max-width: 80px;
+    }
+    .owl-theme .owl-dots .owl-dot span {
+        width: 12px !important;
+        height: 12px !important;
+        margin: 1px 3px;
+        background: rgb(36 36 35 / 50%) !important;
+        display: block;
+    }
+    .owl-theme .owl-dots .owl-dot.active span,
+    .owl-theme .owl-dots .owl-dot:hover span {
+        background: #242423 !important;
+    }
+    .main-div.homepage-banner {
+        padding: 120px 0 50px;
+    }
+    .men-getting-sec .row .col-lg-6 {
+        width: 100%;
+    }
+    .men-getting-sec .row .col-lg-6:not(:first-child) {
+        margin-top: 30px;
+    }
+    .beard-problem-sec .bread-pro-box {
+        padding: 30px 40px 40px;
+    }
+    .to-buttons a {
+        padding: 10px 20px;
+        min-width: 150px;
+    }
+    .Treatment-opt-sec .to-content p {
+        font-size: 24px;
+    }
+    .product-get-start .ques-text h4 {
+        font-size: 30px;
+    }
+    .men-getting-sec .men-get-text p {
+        line-height: 2;
+    }
+    .admin-checkout .comon-padding {
+        padding-top: 90px;
+    }
+    .comon-padding {
+        padding-top: 125px;
+    }
+    .sildenafil-wrap .main-heading p {
+        font-size: 20px;
+        line-height: 1.7;
+    }
+    .product-deatils-b-sec {
+        margin: 70px 0;
+    }
+    .question-acco {
+        margin-bottom: 90px !important;
+    }
+    .questinnaire-main .questinnaire-heading {
+        font-size: 40px;
+    }
+    .questinnaire-main .form-group {
+        margin-bottom: 20px;
+    }
+    .questinnaire-main .form-section {
+        max-width: 500px;
+        padding: 30px 0px 15px 0px;
+    }
+    .pro_heading_desc h2 {
+        font-size: 34px;
+    }
+    .pro_heading_desc {
+        padding-bottom: 37px !important;
+    }
+    .improve-growth-banner {
+        padding-top: 0px;
+        padding-bottom: 120px;
+    }
+    .form-wedlove-sec .form-main {
+        max-width: 452px;
+    }
+    .sci-behind-sec .row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start !important;
+    }
+    .sci-behind-sec .row .col-4.ques-col-margin {
+        width: 400px;
+        margin-bottom: 20px;
+    }
+    .hair-regrow-sec .row {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        justify-content: flex-start !important;
+    }
+    .hair-regrow-sec .row .col-4.ques-col-margin {
+        width: 400px;
+        margin-bottom: 10px;
+    }
+    .agent-offer .agent-div h2 {
+        font-size: 26px;
+    }
+    .agent-div p {
+        font-size: 18px;
+        line-height: 1.2;
+    }
+    .improve-growth-banner #chart {
+        padding: 20px 0 0px 0px;
+    }
+    .agent-offer .agent-div {
+        padding-bottom: 100px;
+    }
+    .hair-regrow-sec .row .col-12.ques-col-margin {
+        width: 400px;
+        margin-bottom: 10px;
+    }
+    .faq-page {
+        padding: 150px 0 40px;
+    }
+    .about-us-page .pro_heading_desc {
+        padding: 0 0 18px !important;
+    }
+    .pharmacy-sec {
+        padding: 80px 0;
+    }
+    .main-pharmacy-sec p {
+        margin-bottom: 20px;
+    }
+    .Save-hair-banner .pro_heading_desc {
+        padding-bottom: 15px;
+    }
+    .hair-treatment-sec .bread-journey-box svg {
+        max-width: 260px;
+    }
+    .bread-journey-box svg {
+        max-width: 280px;
+    }
+    .hair-regrow-sec .bread-journey-box svg {
+        margin: 30px 0 5px;
+    }
+    .sci-behind-sec .bread-journey-box svg {
+        height: 220px;
+        margin-bottom: 35px;
+    }
+    .hands-card {
+        padding: 20px 35px 38px;
+    }
+    .bread-pro-box svg {
+        max-width: 350px;
+        margin-bottom: 30px;
+    }
+    .bread-journey-v2 .bread-journey-box svg {
+        max-width: 230px;
+        margin-bottom: 10px;
+    }
+    .bread-journey-sec .bread-journey-heading {
+        padding: 20px 15px;
+        text-align: center;
+    }
+    .hair-treatment-sec .bread-journey-box h4 {
+        font-size: 26px;
+    }
+    .sci-behind-sec .pro_heading_desc h4 {
+        font-size: 26px;
+        margin-top: 20px;
+    }
+    .improve-growth-banner .pro_heading_desc h4 {
+        font-size: 30px;
+    }
+    .improve-growth-banner .pro_heading_desc p {
+        font-size: 24px;
+    }
+    .product-get-start-sec .product-get-button {
+        margin-top: 35px;
+    }
+    .agent-offer figure {
+        height: 500px;
+    }
+    .treatment-option-sec .col-md-6.col-sm-12 {
+        margin-bottom: 70px;
+    }
+    .men-getting-sec .men-get-box {
+        padding: 40px 35px 35px;
+    }
+    .men-getting-sec .men-get-text {
+        width: calc(100% - 120px);
+        flex: 0 0 calc(100% - 120px);
+        padding-right: 25px;
+    }
+    .men-getting-sec .men-get-image img {
+        max-width: 115px;
+    }
+    .men-getting-sec .men-get-image img:not(:last-child) {
+        margin-bottom: 26px;
+    }
+    .Treatment-opt li.to-image {
+        width: 130px;
+        flex: 0 0 130px;
+    }
+    .to-buttons a {
+        padding: 9px 20px;
+        min-width: 130px;
+    }
+    .Treatment-opt li.to-buttons {
+        width: 280px;
+        flex: 0 0 280px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        font-size: 28px;
+    }
+    .top-div ul li p {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .top-div ul li p img {
+        margin-right: 15px;
+        height: 26px;
+        width: 26px;
+    }
+    .hands-card figure img {
+        width: 250px;
+    }
+    .graph-image {
+        padding-left: 0;
+        padding-top: 50px;
+    }
+    .treatment-option-div .star-reviews {
+        padding: 6px 0;
+        line-height: normal;
+    }
+    .best-treatment .black-sec .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-bottom: 20px;
+        font-size: 50px;
+        line-height: 42px;
+    }
+    .what-erectile-head {
+        margin-top: 50px;
+        margin-bottom: 0px;
+    }
+    .pro_desc {
+        font-size: 12px;
+    }
+    .sci-behind-sec .bread-journey-heading {
+        text-align: left;
+        padding: 0;
+    }
+    .phone-none {
+        display: none;
+    }
+    .desktop-none {
+        display: block;
+    }
+    section.user-dashboard {
+        margin: 0px 19px;
+    }
+    .pages-content.inner-pages-design {
+        padding: 10px 0 50px;
+    }
+    .pages-content.inner-pages-design h3 {
+        font-size: 36px;
+    }
+    .pages-content.inner-pages-design p b,
+    .pages-content.inner-pages-design ul li,
+    .pages-content.inner-pages-design ul li b {
+        font-size: 18px;
+    }
+    .pages-content.inner-pages-design p {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+    .consultation-head {
+        font-size: 36px !important;
+        line-height: 57px !important;
+        margin-bottom: 12px;
+    }
+    .men-getting-sec .men-get-image img {
+        height: 160px;
+    }
+    .men-getting-sec .men-get-image {
+        width: 170px;
+        flex: 0 0 133px;
+        height: 350px;
+    }
+}
+@media (max-width: 991px) {
+    .pre-tm-dosage-mg .hd-4 {
+        font-size: 24px;
+    }
+    #orderText {
+        font-size: 9px;
+    }
+    .medical-advice {
+        background: #484f47;
+    }
+    .top-div h1 {
+        font-size: 40px;
+        line-height: 38px;
+        color: #fff;
+        font-style: normal;
+        letter-spacing: -4.94px;
+    }
+    .top-div h4 {
+        font-size: 20px;
+    }
+    .pt-120 {
+        padding-top: 60px;
+    }
+    .pb-120 {
+        padding-bottom: 60px;
+    }
+    .main-heading h2 {
+        font-size: 31px;
+    }
+    .cards {
+        padding: 19px 13px;
+        margin-bottom: 20px;
+    }
+    .consultation-sec .consult-div {
+        margin-bottom: 38px;
+    }
+    .consultation-sec .cstm-row {
+        padding-bottom: 10px;
+    }
+    .main-heading p {
+        font-size: 14px;
+    }
+    .free-consultation-upper {
+        row-gap: 28px;
+    }
+    .gentelman-upper {
+        row-gap: 24px;
+    }
+    .main-heading {
+        padding-bottom: 27px;
+    }
+    .gent-hub-upper {
+        row-gap: 24px;
+    }
+    .unsure-div h2,
+    unsure-div h2 span,
+    .big-heading,
+    .big-heading span {
+        font-size: 36px;
+        line-height: 55px;
+    }
+    .unsure-div p {
+        font-size: 12px;
+        line-height: 16px;
+    }
+    .white-btn,
+    .white-btn span .pure-white-btn {
+        font-size: 13px;
+    }
+    .white-btn,
+    .white-btn span .pure-white-btn {
+        padding: 9px 46px 9px 24px;
+    }
+    .white-btn span svg {
+        height: 24px;
+        width: 24px;
+    }
+    .consultation-sec .consult-div {
+        margin-bottom: 11px;
+    }
+    .words-sec .consult-div {
+        padding: 26px 13px;
+    }
+    .backed-upperP {
+        row-gap: 15px;
+    }
+    .partners .partner-link {
+        width: 78px;
+    }
+    .mob {
+        max-width: 343px;
+        margin: auto;
+    }
+    .beared-item figcaption h6 {
+        font-size: 18px;
+        line-height: 20px;
+    }
+    .beared-btns .pure-white-btn,
+    .beared-btns .white-trans-btn {
+        padding: 6px 16px;
+    }
+    .pure-white-btn {
+        font-size: 13px;
+    }
+    .white-trans-btn {
+        font-size: 13px;
+    }
+    .navbar-toggler {
+        background-color: white !important;
+    }
+    .best-treatment .black-sec .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-bottom: -4px;
+        font-size: 25px;
+        line-height: 52px;
+        margin-bottom: 20px;
+    }
+    .treatment-option-div p {
+        font-size: 15px;
+        line-height: 23px;
+    }
+    .treatment-option-div h2 {
+        font-size: 25px;
+    }
+    .treatment-option-div {
+        padding: 21px 25px 29px;
+    }
+    .treatment-option-div .row .trans-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+    .treatment-option-div .star-reviews {
+        padding: 11px 0;
+    }
+    .star-reviews span {
+        font-size: 15px;
+    }
+    .treatment-option-div .star-reviews .stars i {
+        font-size: 16px;
+    }
+    .agent-div h2 {
+        font-size: 30px;
+        line-height: 46px;
+    }
+    .agent-offer figure {
+        height: 444px;
+    }
+    .agent-div p {
+        font-size: 16px;
+        padding: 20px 0 0;
+    }
+    .unsure-div h2,
+    .unsure-div h2 span,
+    .big-heading,
+    .big-heading span {
+        font-size: 38px;
+        line-height: 38px;
+    }
+    .erectile-black .white-btn {
+        padding: 9px 17px;
+    }
+    .how-its-workdiv figure {
+        height: 187px;
+    }
+    .how-its-workdiv figcaption h4 {
+        font-size: 16px;
+    }
+    .how-its-workdiv figcaption p {
+        font-size: 15px;
+        line-height: 21px;
+    }
+    .main-heading h2 {
+        font-size: 29px;
+    }
+    .erectile-info p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 29px;
+    }
+    .faq-head {
+        margin-top: 81px;
+    }
+    #questionaccordion .accordion-body {
+        font-size: 15px;
+        line-height: 28px;
+    }
+    #questionaccordion .accordion-item .accordion-button {
+        font-size: 20px;
+    }
+    .gent-sec .cards .read-more {
+        bottom: 12px;
+        justify-content: space-between;
+    }
+    .gent-sec .cards {
+        padding-bottom: 40px;
+    }
+    .gent-sec .cards .card-heading {
+        padding: 5px 10px;
+        text-align: center;
+    }
+    .gent-hub-last {
+        margin-bottom: 78px;
+        row-gap: 30px;
+    }
+    #questionaccordion .accordion-item {
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+    }
+    .erectile-info:not(:last-child) {
+        margin-bottom: 36px;
+    }
+    .erectile-sec .black-btn {
+        font-size: 14px;
+        line-height: 26px;
+    }
+    .erectile-info h4 {
+        font-size: 24px;
+        line-height: 36px;
+    }
+    .best-treatment {
+        margin-bottom: 60px;
+    }
+    .treatment-option-div {
+        margin-bottom: 25px;
+    }
+    .main-div {
+        padding: 188px 0 60px !important;
+    }
+    .learn-more-card-btn {
+        margin-top: 15px;
+    }
+    .silden-icon-upper.pt-120 {
+        padding-top: 29px;
+    }
+    .sildenafil-right {
+        width: 100%;
+        max-width: 100%;
+    }
+    .silden-head {
+        font-size: 59px;
+        line-height: 67px;
+    }
+    .silden-icon .consult-div figure {
+        width: 50px;
+        height: 50px;
+    }
+    .consultation-sec .consult-div {
+        margin-bottom: 40px;
+        justify-content: center;
+    }
+    .silden-icon-upper.consultation-sec .cstm-row {
+        padding-bottom: 30px;
+        row-gap: 35px;
+    }
+    .how-its-head {
+        margin-top: 46px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        font-size: 39px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption h4 {
+        font-size: 26px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption p {
+        font-size: 15px;
+        line-height: 27px;
+    }
+    .consultation-head br {
+        display: none;
+    }
+    .consultation-head {
+        font-size: 40px;
+        line-height: 50px;
+        margin-bottom: 10px;
+    }
+    .sildenafil-wrap .main-heading p {
+        font-size: 18px;
+    }
+    .sildenafil-sec .owl-dots {
+        margin-top: 40px !important;
+    }
+    .consultation-text {
+        font-size: 18px;
+        line-height: 33px;
+        padding-bottom: 12px;
+    }
+    .consultation-row {
+        margin-top: 52px;
+        row-gap: 59px;
+    }
+    .consultation-right-text {
+        font-size: 21px;
+        line-height: 28px;
+        margin-bottom: 45px;
+    }
+    .consultation-row {
+        margin-bottom: 78px;
+    }
+    .what-silidar-text {
+        font-size: 18px;
+        line-height: 34px;
+        margin-bottom: 23px;
+    }
+    .question-acco {
+        margin-bottom: 87px !important;
+    }
+    .premature-banner .top-div.erectile-top-div h1 {
+        font-size: 38px;
+        line-height: 35px;
+    }
+    .premature-banner.electile-main {
+        padding-bottom: 8px;
+        padding-top: 189px;
+    }
+    .consultation-sec.premature-secont-sec .cstm-row {
+        row-gap: 28px;
+    }
+    .premature-sec-3 .main-heading h2 {
+        font-size: 27px;
+        line-height: 23px;
+    }
+    .premature-sec-3 .erectile-info:not(:last-child) {
+        margin-bottom: 36px;
+        margin-top: 13px;
+    }
+    .premature-sec-3 .erectile-info p {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .premature-slide .trans-btn {
+        height: fit-content;
+        margin-top: 0;
+    }
+    .premature-btns-crousel {
+        align-items: center;
+    }
+    .black-outer-premature .black-inner h2 {
+        font-size: 24px;
+        font-weight: 700;
+        line-height: 56px;
+    }
+    .black-outer-premature .black-inner .white-btn {
+        font-size: 17px;
+        line-height: 7px;
+        padding: 4px 37px;
+        height: 43px;
+    }
+    .black-outer-premature {
+        padding: 32px 32px;
+        margin-bottom: 54px;
+    }
+    .unsure-div .white-trans-btn {
+        padding: 12px 32px;
+    }
+    .unsure-div .white-trans-btn {
+        margin-left: 30px;
+    }
+    .order-custm1 {
+        order: 2;
+        text-align: center;
+        margin-top: 10px;
+    }
+    footer .order-custm3 ul {
+        justify-content: center;
+    }
+    footer {
+        padding: 18px 0 24px;
+    }
+    .pt-100 {
+        padding-top: 60px;
+    }
+    header .navbar-collapse {
+        position: absolute;
+        top: 82px;
+        left: 0;
+        width: 100% !important;
+        background: rgb(94 90 87 / 98%);
+        padding: 0 15px;
+        backdrop-filter: blur(50px);
+    }
+    header .navbar button {
+        outline: none !important;
+        box-shadow: unset !important;
+        padding: 0;
+        background: none !important;
+        color: #fff;
+        font-size: 30px;
+        border: unset;
+    }
+    header .navbar-collapse .login-signup {
+        display: block;
+        width: 100%;
+    }
+    header .navbar-collapse li {
+        width: 100%;
+        border-bottom: 1px solid #f5f5f5;
+        margin: 0 !important;
+    }
+    header .navbar-collapse li a {
+        width: 100%;
+    }
+    header .navbar-collapse .login-signup li:last-child {
+        border: unset;
+    }
+    header .navbar-collapse li a {
+        border: unset;
+        padding: 8px 0 !important;
+        display: inline-block;
+        margin: 0;
+        background: transparent !important;
+    }
+    header .navbar-collapse li a + ul {
+        border-radius: 0;
+    }
+    .header ul li a.dropdown-toggle:after {
+        position: absolute;
+        right: 15px;
+        top: 18px;
+    }
+    .faq form .input-group .form-control {
+        padding: 7px 15px 6px 50px;
+        font-size: 16px;
+        height: 48px;
+    }
+    .faq form .input-group span i {
+        font-size: 15px;
+    }
+    .free-cons-head {
+        margin-top: 40px;
+        margin-bottom: 55px;
+    }
+    .gent-hub-last {
+        margin-bottom: 40px;
+    }
+    .how-its-work .row {
+        width: 100%;
+    }
+    .sildenafil-right .silden-head {
+        font-size: 32px;
+    }
+    .main-div.homepage-banner {
+        min-height: 600px;
+        padding: 180px 0 30px;
+    }
+    .arrow {
+        bottom: 40px;
+    }
+    .consultation-sec [class*="col-"]:not(:last-child) .consult-div:before {
+        display: none;
+    }
+    .consult-heading h4 {
+        font-size: 14px;
+        line-height: 20px;
+    }
+    .other-item figcaption p {
+        font-size: 18px;
+        line-height: 24px;
+        min-height: 72px;
+    }
+    .trans-btn {
+        line-height: 22px;
+    }
+    .medical-sec .expert:before {
+        border: 6px solid rgba(255, 255, 255, 0.7);
+    }
+    .arrow-down {
+        padding: 18px 11px 15px;
+    }
+    .arrow-down i {
+        font-size: 14px;
+    }
+    .home-free-cnslt a.white-btn {
+        padding: 8px 25px;
+    }
+    .home-free-cnslt a.white-btn span {
+        padding: 10px 24px;
+    }
+    .top-div {
+        padding-bottom: 48px;
+    }
+    .product-hero-banner a.white-trans-btn {
+        padding: 12px 50px;
+    }
+    .sildenafil-inner figure {
+        margin-right: 0;
+    }
+    .sildenafil-right {
+        margin-top: 40px;
+    }
+    .user-dashboard .row .col-lg-8 {
+        order: 2;
+    }
+    .user-dashboard .row .col-lg-4 {
+        padding: 0;
+    }
+    .user-dashboard .row .col-4 {
+        width: 100%;
+        order: 1;
+        padding: 0px;
+    }
+    .user-dashboard .dashboard-left-inr {
+        padding: 20px 5px;
+    }
+    .user-dashboard .container {
+        border-radius: 14px;
+    }
+    .header .navbar-nav li.nav-item.dropdown {
+        margin: 0;
+    }
+    .login-signup li .dropdown-menu {
+        position: static;
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        border: unset;
+    }
+    footer .ftr-logo {
+        margin: 15px auto;
+    }
+    .silden-icon-upper.consultation-sec .cstm-row {
+        padding-bottom: 0;
+        row-gap: 10px;
+    }
+    header .navbar-collapse .navbar-nav .dropdown-menu {
+        border: unset;
+    }
+    header .navbar .navbar-nav .dropdown-menu li a {
+        font-size: 14px;
+        padding: 6px 13px !important;
+    }
+    .login-signup li .dropdown-menu div a {
+        border-top: 1px solid #f5f5f5;
+    }
+    .words-sec .consult-div svg {
+        height: 70px;
+        width: 70px;
+        margin: 0 auto 15px;
+    }
+    .to-buttons .btn-visit {
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+    .pro_heading_desc h2 {
+        font-size: 29px;
+    }
+    .product-get-start-sec,
+    .bread-journey-sec,
+    .Treatment-opt-sec,
+    .men-getting-sec {
+        padding-bottom: 60px;
+    }
+    .admin-checkout .card-body .checkout-shipping-add {
+        margin-bottom: 30px;
+    }
+    .checkout-heading {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+    .admin-checkout .card-body .checkout-shipping-add,
+    .admin-checkout .card-body .checkout-your-order {
+        padding: 20px 20px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        font-size: 26px;
+    }
+    .pro-get-started .get-started-inr .pure-white-btn {
+        padding: 10px 45px;
+    }
+    .beard-problem-sec {
+        padding: 60px 0px;
+    }
+    .beard-problem-sec .bread-pro-box .bread-pro-heading h4 {
+        font-size: 22px;
+    }
+    .men-getting-sec .men-get-text p {
+        font-size: 12px;
+        line-height: 1.4;
+    }
+    .product-get-start-sec .product-get-button a {
+        font-size: 13px;
+        padding: 10px 32px 10px 32px;
+        line-height: 20px;
+    }
+    .product-get-start .ques-text h4 {
+        font-size: 20px;
+    }
+    .bread-journey-box figure img {
+        width: 60%;
+    }
+    .product-get-start .ques-image img {
+        width: 140px;
+    }
+    .men-getting-sec .stars i {
+        font-size: 20px;
+    }
+    .quotes-img svg {
+        height: 20px;
+        width: 20px;
+    }
+    li.to-buttons {
+        text-align: end;
+    }
+    .to-buttons a {
+        padding: 10px 15px;
+        font-size: 13px;
+        min-width: 130px;
+    }
+    .Treatment-opt-sec .to-content p {
+        font-size: 20px;
+    }
+    .pro_heading_desc {
+        padding-bottom: 27px;
+    }
+    .questinnaire-main
+        .form-section
+        .form-group.ques-textarea
+        input.form-control {
+        font-size: 16px;
+    }
+    .questinnaire-list li {
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+    .ques-modal .modal-body {
+        padding: 25px 15px 15px;
+        font-size: 14px;
+    }
+    .ques-modal .modal-footer a {
+        font-size: 13px;
+        padding: 10px 30px 9px;
+    }
+    .ques-modal .modal-footer {
+        padding: 0 0 25px;
+    }
+    .abort-sec .container {
+        padding: 20px;
+    }
+    .faq .faq-head {
+        margin-top: 20px;
+    }
+    .question-acco {
+        margin-bottom: 50px !important;
+    }
+    .questinnaire-main .questinnaire-heading {
+        font-size: 32px;
+        margin: 0px;
+    }
+    .questinnaire-main .form-section {
+        padding: 40px 0px 20px 0px;
+    }
+    .questinnaire-main .form-group {
+        margin-bottom: 15px;
+    }
+    .questinnaire-main [type="radio"]:checked + label:before,
+    .questinnaire-main [type="radio"]:not(:checked) + label:before {
+        left: 30px;
+        width: 33px;
+        height: 33px;
+    }
+    .questinnaire-main [type="radio"]:checked + label:after,
+    .questinnaire-main [type="radio"]:not(:checked) + label:after {
+        width: 25px;
+        height: 25px;
+        left: 34px;
+    }
+    .questinnaire-main .questinnaire-button a {
+        font-size: 16px;
+        padding: 10px 30px 9px;
+    }
+    .questinnaire-main .qtnr-inner {
+        padding: 50px 0px;
+    }
+    .questinnaire-main {
+        padding: 85px 0px 10px;
+    }
+    section.hair-banner-before::after {
+        display: none;
+    }
+    .save-hair-image figure img {
+        width: 100%;
+    }
+    .sci-behind-sec {
+        padding: 60px 0px;
+    }
+    .men-banner-sec {
+        padding-bottom: 60px;
+    }
+    .questinnaire-laststep .questinnaire-thankyou .questinnaire-heading {
+        font-size: 29px;
+    }
+    .form-wedlove-sec .icon-size i {
+        font-size: 20px;
+    }
+    .cont-get-start .cont-text h4 {
+        font-size: 18px;
+    }
+    .cont-get-start .cont-text span {
+        font-size: 16px;
+    }
+    .cont-get-start .cont-text {
+        padding-left: 31px;
+    }
+    .content-get-main {
+        padding-left: 57px;
+    }
+    .form-wedlove-sec .form-control {
+        font-size: 16px;
+    }
+    .form-wedlove-sec .product-get-button a {
+        font-size: 16px;
+        padding: 9px 35px 11px 35px;
+    }
+    .consultation-left-box {
+        padding-right: 0;
+    }
+    body {
+        -moz-transform: scale(0.9, 0.9);
+        zoom: 0.9;
+        zoom: 90%;
+    }
+    .agent-offer .agent-div h2 {
+        font-size: 20px;
+    }
+    .mprove-growth-citation {
+        margin-top: 30px;
+    }
+    .main-themselves-sec {
+        max-width: 400px;
+    }
+    .as-agent-inr {
+        max-width: 400px;
+    }
+    .banner-div-text {
+        max-width: 400px;
+        padding: 20px 20px;
+    }
+    .swiper-design .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        margin: 0 6px !important;
+    }
+    .swiper-design .swiper-pagination-bullet:nth-child(2) {
+        width: 14px;
+        height: 14px;
+    }
+    .swiper-design .swiper-pagination-bullet:nth-child(3) {
+        width: 12px;
+        height: 12px;
+    }
+    .swiper-design .swiper-pagination-bullet:nth-child(4) {
+        width: 10px;
+        height: 10px;
+    }
+    .swiper-design .swiper-pagination-bullet:nth-child(5) {
+        width: 8px;
+        height: 8px;
+    }
+    .swiper-design .swiper-pagination-bullet:nth-child(6) {
+        width: 6px;
+        height: 6px;
+    }
+    .product-get-start .ques-image .ques-svg-img svg {
+        height: 140px;
+        max-width: 160px;
+    }
+    .product-get-start .ques-image .ques-svg-img {
+        max-width: 150px;
+    }
+    .product-get-start .ques-image {
+        padding-left: 50px;
+    }
+    .product-get-start-sec .ques-text span {
+        border: 6px solid #242423;
+        padding: 8px;
+        margin-right: 20px;
+    }
+    .product-get-main:before {
+        left: 14px;
+        top: 14px;
+    }
+    .product-get-start {
+        padding-bottom: 30px;
+    }
+    .product-get-start-sec .product-get-button {
+        margin-top: 22px;
+    }
+    .Treatment-opt-sec {
+        padding: 70px 0px;
+    }
+    .erectile-sec figure {
+        height: auto;
+    }
+    .agent-section {
+        padding-top: 80px !important;
+    }
+    .bread-pro-box svg {
+        max-width: 320px;
+    }
+    .bread-journey-v2 .bread-journey-box svg {
+        max-width: 200px;
+    }
+    .bread-journey-v2 .row .col-md-6.col-lg-4 {
+        margin-bottom: 25px;
+    }
+    .main-heading.text-center.what-erectile-head {
+        margin: 45px 0 20px;
+    }
+    .consultation-head {
+        font-size: 30px;
+        line-height: 44px;
+    }
+    .consultation-right-head {
+        font-size: 26px;
+        line-height: 44px;
+    }
+    .consultation-right-text {
+        font-size: 20px;
+        line-height: 28px;
+        margin-bottom: 24px;
+    }
+    .qcc-icon svg {
+        width: 74px;
+        height: 74px;
+    }
+    .Treatment-opt-sec li.to-content {
+        padding: 0 15px;
+    }
+    .Treatment-opt li.to-buttons {
+        width: 135px;
+        flex: 0 0 135px;
+    }
+    .Treatment-opt li.to-image {
+        width: 110px;
+        flex: 0 0 110px;
+    }
+    body .swiper-design {
+        margin-bottom: 70px;
+        padding-bottom: 60px;
+    }
+    .swiper-design .swiper-pagination {
+        bottom: 5px;
+    }
+    .pro-get-started .get-started-inr {
+        padding: 35px 20px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        margin-right: 16px;
+    }
+    .main-div {
+        display: block;
+    }
+    .top-div h4 {
+        padding: 25px 0 16px;
+    }
+    .medical-sec .expert {
+        margin: 0px auto 50px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        font-size: 22px;
+    }
+    .bread-journey-sec.hair-treatment-sec.pt-100 {
+        padding-top: 83px;
+    }
+    .top-div p.desc {
+        font-size: 16px;
+    }
+    .home-beard-slider2 {
+        padding: 100px 0px 100px 0 !important;
+    }
+    .home-beard-slider {
+        padding: 40px 0px !important;
+    }
+    body .swiper-design {
+        padding: 98px 0px;
+    }
+    .main-div {
+        padding: 150px 0 50px !important;
+    }
+    body .swiper-design {
+        padding: 72px 0px;
+    }
+    .dashboard-open .header.navbar-fixed {
+        background: rgb(42 36 32 / 61%);
+        left: 0;
+        width: 100%;
+    }
+    .dashboard-open .header {
+        position: fixed;
+    }
+    .user-dashboard .user-sidebar {
+        top: 87px;
+    }
+    .user-dashboard .user-sidebar .card-body .bg-dark {
+        background: rgb(42 36 32 / 61%) !important;
+    }
+    .user-dashboard .user-sidebar .card-body div a {
+        border-bottom: 1px solid rgb(42 36 32 / 61%);
+    }
+    .user-sidebar .side-bar {
+        display: block;
+    }
+    .user-dashboard .user-sidebar {
+        transform: translateX(-100%);
+        transition: all 0.3s ease-in-out;
+    }
+    .user-sidebar.open {
+        transform: translateX(0);
+        padding: 20px 10px;
+    }
+    .dashboard-open .app-layout {
+        width: unset;
+    }
+    .l-s-details form .form-control {
+        font-size: unset;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .product-details-content {
+        margin-top: 0px;
+    }
+}
+@media (max-width: 767px) {
+    .svg-round {
+        margin-top: -10px;
+    }
+    .questinnaire-laststep .questinnaire-thankyou .questinnaire-heading {
+        font-size: 18px;
+    }
+    .how-its-row .how-its-workdiv figure {
+        height: 303px;
+    }
+    .arrow {
+        bottom: 11px;
+        width: 35px;
+    }
+    .footer-h2 {
+        font-size: 24px !important;
+        line-height: 24px !important;
+    }
+    .card-heading h4 {
+        font-size: 14px;
+    }
+    .backed-upper {
+        row-gap: 20px;
+    }
+    .main-heading h2 {
+        font-size: 28px;
+    }
+    .consult-heading h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .consultation-sec .cstm-row:before {
+        display: none;
+    }
+    .medical-sec .expert {
+        margin: 0 auto 42px;
+    }
+    .accordion-body {
+        line-height: 28px;
+    }
+    .unsure-div {
+        flex-wrap: wrap;
+    }
+    .unsure-div .white-btn {
+        padding: 9px 22px;
+        margin-top: 18px;
+    }
+    .gent-sec .cards .card-heading p {
+        font-size: 17px;
+    }
+    .gent-sec .cards {
+        padding-bottom: 60px;
+    }
+    .footer-upper {
+        row-gap: 12px;
+    }
+    .order-custm1 {
+        order: 2;
+    }
+    .order-custm2 {
+        justify-content: center;
+        display: flex;
+    }
+    .beared-item figcaption h6 {
+        font-size: 14px;
+        line-height: 1.4;
+    }
+    .white-trans-btn {
+        padding: 8px 16px;
+    }
+    .login-signup a {
+        font-size: 13px;
+    }
+    .login-signup .login-link {
+        font-size: 13px;
+    }
+    .login-link {
+        margin-right: 28px;
+    }
+    .top-div.erectile-top-div h1 {
+        font-size: 44px;
+        line-height: 59px;
+    }
+    .top-div.erectile-top-div ul li:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .top-div.erectile-top-div ul {
+        padding: 35px 0 15px;
+    }
+    .erectile-top-div {
+        font-size: 49px;
+    }
+    .treatment-option-div .star-reviews {
+        padding: 4px 0;
+    }
+    .treatment-option-div ul {
+        margin-top: 6px;
+        padding: 18px 0 18px;
+    }
+    .learn-more-card-btn {
+        margin-top: 20px;
+    }
+    .agent-div {
+        padding-bottom: 33px;
+    }
+    .agent-div h2 {
+        font-size: 28px;
+        line-height: 42px;
+    }
+    .agent-div p {
+        font-size: 16px;
+        padding: 5px 0 0;
+    }
+    .black-sec.erectile-black {
+        padding: 35px 15px;
+    }
+    .erectile-black figure {
+        height: 65px;
+        width: 65px;
+        margin-right: 30px;
+    }
+    .unsure-div {
+        flex-wrap: wrap;
+        justify-content: center !important;
+        flex-direction: column;
+    }
+    .how-its-row {
+        row-gap: 30px;
+    }
+    .erectile-sec figure {
+        height: auto;
+        width: auto;
+    }
+    .happens-row-gap {
+        row-gap: 30px;
+    }
+    .erectile-info h4 {
+        margin: 8px 0 5px;
+    }
+    .erectile-info:not(:last-child) {
+        margin-bottom: 43px;
+    }
+    .faq-head {
+        margin-top: 10px;
+    }
+    .faq-head p {
+        margin-top: 17px;
+    }
+    .faq form {
+        padding-bottom: 43px;
+    }
+    #questionaccordion .accordion-body {
+        font-size: 14px;
+        line-height: 27px;
+    }
+    #questionaccordion .accordion-item .accordion-button {
+        font-size: 14px;
+        line-height: 34px;
+    }
+    .free-cons-head {
+        margin-top: 76px;
+        margin-bottom: 80px;
+    }
+    .black-sec {
+        padding: 21px 26px;
+        background: #29322d;
+        text-align: center;
+    }
+    .unsure-text {
+        padding: 20px;
+    }
+    .gent-sec .cards figure {
+        height: 284px;
+    }
+    .gent-hub-last .trans-btn {
+        padding: 6px 27px;
+        font-size: 14px;
+    }
+    .gent-sec .cards .date-time {
+        font-size: 13px;
+    }
+    .what-erectile-head {
+        margin-top: 71px;
+        margin-bottom: 27px;
+    }
+    .erectile-sec .black-btn {
+        font-size: 13px;
+        line-height: 24px;
+    }
+    .how-its-workdiv figure {
+        height: 197px;
+    }
+    br {
+        display: none;
+    }
+    .top-div {
+        padding-bottom: 7px;
+    }
+    .best-treatment .black-sec .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        font-size: 37px;
+        line-height: 37px;
+        margin-bottom: 1px;
+    }
+    .best-treatment .black-sec {
+        padding: 26px;
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .sildenafil-right .stars.treatment-stars {
+        margin: 12px 0px;
+    }
+    .slider-text {
+        font-size: 15px;
+        line-height: 30px;
+        margin-bottom: 18px;
+    }
+    .silder-list li {
+        font-size: 24px;
+        line-height: 28px;
+        padding-bottom: 10px;
+    }
+    .consultation-sec .consult-div {
+        margin-bottom: 2px;
+        border-color: transparent;
+        background: #ffffff;
+        display: inline-flex;
+        height: 100px;
+        width: 100px;
+        text-align: center;
+        border-radius: 50%;
+    }
+    .consultation-sec .consult-div figure {
+        margin: 0 auto;
+    }
+    .consult-div .consult-heading {
+        padding-left: 0;
+        padding-top: 15px;
+    }
+    .silden-icon-upper.consultation-sec .cstm-row {
+        padding-bottom: 30px;
+        row-gap: 24px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        font-size: 31px;
+    }
+    .how-its-head {
+        margin-top: 20px;
+    }
+    .how-its-workdiv figcaption {
+        margin: 20px 0 13px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption h4 {
+        line-height: 40px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption p {
+        width: 100%;
+        max-width: 230px;
+    }
+    .consultation-head {
+        font-size: 46px;
+        line-height: 61px;
+        margin-bottom: 10px;
+    }
+    .consultation-right-text {
+        font-size: 17px;
+        line-height: 18px;
+        margin-bottom: 41px;
+    }
+    .what-silidar-head {
+        font-size: 47px;
+        line-height: 41px;
+    }
+    .premature-banner .top-div.erectile-top-div h1 {
+        font-size: 32px;
+        line-height: 28px;
+    }
+    .premature-banner .top-div ul li p img {
+        margin-right: 14px;
+        height: 20px;
+        width: 20px;
+    }
+    .top-div.erectile-top-div ul li:not(:last-child) {
+        margin-bottom: 11px;
+    }
+    .premature-banner .top-div ul li p {
+        font-size: 16px;
+    }
+    .premature-secont-sec.pt-120 {
+        padding-top: 70px;
+    }
+    .consultation-sec.premature-secont-sec .cstm-row {
+        row-gap: 21px;
+    }
+    .premature-secont-sec .consult-div figure {
+        height: 43px;
+        width: 43px;
+    }
+    .premature-sec-3 .happens-row-gap {
+        margin-bottom: 50px;
+    }
+    .premature-sec-4 .other-item figure {
+        padding-bottom: 60%;
+    }
+    .premature-sec-4 {
+        padding-bottom: 69px;
+    }
+    .black-outer-premature .black-inner h2 {
+        font-size: 18px;
+    }
+    .unsure-div .text-white {
+        text-align: center;
+    }
+    .header ul li a {
+        font-size: 14px;
+    }
+    .main-div .top-div {
+        padding-bottom: 14px;
+    }
+    .main-div .top-div .d-flex {
+        justify-content: center;
+        margin-top: 10px;
+    }
+    .main-div .partners {
+        justify-content: center;
+    }
+    .faq .accordion {
+        width: 100%;
+    }
+    .footer-upper {
+        row-gap: 5px;
+    }
+    .agent-div h2 {
+        text-align: center;
+    }
+    .agent-div p {
+        text-align: center;
+    }
+    .top-div ul li p {
+        justify-content: center;
+    }
+    .main-div.homepage-banner {
+        background-image: none !important;
+        background: #000;
+        background-position: bottom -150px center !important;
+        padding: 150px 0 30px !important;
+    }
+    .main-div.Save-hair-banner {
+        background-color: #000;
+        background-image: none !important;
+        background-position: bottom -200px center !important;
+        padding: 100px 0 0 !important;
+    }
+    .main-div.erectiledys-hero-banner {
+        background-image: url(https://agenthealth.co.uk/agent/public/frontend_new/images/ed-mob2.jpg) !important;
+        background-position: bottom right !important;
+    }
+    .main-div.premature-hero-banner {
+        background-image: url(https://agenthealth.co.uk/agent/public/frontend_new/images/pe-mob.jpg) !important;
+        background-position: center center !important;
+    }
+    .beared-item figcaption {
+        padding: 6px 15px 15px;
+    }
+    .beared-btns {
+        padding-top: 7px;
+    }
+    .arrow-down {
+        padding: 12px 10px 10px;
+    }
+    .arrow {
+        bottom: 30px;
+        width: 31px;
+    }
+    .main-div.homepage-banner .top-div {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .home-free-cnslt a.white-btn span {
+        padding: 10px 16px;
+    }
+    .erectile-right {
+        padding-left: 0;
+    }
+    .silden-icon .consult-div .consult-heading {
+        padding-left: 0;
+        display: block;
+        padding-top: 15px;
+    }
+    .product-details-content .rating-number {
+        margin-bottom: 10px;
+        margin-top: 20px;
+    }
+    .product-details-content {
+        margin-top: 0px;
+    }
+    .sildenafil-right ul.breadcrumb {
+        margin-bottom: 5px;
+    }
+    .quickview-btn-cart > a {
+        padding: 18px 22px;
+        font-size: 13px;
+    }
+    .silden-icon .consult-heading h4 {
+        font-size: 16px;
+        line-height: 20px;
+    }
+    .user-dashboard .user-heading,
+    .user-dashboard .dashboard-left-inr h2 {
+        font-size: 30px;
+        margin-bottom: 15px !important;
+    }
+    .d-user-title {
+        padding-bottom: 15px;
+    }
+    .user-dashboard .dashboard-left-inr button {
+        padding: 10px 24px;
+        font-size: 14px;
+        line-height: 18px;
+        font-weight: 500;
+    }
+    .words-sec .consult-div figure {
+        margin: 0 auto 15px;
+    }
+    .treatments-sec .black-link {
+        width: 30px;
+        height: 30px;
+        margin: 12px auto 5px;
+    }
+    .treatments-sec .black-link i {
+        font-size: 13px;
+    }
+    #scrollUp {
+        bottom: 35px;
+        font-size: 16px;
+        height: 34px;
+        line-height: 41px;
+        right: 12px;
+        width: 34px;
+    }
+    .beard-problem-sec .col-sm-12:not(:last-child) {
+        margin-bottom: 30px;
+    }
+    .pro-get-started .get-started-inr {
+        display: block;
+        text-align: center;
+    }
+    .pro-get-started .get-started-inr .pure-white-btn {
+        margin-top: 15px;
+    }
+    .product-get-start .ques-image figure {
+        margin-right: 15px;
+    }
+    .product-get-start-sec .product-get-button {
+        margin-top: 37px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        margin-right: 0;
+    }
+    .admin-checkout .comon-padding {
+        padding-top: 70px;
+    }
+    .bread-journey-box figure {
+        margin-bottom: 15px;
+    }
+    .bread-journey-box figure img,
+    .beard-problem-sec .bread-pro-box figure img {
+        width: 45%;
+    }
+    .questinnaire-main
+        .form-section
+        .form-group.ques-textarea
+        input.form-control {
+        font-size: 13px;
+        padding: 10px 25px;
+        height: auto;
+    }
+    .questinnaire-list li {
+        font-size: 16px;
+        margin-bottom: 3px;
+    }
+    .questinnaire-main .questinnaire-button a {
+        font-size: 14px;
+        padding: 9px 30px 8px;
+    }
+    .abort-sec .container {
+        padding: 20px 15px;
+    }
+    .abort-sec {
+        padding: 0 15px;
+    }
+    .sildenafil-wrap .main-heading {
+        padding-right: 0;
+        padding-bottom: 30px;
+    }
+    .product-deatils-b-sec {
+        margin: 20px 0;
+    }
+    .sildenafil-wrap .main-heading p {
+        font-size: 16px;
+    }
+    .consultation-right-text {
+        font-size: 16px;
+        line-height: 1.7;
+    }
+    .questinnaire-main .qtnr-inner {
+        padding: 25px 0px;
+    }
+    .questinnaire-main .questinnaire-heading {
+        font-size: 24px;
+    }
+    .questinnaire-main .form-section .form-radio label,
+    .questinnaire-main .form-section .form-group input.form-control {
+        font-size: 15px;
+        padding: 24px 14px 20px 58px;
+        border-radius: 20px;
+    }
+    .questinnaire-main [type="radio"]:checked + label:before,
+    .questinnaire-main [type="radio"]:not(:checked) + label:before {
+        left: 21px;
+        width: 18px;
+        height: 18px;
+    }
+    .questinnaire-main [type="radio"]:checked + label:after,
+    .questinnaire-main [type="radio"]:not(:checked) + label:after {
+        width: 12px;
+        height: 12px;
+        left: 24px;
+    }
+    .questinnaire-main .form-group {
+        margin-bottom: 20px;
+    }
+    section.contect-wedlove-sec {
+        padding-top: 130px;
+        padding-bottom: 0px;
+    }
+    .form-wedlove-sec {
+        padding: 100px 0px !important;
+    }
+    .save-hair-image figure img {
+        width: 80%;
+    }
+    .premature-other-sec .pre-crou-head {
+        font-size: 20px;
+    }
+    .sidebar .sidebar-brand .sidebar-brand-text img {
+        height: 40px;
+    }
+    .content-get-main {
+        padding-left: 0px;
+        margin-top: 76px;
+    }
+    .hair-treatment-sec .bread-journey-box figure {
+        margin: 0 auto 4px;
+    }
+    .hair-treatment-sec .bread-journey-box h4 {
+        margin-bottom: 5px;
+    }
+    .bread-journey-sec .bread-journey-box {
+        margin-bottom: 30px;
+    }
+    .bread-journey-sec .bread-journey-heading {
+        padding: 8px 45px;
+    }
+    .premature-hero-banner .top-div ul li p {
+        justify-content: unset;
+    }
+    .premature-hero-banner .top-div ul li p span {
+        text-align: left;
+    }
+    .erectiledys-hero-banner .top-div ul li p {
+        justify-content: unset;
+    }
+    .erectiledys-hero-banner .top-div ul li p span {
+        text-align: left;
+    }
+    .beard-hero-banner .top-div ul li p {
+        justify-content: unset;
+    }
+    .beard-hero-banner .top-div ul li p span {
+        text-align: left;
+    }
+    .beard-problem-sec .bread-pro-box figure {
+        margin: 0 auto 10px;
+    }
+    .best-treatment {
+        background: #242424;
+        margin-bottom: 34px !important;
+    }
+    .best-treatment .black-sec {
+        padding: 10px;
+    }
+    .unsure-div .white-trans-btn {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    .main-div.beard-hero-banner {
+        background: url("https://agenthealth.co.uk/agent/public/frontend_new/images/beard-mob.jpg")
+            no-repeat !important;
+        background-position: bottom center !important;
+        background-size: cover !important;
+    }
+    body .header .navbar .dropdown-menu a {
+        font-size: 14px !important;
+    }
+    .bread-journey-sec .pro_heading_desc h2 {
+        margin-bottom: 16px;
+    }
+    .faq-page {
+        padding: 120px 0 30px;
+    }
+    .main-pharmacy-sec p br {
+        display: block;
+    }
+    .main-pharmacy-sec p span {
+        font-size: 22px;
+    }
+    .main-pharmacy-sec p {
+        font-size: 16px;
+    }
+    .about-desc {
+        font-size: 16px;
+    }
+    .mission-sec {
+        background: #000;
+        background-position: bottom center !important;
+        padding: 130px 0 45px;
+        text-align: center;
+    }
+    .themselves-sec {
+        background: #000;
+        display: block;
+        padding: 50px 0;
+    }
+    .as-agent-sec {
+        background: #000;
+        background-position: bottom center !important;
+        display: block;
+        padding: 50px 0;
+    }
+    .banner-div-text {
+        margin: 5px auto 30px;
+    }
+    .main-themselves-sec {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .as-agent-inr {
+        margin: 0 auto;
+        text-align: center;
+    }
+    .faq .accordion .accordion-item .accordion-button {
+        font-size: 20px;
+        line-height: 36px;
+    }
+    .agent-offer .agent-div {
+        padding-bottom: 30px;
+    }
+    .bread-journey-box svg {
+        max-width: 240px;
+    }
+    .hair-regrow-sec .bread-journey-box svg {
+        margin: 30px 0 15px;
+    }
+    .product-get-start-sec .product-get-button {
+        margin-top: 10px;
+    }
+    .agent-offer figure img {
+        object-position: center;
+    }
+    .hair-treatment-sec .bread-journey-box svg {
+        max-width: 170px;
+        margin-bottom: 20px;
+    }
+    .bread-journey-sec .bread-journey-box {
+        margin-bottom: 6px;
+    }
+    .pro_heading_desc {
+        padding-bottom: 20px !important;
+    }
+    .men-getting-sec .men-get-text {
+        width: calc(100% - 120px);
+        flex: 0 0 calc(100% - 120px);
+        padding-right: 25px;
+    }
+    .men-getting-sec .men-get-image img {
+        max-width: 120px;
+    }
+    .men-getting-sec .men-get-image img:not(:last-child) {
+        margin-bottom: 20px;
+    }
+    .men-getting-sec .men-get-box {
+        padding: 20px;
+    }
+    .bread-journey-sec .bread-journey-heading {
+        padding: 8px 21px;
+    }
+    .bread-journey-box svg {
+        max-width: 180px;
+    }
+    .white-trans-btn {
+        padding: 8px 25px;
+    }
+    .Treatment-opt-sec {
+        padding: 50px 0px;
+    }
+    .bread-journey-box figure img,
+    .beard-problem-sec .bread-pro-box figure img {
+        width: 32%;
+    }
+    .bread-journey-sec .bread-journey-box {
+        margin-bottom: 30px;
+    }
+    .bread-journey-sec {
+        padding-bottom: 10px !important;
+        padding-top: 10px;
+    }
+    .bread-journey-sec .pro_heading_desc {
+        padding-bottom: 40px !important;
+    }
+    .best-treatment {
+        margin-bottom: 50px !important;
+    }
+    .how-its-workdiv figure img {
+        max-width: 230px;
+    }
+    .agent-section {
+        padding-top: 55px !important;
+    }
+    .bread-pro-box svg {
+        max-width: 180px;
+        margin-bottom: 25px;
+    }
+    .bread-journey-v2 .bread-journey-box svg {
+        max-width: 180px;
+    }
+    .bread-journey-sec.bread-journey-v2 .bread-journey-box {
+        margin-bottom: 15px;
+    }
+    .bread-journey-sec.hair-treatment-sec {
+        padding: 70px 0 40px !important;
+    }
+    .bread-journey-sec.hair-treatment-sec .bread-journey-box {
+        margin-bottom: 14px;
+    }
+    .bread-journey-sec.hair-treatment-sec .pro_heading_desc {
+        padding-bottom: 10px !important;
+    }
+    .bread-journey-sec.sci-behind-sec {
+        padding: 65px 0 !important;
+    }
+    .improve-growth-banner .pro_heading_desc h4 {
+        font-size: 28px;
+    }
+    .improve-growth-banner .pro_heading_desc p {
+        font-size: 20px;
+    }
+    .hair-regrow-sec .improve-growth-banner {
+        padding-bottom: 78px;
+    }
+    .bread-journey-sec .pro_heading_desc {
+        padding-bottom: 20px !important;
+    }
+    .bread-journey-sec.hair-regrow-sec {
+        padding-bottom: 70px !important;
+    }
+    section.improve-growth-banner {
+        padding-bottom: 63px;
+    }
+    .improve-growth-banner .mprove-grow-inner a span {
+        font-size: 9px;
+    }
+    .sci-behind-sec .pro_heading_desc h4 {
+        font-size: 22px;
+        margin-top: 19px;
+    }
+    .treatment-option-sec .col-md-6.col-sm-12 {
+        margin-bottom: 44px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        font-size: 22px;
+    }
+    .faq .accordion .accordion-item .accordion-button {
+        padding: 5px 0;
+    }
+    .bread-journey-box h4 {
+        font-size: 22px;
+    }
+    .hair-treatment-sec .bread-journey-box h4 {
+        font-size: 22px;
+    }
+    .mCSB_inside > .mCSB_container {
+        margin-right: 20px;
+    }
+    .Treatment-opt-sec .Treatment-opt:not(:last-child) {
+        margin-bottom: 30px;
+        padding: 20px 20px;
+    }
+    .Treatment-opt li.to-image {
+        width: 80px;
+        flex: 0 0 80px;
+    }
+    .to-buttons a {
+        padding: 8px 10px;
+        font-size: 12px;
+        min-width: 100px;
+    }
+    .Treatment-opt-sec .to-content p {
+        font-size: 16px;
+    }
+    .agent-div p {
+        font-size: 14px;
+        padding: 12px 0 0;
+    }
+    .sci-behind-sec .bread-journey-box {
+        padding: 30px;
+    }
+    .sci-behind-sec .bread-journey-box svg {
+        height: 215px;
+        margin-bottom: 30px;
+    }
+    .pro-get-started .get-started-inr h2 {
+        font-size: 20px;
+    }
+    .erectile-sec figure img {
+        max-width: 100%;
+    }
+    .beard-hero-banner .top-div h1 {
+        margin-bottom: 0px;
+    }
+    .hands-card figure img {
+        width: 270px;
+    }
+    .bread-journey-sec.hair-treatment-sec.pt-100 {
+        padding-top: 90px;
+    }
+    .bread-journey-sec.hair-treatment-sec.pt-100 .pro_heading_desc {
+        padding-bottom: 15px !important;
+    }
+    .homepage-banner .top-div {
+        text-align: center;
+    }
+    .user-dash-info {
+        padding: 10px 0;
+    }
+    .pages-content.inner-pages-design h3 {
+        font-size: 26px;
+        margin-bottom: 15px;
+    }
+    .pages-content.inner-pages-design p {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    .pages-content.inner-pages-design p b,
+    .pages-content.inner-pages-design ul li,
+    .pages-content.inner-pages-design ul li b {
+        font-size: 16px;
+    }
+    .pages-content.inner-pages-design {
+        padding: 0px 0 30px;
+    }
+    .pages-content.inner-pages-design {
+        padding: 0px 0 30px;
+    }
+    .user-dashboard.py-5,
+    section.user-dashboard {
+        padding: 10px 0px !important;
+    }
+    section.user-dashboard {
+        margin: 0px;
+    }
+    .user-dash-info {
+        overflow: scroll;
+    }
+    .user-dashboard .user-heading,
+    .user-dash-info h2,
+    .user-dashboard .dashboard-left-inr h2 {
+        font-size: 25px;
+    }
+    .hist-box a {
+        padding: 4px 23px;
+        font-size: 16px;
+    }
+    .bal-box {
+        font-size: 21px;
+        margin-top: 0px;
+    }
+    .user-dashboard .card.shadow.bg-white.ab {
+        overflow-x: auto;
+    }
+}
+@media (max-width: 575px) {
+    section.pro-get-started {
+        background: #242424;
+    }
+    .pro-get-started .get-started-inr {
+        padding: 25px 15px;
+    }
+    .top-div h1 {
+        font-size: 50px;
+        font-weight: 500;
+        line-height: 100%;
+        letter-spacing: -2px;
+        text-align: center;
+    }
+    .heading54 {
+        font-size: 48px !important;
+        margin: 20px 0;
+    }
+    .text54 {
+        text-align: center;
+        margin: 20px 0;
+        font-size: 14px;
+        font-weight: 300;
+    }
+    .top-div h4 {
+        font-size: 20px;
+        padding: 6px 0;
+    }
+    .cards figure {
+        height: 124px;
+    }
+    .other-item figcaption p {
+        font-size: 14px;
+        line-height: 23px;
+        min-height: auto;
+        -webkit-line-clamp: 1;
+    }
+    .main-heading h2 {
+        font-size: 25px;
+    }
+    .card-heading h4 {
+        font-size: 12px;
+    }
+    .header .navbar-brand img {
+        max-width: 90px;
+        padding: 7px;
+        padding-left: 0;
+    }
+    .login-link {
+        margin-right: 31px;
+    }
+    .consult-heading h4 {
+        font-size: 14px;
+        line-height: 18px;
+    }
+    .mob {
+        max-width: 281px;
+        margin: auto;
+    }
+    .top-div.erectile-top-div h1 {
+        font-size: 40px;
+        line-height: 53px;
+    }
+    .top-div.erectile-top-div ul li:not(:last-child) {
+        margin-bottom: 17px;
+    }
+    .treatment-head {
+        padding-top: 49px;
+    }
+    .treatment-option-div h2 {
+        font-size: 23px;
+    }
+    .treatment-option-div ul {
+        margin-top: 6px;
+        padding: 13px 0 10px;
+    }
+    .treatment-option-div .row .trans-btn:first-child {
+        margin: 0 6px 20px 0;
+    }
+    .treatment-option-div .row .trans-btn {
+        padding: 8px 12px;
+        font-size: 13px;
+    }
+    .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-top: 0px;
+    }
+    .unsure-div .white-btn {
+        padding: 9px 16px;
+        margin-top: 18px;
+    }
+    .how-its-head {
+        margin-top: 50px;
+    }
+    .erectile-sec figure {
+        height: auto;
+        width: auto;
+    }
+    .erectile-info h4 {
+        font-size: 22px;
+    }
+    #questionaccordion .accordion-item {
+        padding-bottom: 5px;
+        margin-bottom: 5px;
+    }
+    .best-treatment .black-sec .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-bottom: 0px;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    .best-treatment .black-sec {
+        border-radius: 30px;
+        padding: 24px;
+        text-align: center;
+    }
+    .unsure-div .white-trans-btn {
+        padding: 11px 18px;
+    }
+    .main-div {
+        padding: 155px 0 72px !important;
+    }
+    .silden-head {
+        font-size: 54px;
+        line-height: 62px;
+    }
+    .sildenafil-right .stars i {
+        font-size: 15px;
+    }
+    .sildenafil-inner {
+        margin-bottom: 41px;
+    }
+    .silden-icon .consult-div figure {
+        width: 44px;
+        height: 44px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        line-height: 51px;
+        font-size: 29px;
+    }
+    .consultation-head {
+        font-size: 41px;
+        line-height: 58px;
+    }
+    .what-silidar-text {
+        font-size: 16px;
+        line-height: 31px;
+        margin-bottom: 23px;
+    }
+    .consultation-text {
+        font-size: 17px;
+        line-height: 31px;
+        padding-bottom: 5px;
+    }
+    .consultation-right-text {
+        font-size: 17px;
+        line-height: 23px;
+        margin-bottom: 31px;
+    }
+    .consultation-right-table tr td:first-child {
+        font-size: 18px;
+    }
+    .consultation-right-table tr td:last-child {
+        font-size: 16px;
+    }
+    .what-silidar-head {
+        font-size: 44px;
+        line-height: 41px;
+    }
+    .black-silinder .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        font-size: 32px;
+        font-weight: 700;
+        line-height: 43px;
+    }
+    .owl-theme .owl-dots .owl-dot:not(:last-child) span {
+        margin-right: 13px;
+    }
+    .owl-theme .owl-dots .owl-dot:nth-child(2) span {
+        height: 15px;
+        width: 15px;
+    }
+    .owl-theme .owl-dots .owl-dot:nth-child(3) span {
+        height: 13px;
+        width: 13px;
+    }
+    .owl-theme .owl-dots .owl-dot span {
+        width: 17px;
+        height: 17px;
+    }
+    .what-silidar-main {
+        margin-bottom: 58px;
+    }
+    .owl-theme .owl-nav.disabled + .owl-dots {
+        margin-top: 4px;
+    }
+    .premature-sec-3 .main-heading h2 {
+        font-size: 23px;
+        line-height: 23px;
+    }
+    .premature-sec-3.erectile-sec figure {
+        height: auto;
+    }
+    .black-outer-premature .black-inner {
+        justify-content: center;
+    }
+    .black-outer-premature {
+        padding: 19px 32px;
+    }
+    header .navbar-collapse {
+        top: 67px;
+    }
+    .pb-120 {
+        padding-bottom: 40px;
+    }
+    .pt-120 {
+        padding-top: 40px;
+    }
+    .beared-sec.pt-100 {
+        padding-top: 30px;
+    }
+    .treatment-head {
+        padding-top: 0;
+    }
+    .best-treatment {
+        margin-bottom: 0px;
+    }
+    .pb-100 {
+        padding-bottom: 45px;
+    }
+    .black-sec.erectile-black .unsure-div .d-flex {
+        display: block !important;
+    }
+    .black-sec.erectile-black .unsure-div .d-flex figure {
+        margin-bottom: 10px;
+        margin: 0 auto 12px;
+    }
+    .black-sec.erectile-black .unsure-div h2 {
+        text-align: center;
+    }
+    .how-its-head {
+        margin-top: 10px;
+    }
+    .free-cons-head {
+        margin-top: 30px;
+        margin-bottom: 25px;
+    }
+    .erectile-right {
+        padding-left: 0px;
+    }
+    .hands-card figure {
+        margin: 0 auto 16px;
+    }
+    .medical-sec .expert:before {
+        border: 3px solid rgba(255, 255, 255, 0.7);
+    }
+    section.user-dashboard {
+        padding: 0 15px;
+    }
+    footer .ftr-logo {
+        margin: 8px auto;
+    }
+    .order-custm1 {
+        margin-top: 2px;
+    }
+    .gent-sec .cards .card-heading {
+        padding: 5px 10px 0;
+    }
+    .words-sec .consult-div svg {
+        height: 65px;
+        width: 65px;
+    }
+    .Treatment-opt-sec .Treatment-opt {
+        flex-direction: column;
+        text-align: center;
+    }
+    .Treatment-opt-sec .to-content p {
+        margin: 15px 0;
+    }
+    .to-buttons .btn-visit {
+        margin-right: 10px;
+        margin-bottom: 0;
+    }
+    .Treatment-opt-sec li.to-content {
+        padding-left: 0;
+    }
+    .admin-checkout .card-body .checkout-shipping-add,
+    .admin-checkout .card-body .checkout-your-order {
+        padding: 20px 15px;
+    }
+    .checkout-shipping-add button {
+        padding: 8px 30px;
+        font-weight: 500;
+        font-size: 13px;
+    }
+    .checkout-shipping-add .tab-content .form-group {
+        margin-bottom: 12px;
+    }
+    .checkout-shipping-add .tab-content .form-group .form-control,
+    .checkout-shipping-add .tab-content .input-group-text {
+        font-size: 13px;
+        min-height: 40px;
+        height: 40px;
+    }
+    .checkout-shipping-add .tab-content .form-group label {
+        line-height: normal;
+        margin-bottom: 2px;
+    }
+    .admin-checkout .comon-padding {
+        padding-top: 55px;
+    }
+    .user-dashboard .user-heading,
+    .user-dashboard .dashboard-left-inr h2 {
+        font-size: 24px;
+    }
+    .comon-padding {
+        padding-top: 90px;
+    }
+    .breadcrumb-content h2 {
+        font-size: 24px;
+        line-height: 26px;
+        margin-bottom: 10px;
+    }
+    .Treatment-opt-sec ul.Treatment-opt figure img {
+        max-width: 70%;
+    }
+    .premature-other-sec .pre-crou-head {
+        line-height: 30px;
+        -webkit-line-clamp: 1;
+        margin-top: 34px;
+        min-height: auto;
+    }
+    .homepage-banner .top-div a.white-btn {
+        font-size: 16px;
+        transition: none;
+    }
+    .top-div.erectile-top-div ul {
+        padding: 0px 0 10px;
+    }
+    .main-div {
+        padding: 125px 0 50px !important;
+    }
+    .improve-growth-banner .pro_heading_desc h4 {
+        font-size: 24px;
+    }
+    .improve-growth-banner .pro_heading_desc p {
+        font-size: 18px;
+    }
+    .qcc-icon {
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 13px;
+    }
+    .qcc-icon svg {
+        width: 70px;
+        height: 70px;
+    }
+    .Treatment-opt li.to-buttons {
+        width: 230px;
+        flex: 0 0 130px;
+        text-align: center;
+    }
+    .Treatment-opt-sec li.to-content {
+        padding: 0 15px;
+    }
+    .Treatment-opt li.to-image {
+        width: 100px;
+        flex: 0 0 100px;
+    }
+    .Treatment-opt-sec .Treatment-opt {
+        display: block;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .Treatment-opt li {
+        width: 100% !important;
+        text-align: center;
+    }
+    .Treatment-opt-sec li.to-content p {
+        text-align: center;
+        width: 100%;
+    }
+    .Treatment-opt-sec ul.Treatment-opt figure img {
+        max-width: 100px;
+    }
+    body .swiper-design {
+        padding: 55px 0px;
+    }
+    .men-getting-sec.men-banner-sec.swiper-design {
+        padding-top: 0;
+    }
+    .other-sec.premature-sec-4.premature-other-sec.swiper-design {
+        padding-bottom: 55px !important;
+    }
+    .Save-hair-banner.hair-banner-before {
+        padding-top: 100px;
+        padding-bottom: 50px;
+    }
+    .Save-hair-banner .save-hair-content {
+        padding: 22px 20px 25px;
+    }
+    .Save-hair-banner.hair-banner-before {
+        min-height: 790px !important;
+    }
+    .margin-box-ques {
+        margin-left: 0px !important;
+    }
+    .margin-box-ques .ques-svg-img {
+        margin-left: -10px !important;
+    }
+    .premature-hero-banner .top-div {
+        padding: 10px 23px 15px;
+        background: #00000087;
+        box-shadow: 0px 20px 50px rgba(0, 0, 0, 0.1);
+        border-radius: 20px;
+    }
+    .premature-hero-banner .top-div.erectile-top-div h1 {
+        font-size: 25px;
+        line-height: 34px;
+    }
+    .premature-hero-banner .arrow {
+        bottom: 84px;
+        width: 31px;
+    }
+    .hair-banner-inr svg {
+        margin-right: 17px;
+        height: 26px;
+        width: 27px;
+        flex: 0 0 40px;
+    }
+    .margin-hair svg {
+        margin-left: 5px;
+        margin-top: -2px;
+    }
+    .pro_heading_desc h2 {
+        font-size: 42px;
+    }
+    .hair-banner-inr {
+        padding: 5px 0;
+    }
+    .Save-hair-banner.hair-banner-before {
+        padding-top: 70px !important;
+    }
+    .Save-hair-banner .save-hair-content {
+        padding: 10px 23px 15px;
+    }
+    .Save-hair-banner .pro_heading_desc {
+        padding-bottom: 0px !important;
+    }
+    .Save-hair-banner .pure-white-btn {
+        margin-top: 0px;
+    }
+    .margin-hair svg {
+        margin-left: 7px !important;
+        margin-top: 6px;
+    }
+    .hair-banner-inr svg {
+        margin-left: 7px;
+    }
+    .user-sidebar .side-bar {
+        top: 12px;
+    }
+    .user-dashboard .user-sidebar {
+        top: 69px;
+    }
+    .user-dashboard .user-sidebar .card-body div a:hover {
+        background: rgb(42 36 32 / 61%);
+    }
+    .sildenafil-banner figure {
+        height: 300px;
+    }
+    .sildenafil-right .silden-head {
+        font-size: 32px !important;
+    }
+    .sildenafil-sec .silden-head-slider {
+        font-size: 24px !important;
+        line-height: 1.6 !important;
+    }
+    .qos-product-price {
+        font-size: 20px;
+        text-align: center;
+    }
+    .pay-col h3.card-heading.mb-30 {
+        position: absolute;
+        right: 0;
+        top: -55px;
+        font-size: 27px;
+    }
+    .pay-col .qos-product figure {
+        margin: 0;
+        width: 140px;
+        flex: 0 0 141px;
+    }
+    .card-design {
+        padding: 9px;
+    }
+    li.list-group-item.d-flex.justify-content-between.align-items-center.border-0.p-0 {
+        font-size: 13px;
+    }
+    li.list-group-item.d-flex.justify-content-between.align-items-center.border-0.p-0
+        span {
+        margin-left: 10px;
+    }
+    .card-design.mb-40 {
+        margin-bottom: 0px;
+    }
+}
+@media (max-width: 480px) {
+    .user-sidebar .side-bar {
+        top: 1px;
+    }
+    .Save-hair-banner.hair-banner-before {
+        background-size: 138%;
+    }
+    .hair-banner-inr {
+        padding: 10px 0;
+        display: -webkit-inline-box;
+    }
+    .Save-hair-banner.hair-banner-before {
+        min-height: 790px !important;
+    }
+    .Save-hair-banner .pure-white-btn {
+        margin-top: 6px;
+        padding: 8px 20px;
+    }
+    .header .navbar-brand img {
+        max-width: 70px;
+    }
+    .hair-banner-inr svg {
+        margin-right: 12px;
+    }
+    .hair-banner-before .pro_desc {
+        font-size: 15px;
+    }
+    .login-link {
+        margin-right: 13px;
+    }
+    .unsure-div .white-trans-btn {
+        margin-left: 0;
+        margin-top: 10px;
+        padding: 10px 28px;
+    }
+    .black-sec {
+        padding: 41px 33px;
+    }
+    .accordion-body {
+        line-height: 26px;
+    }
+    .medical-sec .expert {
+        margin: 0 auto 22px;
+    }
+    .top-div h1 {
+        font-size: 45px;
+        line-height: 0.94;
+    }
+    .main-heading h2 {
+        font-size: 24px;
+    }
+    .owl-theme .owl-dots .owl-dot:not(:last-child) span {
+        margin-right: 11px;
+    }
+    .owl-theme .owl-dots .owl-dot span {
+        width: 16px;
+        height: 16px;
+    }
+    .login-signup .login-link {
+        font-size: 12px;
+    }
+    .gent-sec .cards .card-heading p {
+        font-size: 15px;
+    }
+    .login-signup {
+        flex: auto;
+    }
+    footer p {
+        font-size: 14px;
+        line-height: 23px;
+    }
+    .top-div.erectile-top-div h1 {
+        line-height: 36px;
+    }
+    .top-div ul li p img {
+        margin-right: 12px;
+        height: 22px;
+        width: 22px;
+    }
+    .top-div.erectile-top-div ul li:not(:last-child) {
+        margin-bottom: 4px;
+    }
+    .top-div ul li p {
+        font-size: 16px;
+        line-height: 29px;
+    }
+    .erectile-top-div {
+        font-size: 38px;
+    }
+    .treatment-option-div .star-reviews .stars i {
+        font-size: 14px;
+    }
+    .treatment-option-div h2 {
+        font-size: 21px;
+        line-height: 33px;
+    }
+    .agent-div h2 {
+        font-size: 24px;
+        line-height: 37px;
+    }
+    .agent-div p {
+        font-size: 13px;
+        padding: 5px 0 0;
+    }
+    .agent-div {
+        padding-bottom: 1px;
+    }
+    .agent-offer figure {
+        height: 393px;
+    }
+    .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        margin-top: 0px;
+        margin-bottom: 5px;
+        display: block;
+        width: 100%;
+    }
+    .unsure-div p {
+        padding-top: 7px;
+    }
+    .unsure-div .white-btn {
+        padding: 5px 10px;
+        font-size: 13px;
+    }
+    .how-its-workdiv figcaption p {
+        font-size: 14px;
+        line-height: 19px;
+    }
+    .erectile-black figure {
+        height: 69px;
+        width: 69px;
+        margin-right: 12px;
+    }
+    .what-erectile-head {
+        margin-top: 52px;
+        margin-bottom: 16px;
+    }
+    .erectile-info p {
+        font-size: 14px;
+        line-height: 24px;
+    }
+    .erectile-info h4 {
+        font-size: 19px;
+    }
+    .black-sec {
+        padding: 23px 12px;
+    }
+    .free-cons-head {
+        margin-top: 65px;
+        margin-bottom: 54px;
+    }
+    .gent-sec .cards {
+        padding-bottom: 49px;
+    }
+    .gent-hub-last .trans-btn {
+        padding: 4px 19px;
+        font-size: 12px;
+    }
+    .main-div {
+        padding: 100px 0 60px !important;
+    }
+    .top-div {
+        padding-bottom: 14px;
+    }
+    .best-treatment .black-sec {
+        padding: 26px;
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+    .sildenafil-banner {
+        margin-top: 95px;
+    }
+    .silden-head {
+        font-size: 49px;
+        line-height: 53px;
+    }
+    .breadcrumb li a {
+        font-size: 15px;
+    }
+    .sildenafil-right .breadcrumb {
+        margin-bottom: 5px;
+    }
+    .silder-list li {
+        font-size: 23px;
+        line-height: 24px;
+        padding-bottom: 9px;
+    }
+    .sildenafil-inner {
+        margin-bottom: 31px;
+    }
+    .silden-icon-upper.consultation-sec .cstm-row {
+        padding-bottom: 6px;
+        row-gap: 17px;
+    }
+    .hard-easy-sec .main-heading h2 {
+        line-height: 31px;
+        font-size: 21px;
+    }
+    .how-its-row .how-its-workdiv figure {
+        height: 196px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption p {
+        width: 100%;
+        max-width: 251px;
+    }
+    .consultation-head {
+        font-size: 26px;
+        line-height: 36px;
+    }
+    .consultation-text {
+        font-size: 16px;
+        line-height: 30px;
+        padding-bottom: 8px;
+    }
+    .consultation-left .trans-btn {
+        padding: 8px 30px;
+    }
+    .consultation-right-head {
+        font-size: 28px;
+        line-height: 42px;
+    }
+    .consultation-right-table tr td:first-child {
+        font-size: 17px;
+        line-height: 26px;
+    }
+    .what-silidar-head {
+        font-size: 40px;
+        line-height: 35px;
+    }
+    .what-silidar-text {
+        font-size: 15px;
+        line-height: 27px;
+    }
+    .black-silinder .unsure-div h2,
+    .big-heading,
+    .big-heading span {
+        font-size: 38px;
+        line-height: 38px;
+        letter-spacing: -1px;
+        zoom: 0.9;
+        font-weight: 500;
+    }
+    .slide-medical.pt-120 {
+        padding-top: 67px;
+    }
+    .question-acco {
+        margin-bottom: 68px !important;
+    }
+    .silden-icon .consult-heading h4 {
+        font-size: 15px;
+    }
+    .premature-banner.electile-main {
+        padding-bottom: 60px;
+    }
+    .premature-secont-sec.pt-120 {
+        padding-top: 62px;
+    }
+    .consultation-sec.premature-secont-sec .cstm-row {
+        padding-bottom: 51px;
+    }
+    .premature-sec-3 .what-erectile-head {
+        margin-top: 0px;
+        margin-bottom: 13px;
+    }
+    .premature-sec-3 .erectile-info:not(:last-child) {
+        margin-bottom: 42px;
+        margin-top: 12px;
+    }
+    .premature-sec-3 .happens-row-gap {
+        margin-bottom: 18px;
+    }
+    .premature-slide .other-item {
+        padding: 10px;
+        margin-bottom: 30px;
+    }
+    .premature-slide .other-item figcaption p {
+        font-size: 15px;
+        font-weight: 400;
+        line-height: 27px;
+    }
+    .pre-crou-head {
+        font-size: 23px;
+        font-weight: 600;
+        line-height: 40px;
+        padding-top: 17px;
+    }
+    .premature-slide .trans-btn {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 29px;
+    }
+    .premature-sec-4 {
+        padding-bottom: 80px !important;
+    }
+    .black-outer-premature {
+        padding: 22px 16px;
+        background-color: #242423;
+        border-radius: 30px;
+        color: white;
+        margin-bottom: 65px;
+    }
+    .black-inner h2 {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 42px;
+        margin-bottom: 18px;
+    }
+    .black-inner .white-btn {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 30px;
+        padding: 5px 27px;
+    }
+    .premature-banner .top-div.erectile-top-div h1 {
+        font-size: 22px;
+        line-height: 12px;
+    }
+    .premature-banner.electile-main {
+        padding-bottom: 49px;
+        padding-top: 160px;
+    }
+    .premature-banner .top-div ul li p {
+        font-size: 14px;
+    }
+    .pre-crou-head {
+        font-size: 17px;
+        line-height: 26px;
+        padding-top: 17px;
+    }
+    .premature-slide .trans-btn {
+        font-size: 13px;
+        font-weight: 500;
+        line-height: 24px;
+    }
+    .black-outer-premature .black-inner h2 {
+        font-size: 16px;
+        line-height: 28px;
+    }
+    .black-outer-premature .black-inner .white-btn {
+        font-size: 16px;
+        line-height: 7px;
+        padding: 4px 37px;
+        height: 38px;
+    }
+    .footer-upper {
+        row-gap: 9px;
+    }
+    header .navbar-collapse {
+        top: 54px;
+    }
+    header .navbar button {
+        font-size: 24px;
+    }
+    .hands-card video {
+        max-width: 210px;
+        margin: 0 auto 25px;
+    }
+    .consultation-sec .consult-div {
+        padding: 15px 15px 10px;
+    }
+    .treatments-sec .cards {
+        padding: 10px 10px;
+        margin-bottom: 20px;
+    }
+    .main-div.homepage-banner {
+        padding: 110px 0 30px !important;
+        max-height: 720px !important;
+        background: #000;
+    }
+    .question-acco {
+        margin-bottom: 20px !important;
+    }
+    .faq.pt-100 {
+        padding-top: 10px;
+    }
+    .consultation-row {
+        margin-bottom: 50px;
+    }
+    .consultation-row {
+        margin-top: 22px;
+        row-gap: 35px;
+    }
+    .hard-easy-sec .how-its-workdiv figcaption h4 {
+        line-height: 30px;
+        font-size: 22px;
+        margin: 0 0 8px;
+    }
+    .sildenafil-right .silder-list li {
+        font-size: 20px;
+        line-height: 24px;
+        padding-bottom: 10px;
+    }
+    .sildenafil-right .silder-list {
+        padding-top: 15px;
+        margin-bottom: 10px;
+    }
+    .cartPlusMinus {
+        padding: 8px 8px;
+        max-width: 80px;
+        height: 42px;
+    }
+    .quickview-btn-cart > a {
+        padding: 14px 20px;
+    }
+    .quickview-btn-wishlist > a {
+        font-size: 18px;
+        padding: 7px 14px 5px;
+    }
+    .sildenafil-right .mt-35 {
+        margin-top: 25px;
+    }
+    .sildenafil-right .mtb-10 {
+        margin: 5px 0;
+    }
+    .product-get-start .ques-image {
+        display: block;
+    }
+    .product-get-start .ques-image figure {
+        margin: 14px 0 20px 0;
+    }
+    .product-get-start-sec .product-get-button {
+        margin-top: 0px;
+    }
+    li.to-buttons {
+        text-align: center;
+        width: 100%;
+    }
+    .men-getting-sec .men-get-image img {
+        margin-right: 20px;
+        margin-left: 20px;
+    }
+    .men-getting-sec .men-get-image img:not(:last-child) {
+        margin-bottom: 10px;
+    }
+    .mCustomScrollBox {
+        text-align: center;
+    }
+    .pro_heading_desc h2 {
+        font-size: 24px;
+        margin-bottom: 0;
+    }
+    .product-get-start .ques-image svg {
+        margin: 10px 15px 12px 0px;
+        max-width: 100px;
+    }
+    .unsure-div .white-btn {
+        font-size: 14px;
+        padding: 7px 24px;
+        line-height: normal;
+    }
+    .premature-sec-4 {
+        padding-bottom: 38px !important;
+    }
+    .trans-btn {
+        padding: 7px 28px;
+    }
+    .top-div ul li p svg {
+        width: 22px;
+        height: 22px;
+        margin-right: 12px;
+    }
+}
+@media (max-width: 401px) {
+    .to-buttons .btn-visit {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .men-getting-sec .men-get-box {
+        flex-direction: column;
+    }
+    .men-getting-sec .men-get-text {
+        width: 100%;
+        flex: 250px;
+    }
+    .men-getting-sec .men-get-image {
+        width: 100%;
+        flex: 250px;
+        height: 500px;
+    }
+    .men-getting-sec .men-get-image img {
+        height: 123px;
+        margin: 0 auto;
+    }
+}

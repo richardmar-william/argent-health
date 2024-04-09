@@ -1,0 +1,356 @@
+/*************************
+    General
+*************************/
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900|Roboto+Slab:300,400,700|Open+Sans:300,300i,400,400i,600,700,800');
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 14px;
+	color: #242423;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.img{
+    max-width: 100%;
+    transition: all 0.3s ease-out 0s;
+}
+a,
+.btn {
+    -webkit-transition: all 0.3s ease-out 0s;
+    -moz-transition: all 0.3s ease-out 0s;
+    -ms-transition: all 0.3s ease-out 0s;
+    -o-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.btn {
+    border-radius: 0px;
+    font-size: 14px;
+    padding: 0px 10px;
+    height: 40px;
+    line-height: 30px;
+}
+a:focus,
+.btn:focus {
+    text-decoration: none;
+    outline: none;
+}
+a:focus, a:hover {
+  color: #050035;
+  text-decoration: none;
+}
+a,
+button,
+input {
+    outline: medium none;
+    color: #242423;
+}
+.uppercase {
+    text-transform: uppercase
+}
+.capitalize {
+    text-transform: capitalize
+}
+
+.bg-gradient-primary {
+    background-color: #242423;
+    background-image: unset;
+}
+.btn-primary {
+    color: #fff;
+    background-color: #242423;
+    border-color: #242423;
+}
+.btn-primary:focus,
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #242423;
+    border-color: #242423;
+    box-shadow: unset;
+}
+.btn-primary:hover {
+    color: #242423;
+    background-color: #fff;
+}
+.sidebar-dark .nav-item .nav-link,
+.sidebar-dark #sidebarToggle,
+.sidebar-dark .nav-item .nav-link i {
+    transition: all 0.5s ease-in-out;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-text {
+    display: inline-block;
+}
+
+.sidebar .sidebar-brand {
+    height: auto;
+    padding: 15px 5px;
+}
+
+.sidebar .sidebar-brand .sidebar-brand-text img {
+    height: 90px;
+}
+
+.admin-login-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.admin-login-page .container div .card {
+    padding: 10px;
+    box-shadow: 0px 0px 0px 8px #818181 !important;
+}
+
+.admin-login-page .container div .card .row {
+    margin: 0;
+}
+
+.admin-login-page .container div .card .bg-password-image, 
+.admin-login-page .container div .card .bg-login-image {
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.admin-login-page .container div .card h1.h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+}
+
+.admin-login-page .container div .card form .btn {
+    border-radius: 50px;
+    background: #242423;
+    border: 1px solid #242423;
+    padding: 10px 40px;
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    text-transform: capitalize;
+    transition: all .3s ease-in-out;
+    height: 48px;
+}
+
+.admin-login-page .container div .card form .btn:hover {
+    background: #fff;
+    color: #242423;
+}
+
+.admin-login-page .container div .card form .form-control {
+    font-size: 16px;
+    min-height: 50px;
+    height: 50px;
+    outline: none;
+    box-shadow: unset;
+    color: #242423;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    border: 1px solid #242423;
+    border-radius: 24px;
+    padding: 6px 20px;
+}
+
+.admin-login-page .container div .card form .form-control::placeholder {
+    color: #242423;
+}
+.admin-login-page .container div .card a.small {
+    color: #242423;
+    font-weight: 500;
+}
+.text-primary {
+    color: #242423!important
+}
+
+a {
+    color: #242423;
+}
+
+.page-item.active .page-link {
+    color: #fff;
+    background-color: #242423;
+    border-color: #242423;
+}
+
+.page-link {
+    color: #242423;
+}
+
+.page-link:hover {
+    color: #242423;
+}
+
+.badge-primary {
+    background-color: #242423;
+}
+
+#content .card .card-body .form-group .form-control {
+    min-height: 42px;
+    height: 42px;
+    outline: none;
+    box-shadow: unset;
+    color: #242423;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    border: 1px solid #242423;
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+#content .card .card-body .form-group input::placeholder {
+    color: #242423;
+}
+#content .card .card-header {
+    align-items: center;
+}
+#content .table {
+    color: #242423;
+}
+#content .table td, #content .table th {
+    padding: 0.75rem 1.25rem;
+    font-weight: 400;
+    font-size: 13px;
+}
+.btn {
+    font-size: 14px;
+    border-radius: 4px;
+    padding: 8px 24px;
+    height: 42px;
+    text-decoration: none;
+    line-height: normal;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #fff;
+    border: 1px solid #242423;
+    background: #242423;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+    outline: none;
+    box-shadow: none !important;
+}
+.btn .icon {
+    color: #fff !important ;
+    margin-right: 8px;
+    transition: all 0.5s ease-in-out;
+}
+.btn:hover {
+    color: #242423;
+    background: #fff;
+    border: 1px solid #242423;
+    text-decoration: none;
+    transition: all 0.5s ease-in-out;
+}
+.btn:hover .icon {
+    color: #242423 !important;
+    transition: all 0.5s ease-in-out;
+}
+.btn-primary:focus:hover, .btn-primary:not(:disabled):not(.disabled).active:hover, .btn-primary:not(:disabled):not(.disabled):active:hover {
+    color: #242423 !important;
+}
+.btn-danger {
+    background-color: #e74a3b;
+    border-color: #e74a3b;
+}
+.btn-danger:hover {
+    background-color: #fff;
+    color: #e74a3b;
+    border-color: #e74a3b;
+}
+#content .table tbody tr td img {
+    height: auto !important;
+}
+/* a-230424 */
+#content .select2-container--default .select2-selection--multiple {
+    background-color: white;
+    cursor: text;
+    min-height: 42px;
+    height: 42px;
+    outline: none;
+    box-shadow: unset;
+    color: #242423;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    border: 1px solid #242423;
+    border-radius: 4px;
+    padding: 4px 12px;
+}
+.card-header  .text-success {
+    color: #242423!important;
+    font-size: 18px;
+}
+.shadow-sm {
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15)!important;
+}
+select option[value="1"]:hover {
+    background: rgba(100, 100, 100, 0.3);
+}  
+/* ********** */
+
+
+.start-color .form-control {
+    color: #ebbe1c !important;
+}
+
+.card .table-responsive .table tr td .btn {
+    font-size: 14px;
+    padding: 8px 10px;
+    height: 40px;
+} 
+.admin-proceed-modal .modal-header {
+    align-items: center;
+}
+.admin-proceed-modal button.btn-close {
+    padding: 0;
+    border: unset;
+    background: transparent;
+    font-size: 20px;
+}
+
+.proceed-btn {
+    vertical-align: middle;
+}
+
+.table td.proceed-btn {
+    vertical-align: middle;
+}
+
+.table td.proceed-btn a {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* 27-07-23 */
+#content .form-control {
+    display: block;
+    width: 100% !important;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem !important;
+    font-weight: 400;
+    line-height: 1.5 !important;
+    color: #6e707e !important;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #d1d3e2;
+    border-radius: .35rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+#content .error {
+    font-size: 15px  !important;
+    line-height: 1;
+    width: 100%;
+    margin-top: 10px;
+    color: #ff000099 !important;
+}
+
+
+.card .table-responsive .table tr td .btn {
+    color: #fff !important;
+}
+.card .table-responsive .table tr td .btn:hover{
+    color: #000 !important;
+}

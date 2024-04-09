@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Poppins";
+    src: url("font/Poppins-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Yeseva";
+    src: url("font/YesevaOne-Regular.ttf");
+}
+
+@font-face {
+    font-family: "Poppins-bold";
+    src: url("font/Poppins-Bold.ttf");
+}
+
+.font-poppins {
+    font-family: "Poppins";
+}
+
+.font-yeseva {
+    font: "Yeseva";
+}
+
+.font-poppins-bold {
+    font-family: "Poppins-bold";
+}
+
+.font-heavy-green {
+    color: #3f453f;
+}
