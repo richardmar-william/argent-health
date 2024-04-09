@@ -568,7 +568,7 @@
                                                 <textarea type="text" class="form-control" id="experiencing_this_hair_loss"
                                                         value=""  name="Q6_answer" placeholder="enter your text" ></textarea>
                                                 </div>
-                                                <div class="quest-v2-btn d-flex flex-row">
+                                                <div class="quest-v2-btn">
                                                     <a class="btn-d-black btn-wt-300 mr-20 next-button"
                                                         href="javascript:void(0)">Continue</a>
                                                     <a class="btn-d-black btn-wt-170 back-sub-step"
@@ -645,7 +645,7 @@
                                                 <textarea type="text" class="form-control" id="experience_with_minoxidil"
                                                     value="" name="Q8_answer" placeholder="enter your text" ></textarea>
                                             </div>
-                                            <div class="quest-v2-btn d-flex flex-row">
+                                            <div class="quest-v2-btn">
                                                 <a class="btn-d-black btn-wt-300 mr-20 next-button"
                                                     href="javascript:void(0)">Continue</a>
                                                 <a class="btn-d-black btn-wt-170 back-sub-step"
@@ -774,7 +774,7 @@
                                                 <textarea type="text" class="form-control" id="list_applicable"
                                                 value="" name="Q11_answer" placeholder="enter your text" ></textarea>
                                             </div>
-                                            <div class="quest-v2-btn d-flex flex-row">
+                                            <div class="quest-v2-btn">
                                                 <a class="btn-d-black btn-wt-300 mr-20 next-button"
                                                     href="javascript:void(0)">Continue</a>
                                                 <a class="btn-d-black btn-wt-170 back-sub-step"
@@ -963,7 +963,7 @@
                                                 <textarea type="text" class="form-control" id="list_apply_to_you"
                                                     value="" name="Q15_answer" placeholder="enter your text" ></textarea>
                                             </div>
-                                            <div class="quest-v2-btn d-flex flex-row">
+                                            <div class="quest-v2-btn">
                                                 <a class="btn-d-black btn-wt-300 mr-20 next-button"
                                                     href="javascript:void(0)">Continue</a>
                                                 <a class="btn-d-black btn-wt-170 back-sub-step"
@@ -1040,7 +1040,7 @@
                                                 <textarea type="text" class="form-control" id="list_consultation"
                                                     value="" name="Q17_answer" placeholder="enter your text" ></textarea>
                                             </div>
-                                            <div class="quest-v2-btn d-flex flex-row">
+                                            <div class="quest-v2-btn">
                                                 <input id="submit_question222" class="btn-d-black btn-wt-170 next-button"
                                                     name="submit" value="Continue">
                                                 <a class="btn-d-black btn-wt-170 back-sub-step"
@@ -1114,7 +1114,7 @@
                                         <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
                                         <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
                                             value="btn">continue</button>
-
+                                        <a class="btn-d-trans btn-wt-170 prev-button mobile">Back</a>
                                     </div>
                                 </div>
                             </div>
@@ -1174,7 +1174,7 @@
                                         <div class="row">
                                             <div class="col-md-5 col-sm-12 quest-v2-error-modal-label d-flex flex-column justify-content-between">
                                                 <div>
-                                                    <div class="error-btn d-flex flex-row-reverse">
+                                                    <div class="error-btn-reverse">
                                                         <img src="{{ asset('images/error-icon.svg') }}" alt="">
                                                     </div>
                                                     <div class="col-9">
@@ -1184,7 +1184,7 @@
                                                             <div><span class="font-yeseva">priority</span>.</div>
                                                     </div>
                                                 </div>
-                                                <button type="button" id="btncheck" class="btn-d-black close-que-modal"
+                                                <button type="button" id="btncheck" class="btn-d-black-outline close-que-modal"
                                                 data-bs-dismiss="modal"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></button>
                                             </div>
                                             <div class="col-1"></div>

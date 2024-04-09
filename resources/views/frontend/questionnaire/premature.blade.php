@@ -53,7 +53,6 @@
             -o-animation: loading-dash 1.5s ease-in-out infinite;
             animation: loading-dash 1.5s ease-in-out infinite;
         }
-
         @-webkit-keyframes loading-rotate {
             to {
                 -webkit-transform: rotate(1turn);
@@ -1558,11 +1557,11 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
-                                    <div class="quest-v2-btn">
+                                    <div class="quest-v2-btn d-flex justify-content-between">
                                         <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
                                         <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
-                                            value="btn">continue</button>
-
+                                        value="btn">continue</button>
+                                        <a class="btn-d-trans btn-wt-170 prev-button mobile">Back</a>
                                     </div>
                                 </div>
                             </div>
