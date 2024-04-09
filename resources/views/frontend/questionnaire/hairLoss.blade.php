@@ -1372,20 +1372,27 @@
                             </div>
                             <div class="sub-step fixed-step" id="sub-step1">
                                 <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" type="text" name="Q21"
-                                            value="Please provide your GP's name and address.">Please provide your GP's name and address.</textarea>
-                                    </h3>
-                                    <div class="form-group form-text-field">
-                                        <textarea type="text" class="form-control" name="Q21_answer" placeholder="enter your text"></textarea>
+                                    <div class="row">
+                                        <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                                            <h3 class="quest-v2-subh mb-30">
+                                                <textarea class="in_type" readonly="readonly" type="text" name="Q21"
+                                                    value="Please provide your GP's name and address.">Please provide your GP's name and address.</textarea>
+                                            </h3>
+                                        </div>
+                                        <div class="col-md-1 col-sm-12">
+                                        </div>
+                                        <div class="quest-v2-quest col-md-5 col-sm-12">
+                                            <div class="form-group form-text-field">
+                                                <textarea type="text" class="form-control" name="Q21_answer" placeholder="enter your text"></textarea>
+                                            </div>
+                                            <div class="quest-v2-btn d-flex flex-row">
+                                                <a class="btn-d-black btn-wt-300 mr-20 next-button"
+                                                    href="javascript:void(0)">Continue</a>
+                                                <a class="btn-d-black btn-wt-170  back-sub-step"
+                                                    href="javascript:void(0)">Back</a>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="quest-v2-btn d-flex flex-row">
-                                        <a class="btn-d-black btn-wt-300 mr-20 next-button"
-                                            href="javascript:void(0)">Continue</a>
-                                        <a class="btn-d-trans btn-wt-170  back-sub-step"
-                                            href="javascript:void(0)">Back</a>
-                                    </div>
-
                                 </div>
                             </div>
                         </div>

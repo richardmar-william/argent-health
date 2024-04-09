@@ -55,6 +55,10 @@
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/responsive.css') }}">
+    <link rel="stylesheet" href="{{asset('css/font.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
 
     <style>
@@ -214,290 +218,371 @@
             </a>
         </div>
     </div>
-    <div class="quest-v2-content">
+    <div class="quest-v2-content" style="background-color: #d9d9d9">
         <div class="quest-v2-inner-wrap">
+            <div class="bg-image">
+                <div class="row">
+                    <div class="col-lg-6 col-md-12 order-detail">
+                        <input type="hidden" name="session_id" value="{{$sessionId}}">
+                        <input type="hidden" name="total_price" value="{{$total_price}}">
 
-            <div class="py-5">
-                <div class="bg-image">
-                    <div class="row">
+                        <div class="quest-ordrsmry-left">
+                                <h1 class="card-heading">
+                                    <div>Order</div>
+                                    <div>Summary</div>
+                                </h1>
 
-                        <div class="col-lg-6 col-md-12 order-detail">
-                            <input type="hidden" name="session_id" value="{{$sessionId}}">
-                            <input type="hidden" name="total_price" value="{{$total_price}}">
-                            
-                            <div class="quest-ordrsmry-left">
-                                    <h1 class="card-heading">
-                                        <div>Order</div>
-                                        <div>Summary</div>
-                                    </h1>
+                            <!-- apply affiliate -->
+                            <div class="card-design mb-40">
+                                @foreach($prod_name as $product)
+                                @php
+                                $first_time_discount = $product->first_time_disc;
+                                $category_id = $product->category_id;
+                                // dd($category_id);
+                                $price = $product->price;
+                                $name = $product->name;
+                                $desc = $product->description;
+                                $discount_price = abs( (float) $product->first_time_disc - (float) $product->price );
+                                $img = DB::table('media')->where('mediable_id',$product->id)->first();
+                                $tag = DB::table('product_tags')->where('product_id', $product->id)->first();
+                                if(isset($tag->tag_id)) {
+                                $type = DB::table('tags')->where('id',$tag->tag_id)->first();
+                                }
+                                $category_id = $product->category_id;
+                                @endphp
 
-                                <!-- apply affiliate -->
-                                <div class="card-design mb-40">
-                                    @foreach($prod_name as $product)
-                                    @php
-                                    $first_time_discount = $product->first_time_disc;
-                                    $category_id = $product->category_id;
-                                    // dd($category_id);
-                                    $price = $product->price;
-                                    $name = $product->name;
-                                    $desc = $product->description;
-                                    $discount_price = abs( (float) $product->first_time_disc - (float) $product->price );
-                                    $img = DB::table('media')->where('mediable_id',$product->id)->first();
-                                    $tag = DB::table('product_tags')->where('product_id', $product->id)->first();
-                                    if(isset($tag->tag_id)) {
-                                    $type = DB::table('tags')->where('id',$tag->tag_id)->first();
-                                    }
-                                    $category_id = $product->category_id;
-                                    @endphp
+                                <div class="qos-product">
+                                    <img class="img-fluid"
+                                        src="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}"
+                                        alt="gent-img2" />
+                                </div>
+                                <h1 class="product-title">{{$name}}</h1>
+                                <p class="product-desc">{{strip_tags($desc)}}</p>
 
-                                    <div class="qos-product">
-                                        <img class="img-fluid"
-                                            src="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}"
-                                            alt="gent-img2" />
-                                    </div>
-                                    <h1 class="product-title">{{$name}}</h1>
-                                    <p class="product-desc">{{strip_tags($desc)}}</p>
-
-                                    @php
-                                    $monthList = DB::table("products")->where('name', $name)->orderBy("subscription_duration")->get()->toArray();
-                                    @endphp
-                                    <div class="row">
-                                        @foreach($monthList as $month) 
-                                            @php
-                                            $img = DB::table('media')->where('mediable_id',$product->id)->first();
-                                            @endphp
-                                            @if($category_id == "33" || $category_id == "32") 
-                                            <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
-                                                <div class="form-group form-radio" <?php echo $subscription_dur;?>>
-                                                    <input type="radio" id="product_sub_month_0" name="input_product_sub" <?php echo $subscription_dur == 0 ? "checked":""?> value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
-                                                    <label class="sub-leb" for="product_sub_month_0">
-                                                        <h4>One time treatment plan</h4>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            @endif
-                                            @if($month->subscription_duration == 1)
-                                            <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
-                                                <div class="form-group form-radio">
-                                                    <input type="radio" id="product_sub_month_2" name="input_product_sub" disabled <?php if($subscription_dur == 1) echo "checked";?> value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
-                                                    <label class="sub-leb" for="product_sub_month_2">
-                                                        <h4>1 month treatment plan</h4>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            @else 
-                                            <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
-                                                <div class="form-group form-radio">
-                                                    <input type="radio" id="product_sub_month_3" name="input_product_sub" disabled <?php if($subscription_dur == $month->subscription_duration) echo "checked";?> product-id="{{$month->id}}" value="3">
-                                                    <label class="sub-leb" for="product_sub_month_3">
-                                                        <span class="">Recommended</span>
-                                                        <h4>{{$month->subscription_duration}} months treatment plan</h4>
-                                                        <p>Save up to 30% with this treatment duration</p>
-                                                    </label>
-                                                </div>
-                                            </div>
-                                            @endif
-                                        @endforeach
-                                        </div>
-                                    @endforeach
-                                    <!-- <form id="myForm"> -->
-                                        @if($total_price > $first_time_discount)
-                                        <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
-                                                £{{$total_price}}.00
-                                            </div>
-                                        </div>
-                                        @else
-                                        <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
-                                                £{{$first_time_discount}}.00
+                                @php
+                                $monthList = DB::table("products")->where('name', $name)->orderBy("subscription_duration")->get()->toArray();
+                                @endphp
+                                <div class="row">
+                                    @foreach($monthList as $month)
+                                        @php
+                                        $img = DB::table('media')->where('mediable_id',$product->id)->first();
+                                        @endphp
+                                        @if($category_id == "33" || $category_id == "32")
+                                        <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
+                                            <div class="form-group form-radio" <?php echo $subscription_dur;?>>
+                                                <input type="radio" id="product_sub_month_0" name="input_product_sub" <?php echo $subscription_dur == 0 ? "checked":""?> value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                <label class="sub-leb" for="product_sub_month_0">
+                                                    <h4>One time treatment plan</h4>
+                                                </label>
                                             </div>
                                         </div>
                                         @endif
-
-                                    <p class="clearText duration-label"><span id="dur_label">{{$product->subscription_duration}}</span> x months supply of treatment</p>
-                                        <div class="qos-product-text">
-                                            <ul class="list-group w-100 ">
-                                                <li
-                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                                    Online Consultation and Health Assessment
-                                                    <span class="text-success">Included</span>
-                                                </li>
-                                                <li
-                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                                    Continuous Support with Ongoing Reviews
-                                                    <span class="text-success">Included</span>
-                                                </li>
-                                                <li
-                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                                    Medical Evaluation and Screening
-                                                    <span class="text-success">Included</span>
-                                                </li>
-                                                <li
-                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                                    Shipping
-                                                    <span class="text-success">Included</span>
-                                                </li>
-                                            </ul>
+                                        @if($month->subscription_duration == 1)
+                                        <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
+                                            <div class="form-group form-radio" style="margin-top: 30px">
+                                                <input type="radio" id="product_sub_month_2" name="input_product_sub" disabled <?php if($subscription_dur == 1) echo "checked";?> value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
+                                                <label class="sub-leb" for="product_sub_month_2">
+                                                    <h4>1 month treatment plan</h4>
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="cstm-border"></div>
-                                        <div class="qos-product-multi qos-product-text">
-                                        <ul class="list-group w-100">
-                                                <li
-                                                    class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
-                                                    First order discount
-                                                    @if(true or $total_price > $first_time_discount)
-                                                        <span class="discount-price">-£{{$discount_price}}</span>
-                                                    @else
-                                                    <span class="discount-price">£0</span>
-                                                    @endif
-                                                </li>
-                                            </ul>
+                                        @else
+                                        <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
+                                            <div class="form-group form-radio" style="margin-top: 30px">
+                                                <input type="radio" id="product_sub_month_3" name="input_product_sub" disabled <?php if($subscription_dur == $month->subscription_duration) echo "checked";?> product-id="{{$month->id}}" value="3">
+                                                <label class="sub-leb" for="product_sub_month_3">
+                                                    <span class="">Recommended</span>
+                                                    <h4>{{$month->subscription_duration}} months treatment plan</h4>
+                                                    <p>Save up to 30% with this treatment duration</p>
+                                                </label>
+                                            </div>
                                         </div>
-                                        <div class="cstm-border"></div>
-
-
-                                        <div class="total-amount">
-                                            <h3>Total</h3>
-                                            <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 </span>
-                                        </h3>
-                                            <span id="totalAmt" class="d-none">{{$first_time_discount}}</span>
-                                            <!-- <p><span id="user_off"></span>%Discount</p> -->
-                                        </div>
-
-                                    <div class="text-dark mt-30 orderText">
-                                        You will receive a monthly delivery of your treatment during the subscription
+                                        @endif
+                                    @endforeach
                                     </div>
+                                @endforeach
+                                <!-- <form id="myForm"> -->
+                                    @if($total_price > $first_time_discount)
+                                    <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
+                                            £{{$total_price}}.00
+                                        </div>
+                                    </div>
+                                    @else
+                                    <div class="qos-product-text text-dark mb-20 product-subtotal">Subtotal <div class="price text-dark">
+                                            £{{$first_time_discount}}.00
+                                        </div>
+                                    </div>
+                                    @endif
 
-                                        <div class="coupon-area d-none">
+                                <p class="clearText duration-label"><span id="dur_label">{{$product->subscription_duration}}</span> x months supply of treatment</p>
+                                    <div class="qos-product-text">
+                                        <ul class="list-group w-100 ">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                Online Consultation and Health Assessment
+                                                <span class="text-success">Included</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                Continuous Support with Ongoing Reviews
+                                                <span class="text-success">Included</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                Medical Evaluation and Screening
+                                                <span class="text-success">Included</span>
+                                            </li>
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                Shipping
+                                                <span class="text-success">Included</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="cstm-border"></div>
+                                    <div class="qos-product-multi qos-product-text">
+                                    <ul class="list-group w-100">
+                                            <li
+                                                class="list-group-item d-flex justify-content-between align-items-center border-0 p-0">
+                                                First order discount
+                                                @if(true or $total_price > $first_time_discount)
+                                                    <span class="discount-price">-£{{$discount_price}}</span>
+                                                @else
+                                                <span class="discount-price">£0</span>
+                                                @endif
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="cstm-border"></div>
+
+
                                     <div class="total-amount">
-                                        <h3>Coupon Discount</h3>
-                                        <h3 class="text-default">- <span id="couponTotal">0</span></h3>
+                                        <h3>Total</h3>
+                                        <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 </span>
+                                    </h3>
+                                        <span id="totalAmt" class="d-none">{{$first_time_discount}}</span>
                                         <!-- <p><span id="user_off"></span>%Discount</p> -->
                                     </div>
-                                    <div class="total-amount">
-                                        <h3>Order Total</h3>
-                                        <h3 class="text-success"><span id="orderTotal">0</span></h3>
-                                        <!-- <p><span id="user_off"></span>%Discount</p> -->
+
+                                <div class="text-dark mt-30 orderText">
+                                    You will receive a monthly delivery of your treatment during the subscription
+                                </div>
+
+                                    <div class="coupon-area d-none">
+                                <div class="total-amount">
+                                    <h3>Coupon Discount</h3>
+                                    <h3 class="text-default">- <span id="couponTotal">0</span></h3>
+                                    <!-- <p><span id="user_off"></span>%Discount</p> -->
+                                </div>
+                                <div class="total-amount">
+                                    <h3>Order Total</h3>
+                                    <h3 class="text-success"><span id="orderTotal">0</span></h3>
+                                    <!-- <p><span id="user_off"></span>%Discount</p> -->
+                                </div>
+                                </div>
+
+
+                                    <div class="cstm-border"></div>
+
+
+                                    <div class="qos-product-text mb-3 mt-2">
+                                        <input type="text" id="coupon_code" class="discount-cls-main"
+                                            name="coupon_code" value="" placeholder="Coupon/Gift Code" >
+                                        <input type="hidden" id="input_couponTotal" value="">
+                                        <input type="hidden" name="total_price" value="{{$total_price}}">
+                                        <input type="hidden" name="session_id" value="{{$sessionId}}">
+
+                                        <div class="qos-product-text"> <button type="button" id="coupon_btn"
+                                                                                class="btn-d-black">Apply Coupon</button></div>
+
+                                        <p id="coupon_error"></p>
                                     </div>
+
+
+                                <!-- </form> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="row right-banner banner-img">
+                            <div class="col-12">
+                                    <div class="shipping-details-header">
+                                        <div>Payment</div>
+                                        <div>details</div>
                                     </div>
+                                <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
+                            </div>
+                        </div>
+                        <div class="quest-ordrsmry-right">
 
+                            <div class="checkout-step">
+                                <div class="checkout-step1">Account</div>
+                                <div class="checkout-step1">-</div>
+                                <div class="checkout-step1 checkout-step1-check"><i class='fa fa-circle-check'></i></div>
+                                <div class="checkout-step2">-</div>
+                                <div class="checkout-step2">Shipping</div>
+                                <div class="checkout-step2">-</div>
+                                <div class="checkout-step2 checkout-step1-check"><i class='fa fa-circle-check'></i></div>
+                                <div class="checkout-step2">-</div>
+                                <div class="checkout-step3">Payment</div>
+                            </div>
+                            <h4 class="q-orsm-heading mb-30">Payment details</h4>
+                            <div class="row">
+                                <!-- <div class="col col-md-12 col-lg-5" style="display: flex; align-items: center;">
+                                    <label for="saved_address">Use saved card</label>
+                                </div>
+                                <div class="col col-md-12 col-lg-7">
+                                    @php
+                                    $user_id = auth()->user()->id;
+                                    $address = DB::table('delivery_address')->where('user_id', $user_id)->orderBy("created_at", "desc")->get();
+                                    @endphp
+                                    <select class="form-control" aria-label="User saved address" name="saved_address" id="saved_address">
+                                        @foreach($address as $adss)
+                                        <option value="{{$adss->id}}">{{$adss->address}}</option>
+                                        @endforeach
+                                    </select>
+                                </div> -->
+                            </div>
+                            <div style="width: 100%; display: flex; justify-content: flex-end;">
+                                <img src="/frontend/images/default.png" style="margin:0px 10px; width: 2.4rem;"/>
+                                <img src="/frontend/images/mastercard.png" style="margin:0px 10px; width: 2.4rem;"/>
+                                <img src="/frontend/images/visa.png" style="margin:0px 10px; width: 2.4rem;"/>
+                            </div>
+                            <div class="button-box">
+                                <main class="bg-white card-design" style="padding: 0px;">
 
-                                        <div class="cstm-border"></div>
+                                    <div id="st-notification-frame"></div>
+                                    <form id="st-form">
 
-
-                                        <div class="qos-product-text mb-3 mt-2">
-                                            <input type="text" id="coupon_code" class="discount-cls-main"
-                                                name="coupon_code" value="" placeholder="Coupon/Gift Code" >
-                                            <input type="hidden" id="input_couponTotal" value="">
-                                            <input type="hidden" name="total_price" value="{{$total_price}}">
-                                            <input type="hidden" name="session_id" value="{{$sessionId}}">
-
-                                            <div class="qos-product-text"> <button type="button" id="coupon_btn"
-                                                                                    class="btn-d-black">Apply Coupon</button></div>
-
-                                            <p id="coupon_error"></p>
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div id="st-card-number" class="st-form__group st-form__iframe-container"></div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div id="st-expiration-date" class="st-form__group st-form__iframe-container"></div>
+                                            </div>
+                                            <div class="col-lg-6">
+                                                <div id="st-security-code" class="st-form__group st-form__iframe-container"></div>
+                                            </div>
                                         </div>
+                                        <input type='hidden' name='subscription_duration' value="{{$subscription_dur}}">
+                                        <button type="submit" class="btn_order_pay">Pay with Card</button>
+
+                                    </form>
+                                    <!-- <form id="st-form1">
+                                        <div id="st-google-pay" style="color: black;"></div>
+                                    </form> -->
+
+                                </main>
 
 
-                                    <!-- </form> -->
+                            </div>
+
+                        </div>
+
+                            <!-- <div class="row">
+                                <div class="col col-12 payment-method-btns">
+                                    <div class='apple-pay-area' style="display: inline-block;">
+                                        <div id="apple-pay-button"><img src='/frontend/images/applepay.png'  style="height: 4rem;"></div>
+                                    </div>
+                                    <div class='google-pay-area' style="display: inline-block;">
+                                        <div id="google-pay-button">
+                                            <img src='/frontend/images/gpay.png' style="height: 4rem;">
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div> -->
+                    </div>
+                </div>
+                <div class="row review-brand-content">
+                    <div class="col-12">
+                        <div class="brands container mobile mt-5" id="business brands">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex justify-content-between brand-images mobile">
+                                    <img src="{{ asset('images/brand-medicine.png') }}">
+                                    <p class="font-heavy-green">Licensed & Registered
+                                            Medication</p>
+                                    <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
+                                    <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-6">
-                            <div class="row right-banner banner-img">
-                                <div class="col-12">
-                                        <div class="shipping-details-header">
-                                            <div>Payment</div>
-                                            <div>details</div> 
-                                        </div>
-                                    <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
-                                </div>
-                            </div>
-                            <div class="quest-ordrsmry-right">
-                                
-                                <div class="checkout-step">
-                                    <div class="checkout-step1">Account</div>
-                                    <div class="checkout-step1">-</div>
-                                    <div class="checkout-step1 checkout-step1-check"><i class='fa fa-circle-check'></i></div>
-                                    <div class="checkout-step2">-</div>
-                                    <div class="checkout-step2">Shipping</div>
-                                    <div class="checkout-step2">-</div>
-                                    <div class="checkout-step2 checkout-step1-check"><i class='fa fa-circle-check'></i></div>
-                                    <div class="checkout-step2">-</div>
-                                    <div class="checkout-step3">Payment</div>
-                                </div>
-                                <h4 class="q-orsm-heading mb-30">Payment details</h4>
-                                <div class="row">
-                                    <!-- <div class="col col-md-12 col-lg-5" style="display: flex; align-items: center;">
-                                        <label for="saved_address">Use saved card</label>
-                                    </div>
-                                    <div class="col col-md-12 col-lg-7">
-                                        @php
-                                        $user_id = auth()->user()->id;
-                                        $address = DB::table('delivery_address')->where('user_id', $user_id)->orderBy("created_at", "desc")->get();
-                                        @endphp
-                                        <select class="form-control" aria-label="User saved address" name="saved_address" id="saved_address">
-                                            @foreach($address as $adss)
-                                            <option value="{{$adss->id}}">{{$adss->address}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div> -->
-                                </div>
-                                <div style="width: 100%; display: flex; justify-content: flex-end;">
-                                    <img src="/frontend/images/default.png" style="margin:0px 10px; width: 2.4rem;"/>
-                                    <img src="/frontend/images/mastercard.png" style="margin:0px 10px; width: 2.4rem;"/>
-                                    <img src="/frontend/images/visa.png" style="margin:0px 10px; width: 2.4rem;"/>
-                                </div>
-                                <div class="button-box">
-                                    <main class="bg-white card-design" style="padding: 0px;">
-                                        
-                                        <div id="st-notification-frame"></div>
-                                        <form id="st-form">
-    
-                                          <div class="row">
-                                                <div class="col-lg-12">
-                                                    <div id="st-card-number" class="st-form__group st-form__iframe-container"></div>
+                    </div>
+                    <div class="col-12">
+                        <div class="reviews">
+                            <div class="swiper" id="review-swiper">
+                                <div class="swiper-wrapper">
+                                    @if (!empty($reviews))
+                                        @foreach ($reviews as $review)
+                                        <div class="swiper-slide">
+                                            <div class="card review-card">
+                                                <div class="card-header d-flex justify-content-between">
+                                                    <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
+                                                    <ul class="d-flex">
+                                                        @for ($i=0; $i<$review->rating; $i++)
+                                                            <li><i class="ti-star text-warning"></i></li>
+                                                        @endfor
+                                                    </ul>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div id="st-expiration-date" class="st-form__group st-form__iframe-container"></div>
+                                                <div class="card-body">
+                                                    <p class="font-poppins review-content">{{ $review->content }}</p>
+                                                    <p> Verified by company</p>
                                                 </div>
-                                                <div class="col-lg-6">
-                                                    <div id="st-security-code" class="st-form__group st-form__iframe-container"></div>
+                                                <div class="card-footer">
+                                                    <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
                                                 </div>
                                             </div>
-                                            <input type='hidden' name='subscription_duration' value="{{$subscription_dur}}">
-                                            <button type="submit" class="btn_order_pay">Pay with Card</button>
-                                       
-                                        </form>
-                                        <!-- <form id="st-form1">
-                                            <div id="st-google-pay" style="color: black;"></div>
-                                        </form> -->
-    
-                                    </main>
-    
-                                
-                                </div>
-                                
-                            </div>
-                            
-                                <!-- <div class="row">
-                                    <div class="col col-12 payment-method-btns">    
-                                        <div class='apple-pay-area' style="display: inline-block;">
-                                            <div id="apple-pay-button"><img src='/frontend/images/applepay.png'  style="height: 4rem;"></div>
                                         </div>
-                                        <div class='google-pay-area' style="display: inline-block;">
-                                            <div id="google-pay-button">
-                                                <img src='/frontend/images/gpay.png' style="height: 4rem;">
+                                        @endforeach
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="brands container mt-5" id="business brands">
+                            <div class="d-flex justify-content-center">
+                                <div class="d-flex">
+                                    <div class="d-flex bg-black brands-rating mr-3">
+                                        <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
+                                            <div>
+                                                <ul class="d-flex">
+                                                    <li><i class="ti-star"></i></li>
+                                                    <li><i class="ti-star"></i></li>
+                                                    <li><i class="ti-star"></i></li>
+                                                    <li><i class="ti-star"></i></li>
+                                                    <li><i class="ti-star"></i></li>
+                                                </ul>
+                                                <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
                                             </div>
                                         </div>
-                                        
+                                        <img src="{{ asset('images/brand line.png') }}">
+                                        <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
+                                        <div>
+                                                <h4 class="font-poppins-bold">100+</h4>
+                                                <p class="text-white" style="width: max-content">Total ratings</p>
+                                        </div>
+                                        </div>
                                     </div>
-                                </div> -->
+                                    <div class="font-heavy-green brands-title d-flex flex-column justify-content-center">
+                                        <p class="font-poppins">Trusted by <b>hundreds</b> of
+                                        customers with amazing
+                                        results</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex justify-content-between brand-images">
+                                    <img src="{{ asset('images/brand-medicine.png') }}">
+                                    <img src="{{ asset('images/brand-shipping.png') }}">
+                                    <img src="{{ asset('images/brand-pause.png') }}">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
                 <!-- form to make the payment through the trust payments -->
 
-            </div>
 
             <!-- <div class=" bg-white" style="border-radius: 20px; margin: 15px; color: #000; padding-top: 40px;">
                 @include('partials.frontend.above-footer')
@@ -512,7 +597,7 @@
     </div>
 
 </section>
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.js"></script>
     <script type="text/javascript" src="https://cdn.eu.trustpayments.com/js/latest/st.js "></script>
     <script>
@@ -587,7 +672,7 @@
         ?>
     const subscriptionDuration = <?php echo $subscription_dur ?>;
     const finalPrice = <?php echo $final_price ?>;
-    
+
 
 
     // console.log(formattedCurrentDate);  // Output: '2023-10-05' (assuming the current date is October 5, 2023)
@@ -674,7 +759,7 @@
             const subscriptionfinalnumber = subscriptionDuration == 0 ? 1 : 12;
             // const subscriptionfinalnumber =  12;
             const subscriptionbegindate = subscribtionPaymentDate;
-            
+
             payload.payload.credentialsonfile = credentialsonfile;
             payload.payload.subscriptiontype = subscriptiontype;
             payload.payload.subscriptionunit = subscriptionunit;
@@ -713,13 +798,39 @@
             });
 
             st.Components()
-            
+
         } catch (error) {
             console.error("Error initializing SecureTrading:", error);
         }
     })();
 
     $(document.body).ready(function() {
+        var swiper = new Swiper("#review-swiper", {
+            spaceBetween: 0,
+            initialSlide: 1,
+            slidesPerView: 1,
+            loop: true,
+            speed: 50000,
+            centeredSlides:true,
+            autoplay: {
+                enabled: true,
+                delay: 1,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                1440: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                },
+            },
+        });
         function getProductInfo(id) {
             var monthList = <?php echo json_encode($monthList)?>;
 
@@ -735,7 +846,7 @@
             $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
             $(".discount-price").text("-£"+(productInfo.price > productInfo.first_time_disc ? Math.abs(productInfo.price - productInfo.first_time_disc) : 0)+".00");
 
-            if(productInfo.category_id != 31) 
+            if(productInfo.category_id != 31)
                 $(".total-amount del").text("£"+productInfo.price)
             if($("#input_couponTotal").val() > 0) {
                 total_price = total_price - $("#input_couponTotal").val();

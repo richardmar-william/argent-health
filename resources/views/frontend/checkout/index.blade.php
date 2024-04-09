@@ -2,7 +2,7 @@
 <?php
     if(Auth::check()) {
         $user = DB::table('users')->where('id', Auth::user()->id)->first();
-    
+
         $user_name = $user->full_name;
         $user_tel = $user->phone;
         $user_email = $user->email;
@@ -42,6 +42,10 @@
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
+    <link rel="stylesheet" href="{{asset('css/font.css')}}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/checkout.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <livewire:styles />
     @yield('style')
@@ -90,7 +94,7 @@
                 max-height: 44px; */
                 /* background-color: #242423; */
                 border-radius: 30px;
-                overflow: hidden; 
+                overflow: hidden;
                 /* padding: 0px 40px; */
             }
             .gpay-card-info-container.black.long.en{
@@ -98,9 +102,9 @@
                 background-color: #333;
                 color: white;
                 border-radius: 30px;
-                overflow: hidden; 
-                background-image: url(/frontend/images/gpay.png); 
-                background-repeat: no-repeat; 
+                overflow: hidden;
+                background-image: url(/frontend/images/gpay.png);
+                background-repeat: no-repeat;
                 background-size: contain;
                 height: 4rem;
                 width: 100%;
@@ -167,16 +171,15 @@
             </div>
         </div>
         <div class="quest-v2-content">
-            <div class="container-fluid">
+            <div class="container-fluid" style="background-color: #d9d9d9">
                 <div class="quest-v2-inner-wrap">
                     <!-- 13th step end -->
                     <div class="quest-v2-step" id="step14">
-
                         <div class="row quest-ordrsmry-wrap">
                             <div class="col-lg-6 col-md-12 <?php echo Auth::check() ? "logged-in" : "login" ?> <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>">
                                 <input type="hidden" name="session_id" value="{{$sessionId}}">
                                 <input type="hidden" name="total_price" value="{{$total_price}}">
-                                
+
                                 <div class="quest-ordrsmry-left">
                                         <h1 class="card-heading" >
                                             <div>Order</div>
@@ -214,11 +217,11 @@
                                         $monthList = DB::table("products")->where('name', $name)->orderBy("subscription_duration")->get()->toArray();
                                         @endphp
                                         <div class="row">
-                                            @foreach($monthList as $month) 
+                                            @foreach($monthList as $month)
                                                 @php
                                                 $img = DB::table('media')->where('mediable_id',$product->id)->first();
                                                 @endphp
-                                                @if($category_id == "33" || $category_id == "32") 
+                                                @if($category_id == "33" || $category_id == "32")
                                                 <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
                                                     <div class="form-group form-radio">
                                                         <input type="radio" id="product_sub_month_0" name="input_product_sub" value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
@@ -230,16 +233,16 @@
                                                 @endif
                                                 @if($month->subscription_duration == 1)
                                                 <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
-                                                    <div class="form-group form-radio">
+                                                    <div class="form-group form-radio" style="margin-top: 30px">
                                                         <input type="radio" id="product_sub_month_2" name="input_product_sub" <?php echo $prod_subs == '1' ? 'checked="checked"' : "";?>  value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
                                                         <label class="sub-leb" for="product_sub_month_2">
                                                             <h4>1 month treatment plan</h4>
                                                         </label>
                                                     </div>
                                                 </div>
-                                                @else 
+                                                @else
                                                 <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
-                                                    <div class="form-group form-radio">
+                                                    <div class="form-group form-radio" style="margin-top: 30px">
                                                         <input type="radio" id="product_sub_month_3" name="input_product_sub" <?php echo $prod_subs == '3' ? 'checked="checked"' : "";?> product-id="{{$month->id}}" value="3">
                                                         <label class="sub-leb" for="product_sub_month_3">
                                                             <span class="">Recommended</span>
@@ -355,7 +358,7 @@
                             </div>
 
                             @if(!Auth::check())
-                            
+
 
                             @if(!empty($successMsg))
                             <div class="alert alert-success"> {{ $successMsg }}</div>
@@ -365,7 +368,7 @@
                                     <div class="col-12 text-center 2">
                                         <h1 class="account-signup">
                                             <div>
-                                                Account 
+                                                Account
                                             </div>
                                             <div>
                                                 Sign Up
@@ -375,7 +378,7 @@
                                     </div>
                                 </div>
                                 <div class="quest-ordrsmry-right">
-                                    
+
                                     <div class="checkout-step">
                                         <div class="checkout-step1">Account</div>
                                         <div class="checkout-step1 disabled">-</div>
@@ -395,7 +398,7 @@
                                         <input type="hidden" name="subscription_duration" value="{{$prod_subs}}">
                                         <input type="hidden" name="total_price" value="{{$total_price}}">
                                         <input type="hidden" name="product_id" value="{{$product_id}}">
-                                        
+
                                         <div class="form-group">
                                             <label for="email">Email address</label>
                                             <input type="email" class="form-control" name="email" value=""
@@ -517,10 +520,10 @@
                                                 @error('city')
                                                 <span class="text-danger">{{ $message }}</span>
                                                 @enderror
-                                                
+
                                             </div>
                                         </div>
-                                        
+
                                         <div class="quest-v2-btn form-btns">
                                             <!-- <a class="btn-d-black btn-wt-300 next-button" href="javascript:void(0)">Continue</a> -->
                                             <button id="cancel_order" type="button"
@@ -538,17 +541,19 @@
                             @else
                             @php
                                 $user = DB::table('users')->where('id', Auth::user()->id)->first();
-                                
+
                                 $user_name = $user->full_name;
                                 $user_tel = $user->phone;
                                 $user_email = $user->email;
                             @endphp
+
+
                             <div class="col-lg-6 col-md-12 <?php echo Session::get('new_user') == 1 ? "new-user-auth":"";?>" id="address_order">
                                 <div class="row banner-img">
                                     <div class="col-12">
                                         <div class="shipping-details-header">
                                             <div>Shipping</div>
-                                            <div>details</div> 
+                                            <div>details</div>
                                         </div>
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
@@ -613,7 +618,7 @@
                                                     <div class="col col-md-12 col-lg-5">
                                                         <div class="form-group">
                                                             <label for="postcode">Post code</label>
-                                                            <input type="text" class="form-control" 
+                                                            <input type="text" class="form-control"
                                                             id="zipcode" name="zip_code" value="{{$addresses->zip_code}}"
                                                             placeholder="Enter Here">
                                                         </div>
@@ -632,7 +637,7 @@
                                                         @enderror
                                                     </div>
                                                 </div>
-                                                
+
                                             </div>
 
                                             <div class="quest-v2-btn pay-btn">
@@ -640,7 +645,7 @@
                                                 <!-- <button id="bil_submit" type="submit"
                                                     class="btn-d-black btn-wt-300 next-button">Payment</button> -->
                                                     <div class="row">
-                                                        @if(isset($login_addreses) && !empty($login_addreses))  
+                                                        @if(isset($login_addreses) && !empty($login_addreses))
                                                         <div class="col col-12">
 
                                                             <div class="row">
@@ -652,7 +657,7 @@
                                                             </div>
                                                         </div>
                                                         @else
-                                                        
+
                                                         <div class="debit-btn-pw">
                                                             <button type="submit" class="btn-d-black btn-wt-300 next-button">Please fill your Delivery Address first.</button>
                                                         </div>
@@ -661,7 +666,7 @@
                                                     <!-- <div id="st-notification-frame"></div> -->
                                                         <div class="col col-12">
                                                             <div class="row">
-                                                                <div class="col col-12 col-md-12 col-lg-6 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">    
+                                                                <div class="col col-12 col-md-12 col-lg-6 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">
                                                                     <div id="st-apple-pay" style="width: 100%"></div>
                                                                 </div>
                                                                 <div class="col col-12 col-md-12 col-lg-6 payment-method-btns" style="padding: 0px 0px; display: flex; justify-content: center; width: 100%">
@@ -694,14 +699,100 @@
                                                 value="{{$product_id}}">
                                                 <!--place order button disabled untill user has a delivery address-->
                                             <button type="submit" id="btn_pay_sub" style="display: none;"></button>
-                                        </form>  
-                                        
-                                      
+                                        </form>
+
+
                                     </div>
                                     @endif
                                     <!--Address & Order place-->
                                     <div class="card-body d-none">
                                         {{-- <livewire:frontend.checkout.checkout-component /> --}}
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="row review-brand-content">
+                            <div class="col-12">
+                                <div class="brands container mobile mt-5" id="business brands">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="d-flex justify-content-between brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <p class="font-heavy-green">Licensed & Registered
+                                                    Medication</p>
+                                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
+                                            <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="reviews">
+                                    <div class="swiper" id="review-swiper">
+                                        <div class="swiper-wrapper">
+                                            @if (!empty($reviews))
+                                                @foreach ($reviews as $review)
+                                                <div class="swiper-slide">
+                                                    <div class="card review-card">
+                                                        <div class="card-header d-flex justify-content-between">
+                                                            <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
+                                                            <ul class="d-flex">
+                                                                @for ($i=0; $i<$review->rating; $i++)
+                                                                    <li><i class="ti-star text-warning"></i></li>
+                                                                @endfor
+                                                            </ul>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="font-poppins review-content">{{ $review->content }}</p>
+                                                            <p> Verified by company</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="brands container mt-5" id="business brands">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="d-flex">
+                                            <div class="d-flex bg-black brands-rating mr-3">
+                                                <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
+                                                    <div>
+                                                        <ul class="d-flex">
+                                                            <li><i class="ti-star"></i></li>
+                                                            <li><i class="ti-star"></i></li>
+                                                            <li><i class="ti-star"></i></li>
+                                                            <li><i class="ti-star"></i></li>
+                                                            <li><i class="ti-star"></i></li>
+                                                        </ul>
+                                                        <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
+                                                    </div>
+                                                </div>
+                                                <img src="{{ asset('images/brand line.png') }}">
+                                                <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
+                                                <div>
+                                                        <h4 class="font-poppins-bold">100+</h4>
+                                                        <p class="text-white" style="width: max-content">Total ratings</p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="font-heavy-green brands-title d-flex flex-column justify-content-center">
+                                                <p class="font-poppins">Trusted by <b>hundreds</b> of
+                                                customers with amazing
+                                                results</p>
+                                            </div>
+                                        </div>
+                                        <div class="d-flex justify-content-between brand-images">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <img src="{{ asset('images/brand-shipping.png') }}">
+                                            <img src="{{ asset('images/brand-pause.png') }}">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1203,9 +1294,35 @@ function appendRadioValue(selectedId) {
 </script>
 <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6w6K6XGM-FfYNTKiSNmgcWFzwOqXqWaw&libraries=places">
 </script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script type="text/javascript">
     $(document).ready(function(){
+        var swiper = new Swiper("#review-swiper", {
+            spaceBetween: 0,
+            initialSlide: 1,
+            slidesPerView: 1,
+            loop: true,
+            speed: 50000,
+            centeredSlides:true,
+            autoplay: {
+                enabled: true,
+                delay: 1,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                1440: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                },
+            },
+        });
         if(localStorage.getItem("new_user_email")) {
             $("[name='email']").val(localStorage.getItem("new_user_email"))
         }
@@ -1235,12 +1352,12 @@ function appendRadioValue(selectedId) {
             }
             if($("#input_couponTotal").val() > 0) {
                 total_price = total_price - $("#input_couponTotal").val();
-                if(productInfo.category_id != 31) 
+                if(productInfo.category_id != 31)
                     $("#final_price del").text("£"+productInfo.price)
             }
             $(".qos-product .img-fluid").attr("src", $(this).attr("product-img"));
             $(".product-subtotal .price").text("£"+(Math.max(productInfo.price, productInfo.first_time_disc))+".00")
-            
+
             $("#dur_label").text(productInfo.subscription_duration);
             $("#orderTotal").text("£"+total_price);
             $('#totalAmt').text(total_price)
@@ -1324,7 +1441,7 @@ function appendRadioValue(selectedId) {
             }
             else (subscription_dur == 1)
                 subscribtionPaymentDate = formatNextMonthDate();
-                
+
             const header = {
                 alg: "HS256",
                 typ: "JWT"
@@ -1341,7 +1458,7 @@ function appendRadioValue(selectedId) {
             let requesttypedescriptions = ["THREEDQUERY", "AUTH"];
             if(subscription_dur > 0) requesttypedescriptions.push("SUBSCRIPTION");
             const locale = "en_GB";
-            
+
             //26oct23 delivery details
 
             const billingfirstname = "{{ $user_name }}";
@@ -1405,7 +1522,7 @@ function appendRadioValue(selectedId) {
                 const subscriptionfinalnumber = subscription_dur == 0 ? 1 : 12;
                 // const subscriptionfinalnumber =  12;
                 const subscriptionbegindate = subscribtionPaymentDate;
-                
+
                 payload.payload.credentialsonfile = credentialsonfile;
                 payload.payload.subscriptiontype = subscriptiontype;
                 payload.payload.subscriptionunit = subscriptionunit;
@@ -1491,9 +1608,9 @@ function appendRadioValue(selectedId) {
             });
         }
         initST()
-        
+
     });
-    
+
         <?php
     }
     ?>
@@ -1545,8 +1662,8 @@ function appendRadioValue(selectedId) {
             break;
         }
 
-        case "postal_code": 
-        case "postal_code_suffix": 
+        case "postal_code":
+        case "postal_code_suffix":
         {
             postcode = component.long_name;
             break;
@@ -1617,5 +1734,5 @@ function appendRadioValue(selectedId) {
     window.initAutocomplete = initAutocomplete;
     window.initAutocomplete();
 
-  
+
 </script>

@@ -21,6 +21,7 @@ use Illuminate\Support\Str;
 use App\Models\affiliateCoupon;
 use App\Models\Referral_wallet;
 use App\Models\AffiliateCouponDetails;
+use App\Models\Review;
 use App\Traits\SMPT2GoTrait;
 use Illuminate\Support\Facades\Http;
 use SMTP2GO\ApiClient;
@@ -72,12 +73,12 @@ class CheckoutController extends Controller
 
        //code to save questionnair
        public function cart_product(Request $request)
-       {    
+       {
         // print_r($request->isMethod('post')); exit;
 
                     //DB::table('temp')->where('product_ids', NULL)->delete();
                     //DB::beginTransaction();
-        
+
                 try {
 
                     $data = [];
@@ -386,7 +387,7 @@ class CheckoutController extends Controller
                         Session::put("categoryId", $request->category_id);
                     }
                     $session = $request->session_id;
-                 
+
                     //echo $request->session_id;die;
                     //$check_tempd = DB::table('temp')->where('session_id',$request->session_id)->first();
                     //dd($check_tempd);
@@ -436,7 +437,7 @@ class CheckoutController extends Controller
                 $sessionId = Session::get('premature_ejaculation');
                 //Session::forget('premature_ejaculation');
             }
-            
+
             //dd($sessionId);
             // if($request->Session_Id != $sessionId){
             //     DB::table('temp')->where('product_ids', NULL)->delete();
@@ -477,34 +478,35 @@ class CheckoutController extends Controller
                 }
                 // $total_price = Product::whereIn('id',explode(',', $get_data->product_ids))->select('price');
                 // print_r($get_data); exit;
-                
+
                 if(Session::get('product_id')) {
                     $get_data->product_ids = Session::get("product_id");
                 }
                 $product_detail = Product::whereIn('id',explode(',', $get_data->product_ids))->first();
                 $product_data = Product::whereRaw("name='{$product_detail['name']}'")->whereRaw("subscription_duration={$get_data->subscription_duration}")->first();
-                    
+
                 if(!isset($product_data) || empty($product_data)){
                     return redirect('/shop');
                 }
-                
+
 
                 $prod_subs = $product_data['subscription_duration'];
                 $total_price = $product_data['price'];
                 $first_time_disc = $product_data['first_time_disc'];
                 $product_id = $product_data['id'];
-                
+
                 if(Session::get('product_id')) {
                     $product_id = Session::get("product_id");
                 }
                 $product_data = Product::whereIn('id',explode(',',  $product_id))->get();
                 if(sizeof($product_data) > 0) $prod_subs = $product_data[0]['subscription_duration'];
 
+                $reviews = Review::with(['user','product'])->take(10)->latest()->get();
                 $order_id = 0;
                 if($_SERVER['REMOTE_ADDR'] == "191.178.104.67") {
-                    return view('frontend.checkout.index1',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));    
+                    return view('frontend.checkout.index1',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));
                 }
-                return view('frontend.checkout.index',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));
+                return view('frontend.checkout.index',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id', 'reviews'));
             } catch (\Illuminate\Session\TokenMismatchException $e) {
     // If a TokenMismatchException is caught, it means the CSRF token validation failed
 
@@ -553,9 +555,9 @@ class CheckoutController extends Controller
                 // dd($data['product_details']);
                 $full_name = auth()->user()->full_name;
                 $order_num = $order_data->ref_id;
-                
+
                 $this->sendOrderConfirmMail($full_name, $order_num);
-                
+
                 Session::put("order_id", $order_data->ref_id);
                 Session::put("product_id", $data['product_ids']);
                 Session::put("subscription_duration", $request->subscription_duration);
@@ -701,8 +703,9 @@ class CheckoutController extends Controller
         $billing_street = isset($request->billing_street) ? $request->billing_street : "";
         $billing_city = isset($request->billing_city) ? $request->billing_city : "";
         $billing_zipcode = isset($request->billing_zipcode) ? $request->billing_zipcode : "";
-        
-        return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc','billing_street','billing_city','billing_zipcode'));
+        $reviews = Review::with(['user','product'])->take(10)->latest()->get();
+
+        return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc','billing_street','billing_city','billing_zipcode', 'reviews'));
 
         //  return redirect('checkout/payment-page')->route('payment.page',['user_id'=>$user_id,'order_id'=>$order_id,'final_price'=>$final_price]);
         // for testing
