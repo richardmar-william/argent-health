@@ -2476,7 +2476,7 @@
                 </div>
                 <div class="modal-product-content">
                     <h3 class="modal-product-title"></h3>
-                    <p class="modal-product-description"></p>
+                    <p class="modal-product-description" style="max-height: 20rem; overflow-y: auto"></p>
                 </div>
             </div>
           </div>

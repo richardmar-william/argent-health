@@ -1557,7 +1557,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
-                                    <div class="quest-v2-btn d-flex justify-content-between">
+                                    <div class="quest-v2-btn">
                                         <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
                                         <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
                                         value="btn">continue</button>
@@ -1596,7 +1596,7 @@
                                                     </div>
                                                 </div>
                                                 <button type="button" id="btncheck"
-                                                    class="btn-d-black close-que-modal"
+                                                    class="btn-d-black-outline close-que-modal"
                                                     data-bs-dismiss="modal"><span>Back</span><i
                                                         class="ti-arrow-left quetions-icon"></i></button>
                                             </div>
