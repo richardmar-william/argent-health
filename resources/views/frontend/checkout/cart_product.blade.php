@@ -92,6 +92,76 @@
             content: "";
         }
 
+        .tab-mask {
+            display: none;
+        }
+        .tab-mask.active {
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            background-color: #000;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            top: 0;
+            z-index: 9999;;
+            opacity: 0.4;
+            border-radius: 29px;
+
+            &.fixed {
+                position: fixed;
+        }
+        &:before {
+            content: '';
+            background-color: rgba(0,0,0,0);
+            border: 5px solid #fff;
+            opacity: .9;
+            border-right: 5px solid rgba(0,0,0,0);
+            border-left: 5px solid rgba(0,0,0,0);
+            border-radius: 50px;
+            box-shadow: 0 0 35px #2187e7;
+            width: 50px;
+            height: 50px;
+            -moz-animation: spinPulse 1s infinite ease-in-out;
+            -webkit-animation: spinPulse 1s infinite linear;
+
+            margin: -25px 0 0 -25px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+                }
+        &:after {
+            content: '';
+            background-color: rgba(0,0,0,0);
+            border: 5px solid #fff;
+            opacity: .9;
+            border-left: 5px solid rgba(0,0,0,0);
+            border-right: 5px solid rgba(0,0,0,0);
+            border-radius: 50px;
+            box-shadow: 0 0 15px #2187e7;
+            width: 30px;
+            height: 30px;
+            -moz-animation: spinoffPulse 1s infinite linear;
+            -webkit-animation: spinoffPulse 1s infinite linear;
+
+            margin: -15px 0 0 -15px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        }
+
+        @-webkit-keyframes spinoffPulse {
+        0% {
+            -webkit-transform: rotate(0deg);
+        }
+        100% {
+            -webkit-transform: rotate(360deg);
+        }
+        }
+
+
+
     </style>
     <!-- Matomo Tag Manager -->
     <script>
@@ -240,13 +310,13 @@
                     }
                     array_multisort($tags, SORT_ASC, $proList);
                     @endphp
-                        <div class=" product-card swiper-slide">
+                        <div class="product-card swiper-slide">
                             <div class="tag-selector-area">
                                 <ul class="nav nav-tabs tag-selector"  role="tablist">
                                     <?php
                                     foreach($proList as $key => $item) {
-                                        echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."'>
-                                                <a class='nav-link' data-bs-toggle='tab' href='#recom_{$products->id}_{$key}'>{$item['tag']}</a>
+                                        echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."' data-tag='{$products->id}_{$key}' data-id='{$products->id}'>
+                                                <a class='nav-link' data-bs-toggle='tab'>{$item['tag']}</a>
                                             </li>";
                                     }
                                     ?>
@@ -254,6 +324,7 @@
                             </div>
 
                             <div class="tab-content">
+                            <div class='{{$products->id}} tab-mask'></div>
                             @foreach($proList as $iKey => $proItem)
                                 @php
                                 $media = DB::table('media')->where('mediable_id',$proItem['id'])->first();
@@ -262,7 +333,8 @@
                                 if($pro_tag)
                                     $tags = DB::table('tags')->where('id', $pro_tag->tag_id)->first();
                                 @endphp
-                                <div class="row container tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
+                                <div class="row container {{$products->id}} tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?> " id="recom_{{$products->id}}_{{$iKey}}">
+
                                     <div class="col col-12">
                                         <figure style="display: flex; justify-content: center">
                                             <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="75%" alt="">
@@ -385,8 +457,8 @@
                                 <ul class="nav nav-tabs tag-selector"  role="tablist">
                                     <?php
                                     foreach($proList as $key => $item) {
-                                        echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."'>
-                                                <a class='nav-link' data-bs-toggle='tab' href='#recom_{$products->id}_{$key}'>".($item['tag'] ? $item['tag']:"Tablets")."</a>
+                                        echo "<li class='nav-item ".($key == 0 ? "nav-item-selected":"")."' data-tag='{$products->id}_{$key}' data-id='{$products->id}'>
+                                                <a class='nav-link' data-bs-toggle='tab'>".($item['tag'] ? $item['tag']:"Tablets")."</a>
                                             </li>";
                                     }
                                     ?>
@@ -394,6 +466,7 @@
                             </div>
 
                             <div class="tab-content">
+                            <div class='{{$products->id}} tab-mask'></div>
                             @foreach($proList as $iKey => $proItem)
                                 @php
                                 $media = DB::table('media')->where('mediable_id',$proItem['id'])->first();
@@ -402,7 +475,8 @@
                                 if($pro_tag)
                                     $tags = DB::table('tags')->where('id', $pro_tag->tag_id)->first();
                                 @endphp
-                                <div class="row container tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
+                                <div class="row container {{$products->id}} tab-pane product-info <?php echo $iKey == 0 ? "active" :"" ?>" id="recom_{{$products->id}}_{{$iKey}}">
+                                    <div class="tab-mask"></div>
                                     <div class="col col-12">
                                         <figure style="display: flex; justify-content: center">
                                             <img src="{{asset('storage/images/products/')}}{{ '/'. $media->file_name}}" width="75%" alt="">
@@ -1703,7 +1777,7 @@
                                                         <label class="" for="Sildenafil">
                                                             <h3>Priligy (Dapoxetine) 30mg</h3>
                                                             <figure>
-                                                                <img src="{{asset('frontend_new/images/pre-Priligy.JPG')}}" alt="">
+                                                                <img src="{{asset('frontend_new/images/pre-Priligywith" 3--h[].JPG')}}" alt="">
                                                             </figure>
                                                         </label>
                                                     </div>
@@ -3066,6 +3140,15 @@ var productList = <?=json_encode($productList)?>;
         $(".tag-selector > li").click(function() {
             $(this).parent().children("li").removeClass("nav-item-selected");
             $(this).addClass("nav-item-selected")
+            var tag = '#recom_' + $(this).data('tag')
+            var id = $(this).data('id')
+            $('.'+id+'.tab-mask').addClass('active')
+            setTimeout(() => {
+                $('.'+ id+'.tab-pane.product-info').removeClass('active');
+                $('.'+id+'.tab-mask').removeClass('active')
+                $(tag).addClass('active')
+            }, 1000);
+
         })
         $(".product-toolbar .checkout-btn").click(function(){
             $("#submit_form").submit();

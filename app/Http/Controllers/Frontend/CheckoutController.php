@@ -470,7 +470,6 @@ class CheckoutController extends Controller
                         $check_data->subscription_duration = 1;
                         $check_data->save();
                     }
-
                 }
                 $get_data = Temp::where('session_id', $sessionId)->first();
                 if(!isset($get_data) || empty($get_data)){
@@ -506,6 +505,7 @@ class CheckoutController extends Controller
                 if($_SERVER['REMOTE_ADDR'] == "191.178.104.67") {
                     return view('frontend.checkout.index1',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));
                 }
+
                 return view('frontend.checkout.index',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id', 'reviews'));
             } catch (\Illuminate\Session\TokenMismatchException $e) {
     // If a TokenMismatchException is caught, it means the CSRF token validation failed
@@ -525,7 +525,6 @@ class CheckoutController extends Controller
             // dd($request->all());
             // dd(Session::get('hair_loss'));
             $user_id = auth()->id();
-
 
             if(isset($_GET['errorcode'])){
                 if($_GET['errorcode'] == 0){
@@ -579,7 +578,7 @@ class CheckoutController extends Controller
             session()->flash('alert-type', 'danger');
             // toast('You have already placed this order', 'error');
             return redirect('/shop');
-            }
+        }
             //  dd($user_id);
             $latestOrder = Order::latest()->first();
 
@@ -599,15 +598,17 @@ class CheckoutController extends Controller
 
             // code to calculate the price
             if(!isset($request->total_price)){
+
                 return redirect()->back();
             }
             $total_price = $request->total_price;
             $subscription_dur = $request->subscription_duration;
-            $prodcut_id = $request->product_id;
+            $product_id = $request->product_id;
             $sessionId = $request->session_id;
-            if(!isset($total_price, $subscription_dur, $prodcut_id, $sessionId)){
+            if(!isset($total_price, $subscription_dur, $product_id, $sessionId)){
                 return redirect()->back();
             }
+
             Session::put('sessionid',$sessionId);
             $get_data = Temp::where('session_id', $sessionId)->first();
                 // if(isset($coupon_data)){
@@ -620,7 +621,7 @@ class CheckoutController extends Controller
                 // }
                 $final_price = $total_price;
 
-            $prod_name = DB::table('products')->where('id',$prodcut_id)->get();
+            $prod_name = DB::table('products')->where('id',$product_id)->get();
 
             //////////////////////////////////////////////////////////////////////////
             // code to update the user when placing order

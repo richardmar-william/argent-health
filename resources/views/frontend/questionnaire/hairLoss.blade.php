@@ -569,7 +569,8 @@
                                                 </h3>
                                                 <div class="quest-v2-btn">
                                                     <a class="btn-d-trans btn-wt-170 prev-button"
-                                                        href="javascript:void(0)">Back</a>
+                                                        href="javascript:void(0)"><span>Back</span><i
+                                                        class="ti-arrow-left quetions-icon"></i></a>
                                                 </div>
                                             </div>
                                             <div class="col-md-1 col-sm-12">

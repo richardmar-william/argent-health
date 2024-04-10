@@ -170,8 +170,8 @@
                 </a>
             </div>
         </div>
-        <div class="quest-v2-content">
-            <div class="container-fluid" style="background-color: #d9d9d9">
+        <div class="quest-v2-content" style="background-color: #d9d9d9">
+            <div class="container-fluid">
                 <div class="quest-v2-inner-wrap">
                     <!-- 13th step end -->
                     <div class="quest-v2-step" id="step14">
