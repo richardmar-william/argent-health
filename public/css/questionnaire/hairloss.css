@@ -1,0 +1,19 @@
+
+.hair-loss-content {
+    overflow-x: auto;
+}
+
+.hair-loss-content .hair-card {
+    margin-right: 24px;
+}
+
+.quest-v2-content .form-radio .hair-label {
+    padding: 16px 16px 0px 16px;
+    border-radius: 21px;
+    background-color: #f4f4f4;
+    height: 100%;
+}
+
+.hair-label .card .card-body {
+    background-color: #f4f4f4;
+}

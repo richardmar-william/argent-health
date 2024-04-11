@@ -175,6 +175,7 @@
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/questionnaire/hairloss.css') }}"/>
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="description" content="">
@@ -302,12 +303,6 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="v2-2step-cont">
-                                        <div class="quest-progress-bar">
-                                            <div class="progress hair">
-                                                <div class="progress-bar" role="progressbar" style="width: 0%;"
-                                                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-                                            </div>
-                                        </div>
                                         <h3 class="quest-v2-subh mb-30 text-center" style="color: #000">
                                             <!-- <input class="in_type" readonly="readonly"  name="What is your type of hair loss?" id="Kindly_Tell_Us_Your_Age" type="text" value="What is your type of hair loss?">  -->
                                             <textarea class="in_type" readonly="readonly" name="Q1" id="Kindly_Tell_Us_Your_Age" type="text">What is your type of hair loss?</textarea>
@@ -381,15 +376,43 @@
                                                 </label>
                                             </div>
                                             <div class="form-group form-radio hair-card">
-                                                <input type="radio" id="completelyhl" name="Q1_answer"
-                                                    value="Completely bald">
-                                                <label class="open-que-error hair-label" for="completelyhl">
+                                                <input type="radio" id="thinninghl" name="Q1_answer"
+                                                    value="Thinning all over (Temples and Crown)">
+                                                <label class="open-que-error hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
-                                                            src="{{ asset('images/hair_7750.png') }}"
-                                                            alt="Completely bald" width="100%">
+                                                            src="{{ asset('images/hair_tc_5899.jpg') }}"
+                                                            alt="Thinning all over (Temples and Crown)" width="100%">
                                                         <div class="card-body">
-                                                            <p class="card-title text-center">Completely bald</p>
+                                                            <p class="card-title text-center">Thinning all over (Temples and Crown)</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-radio hair-card">
+                                                <input type="radio" id="thincrownhl" name="Q1_answer"
+                                                    value="Thin crown">
+                                                <label class="open-que-error hair-label" for="thincrownhl">
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('images/hair_5898.jpg') }}"
+                                                            alt="Thin crown" width="100%">
+                                                        <div class="card-body">
+                                                            <p class="card-title text-center">Thin crown</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-radio hair-card">
+                                                <input type="radio" id="extensivehl" name="Q1_answer"
+                                                    value="Extensive Hair loss">
+                                                <label class="open-que-error hair-label" for="extensivehl">
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('images/hair_5900.jpg') }}"
+                                                            alt="Extensive Hair loss" width="100%">
+                                                        <div class="card-body">
+                                                            <p class="card-title text-center">Extensive Hair loss</p>
                                                         </div>
                                                     </div>
                                                 </label>
@@ -473,6 +496,48 @@
                                                             alt="Completely bald" width="100%">
                                                         <div class="card-body">
                                                             <p class="card-title text-center">Completely bald</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-radio col-6">
+                                                <input type="radio" id="thinninghl" name="Q1_answer"
+                                                    value="Thinning all over (Temples and Crown)">
+                                                <label class="open-que-error hair-label" for="thinninghl">
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('images/hair_tc_5899.jpg') }}"
+                                                            alt="Thinning all over (Temples and Crown)" width="100%">
+                                                        <div class="card-body">
+                                                            <p class="card-title text-center">Thinning all over (Temples and Crown)</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-radio col-6">
+                                                <input type="radio" id="thincrownhl" name="Q1_answer"
+                                                    value="Thin crown">
+                                                <label class="open-que-error hair-label" for="thincrownhl">
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('images/hair_5898.jpg') }}"
+                                                            alt="Thin crown" width="100%">
+                                                        <div class="card-body">
+                                                            <p class="card-title text-center">Thin crown</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-radio col-6">
+                                                <input type="radio" id="extensivehl" name="Q1_answer"
+                                                    value="Extensive Hair loss">
+                                                <label class="open-que-error hair-label" for="extensivehl">
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('images/hair_5900.jpg') }}"
+                                                            alt="Extensive Hair loss" width="100%">
+                                                        <div class="card-body">
+                                                            <p class="card-title text-center">Extensive Hair loss</p>
                                                         </div>
                                                     </div>
                                                 </label>
