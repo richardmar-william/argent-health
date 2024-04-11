@@ -228,8 +228,8 @@
 
                         <div class="quest-ordrsmry-left">
                                 <h1 class="card-heading">
-                                    <div>Order</div>
-                                    <div>Summary</div>
+                                    <div class="font-poppins" style="font-weight: 600; letter-spacing: -2px;">Order</div>
+                                    <div class="font-yeseva" style="font-weight: 400; letter-spacing: -2px;">Summary</div>
                                 </h1>
 
                             <!-- apply affiliate -->
@@ -407,8 +407,8 @@
                         <div class="row right-banner banner-img">
                             <div class="col-12">
                                     <div class="shipping-details-header">
-                                        <div>Payment</div>
-                                        <div>details</div>
+                                        <div class="font-poppins" style="font-weight: 600; letter-spacing: -2px;">Payment</div>
+                                        <div class="font-yeseva" style="font-weight: 400; letter-spacing: -2px;">details</div>
                                     </div>
                                 <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                             </div>
