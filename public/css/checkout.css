@@ -32,9 +32,60 @@
     margin-bottom: 32px;
 }
 
+.brands {
+    background-color: #fff;
+    border-radius: 29px;
+    width: fit-content;
+    padding: 32px 16px 32px 16px;
+}
+
+.brand-images.mobile p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.mobile-logo {
+    display: none;
+}
+
+.questionnaire-v2-main .container-fluid.brands-reviews-content {
+    margin-bottom: 5rem;
+    padding: 0 8px;
+}
+
+.brands.mobile {
+    width: 85%;
+    margin: auto;
+}
+
+.brands-rating {
+    margin-right: 0px;
+}
+
+.brand-images img{
+    margin-right: 16px;
+}
+
+.brand-images p {
+    margin-right: 8px;
+}
+
+.brands-rating img {
+    max-height: 4rem;
+    margin: auto;
+}
+
+
+@media (max-width: 991px) {
+    .mobile-logo {
+        display: block;
+    }
+}
+
 @media (max-width: 575px) {
     .swiper-slide .card  {
-        width: 100%;
+        width: 90%;
         margin-right: 32px;
     }
 }
@@ -42,5 +93,50 @@
 @media (max-width: 320px) {
     .brands.container.mobile {
         padding: 32px 16px 32px 16px;
+    }
+}
+
+@media (max-width: 670px) {
+    .brand-images img{
+        width: 3rem;
+        height: 3rem;
+        margin-right: 8px;
+    }
+
+    .brand-images p {
+        font-size: 12px;
+    }
+    .brands-rating p {
+        font-size: 12px;
+    }
+    .brands-rating li {
+        font-size: 12px;
+    }
+    .brands-title p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .brand-images p {
+        font-size: 8px;
+    }
+    .brands-rating p {
+        font-size: 8px;
+    }
+    .brands-rating li {
+        font-size: 8px;
+    }
+    .brands-title p {
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 375px) {
+    .brand-images img{
+        margin-right: 4px !important;
+    }
+    .brand-images p {
+        font-size: 6px;
     }
 }

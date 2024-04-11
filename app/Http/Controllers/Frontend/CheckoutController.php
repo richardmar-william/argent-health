@@ -420,23 +420,24 @@ class CheckoutController extends Controller
     //code to save product and price in temp folder
     public function index(Request $request)
     {
-            $session = $request->Session_Id;
-            if(Session::has('hair_loss')){
-                $sessionId = Session::get('hair_loss');
-                 //Session::forget('hair_loss');
-            }
-            if(Session::has('beard_browth')){
-                $sessionId = Session::get('beard_browth');
-                //Session::forget('beard_browth');
-            }
-            if(Session::has('erectile_dysfunction')){
-                $sessionId = Session::get('erectile_dysfunction');
-                 //Session::forget('erectile_dysfunction');
-            }
-            if(Session::has('premature_ejaculation')){
-                $sessionId = Session::get('premature_ejaculation');
-                //Session::forget('premature_ejaculation');
-            }
+            $sessionId = $request->Session_Id;
+
+            // if(Session::has('hair_loss')){
+            //     $sessionId = Session::get('hair_loss');
+            //      //Session::forget('hair_loss');
+            // }
+            // if(Session::has('beard_browth')){
+            //     $sessionId = Session::get('beard_browth');
+            //     //Session::forget('beard_browth');
+            // }
+            // if(Session::has('erectile_dysfunction')){
+            //     $sessionId = Session::get('erectile_dysfunction');
+            //      //Session::forget('erectile_dysfunction');
+            // }
+            // if(Session::has('premature_ejaculation')){
+            //     $sessionId = Session::get('premature_ejaculation');
+            //     //Session::forget('premature_ejaculation');
+            // }
 
             //dd($sessionId);
             // if($request->Session_Id != $sessionId){

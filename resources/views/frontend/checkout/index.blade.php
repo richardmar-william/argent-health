@@ -185,7 +185,9 @@
                                             <div>Order</div>
                                             <div>Summary</div>
                                         </h1>
-
+                                        <div class="mobile-logo mb-3">
+                                            <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
+                                        </div>
                                     <!-- apply affiliate -->
                                     <div class="card-design mb-40">
                                         @foreach($product_data as $product)
@@ -713,8 +715,8 @@
 
                         </div>
                         <div class="row review-brand-content">
-                            <div class="col-12">
-                                <div class="brands container mobile mt-5" id="business brands">
+                            <div class="col-12 mb-3">
+                                <div class="brands mobile mt-5" id="business brands">
                                     <div class="d-flex justify-content-center">
                                         <div class="d-flex justify-content-between brand-images mobile">
                                             <img src="{{ asset('images/brand-medicine.png') }}">

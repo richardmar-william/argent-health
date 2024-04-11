@@ -497,7 +497,7 @@
                 </div>
                 <div class="row review-brand-content">
                     <div class="col-12" style="margin-bottom: 4rem;">
-                        <div class="brands container mobile mt-5" id="business brands">
+                        <div class="brands mobile mt-5" id="business brands" style="width: 100%">
                             <div class="d-flex justify-content-center">
                                 <div class="d-flex justify-content-between brand-images mobile">
                                     <img src="{{ asset('images/brand-medicine.png') }}">

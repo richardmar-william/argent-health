@@ -52,6 +52,10 @@
     margin: auto;
 }
 
+.choose-perfer-content {
+    background-color: #e4e4e4;
+}
+
 @media (max-width: 670px) {
     .brand-images img{
         width: 3rem;
