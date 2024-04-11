@@ -227,6 +227,53 @@
                     <button type="button" class='btn-d-black' id="btn_signin">Continue</button>
                 </form>
             </div>
+            <div class="row review-brand-content">
+                <div class="col-12">
+                    <div class="brands mobile mt-5">
+                        <div class="d-flex">
+                            <div class="d-flex bg-black brands-rating mr-3">
+                                <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 16px">
+                                    <div>
+                                        <ul class="d-flex">
+                                            <li><i class="ti-star"></i></li>
+                                            <li><i class="ti-star"></i></li>
+                                            <li><i class="ti-star"></i></li>
+                                            <li><i class="ti-star"></i></li>
+                                            <li><i class="ti-star"></i></li>
+                                        </ul>
+                                        <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
+                                    </div>
+                                </div>
+                                <img src="{{ asset('images/brand line.png') }}">
+                                <div class="d-flex flex-column justify-content-center" style="margin-left: 16px">
+                                <div>
+                                        <h4 class="font-poppins-bold">100+</h4>
+                                        <p class="text-white" style="width: max-content">Total ratings</p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="font-heavy-green brands-title d-flex flex-column justify-content-center" style="margin-right: 0px">
+                                <p class="font-poppins">Trusted by <b>hundreds</b> of
+                                customers with amazing
+                                results</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="brands mobile mt-5" id="business brands">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex justify-content-between brand-images mobile">
+                                <img src="{{ asset('images/brand-medicine.png') }}">
+                                <p class="font-heavy-green">Licensed & Registered
+                                        Medication</p>
+                                <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
+                                <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     @if($category == "30" || $category == "31" || $category == "32" || $category == "33")
