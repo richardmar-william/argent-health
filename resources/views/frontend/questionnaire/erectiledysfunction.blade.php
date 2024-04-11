@@ -176,6 +176,7 @@
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/questionnaire/erectile.css') }}">
 
     <livewire:styles />
     @yield('style')
@@ -1434,6 +1435,7 @@
                                 </div>
                             </div>
                         </div>
+                        <input type="hidden" id="quest-page-type" value="premature"/>
                         <div class="quest-v2-step d-none question-final" id="step14">
                             <div class="row">
                                 <div class="col-md-12 col-lg-6 qe-img">
@@ -1446,69 +1448,111 @@
                                                 <div class="ques-final-thankyou">Thank you</div>
                                                 <div class="ques-final-answering">For Answering</div>
                                             </h1>
-                                            <p class="mb-30">Thank you for completing this questionnaire about your
-                                                health and your experience with erectile dysfunction. Your answers will
-                                                be reviewed by a licensed clinician on our team to assess if a
-                                                prescription medication might be appropriate
-                                                for your condition. They will promptly review your answers and get back
-                                                to you with suitable suggestions.</p>
+                                            <p class="mb-30">Thank you for answering questions about your health and
+                                                experiences with hair loss. Your responses will assist our licensed
+                                                clinicians in determining if a prescription for hair loss
+                                                treatment could be appropriate for you. They will promptly review your
+                                                answers and get back to you with suitable suggestions.</p>
                                         </div>
                                         <div>
-                                            <h3 class="list-heading mb-30">Before You Submit Your Responses, Please
-                                                Affirm That You:</h3>
+                                            <h3 class="list-heading mb-30">Before Submitting Your Answers,
+                                                PleaseAcknowledge The Following:</h3>
                                             <ul class="quest-v2-list pb-30 mb-20 before-submit-area">
-                                                <li>Are Completing This Survey To The Best Of Your Abilities And In A
-                                                    Truthful Manner. </li>
-                                                <li>Were Assigned Male At Birth And Are Currently Experiencing Symptoms
-                                                    Of Erectile Dysfunction. </li>
-                                                <li>Have Disclosed Any Significant Illnesses Or Surgeries You've
-                                                    Undergone.
+                                                <li>You Are The Sole User Of Any Medication Provided Through This
+                                                    Service.</li>
+                                                <li>You Have Provided Truthful Answers To The Best Of Your Knowledge.
                                                 </li>
-                                                <li>Have Disclosed Any Prescription Medication You're Currently Using.
+                                                <li>You Are Aware That Minoxidil 5% Solution And Combined Minoxidil 5%
+                                                    With 0.1% Finasteride Solution Are Prescribed As Unlicensed
+                                                    Products.</li>
+                                                <li>You Were Assigned Male At Birth.</li>
+                                                <li>You Have Disclosed Any Serious Illnesses Or Operations You Have Had.
                                                 </li>
-                                                <li>Understand That A Higher Dose Of Sildenafil, Viagra Connect, Or
-                                                    Tadalafil (Non-Daily Dose)
-                                                    Should Only Be Attempted If You've Tried A Lower Dose Several Times
-                                                    In The Past Year Without Success. </li>
-                                                <li>Understand That It's Best To Start Tadalafil Daily At A Higher Dose,
-                                                    And Then Decrease To A Lower Dose Once You've Experienced
-                                                    Satisfactory Results. </li>
-                                                <li>Will Only Utilise One Method Of ED Treatment At A Time And Will
-                                                    Refrain From Combining More Than One Different Medication For This
-                                                    Condition.
+                                                <li>You Have Disclosed Any Prescription Medication You Currently Take.
                                                 </li>
+                                                <li>You Will Only Use The Recommended Method Of Hair Loss Treatment And
+                                                    Not Combine More Than One Different Medication For This Condition.
+                                                </li>
+                                                <li>You Are Aware That You Should Not Take Finasteride If You’re Trying
+                                                    For A Baby.</li>
+                                                <li>You Accept Our Terms & Conditions, Privacy Policy, And Terms Of
+                                                    Sale.</li>
+                                                <li>You Currently Live In The UK.</li>
+                                                <li>You Are Using This Service Of Your Own Free Will.</li>
                                                 <li>Will Read all patient information leaflets available</li>
-                                                <li>Are Accepting Our Terms & Conditions And Terms Of Sale.</li>
+                                                <li>You Agree To The Terms Of Service, Terms Of Subscription, And
+                                                    Privacy Policy.</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row ques-footer">
-                                <div class='col-lg-6 col-md-12 ques-lfc'>
-                                    <div class="quest-lfc-btn">
-                                        <div>
-                                            <img src="{{ asset('frontend_new/images/licensed.png') }}"
-                                                alt="backed">
-                                            <span>Licensed & Registered Medication</span>
-                                        </div>
-                                        <div>
-                                            <img src="{{ asset('frontend_new/images/lock.png') }}" alt="backed">
-                                            <span>Free & Discreet 24 Hour Shipping</span>
-                                        </div>
-                                        <div>
-                                            <img src="{{ asset('frontend_new/images/delete.png') }}"
-                                                alt="backed">
-                                            <span>Pause or Cancel Anytime</span>
+                                <div class="col-lg-6"></div>
+                                <div class="col-lg-6 col-md-12">
+                                    <div class="quest-v2-btn d-flex justify-content-between">
+                                        <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
+                                        <a class="btn-d-black-outline btn-wt-170 prev-button mobile">Back</a>
+                                        <button class="btn-d-black" type="submit" id="relyimpohl-btn"
+                                        name="" value="btn">continue</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 13th step end -->
+                        <div class='container-fluid brands-reviews-content' style="display: none">
+                            <div class="col-12">
+                                <div class="brands container mt-5" id="business brands">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="d-flex justify-content-between brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <p class="font-heavy-green mr-50">Licensed & Registered
+                                                    Medication</p>
+                                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green mr-50">Free & Discreet 24Hr Shipping</p>
+                                            <img src="{{ asset('images/brand-pause.png') }}" style="margin-right: 16px;"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-6 col-md-12">
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
-                                        <button class="btn-d-black" type="submit" id="relyimpohl-btn"
-                                            name="" value="btn">continue</button>
-                                        <a class="btn-d-trans btn-wt-170 prev-button mobile">Back</a>
+                            </div>
+                            <div class="col-12">
+                                <div class="brands mobile mt-5" id="business brands">
+
+                                        <div class="d-flex justify-content-around brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <img src="{{ asset('images/brand-shipping.png') }}">
+                                            <img src="{{ asset('images/brand-pause.png') }}">
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="reviews">
+                                    <div class="swiper" id="review-swiper">
+                                        <div class="swiper-wrapper">
+                                            @if (!empty($reviews))
+                                                @foreach ($reviews as $review)
+                                                <div class="swiper-slide">
+                                                    <div class="card review-card">
+                                                        <div class="card-header d-flex justify-content-between">
+                                                            <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
+                                                            <ul class="d-flex">
+                                                                @for ($i=0; $i<$review->rating; $i++)
+                                                                    <li><i class="ti-star text-warning"></i></li>
+                                                                @endfor
+                                                            </ul>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="font-poppins review-content">{{ $review->content }}</p>
+                                                            <p> Verified by company</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1531,9 +1575,9 @@
                                         <div class="row">
                                             <div
                                                 class="col-md-5 col-sm-12 quest-v2-error-modal-label d-flex flex-column justify-content-between">
-                                                <div>
+                                                <div style="position: relative">
                                                     <div class="error-btn d-flex flex-row-reverse">
-                                                        <img src="{{ asset('images/error-icon.svg') }}"
+                                                        <img src="{{ asset('images/error-icon.png') }}"
                                                             alt="">
                                                     </div>
                                                     <div class="col-9">
@@ -1546,13 +1590,13 @@
                                                 </div>
                                                 <button type="button" id="btncheck"
                                                     class="btn-d-black-outline close-que-modal"
-                                                    data-bs-dismiss="modal"><span>Back</span><i
+                                                    data-bs-dismiss="modal"><span>Review Your Answers</span><i
                                                         class="ti-arrow-left quetions-icon"></i></button>
                                             </div>
                                             <div class="col-1"></div>
                                             <div class="col-md-6 col-sm-12">
-                                                <h5 class="font-poppins-bold">Unfortunately, we can’t offer you any ED
-                                                    medication.</h5>
+                                                <h5 class="font-poppins-bold">Unfortunately, we can’t offer you any
+                                                    beard growth medication.</h5>
                                                 <p class="font-poppins">No recommended treatment. Based on your
                                                     answers, there is no treatment
                                                     suitable for you. If you think you have made an error in your
@@ -1572,7 +1616,7 @@
                                                 </div>
                                                 <button type="button" id="btncheck"
                                                     class="btn-d-black close-que-modal mobile"
-                                                    data-bs-dismiss="modal">Back</button>
+                                                    data-bs-dismiss="modal">Review Your Answers</button>
                                             </div>
                                         </div>
                                     </div>

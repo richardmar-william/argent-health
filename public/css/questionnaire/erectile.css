@@ -1,0 +1,37 @@
+.review-user-name{
+    color: #484f47;
+}
+.review-content {
+    color: #979caa;
+}
+
+.quest-v2-quest .form-group.form-radio {
+    background-color: #f5f5f5;
+    border-radius: 39px;
+}
+
+.brands {
+    background-color: #fff;
+    border-radius: 29px;
+    width: fit-content;
+    padding: 32px 16px 32px 16px;
+}
+
+.brand-images p:not(:last-of-type) {
+    margin-right: 16px;
+}
+
+.brand-images.mobile p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.questionnaire-v2-main .container-fluid.brands-reviews-content {
+    margin-bottom: 5rem;
+    padding: 0 8px;
+}
+
+.brands.mobile {
+    width: 100%;
+}

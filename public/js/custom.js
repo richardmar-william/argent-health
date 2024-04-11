@@ -83,7 +83,7 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
-                if(currentStep < progressTotalSteps) {
+                if(currentStep <= progressTotalSteps) {
                     $('.question-final').addClass('bg-white')
                     $('.question-final').css('padding-top', '48px')
                     $('.quest-v2-content').css("background-color", "#fff");
