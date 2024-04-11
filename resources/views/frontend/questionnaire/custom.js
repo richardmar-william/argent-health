@@ -20,7 +20,6 @@ $(document).ready(function () {
     // Hide all steps except the first one
     $(".quest-v2-step").not(":first").hide();
 
-    alert(1)
     // Function to go to the next step
     function nextStep() {
         if (currentStep < totalSteps) {

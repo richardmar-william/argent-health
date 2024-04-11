@@ -2586,7 +2586,7 @@
 
 <script>
     $(document).ready(function () {
-         var swiper = new Swiper("#rec_prod", {
+        var swiper = new Swiper("#rec_prod", {
             watchSlidesProgress: true,
             slidesPerView: 1,
             spaceBetween: 0,

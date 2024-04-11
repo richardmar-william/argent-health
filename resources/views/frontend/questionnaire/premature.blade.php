@@ -1687,37 +1687,6 @@
 
                                 </div>
                             </div>
-                            <div class="col-12">
-                                <div class="reviews">
-                                    <div class="swiper" id="review-swiper">
-                                        <div class="swiper-wrapper">
-                                            @if (!empty($reviews))
-                                                @foreach ($reviews as $review)
-                                                <div class="swiper-slide">
-                                                    <div class="card review-card">
-                                                        <div class="card-header d-flex justify-content-between">
-                                                            <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
-                                                            <ul class="d-flex">
-                                                                @for ($i=0; $i<$review->rating; $i++)
-                                                                    <li><i class="ti-star text-warning"></i></li>
-                                                                @endfor
-                                                            </ul>
-                                                        </div>
-                                                        <div class="card-body">
-                                                            <p class="font-poppins review-content">{{ $review->content }}</p>
-                                                            <p> Verified by company</p>
-                                                        </div>
-                                                        <div class="card-footer">
-                                                            <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                @endforeach
-                                            @endif
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                         <!-- 14th step end -->
                     </form>
