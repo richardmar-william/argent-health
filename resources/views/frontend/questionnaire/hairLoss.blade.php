@@ -255,7 +255,7 @@
 
 </head>
 
-<body style="background-color: #f2f2f2;">
+<body style="background-color: #f5f5f5;">
 
     {{-- <div id="loader"> --}}
     {{--    <div class="spinner"> --}}
@@ -1665,7 +1665,7 @@
     <script>
         $(function() {
             $('.d-none').removeClass('d-none');
-            $("body").css('background-color', "#f2f2f2");
+            $("body").css('background-color', "#f5f5f5");
         });
     </script>
 
