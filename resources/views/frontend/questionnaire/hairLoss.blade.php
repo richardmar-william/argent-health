@@ -255,7 +255,7 @@
 
 </head>
 
-<body style="background-color: #f5f5f5;">
+<body style="background-color: #f5f5f5;" class="">
 
     {{-- <div id="loader"> --}}
     {{--    <div class="spinner"> --}}
@@ -382,7 +382,7 @@
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_tc_5899.jpg') }}"
-                                                            alt="Thinning all over (Temples and Crown)" width="100%">
+                                                            alt="Thinning all over (Temples and Crown)" width="340px">
                                                         <div class="card-body">
                                                             <p class="card-title text-center">Thinning all over (Temples and Crown)</p>
                                                         </div>
@@ -587,14 +587,14 @@
                                                 </div>
                                             </div>
                                             <div class="col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="noticehl-days" name="Q2_answer"
                                                         value="My hair loss has been sudden and I’ve noticed over the past few days/weeks">
                                                     <label for="noticehl-days" class="open-que-error">My hair loss has
                                                         been
                                                         sudden and I’ve noticed over the past few days / weeks</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="noticehl-months" name="Q2_answer"
                                                         value="I have had gradual hair loss which I have noticed over the past couple of months / years">
                                                     <label class="next-button" for="noticehl-months">I have had
@@ -648,12 +648,12 @@
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="exphl-yes" name="Q3_answer"
                                                         value="Yes">
                                                     <label for="exphl-yes" class="open-sub-step">Yes</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="exphl-no" name="Q3_answer"
                                                         value="No">
                                                     <label class="next-button" for="exphl-no">No </label>
@@ -732,12 +732,12 @@
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="medi-consM-yes" name="Q5_answer"
                                                         value="Yes">
                                                     <label for="medi-consM-yes" class="open-sub-step">Yes</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="medi-consM-no" name="Q5_answer"
                                                         value="No">
                                                     <label class="next-button" for="medi-consM-no">No</label>
@@ -815,12 +815,12 @@
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="scalphl-prob-no" name="Q7_answer"
                                                         value="Yes">
                                                     <label class="open-sub-step" for="scalphl-prob-no">Yes</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="scalphl-prob-yes" name="Q7_answer"
                                                         value="No">
                                                     <label class="next-button" for="scalphl-prob-yes">No</label>
@@ -847,28 +847,28 @@
                                         <div class="col-md-1 col-sm-12">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="scalppsoriasis" name="Q8_answer"
                                                     value="Psoriasis">
                                                 <label class="open-que-error" for="scalppsoriasis">Psoriasis</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="scalpsunburn" name="Q8_answer"
                                                     value="Sunburn">
                                                 <label class="open-que-error" for="scalpsunburn"> Sunburn</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="scalpsudden" name="Q8_answer"
                                                     value="Sudden soreness/redness">
                                                 <label class="open-que-error" for="scalpsudden">Sudden
                                                     soreness/redness</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="scalpdandruff" name="Q8_answer"
                                                     value="Dandruff">
                                                 <label class="next-button" for="scalpdandruff">Dandruff</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="scalpother" name="Q8_answer"
                                                     value="other">
                                                 <label class="open-other-step" for="scalpother"
@@ -932,18 +932,18 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 55.5%;" aria-valuenow="55.5" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="areaf-yes" name="Q9_answer"
                                                         value="Yes">
                                                     <label class="open-sub-step" for="areaf-yes">Yes</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="areaf-no" name="Q9_answer"
                                                         value="No">
                                                     <label class="next-button" for="areaf-no">No</label>
@@ -970,11 +970,11 @@
                                         <div class="col-md-1 col-sm-12">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="prev-diag-yes" name="Q10_answer" value="Yes">
                                                 <label class="open-que-error" for="prev-diag-yes">Yes</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="prev-diag-no" name="Q10_answer" value="No">
                                                 <label class="open-sub-step" for="prev-diag-no">No</label>
                                             </div>
@@ -999,12 +999,12 @@
                                         <div class="col-md-1 col-sm-12">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="exper-deps-yes" name="Q11_answer" value="Yes">
                                                 <label class=" open-other-step" for="exper-deps-yes"
                                                     step-id="sub-step-1">Yes</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="areaf-other" name="Q11_answer" value="No">
                                                 <label class=" open-other-step" for="areaf-other"
                                                     step-id="sub-step-2">No</label>
@@ -1031,7 +1031,7 @@
                                                 <div class="col-md-1 col-sm-12">
                                                 </div>
                                                 <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                    <div class="form-group form-radio">
+                                                    <div class="form-group form-radio question-radio">
                                                         <input type="radio" id="treatment-immed" name="Q11_answer"
                                                             value="I understand and agree to stop this treatment immediately and consult a doctor if I experience symptoms of depression, anxiety, or panic disorders.">
                                                         <label class="open-sub-step" for="treatment-immed"> I understand and
@@ -1039,7 +1039,7 @@
                                                             experience symptoms of depression, anxiety, or panic disorders.
                                                         </label>
                                                     </div>
-                                                    <div class="form-group form-radio">
+                                                    <div class="form-group form-radio question-radio">
                                                         <input type="radio" id="currently-stable" name="Q11_answer"
                                                             value="I am not currently stable or don't want to proceed with Finasteride.">
                                                         <label class="open-que-error" for="currently-stable">I am not
@@ -1066,15 +1066,15 @@
                                                 <div class="col-md-1 col-sm-12">
                                                 </div>
                                                 <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                    <div class="form-group form-radio">
-                                                        <input type="radio" id="uncont-bloodp-no" name="Q12_answer"
-                                                            value="No">
-                                                        <label class="next-button" for="uncont-bloodp-no">No</label>
-                                                    </div>
-                                                    <div class="form-group form-radio">
+                                                    <div class="form-group form-radio question-radio">
                                                         <input type="radio" id="uncont-bloodp-yes" name="Q12_answer"
                                                             value="Yes">
                                                         <label class="open-que-error" for="uncont-bloodp-yes">Yes</label>
+                                                    </div>
+                                                    <div class="form-group form-radio question-radio">
+                                                        <input type="radio" id="uncont-bloodp-no" name="Q12_answer"
+                                                            value="No">
+                                                        <label class="next-button" for="uncont-bloodp-no">No</label>
                                                     </div>
                                                     <div class="quest-v2-btn">
                                                         <a class="btn-d-black btn-wt-170 back-sub-step"
@@ -1100,11 +1100,11 @@
                                             value="Do you have uncontrolled low or high blood pressure?"> Do you have uncontrolled low or high blood pressure?</textarea>
                                     </h3>
 
-                                    <div class="form-group form-radio">
+                                    <div class="form-group form-radio question-radio">
                                         <input type="radio" id="uncont-bloodp-no" name="Q12_answer" value="No">
                                         <label class="next-button" for="uncont-bloodp-no">No</label>
                                     </div>
-                                    <div class="form-group form-radio">
+                                    <div class="form-group form-radio question-radio">
                                         <input type="radio" id="uncont-bloodp-yes" name="Q12_answer" value="Yes">
                                         <label class="open-que-error" for="uncont-bloodp-yes">Yes</label>
                                     </div>
@@ -1157,19 +1157,19 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 66.6%;" aria-valuenow="66.6" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
 
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="anyf-prob-yes" name="Q13_answer"
                                                         value="Yes">
                                                     <label class="open-que-error" for="anyf-prob-yes">Yes</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="anyf-prob-no" name="Q13_answer"
                                                         value="No">
                                                     <label class="next-button" for="anyf-prob-no">No</label>
@@ -1213,28 +1213,28 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 77.7%;" aria-valuenow="77.7" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="lactosehl" name="Q14_answer"
                                                         value="Lactose">
                                                     <label class="open-sub-step" for="lactosehl">Lactose</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="minoxidilhl" name="Q14_answer"
                                                         value="Minoxidil">
                                                     <label class="next-button" for="minoxidilhl">Minoxidil</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="finasteridehl" name="Q14_answer"
                                                         value="Finasteride">
                                                     <label class="next-button" for="finasteridehl">Finasteride</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="None1" name="Q14_answer"
                                                         value="None">
                                                     <label class="next-button" for="None1">None</label>
@@ -1262,11 +1262,11 @@
                                         <div class="col-md-1 col-sm-12">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="into-allerg-yes" name="Q15_answer" value="Yes">
                                                 <label class="next-button" for="into-allerg-yes">Yes</label>
                                             </div>
-                                            <div class="form-group form-radio">
+                                            <div class="form-group form-radio question-radio">
                                                 <input type="radio" id="into-allerg-no" name="Q15_answer" value="No">
                                                 <label class="next-button" for="into-allerg-no">No</label>
                                             </div>
@@ -1308,13 +1308,13 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 88.8%;" aria-valuenow="88.8" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="relyimpohl-yes" name="Q16_answer"
                                                         value="Yes">
                                                     <label class="next-button" for="relyimpohl-yes">I have a major
@@ -1322,7 +1322,7 @@
                                                         take prescribed or over-the-counter medication to inform you
                                                         about.</label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="relyimpohl-no" name="Q16_answer"
                                                         value="No">
                                                     <label class="next-button" for="relyimpohl-no">I do not have a
@@ -1356,14 +1356,14 @@
                                             value="ongoing medical conditions">Please Inform Us About Any Major Illnesses, Ongoing Medical Conditions, Medications (Prescribed Or Over-The-Counter) You Take, Allergies To Medication, Or Surgeries. This Information Is Necessary For Our Clinicians To Ensure The Prescribed Treatment Is Safe For You.”</textarea>
                                     </h3>
 
-                                    <div class="form-group form-radio">
+                                    <div class="form-group form-radio question-radio">
                                         <input type="radio" id="prescribed-1" name="Q17_answer"
                                             value="I have a major illness, ongoing medical condition, allergy to medication, or take prescribed or over-the-counter medication to inform you about.">
                                         <label class="next-button" for="prescribed-1">I have a major illness, ongoing
                                             medical condition, allergy to medication, or take prescribed or
                                             over-the-counter medication to inform you about.</label>
                                     </div>
-                                    <div class="form-group form-radio">
+                                    <div class="form-group form-radio question-radio">
                                         <input type="radio" id="prescribed-2" name="Q17_answer"
                                             value="I do not have a major illness, ongoing medical condition, operation, allergy to medication, or take prescribed or over-the-counter medication to inform you about.">
                                         <label class="next-button" for="prescribed-2"> I do not have a major illness,
@@ -1408,18 +1408,18 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 98.9%;" aria-valuenow="98.9" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="quest-v2-quest col-md-5 col-sm-12">
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="GP-per-1" name="Q20_answer"
                                                         value="Yes">
                                                     <label class="open-sub-step" for="GP-per-1">Yes </label>
                                                 </div>
-                                                <div class="form-group form-radio">
+                                                <div class="form-group form-radio question-radio">
                                                     <input type="radio" id="GP-per-2" name="Q20_answer"
                                                         value="No">
                                                     <!-- <button type="submit" id="GP-per-2" name="Q20_answer">No</button> -->
@@ -1462,7 +1462,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        <input type="hidden" id="quest-page-type" value="hairLoss">
                         <div class="quest-v2-step d-none question-final" id="step11">
                             <div class="row">
                                 <div class="col-md-12 col-lg-6 qe-img">
@@ -1515,35 +1515,75 @@
                                 </div>
                             </div>
                             <div class="row ques-footer">
-                                <div class='col-lg-6 col-md-12 ques-lfc'>
-                                    <div class="quest-lfc-btn">
-                                        <div>
-                                            <img src="{{ asset('frontend_new/images/licensed.png') }}"
-                                                alt="backed">
-                                            <span>Licensed & Registered Medication</span>
-                                        </div>
-                                        <div>
-                                            <img src="{{ asset('frontend_new/images/lock.png') }}" alt="backed">
-                                            <span>Free & Discreet 24 Hour Shipping</span>
-                                        </div>
-                                        <div>
-                                            <img src="{{ asset('frontend_new/images/delete.png') }}"
-                                                alt="backed">
-                                            <span>Pause or Cancel Anytime</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="col-lg-6"></div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="quest-v2-btn d-flex justify-content-between">
                                         <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
+                                        <a class="btn-d-black-outline btn-wt-170 prev-button mobile">Back</a>
                                         <button class="btn-d-black" type="submit" id="relyimpohl-btn"
-                                            name="" value="btn">continue</button>
-                                        <a class="btn-d-trans btn-wt-170 prev-button mobile">Back</a>
+                                        name="" value="btn">continue</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
+                        <div class='container-fluid brands-reviews-content' style="display: none">
+                            <div class="col-12">
+                                <div class="brands container mt-5" id="business brands">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="d-flex justify-content-between brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <p class="font-heavy-green mr-50">Licensed & Registered
+                                                    Medication</p>
+                                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green mr-50">Free & Discreet 24Hr Shipping</p>
+                                            <img src="{{ asset('images/brand-pause.png') }}" style="margin-right: 16px;"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="brands mobile mt-5" id="business brands">
+
+                                        <div class="d-flex justify-content-around brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <img src="{{ asset('images/brand-shipping.png') }}">
+                                            <img src="{{ asset('images/brand-pause.png') }}">
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="reviews">
+                                    <div class="swiper" id="review-swiper">
+                                        <div class="swiper-wrapper">
+                                            @if (!empty($reviews))
+                                                @foreach ($reviews as $review)
+                                                <div class="swiper-slide">
+                                                    <div class="card review-card">
+                                                        <div class="card-header d-flex justify-content-between">
+                                                            <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
+                                                            <ul class="d-flex">
+                                                                @for ($i=0; $i<$review->rating; $i++)
+                                                                    <li><i class="ti-star text-warning"></i></li>
+                                                                @endfor
+                                                            </ul>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="font-poppins review-content">{{ $review->content }}</p>
+                                                            <p> Verified by company</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                     <!-- 10th step end -->
 
@@ -1561,7 +1601,7 @@
                                     <div class="modal-body">
                                         <form>
                                             <div class="error-btn">
-                                                <img src="{{ asset('frontend_new/images/error-icon.svg') }}"
+                                                <img src="{{ asset('frontend_new/images/error-icon.png') }}"
                                                     alt="">
                                             </div>
                                             <h3 class="quest-v2-subh mb-30">Your safety is our top priority.</h3>
@@ -1603,9 +1643,9 @@
                                         <div class="row">
                                             <div
                                                 class="col-md-5 col-sm-12 quest-v2-error-modal-label d-flex flex-column justify-content-between">
-                                                <div>
+                                                <div style="position: relative">
                                                     <div class="error-btn d-flex flex-row-reverse">
-                                                        <img src="{{ asset('images/error-icon.svg') }}"
+                                                        <img src="{{ asset('images/error-icon.png') }}"
                                                             alt="">
                                                     </div>
                                                     <div class="col-9">
@@ -1618,7 +1658,7 @@
                                                 </div>
                                                 <button type="button" id="btncheck"
                                                     class="btn-d-black-outline close-que-modal"
-                                                    data-bs-dismiss="modal"><span>Back</span><i
+                                                    data-bs-dismiss="modal"><span>Review Your Answers</span><i
                                                         class="ti-arrow-left quetions-icon"></i></button>
                                             </div>
                                             <div class="col-1"></div>
@@ -1644,7 +1684,7 @@
                                                 </div>
                                                 <button type="button" id="btncheck"
                                                     class="btn-d-black close-que-modal mobile"
-                                                    data-bs-dismiss="modal">Back</button>
+                                                    data-bs-dismiss="modal">Review Your Answers</button>
                                             </div>
                                         </div>
                                     </div>

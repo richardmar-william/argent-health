@@ -12,7 +12,6 @@ $(document).ready(function () {
     var currentStep = 1;
     var totalSteps = $(".quest-v2-step ").length;
     var progressBarValue = 0;
-
     var currentSubStep = 0;
     var totalSubSteps;
     var getStepVal;
@@ -21,6 +20,7 @@ $(document).ready(function () {
     // Hide all steps except the first one
     $(".quest-v2-step").not(":first").hide();
 
+    alert(1)
     // Function to go to the next step
     function nextStep() {
         if (currentStep < totalSteps) {
@@ -58,6 +58,7 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
+
                 console.log("currentSubStep::", currentSubStep);
                 updateProgressBar();
             }, 400);

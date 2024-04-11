@@ -17,6 +17,7 @@ $(document).ready(function () {
     var progressBarValue = 0;
     var totalSubSteps;
     var getStepVal;
+    var questType = $('#quest-page-type').val();
     $(".sub-step").hide();
 
     // Hide all steps except the first one
@@ -28,6 +29,11 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(".quest-v2-step ").hide();
                 $(".sub-step").hide();
+                if(!questType == 'hairLoss' || currentStep >= 1){
+                    $('body').addClass('h-100 bg-white')
+                }else {
+                    $('body').removeClass('h-100 bg-white')
+                }
                 currentStep++;
                 console.log("currentStep::", currentStep);
                 $("#step" + currentStep).show();
@@ -35,6 +41,12 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
+                if(currentStep > progressTotalSteps) {
+                    $('.question-final').addClass('bg-white')
+                    $('.question-final').css('padding-top', '48px')
+                    $('.quest-v2-content').css("background-color", "#e4e4e4");
+                    $('.brands-reviews-content').css('display', 'block');
+                }
                 currentSubStep = 0;
                 updateProgressBar();
                 if (currentStep == totalSteps)
@@ -51,6 +63,9 @@ $(document).ready(function () {
                 $(".quest-v2-step").hide();
                 $(".sub-step").hide();
                 currentStep--;
+                if(!questType == 'hairLoss' || currentStep == 1){
+                    $('body').removeClass('h-100 bg-white')
+                }
                 console.log("currentStep back::", currentStep);
                 $("#step" + currentStep).show();
                 $("#step" + currentStep + ' input[type="radio"]').prop(
@@ -63,6 +78,12 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
+                if(currentStep < progressTotalSteps) {
+                    $('.question-final').addClass('bg-white')
+                    $('.question-final').css('padding-top', '48px')
+                    $('.quest-v2-content').css("background-color", "#fff");
+                    $('.brands-reviews-content').css('display', 'none');
+                }
                 updateProgressBar();
                 if (currentStep == totalSteps - 1)
                     $(document.body).css("background-color", "#484f47");

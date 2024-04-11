@@ -17,3 +17,89 @@
 .hair-label .card .card-body {
     background-color: #f4f4f4;
 }
+
+.review-user-name{
+    color: #484f47;
+}
+.review-content {
+    color: #979caa;
+}
+
+.brands {
+    background-color: #fff;
+    border-radius: 29px;
+    width: fit-content;
+    padding: 32px 16px 32px 16px;
+}
+
+.brand-images p:not(:last-of-type) {
+    margin-right: 16px;
+}
+
+.brand-images.mobile p {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.questionnaire-v2-main .container-fluid.brands-reviews-content {
+    margin-bottom: 5rem;
+    padding: 0 8px;
+}
+
+.swiper {
+    width: 100%;
+}
+
+.swiper-slide .card {
+    width: 70%;
+    padding: 30px;
+    border-radius: 29px;
+}
+
+.swiper-wrapper {
+    transition-timing-function: linear;
+  }
+
+.review-card .card-header {
+    border: none;
+}
+
+.review-card .card-footer {
+    border: none;
+}
+
+.review-brand-content {
+    margin-bottom: 32px;
+}
+
+.brands.mobile {
+    width: 100%;
+}
+
+@media (max-width: 575px) {
+    .swiper-slide .card  {
+        width: 100%;
+        margin-right: 32px;
+    }
+}
+
+@media (max-width: 320px) {
+    .brands.container.mobile {
+        padding: 32px 16px 32px 16px;
+    }
+}
+
+@media (min-width: 1441px) {
+    .hair-loss-content {
+        width: 70%;
+        margin: auto;
+    }
+}
+
+@media (min-width: 2400px) {
+    .hair-loss-content {
+        width: 50%;
+        margin: auto;
+    }
+}

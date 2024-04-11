@@ -1076,14 +1076,14 @@ label.sub-leb h4 {
         margin-top: 2rem;
     }
     .quest-v2-step.question-final {
-        margin-bottom: 15rem;
+        /* margin-bottom: 15rem; */
     }
     .quest-v21-signin .quest-v21-signin-form {
         margin-top: 3.5rem;
     }
     .question-final .ques-footer .quest-v2-btn * {
         font-size: 1.2rem;
-        padding: 1rem;
+        padding: 10px 25px 10px 25px;
     }
     .quest-v21-signin .quest-v21-signin-form h4 {
         padding: 1.5rem 0px;
@@ -1147,7 +1147,7 @@ label.sub-leb h4 {
     }
     .before-submit-area {
         padding-left: 40px;
-        max-height: 100%;
+        max-height: 200px;
     }
     .ques-lfc {
         height: 0px;
