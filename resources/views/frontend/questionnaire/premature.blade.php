@@ -698,7 +698,7 @@
 
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12  mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio ">
@@ -778,7 +778,7 @@
                                                 <!-- <input class="in_type" readonly="readonly"  type="text" name=" Are you currently under any treatment for erectile dysfunction? " value=" Are you currently under any treatment for erectile dysfunction? ">   -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio">
@@ -807,7 +807,7 @@
                                                 <!-- <input class="in_type" readonly="readonly"  type="text" name="Please specify your current medication for erectile dysfunction:" value="Kindly Tell Us Your AgePlease specify your current medication for erectile dysfunction:"> -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio">
@@ -870,7 +870,7 @@
                                                     value="Taking medications or erectile dysfunction concurrently with treatments for premature ejaculation can potentially lead to lower blood pressure. Possible  side effects may include headaches, dizziness, blurred vision,  confusion, fainting, and feeling sick.">Taking medications or erectile dysfunction concurrently with treatments for premature ejaculation can potentially lead to lower blood pressure. Possible  side effects may include headaches, dizziness, blurred vision,  confusion, fainting, and feeling sick.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio">
@@ -1500,7 +1500,7 @@
                                                 <!-- <input class="in_type" readonly="readonly"  type="text" name="Please provide more information about your condition or medication." value="Please provide more information about your condition or medication.">   -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -1580,7 +1580,7 @@
                                                     value="Please provide your GP's name and address.">Please provide your GP's name and address.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">

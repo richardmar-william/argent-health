@@ -562,7 +562,7 @@
                                                 <!-- <input class="in_type" type="text" name="Please specify the areas of your body affected and how long you have been experiencing this hair loss." value="Please specify the areas of your body affected and how long you have been experiencing this hair loss.">  -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -639,7 +639,7 @@
                                                 <!-- <input class="in_type" type="text" name="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects." value="Please provide details about your previous experience with minoxidil, including formulation, efficacy, and side effects.">  -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -768,7 +768,7 @@
                                                 <!-- <input class="in_type" type="text" name="Please provide details about your skin condition, including any diagnosis if applicable." value="Please provide details about your skin condition, including any diagnosis if applicable."> -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -957,7 +957,7 @@
                                                 <!-- <input class="in_type" type="text" name="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you." value="HAVE YOU HAD ANY OF THE FOLLOWING:Please provide specific details about any or all of the above conditions that apply to you."> -->
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">

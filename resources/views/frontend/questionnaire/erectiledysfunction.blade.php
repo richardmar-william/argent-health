@@ -344,7 +344,7 @@
                                                     value="Please select all the statements that are applicable to you">Please select all the statements that are applicable to you</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-1">
+                                        <div class="col-1 mt-2">
 
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
@@ -390,7 +390,7 @@
                                                     value="Have you had your blood pressure checked within the past 6 months?">Have you had your blood pressure checked within the past 6 months?</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio">
@@ -538,7 +538,7 @@
                                                     value="Please share your experiences with these treatments, including any side effects you may have had.">Please share your experiences with these treatments, including any side effects you may have had.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12"></div>
+                                        <div class="col-md-1 col-sm-12 mt-2"></div>
                                         <div class="col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
                                                 <!-- <input class="in_type" readonly="readonly"  type="text" class="form-control" id="" value=""> -->
@@ -963,7 +963,7 @@
                                                     value="Please list all your medications you take and any other medical conditions.">Please list all your medications you take and any other medical conditions.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -1058,7 +1058,7 @@
                                                     value="Please list any substances or medicines that you may have allergies to.">Please list any substances or medicines that you may have allergies to.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -1085,7 +1085,7 @@
                                                     value="Our tablets contain minuscule amounts of lactose. If you have previously taken a tablet formulation without any symptoms, it's unlikely that you'll experience adverse effects from the lactose in our tablets.">Our tablets contain minuscule amounts of lactose. If you have previously taken a tablet formulation without any symptoms, it's unlikely that you'll experience adverse effects from the lactose in our tablets.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio">
@@ -1187,7 +1187,7 @@
                                                     value="Please provide more information about your condition or medication.">Please provide more information about your condition or medication.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -1267,7 +1267,7 @@
                                                     value="Please provide your GP's contact information?">Please provide your GP's contact information?</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12  mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">

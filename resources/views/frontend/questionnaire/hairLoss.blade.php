@@ -642,7 +642,7 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 22.2%;" aria-valuenow="22.2" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
@@ -678,7 +678,7 @@
                                                     value="Please tell us about hair loss in areas other than your head">Please tell us about hair loss in areas other than your head.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -726,7 +726,7 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 33.3%;" aria-valuenow="33.3" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
@@ -763,7 +763,7 @@
                                                     value="Please tell us what medication you've taken, its effectiveness, and any side effects.">Please tell us what medication you've taken, its effectiveness, and any side effects.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">
@@ -809,7 +809,7 @@
                                                 <div class="quest-progress-bar mobile">
                                                     <div class="progress">
                                                         <div class="progress-bar" role="progressbar"
-                                                            style="width: 0%;" aria-valuenow="0" aria-valuemin="0"
+                                                            style="width: 44.4%;" aria-valuenow="44.4" aria-valuemin="0"
                                                             aria-valuemax="100"></div>
                                                     </div>
                                                 </div>
@@ -844,7 +844,7 @@
                                                     type="text">Please select your scalp problems?</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio question-radio">
@@ -967,7 +967,7 @@
                                                     value="Have you previously been diagnosed with breast cancer, prostate cancer, or are you currently undergoing PSA (prostate monitoring)?"> Have you previously been diagnosed with breast cancer, prostate cancer, or are you currently undergoing PSA (prostate monitoring)?</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio question-radio">
@@ -996,7 +996,7 @@
                                                     value="Are you experiencing, or have previously experienced, depression, anxiety or panic disorders?"> Are you experiencing, or have previously experienced, depression, anxiety or panic disorders?</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio question-radio">
@@ -1063,7 +1063,7 @@
                                                             value="Do you have uncontrolled low or high blood pressure?"> Do you have uncontrolled low or high blood pressure?</textarea>
                                                     </h3>
                                                 </div>
-                                                <div class="col-md-1 col-sm-12">
+                                                <div class="col-md-1 col-sm-12 mt-2">
                                                 </div>
                                                 <div class="quest-v2-quest col-md-5 col-sm-12">
                                                     <div class="form-group form-radio question-radio">
@@ -1259,7 +1259,7 @@
                                                     value="If we recommend a tablet medication in your plan it can contain very small amounts of lactose. If you have previously taken most tablet formulations without causing any symptoms then it is unlikely that you will get undesirable effects from the lactose within our tablets. Are you okay to proceed?">If we recommend a tablet medication in your plan it can contain very small amounts of lactose. If you have previously taken most tablet formulations without causing any symptoms then it is unlikely that you will get undesirable effects from the lactose within our tablets. Are you okay to proceed?</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-radio question-radio">
@@ -1445,7 +1445,7 @@
                                                     value="Please provide your GP's name and address.">Please provide your GP's name and address.</textarea>
                                             </h3>
                                         </div>
-                                        <div class="col-md-1 col-sm-12">
+                                        <div class="col-md-1 col-sm-12 mt-2">
                                         </div>
                                         <div class="quest-v2-quest col-md-5 col-sm-12">
                                             <div class="form-group form-text-field">

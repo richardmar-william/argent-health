@@ -23,7 +23,7 @@ $(document).ready(function () {
     // Hide all steps except the first one
     $(".quest-v2-step").not(":first").hide();
 
-    if(questType != undefined && !(questType == 'hairLoss' || currentStep >= 1)){
+    if(questType != undefined && (!questType == 'hairLoss' || currentStep >= 1)){
         $('body').addClass('h-100 bg-white')
     }else {
         $('body').removeClass('h-100 bg-white')
