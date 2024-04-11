@@ -163,6 +163,7 @@
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
     <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/questionnaire/beard.css') }}">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <meta name="description" content="">
@@ -1005,7 +1006,7 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-5">
+                                            <div class="col-md-5 col-sm-12">
                                                 <div class="form-group form-radio">
                                                     <input type="radio" id="prefer-1" name="Q16_answer" value="Yes">
                                                     <label class="open-sub-step" for="prefer-1">Yes </label>
@@ -1052,6 +1053,7 @@
                             </div>
                         </div>
 
+                        <input type="hidden" id="quest-page-type" value="beard">
                         <div class="quest-v2-step d-none question-final" id="step13">
                             <div class="row">
                                 <div class="col-md-12 col-lg-6 qe-img">
@@ -1064,63 +1066,115 @@
                                                 <div class="ques-final-thankyou">Thank you</div>
                                                 <div class="ques-final-answering">For Answering</div>
                                             </h1>
-                                            <p class="mb-30">Thank you for completing this questionnaire about your beard growth and overall health. Your responses will help our licensed clinicians determine if a prescription treatment may
-                                            be appropriate for enhancing your beard growth. They will promptly review your answers and get back to you with suitable suggestions.</p>
+                                            <p class="mb-30">Thank you for answering questions about your health and
+                                                experiences with hair loss. Your responses will assist our licensed
+                                                clinicians in determining if a prescription for hair loss
+                                                treatment could be appropriate for you. They will promptly review your
+                                                answers and get back to you with suitable suggestions.</p>
                                         </div>
                                         <div>
-                                            <h3 class="list-heading mb-30">Before You Finalise Your Submission, Please Declare That:</h3>
+                                            <h3 class="list-heading mb-30">Before Submitting Your Answers,
+                                                PleaseAcknowledge The Following:</h3>
                                             <ul class="quest-v2-list pb-30 mb-20 before-submit-area">
-                                                <li>You Are Completing This Questionnaire For Yourself And To The Best Of Your Knowledge. </li>
-                                            <li>You are using this service out of free will </li>
-                                            <li>You Will disclose any serious illnesses or operations you have had.</li>
-                                            <li>You Will disclose any prescription medication you currently take and any
-                                                allergies you have.</li>
-                                            <li>You Understand that our clinical team will assess your case and if a
-                                                prescription medicine is required they will select the specific
-                                                medicine and dose.</li>
-                                            <li>You Will only use one method of beard growth treatment at a time and
-                                                will not combine more than one different medication for the
-                                                condition.</li>
-                                            <li>You Will only use your medication as prescribed and not change your
-                                                medication or dose without first seeking medical advice.</li>
-                                            <li>You Are aware that our Topical solution containing minoxidil 5% is an
-                                                unlicensed product.</li>
-                                            <li>Will Read all patient information leaflets available</li>
-                                            <li>You Are accepting our Terms & Conditions and Terms of Sale.</li>
+                                                <li>You Are The Sole User Of Any Medication Provided Through This
+                                                    Service.</li>
+                                                <li>You Have Provided Truthful Answers To The Best Of Your Knowledge.
+                                                </li>
+                                                <li>You Are Aware That Minoxidil 5% Solution And Combined Minoxidil 5%
+                                                    With 0.1% Finasteride Solution Are Prescribed As Unlicensed
+                                                    Products.</li>
+                                                <li>You Were Assigned Male At Birth.</li>
+                                                <li>You Have Disclosed Any Serious Illnesses Or Operations You Have Had.
+                                                </li>
+                                                <li>You Have Disclosed Any Prescription Medication You Currently Take.
+                                                </li>
+                                                <li>You Will Only Use The Recommended Method Of Hair Loss Treatment And
+                                                    Not Combine More Than One Different Medication For This Condition.
+                                                </li>
+                                                <li>You Are Aware That You Should Not Take Finasteride If You’re Trying
+                                                    For A Baby.</li>
+                                                <li>You Accept Our Terms & Conditions, Privacy Policy, And Terms Of
+                                                    Sale.</li>
+                                                <li>You Currently Live In The UK.</li>
+                                                <li>You Are Using This Service Of Your Own Free Will.</li>
+                                                <li>Will Read all patient information leaflets available</li>
+                                                <li>You Agree To The Terms Of Service, Terms Of Subscription, And
+                                                    Privacy Policy.</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="row ques-footer">
-                                <div class='col-lg-6 col-md-12 ques-lfc' >
-                                    <div class="quest-lfc-btn">
-                                        <div>
-                                            <img src="{{asset('frontend_new/images/licensed.png')}}" alt="backed">
-                                            <span>Licensed & Registered Medication</span>
-                                        </div>
-                                        <div>
-                                            <img src="{{asset('frontend_new/images/lock.png')}}" alt="backed">
-                                            <span>Free & Discreet 24 Hour Shipping</span>
-                                        </div>
-                                        <div>
-                                            <img src="{{asset('frontend_new/images/delete.png')}}" alt="backed">
-                                            <span>Pause or Cancel Anytime</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                <div class="col-lg-6"></div>
                                 <div class="col-lg-6 col-md-12">
-                                    <div class="quest-v2-btn">
+                                    <div class="quest-v2-btn d-flex justify-content-between">
                                         <a class="btn-d-trans btn-wt-170 prev-button">Back</a>
-                                        <button class="btn-d-black" type="submit" id="relyimpohl-btn" name=""
-                                            value="btn">continue</button>
-                                        <a class="btn-d-trans btn-wt-170 prev-button mobile">Back</a>
+                                        <a class="btn-d-black-outline btn-wt-170 prev-button mobile">Back</a>
+                                        <button class="btn-d-black" type="submit" id="relyimpohl-btn"
+                                        name="" value="btn">continue</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <!-- 13th step end -->
+                        <div class='container-fluid brands-reviews-content' style="display: none">
+                            <div class="col-12">
+                                <div class="brands container mt-5" id="business brands">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="d-flex justify-content-between brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <p class="font-heavy-green mr-50">Licensed & Registered
+                                                    Medication</p>
+                                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green mr-50">Free & Discreet 24Hr Shipping</p>
+                                            <img src="{{ asset('images/brand-pause.png') }}" style="margin-right: 16px;"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="brands mobile mt-5" id="business brands">
 
+                                        <div class="d-flex justify-content-around brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}">
+                                            <img src="{{ asset('images/brand-shipping.png') }}">
+                                            <img src="{{ asset('images/brand-pause.png') }}">
+                                        </div>
+
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="reviews">
+                                    <div class="swiper" id="review-swiper">
+                                        <div class="swiper-wrapper">
+                                            @if (!empty($reviews))
+                                                @foreach ($reviews as $review)
+                                                <div class="swiper-slide">
+                                                    <div class="card review-card">
+                                                        <div class="card-header d-flex justify-content-between">
+                                                            <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
+                                                            <ul class="d-flex">
+                                                                @for ($i=0; $i<$review->rating; $i++)
+                                                                    <li><i class="ti-star text-warning"></i></li>
+                                                                @endfor
+                                                            </ul>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <p class="font-poppins review-content">{{ $review->content }}</p>
+                                                            <p> Verified by company</p>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                @endforeach
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
 
 
@@ -1172,40 +1226,50 @@
                                     </div>
                                     <div class="modal-body">
                                         <div class="row">
-                                            <div class="col-md-5 col-sm-12 quest-v2-error-modal-label d-flex flex-column justify-content-between">
-                                                <div>
-                                                    <div class="error-btn-reverse">
-                                                        <img src="{{ asset('images/error-icon.svg') }}" alt="">
+                                            <div
+                                                class="col-md-5 col-sm-12 quest-v2-error-modal-label d-flex flex-column justify-content-between">
+                                                <div style="position: relative">
+                                                    <div class="error-btn d-flex flex-row-reverse">
+                                                        <img src="{{ asset('images/error-icon.png') }}"
+                                                            alt="">
                                                     </div>
                                                     <div class="col-9">
                                                         <h2 class="quest-v2-subh mb-30 font-weight-bold">
-                                                            <div><span class="font-poppins">Your</span> <span class="font-yeseva">safety</span></div>
+                                                            <div><span class="font-poppins">Your</span> <span
+                                                                    class="font-yeseva">safety</span></div>
                                                             <div><span class="font-poppins">is our top</span></div>
                                                             <div><span class="font-yeseva">priority</span>.</div>
                                                     </div>
                                                 </div>
-                                                <button type="button" id="btncheck" class="btn-d-black-outline close-que-modal"
-                                                data-bs-dismiss="modal"><span>Back</span><i class="ti-arrow-left quetions-icon"></i></button>
+                                                <button type="button" id="btncheck"
+                                                    class="btn-d-black-outline close-que-modal"
+                                                    data-bs-dismiss="modal"><span>Review Your Answers</span><i
+                                                        class="ti-arrow-left quetions-icon"></i></button>
                                             </div>
                                             <div class="col-1"></div>
                                             <div class="col-md-6 col-sm-12">
-                                                <h5 class="font-poppins-bold">Unfortunately, we can’t offer you any beard growth medication.</h5>
-                                                <p class="font-poppins">No recommended treatment. Based on your answers, there is no treatment
-                                                    suitable for you. If you think you have made an error in your responses,
+                                                <h5 class="font-poppins-bold">Unfortunately, we can’t offer you any
+                                                    beard growth medication.</h5>
+                                                <p class="font-poppins">No recommended treatment. Based on your
+                                                    answers, there is no treatment
+                                                    suitable for you. If you think you have made an error in your
+                                                    responses,
                                                     please click below to review your answers.</p>
                                                 <h5 class="font-poppins-bold">Did you make a mistake?</h5>
-                                                    <p>Providing false information can lead to
-                                                        serious harm to your
-                                                        health.</p>
-                                                <div class="form-group form-check mb-30 pb-2" style="text-align: justify">
-                                                    <input class="form-check-input" type="checkbox" name="terms-and-services"
-                                                        id="check">
+                                                <p>Providing false information can lead to
+                                                    serious harm to your
+                                                    health.</p>
+                                                <div class="form-group form-check mb-30 pb-2"
+                                                    style="text-align: justify">
+                                                    <input class="form-check-input" type="checkbox"
+                                                        name="terms-and-services" id="check">
                                                     <label class="form-check-label m-0" for="terms-and-services">
                                                         I agree only to provide accurate answers
                                                     </label>
                                                 </div>
-                                                <button type="button" id="btncheck" class="btn-d-black close-que-modal mobile"
-                                                data-bs-dismiss="modal">Back</button>
+                                                <button type="button" id="btncheck"
+                                                    class="btn-d-black close-que-modal mobile"
+                                                    data-bs-dismiss="modal">Review Your Answers</button>
                                             </div>
                                         </div>
                                     </div>
