@@ -34,9 +34,8 @@
 
 .brands {
     background-color: #fff;
-    border-radius: 29px;
+    border-radius: 16px;
     width: fit-content;
-    padding: 32px 16px 32px 16px;
 }
 
 .brand-images.mobile p {
