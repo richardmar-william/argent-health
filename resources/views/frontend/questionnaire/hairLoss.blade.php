@@ -337,30 +337,6 @@
                                                     </div>
                                                 </label>
                                             </div>
-                                            {{-- <div class="form-group form-radio">
-                                                <input type="radio" id="thincrownhl" name="Q1_answer" value="thincrown">
-                                                <label class="next-button" for="thincrownhl">Thin Crown </label>
-                                            </div>
-                                            <div class="form-group form-radio">
-                                                <input type="radio" id="thinninghl" name="Q1_answer"
-                                                    value="Thinning all over (Temples and Crown)">
-                                                <label class="next-button" for="thinninghl">Thinning all over (Temples and
-                                                    Crown) </label>
-                                            </div> --}}
-                                            <div class="form-group form-radio hair-card">
-                                                <input type="radio" id="extensivehl" name="Q1_answer"
-                                                    value="Extensive hair loss">
-                                                <label class="next-button hair-label" for="extensivehl">
-                                                    <div class="card">
-                                                        <img class="card-img-top"
-                                                            src="{{ asset('images/hair_5899.png') }}"
-                                                            alt="Extensive hair loss" width="100%">
-                                                        <div class="card-body">
-                                                            <p class="card-title text-center">Extensive hair loss</p>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="patchyhl" name="Q1_answer"
                                                     value="Patchy">
@@ -371,6 +347,20 @@
                                                             width="100%">
                                                         <div class="card-body">
                                                             <p class="card-title text-center">Patchy</p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                                            </div>
+                                            <div class="form-group form-radio hair-card">
+                                                <input type="radio" id="completelyhl" name="Q1_answer"
+                                                    value="Completely bald">
+                                                <label class="open-que-error hair-label" for="completelyhl">
+                                                    <div class="card">
+                                                        <img class="card-img-top"
+                                                            src="{{ asset('images/hair_7750.png') }}"
+                                                            alt="Completely bald" width="100%">
+                                                        <div class="card-body">
+                                                            <p class="card-title text-center">Completely bald</p>
                                                         </div>
                                                     </div>
                                                 </label>
@@ -444,30 +434,6 @@
                                                             alt="Receding Hairline">
                                                         <div class="card-body">
                                                             <p class="card-title text-center">Receding Hairline</p>
-                                                        </div>
-                                                    </div>
-                                                </label>
-                                            </div>
-                                            {{-- <div class="form-group form-radio">
-                                                <input type="radio" id="thincrownhl" name="Q1_answer" value="thincrown">
-                                                <label class="next-button" for="thincrownhl">Thin Crown </label>
-                                            </div>
-                                            <div class="form-group form-radio">
-                                                <input type="radio" id="thinninghl" name="Q1_answer"
-                                                    value="Thinning all over (Temples and Crown)">
-                                                <label class="next-button" for="thinninghl">Thinning all over (Temples and
-                                                    Crown) </label>
-                                            </div> --}}
-                                            <div class="form-group form-radio col-6">
-                                                <input type="radio" id="extensivehl" name="Q1_answer"
-                                                    value="Extensive hair loss">
-                                                <label class="next-button hair-label" for="extensivehl">
-                                                    <div class="card">
-                                                        <img class="card-img-top"
-                                                            src="{{ asset('images/hair_5899.png') }}"
-                                                            alt="Extensive hair loss" width="100%">
-                                                        <div class="card-body">
-                                                            <p class="card-title text-center">Extensive hair loss</p>
                                                         </div>
                                                     </div>
                                                 </label>
