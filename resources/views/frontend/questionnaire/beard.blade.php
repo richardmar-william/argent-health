@@ -232,7 +232,7 @@
 
 </head>
 
-<body style="background-color: #fff">
+<body style="background-color: #f2f2f2">
 
 {{--<div id="loader">--}}
 {{--    <div class="spinner">--}}
@@ -1350,17 +1350,6 @@ $('#check').change(function() {
 $(document).ready(function() {
     $("#submit_question2").click(function(e) {
         e.preventDefault();
-        console.log('data', $('#bg-form').serialize());
-        // $.ajax({
-        //    alert('sdfsdfsdf');
-        //     type: "get",
-        //
-        //     data : $('#ed-form').serialize();
-        //     console.log(data);
-        //     success: function( msg ) {
-        //         alert( msg );
-        //     }
-        // });
     });
 });
 
@@ -1378,6 +1367,6 @@ var app_url = '{{ env('APP_URL') }}';
 
 $(function(){
     $('.d-none').removeClass('d-none');
-        $("body").css('background-color', "#fff");
+        $("body").css('background-color', "#f2f2f2");
 })
 </script>

@@ -1435,7 +1435,7 @@
                                 </div>
                             </div>
                         </div>
-                        <input type="hidden" id="quest-page-type" value="premature"/>
+                        <input type="hidden" id="quest-page-type" value="erectile"/>
                         <div class="quest-v2-step d-none question-final" id="step14">
                             <div class="row">
                                 <div class="col-md-12 col-lg-6 qe-img">
@@ -1618,6 +1618,14 @@
                     </div>
                     <!-- loader section end -->
                 </div>
+                <div class="video-content">
+                    <video muted loop id="video-player">
+                        <source id="video-src" type="video/mp4">
+                    </video>
+                    <div class="video-title">
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1644,20 +1652,10 @@
     $(document).ready(function() {
         $("#submit_question").click(function(e) {
             e.preventDefault();
-            console.log('data', $('#ed-form').serialize());
-            // $.ajax({
-            //    alert('sdfsdfsdf');
-            //     type: "get",
-            //
-            //     data : $('#ed-form').serialize();
-            //     console.log(data);
-            //     success: function( msg ) {
-            //         alert( msg );
-            //     }
-            // });
         });
     });
 
+    var app_url = '{{ env('APP_URL') }}';
 
     var product_ids = [];
 

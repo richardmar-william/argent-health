@@ -48,6 +48,16 @@ var spaceQuestions = {
                 ],
             video: '1.mp4'
         }
+    },
+    'erectile': {
+        2: {
+            type: 'showTreatment',
+            questions: [
+                'Our products come in sleek, low-profile packaging',
+                'designed for discretion whenever and wherever needed'
+            ],
+            video: '1.mp4'
+        }
     }
 }
 
@@ -65,10 +75,11 @@ $(document).ready(function () {
     // Hide all steps except the first one
     $(".quest-v2-step").not(":first").hide();
 
-    if(questType != undefined && (!questType == 'hairLoss' || currentStep >= 1)){
+    if(questType != undefined && currentStep > 1){
         $('body').addClass('h-100 bg-white')
     }else {
-        $('body').removeClass('h-100 bg-white')
+        $('.quest-v2-header').css('border-bottom', '5px solid #f5f5f5')
+        $('body').addClass('h-100 bg-white')
     }
     // Function to go to the next step
     function nextStep() {
@@ -76,10 +87,8 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(".quest-v2-step ").hide();
                 $(".sub-step").hide();
-                if(!questType == 'hairLoss' || currentStep >= 1){
-                    $('body').addClass('h-100 bg-white')
-                }else {
-                    $('body').removeClass('h-100 bg-white')
+                if(currentStep >=1){
+                    $('.quest-v2-header').css('border-bottom', 'none')
                 }
                 currentStep++;
                 console.log("currentStep::", currentStep);
@@ -131,8 +140,8 @@ $(document).ready(function () {
                 $(".quest-v2-step").hide();
                 $(".sub-step").hide();
                 currentStep--;
-                if(!questType == 'hairLoss' || currentStep == 1){
-                    $('body').removeClass('h-100 bg-white')
+                if(currentStep == 1){
+                    $('.quest-v2-header').css('border-bottom', '5px solid #f5f5f5')
                 }
                 console.log("currentStep back::", currentStep);
                 $("#step" + currentStep).show();
@@ -327,7 +336,7 @@ function showHairAds (){
     setTimeout(function() {
         $('.quest-v2-inner-wrap').show();
         $('.quest-v2-content ').css('background-color', '#fff');
-        $('body').addClass('bg-white')
+        $('body').addClass('h-100 bg-white');
         $('.ad-content').hide();
     }, 3000)
 }
@@ -344,23 +353,24 @@ function showVideoAnimation(data) {
 
     var index = 0;
 
-   var timer = setInterval(function() {
-        if(index < data.questions.length) {
-            $('.video-title').empty();
-            var question = `<p class="question-text">${data.questions[index]}</p>`
-            $('.video-title').append(question);
-            index++;
-        } else {
-            index = 0
-        }
-    }, 2000)
+    var timer = setInterval(function() {
+            if(index < data.questions.length) {
+                $('.video-title').empty();
+                var question = `<h3 class="question-text font-poppins text-center d-inline">${data.questions[index]}</h3>`
+                $('.video-title').append(question);
+                index++;
+            } else {
+                index = 0
+            }
+        }, 2000)
+    var outTime = 2000 * (data.questions.length + 1);
 
     setTimeout(function() {
         clearInterval(timer);
         $('.quest-v2-inner-wrap').show();
         $('.quest-v2-content ').css('background-color', '#fff');
-        $('body').addClass('bg-white')
+        $('body').addClass('h-100 bg-white');
         $('.video-content').hide();
         $('.video-title').empty();
-    }, 8000);
+    }, outTime);
 }

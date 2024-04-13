@@ -256,7 +256,7 @@
 
 </head>
 
-<body style="background-color: #f5f5f5;" class="">
+<body style="background-color: #e4e4e4;" class="">
 
     {{-- <div id="loader"> --}}
     {{--    <div class="spinner"> --}}
@@ -1671,7 +1671,7 @@
     <script>
         $(function() {
             $('.d-none').removeClass('d-none');
-            $("body").css('background-color', "#f5f5f5");
+            $("body").css('background-color', "#e4e4e4");
         });
         var app_url = '{{ env('APP_URL') }}';
     </script>
