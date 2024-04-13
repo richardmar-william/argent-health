@@ -50,6 +50,8 @@
     color: #000;
     animation-name: fade;
     animation-duration: 2s;
+    text-align: center;
+    font-size: large;
 }
 
 @keyframes fade {

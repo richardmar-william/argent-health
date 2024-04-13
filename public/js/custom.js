@@ -14,14 +14,14 @@ var spaceQuestions = {
         2: {
             type: 'showHairAds'
         },
-        4: {
+        5: {
             type: 'showTreatment',
             questions: ['Our treatments are delivered using a hydrophilic alcohol-free, botanical formula',
                         'Studies have shown it to outperform alcohol-based preparations of minoxidil',
                         'For delivery and absorption'],
             video: '1.mp4'
         },
-        7: {
+        8: {
             type: 'showMHRA',
             questions:['Minoxidil and Finasteride are the only MHRA approved treatments for hair loss',
                         'studies showing combination use results in',
@@ -356,7 +356,7 @@ function showVideoAnimation(data) {
     var timer = setInterval(function() {
             if(index < data.questions.length) {
                 $('.video-title').empty();
-                var question = `<h3 class="question-text font-poppins text-center d-inline">${data.questions[index]}</h3>`
+                var question = `<p class="question-text font-poppins">${data.questions[index]}</p>`
                 $('.video-title').append(question);
                 index++;
             } else {
