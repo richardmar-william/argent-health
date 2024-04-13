@@ -1627,7 +1627,7 @@
                 </div>
                 <div class="ad-content">
                     <div class="title mt-5 text-center">
-                        <h1 class="font-yeseva font-black font-weight-600">Extensive Hair Loss</h1>
+                        <h1 class="font-yeseva font-black font-weight-600" id="ad-title">Extensive Hair Loss</h1>
                         <h1 class="font-poppins font-black font-weight-600">We’ve got you Covered </h1>
                     </div>
                     <div class="view">

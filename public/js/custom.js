@@ -1,6 +1,4 @@
-﻿const { type } = require("jquery");
-
-// READ MORE BUTTON JS
+﻿// READ MORE BUTTON JS
 $(document).ready(function () {
     $(".recmd-tablets-card:first").show();
     $(".recmd-tabcard-main .hairLossProd").show();
@@ -34,7 +32,7 @@ var spaceQuestions = {
         }
     },
     'beard' : {
-        2: {
+        6: {
             type: 'showTreatment',
             questions: ['Our treatments are delivered using a hydrophilic alcohol-free, botanical formula',
             'Studies have shown it to outperform alcohol-based preparations of minoxidil',
@@ -318,6 +316,7 @@ function showHairAds (){
 
 
             // title + 'before.jpg'
+            $('#ad-title').html(radios[i].value)
             $('#ad-image-before').attr('src', `${app_url}/images/${title}before.png`);
             $('#ad-image-after').attr('src', `${app_url}/images/${title}after.png`);
             // only one radio can be logically checked, don't check the rest
