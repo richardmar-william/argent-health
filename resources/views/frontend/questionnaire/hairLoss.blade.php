@@ -176,6 +176,7 @@
     <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
     <link rel="stylesheet" href="{{ asset('css/font.css') }}">
     <link rel="stylesheet" href="{{ asset('css/questionnaire/hairloss.css') }}"/>
+    <link rel="stylesheet" href="{{ asset('frontend/css/themify-icons.css') }}">
     <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <meta name="description" content="">
@@ -278,7 +279,6 @@
             Session::put('hair_loss', $randomString);
             $sessionId = Session::get('hair_loss');
         }
-        //dd($sessionId);
     @endphp
     <!-- <img src="/frontend/images/Untitled.png" style="position: fixed; width: 100%; left: 0px; top: 0px; opacity: 0.5;"> -->
     <section class="questionnaire-v2-main">
@@ -325,7 +325,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="recehairline" name="Q1_answer"
-                                                    value="Receding Hairline (Temples)">
+                                                    value="Receding Hairline">
                                                 <label class="next-button hair-label" for="recehairline">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -509,10 +509,6 @@
                                                 </label>
                                             </div>
                                         </div>
-                                        {{-- <div class="quest-v2-btn">
-                                            <a class="btn-d-trans btn-wt-170 prev-button"
-                                                href="{{ url('/shop/hair-loss') }}">Back</a>
-                                        </div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -1629,6 +1625,33 @@
                     </div>
                     <!-- loader section end -->
                 </div>
+                <div class="ad-content">
+                    <div class="title mt-5 text-center">
+                        <h1 class="font-yeseva font-black font-weight-600">Extensive Hair Loss</h1>
+                        <h1 class="font-poppins font-black font-weight-600">We’ve got you Covered </h1>
+                    </div>
+                    <div class="view">
+                        <div class="card review-card mt-5">
+                            <div class="card-header d-flex justify-content-between bg-transparent">
+                                <h5 class="font-poppins review-user-name pt-1">Manny A.</h5>
+                                <div class="d-flex flex-column">
+                                    <div><img class="ad-content-image" src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark verified-title">Verified by company</span></div>
+                                    <ul class="d-flex flex-row-reverse stars">
+                                        @for ($i=0; $i<5; $i++)
+                                            <li><i class="ti-star text-warning"></i></li>
+                                        @endfor
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center card-images">
+                                    <img style="margin-right: 32px" id="ad-image-before">
+                                    <img id="ad-image-after">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1642,6 +1665,7 @@
             $('.d-none').removeClass('d-none');
             $("body").css('background-color', "#f5f5f5");
         });
+        var app_url = '{{ env('APP_URL') }}';
     </script>
 
 

@@ -69,12 +69,34 @@
     border: none;
 }
 
+.review-card {
+    width: fit-content;
+    border-radius: 11px;
+    margin: auto;
+}
+
 .review-brand-content {
     margin-bottom: 32px;
 }
 
 .brands.mobile {
     width: 100%;
+}
+
+.ad-content {
+    display: none;
+}
+
+.ad-content-image {
+    max-height: 1.5rem;
+}
+
+.verified-title {
+    font-size: 16px;
+}
+
+.card-images img{
+    max-width: 30vw;
 }
 
 @media (max-width: 575px) {
@@ -101,5 +123,14 @@
     .hair-loss-content {
         width: 50%;
         margin: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .verified-title {
+        font-size: 12px;
+    }
+    .stars {
+        font-size: 12px;
     }
 }

@@ -18,7 +18,7 @@
 }
 
 .font-yeseva {
-    font: "Yeseva";
+    font-family: "Yeseva";
 }
 
 .font-poppins-bold {
@@ -27,4 +27,12 @@
 
 .font-heavy-green {
     color: #3f453f;
+}
+
+.font-black {
+    color: #000;
+}
+
+.font-weight-600 {
+    font-weight: 600;
 }

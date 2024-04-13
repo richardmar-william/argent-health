@@ -9,6 +9,14 @@ $(document).ready(function () {
     });
 });
 
+var spaceQuestions = {
+    'hairLoss': {
+        2: {
+            type: 'showHairAds'
+        }
+    }
+}
+
 $(document).ready(function () {
     var currentStep = 1;
     var totalSteps = $(".quest-v2-step").length;
@@ -53,11 +61,22 @@ $(document).ready(function () {
                     $('.brands-reviews-content').css('display', 'block');
                 }
                 currentSubStep = 0;
+                var steps = Object.keys(spaceQuestions[questType]);
+                if(steps.indexOf(currentStep)) {
+                    switch (spaceQuestions[questType][currentStep].type) {
+                        case 'showHairAds': {
+                            showHairAds();
+                            break;
+                        }
+                    }
+                }
+
                 updateProgressBar();
                 if (currentStep == totalSteps)
                     $(document.body).css("background-color", "#e4e4e4");
             }, 800);
         }
+
         subStepSamePage();
     }
 
@@ -227,19 +246,6 @@ $(document).ready(function () {
         $(this).closest(".card-design").addClass("active");
     });
 });
-// $(document).ready(function() {
-//     $('.user-sidebar .sidebar-active').on('click', function(e) {
-//         e.preventDefault();
-//         $('.user-sidebar .sidebar-active').removeClass('active');
-//         $(this).addClass('active');
-//     });
-//   });
-// // quest height js
-// $(document).ready(function() {
-//     const quesScaledWindowHeight = ($(window).height() / 0.9) - 109;
-//     $(".quest-v2-content").css('height', quesScaledWindowHeight + 'vh');
-//     console.log("quesScaledWindowHeight", quesScaledWindowHeight);
-// });
 
 $(".questionnaire-v2-main .quest-v2-step h3 textarea.in_type").each(
     function () {
@@ -250,3 +256,31 @@ $(".questionnaire-v2-main .quest-v2-step h3 textarea.in_type").each(
         newDiv.text(text);
     }
 );
+
+function showHairAds (){
+    var radios = document.getElementsByName('Q1_answer');
+
+    for (var i = 0, length = radios.length; i < length; i++) {
+
+        if (radios[i].checked) {
+            // do whatever you want with the checked radio
+            $('.quest-v2-inner-wrap').hide();
+            $('.quest-v2-content ').css('background-color', '#e4e4e4');
+            $('body').removeClass('bg-white').css('background-color', '#e4e4e4')
+            $('.ad-content').show();
+            var title = $(radios[i]).attr('id');
+
+
+            // title + 'before.jpg'
+            $('#ad-image-before').attr('src', `${app_url}/images/${title}before.png`);
+            $('#ad-image-after').attr('src', `${app_url}/images/${title}after.png`);
+            // only one radio can be logically checked, don't check the rest
+            break;
+        }
+    }
+
+    setTimeout(function() {
+        $('.quest-v2-inner-wrap').show();
+        $('.ad-content').hide();
+    }, 1500)
+}
