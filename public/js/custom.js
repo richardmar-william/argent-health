@@ -1,4 +1,6 @@
-﻿// READ MORE BUTTON JS
+﻿const { type } = require("jquery");
+
+// READ MORE BUTTON JS
 $(document).ready(function () {
     $(".recmd-tablets-card:first").show();
     $(".recmd-tabcard-main .hairLossProd").show();
@@ -29,6 +31,24 @@ var spaceQuestions = {
                     ],
             video: '1.mp4'
 
+        }
+    },
+    'beard' : {
+        2: {
+            type: 'showTreatment',
+            questions: ['Our treatments are delivered using a hydrophilic alcohol-free, botanical formula',
+            'Studies have shown it to outperform alcohol-based preparations of minoxidil',
+            'For delivery and absorption'],
+            video: '1.mp4'
+        },
+        10: {
+            type: 'showSmoke',
+            questions: [
+                'A randomized trial done in 2016 found that participants using minoxidil',
+                'had 86% more beard hair growth',
+                'compared to those using a placebo.'
+                ],
+            video: '1.mp4'
         }
     }
 }
@@ -82,7 +102,6 @@ $(document).ready(function () {
                     switch (spaceQuestions[questType][currentStep].type) {
                         case 'showHairAds': {
                             showHairAds();
-
                             break;
                         }
                         case 'showTreatment' : {
@@ -92,6 +111,9 @@ $(document).ready(function () {
                         case 'showMHRA' : {
                             showVideoAnimation(spaceQuestions[questType][currentStep])
                             break;
+                        }
+                        case 'showSmoke': {
+                            showVideoAnimation(spaceQuestions[questType][currentStep])
                         }
                     }
                 }

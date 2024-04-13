@@ -1272,6 +1272,14 @@
                     </div>
                     <!-- loader section end -->
                 </div>
+                <div class="video-content">
+                    <video muted loop id="video-player">
+                        <source id="video-src" type="video/mp4">
+                    </video>
+                    <div class="video-title">
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1365,6 +1373,8 @@ function AddToCart(product_id) {
     console.log(product_id, unique_array, final_array);
     $("#ProductIds").val(final_array);
 }
+
+var app_url = '{{ env('APP_URL') }}';
 
 $(function(){
     $('.d-none').removeClass('d-none');
