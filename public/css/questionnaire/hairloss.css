@@ -91,12 +91,34 @@
     max-height: 1.5rem;
 }
 
+.video-content {
+    display: none;
+}
+
+#video-player {
+    height: 30vh;
+    width: 100%;
+    object-fit: fill;
+}
+
 .verified-title {
     font-size: 16px;
+    margin: auto;
 }
 
 .card-images img{
     max-width: 30vw;
+}
+
+.question-text {
+    color: #000;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+@keyframes fade {
+    from {opacity: 0}
+    to {opacity: 1}
 }
 
 @media (max-width: 575px) {

@@ -13,6 +13,22 @@ var spaceQuestions = {
     'hairLoss': {
         2: {
             type: 'showHairAds'
+        },
+        4: {
+            type: 'showTreatment',
+            questions: ['Our treatments are delivered using a hydrophilic alcohol-free, botanical formula',
+                        'Studies have shown it to outperform alcohol-based preparations of minoxidil',
+                        'For delivery and absorption'],
+            video: '1.mp4'
+        },
+        7: {
+            type: 'showMHRA',
+            questions:['Minoxidil and Finasteride are the only MHRA approved treatments for hair loss',
+                        'studies showing combination use results in',
+                        '94% effectiveness'
+                    ],
+            video: '1.mp4'
+
         }
     }
 }
@@ -66,6 +82,14 @@ $(document).ready(function () {
                     switch (spaceQuestions[questType][currentStep].type) {
                         case 'showHairAds': {
                             showHairAds();
+                            break;
+                        }
+                        case 'showTreatment' : {
+                            showVideoAnimation(spaceQuestions[questType][currentStep])
+                            break;
+                        }
+                        case 'showMHRA' : {
+                            showVideoAnimation(spaceQuestions[questType][currentStep])
                             break;
                         }
                     }
@@ -283,4 +307,34 @@ function showHairAds (){
         $('.quest-v2-inner-wrap').show();
         $('.ad-content').hide();
     }, 1500)
+}
+
+function showVideoAnimation(data) {
+    $('.quest-v2-inner-wrap').hide();
+    $('.quest-v2-content ').css('background-color', '#e4e4e4');
+    $('body').removeClass('bg-white').css('background-color', '#e4e4e4')
+    $('.video-content').show();
+
+    $('#video-src').attr('src', `${app_url}/videos/${data.video}`);
+    $('#video-player').get(0).load();
+    $('#video-player').get(0).play();
+
+    var index = 0;
+
+   var timer = setInterval(function() {
+        if(index < data.questions.length) {
+            $('.video-title').empty();
+            var question = `<p class="question-text">${data.questions[index]}</p>`
+            $('.video-title').append(question);
+            index++;
+        } else {
+            index = 0
+        }
+    }, 2000)
+
+    setTimeout(function() {
+        clearInterval(timer);
+        $('.quest-v2-inner-wrap').show();
+        $('.video-content').hide();
+    }, 8000);
 }

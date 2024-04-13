@@ -1652,6 +1652,14 @@
                         </div>
                     </div>
                 </div>
+                <div class="video-content">
+                    <video muted loop id="video-player">
+                        <source id="video-src" type="video/mp4">
+                    </video>
+                    <div class="video-title">
+
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1679,35 +1687,3 @@
         $('#btncheck').prop("disabled", !this.checked);
     }).change();
 </script>
-
-
-
-<!-- saving questionnair -->
-<!-- <script>
-    $(document).ready(function() {
-        $("#submit_question2").click(function(e) {
-            e.preventDefault();
-            console.log('data', $('#bg-form').serialize());
-            // $.ajax({
-            //    alert('sdfsdfsdf');
-            //     type: "get",
-            //
-            //     data : $('#ed-form').serialize();
-            //     console.log(data);
-            //     success: function( msg ) {
-            //         alert( msg );
-            //     }
-            // });
-        });
-    });
-
-    var product_ids = [];
-
-    function AddToCart(product_id) {
-        product_ids.push(product_id);
-        var unique_array = [...new Set(product_ids)];
-        var final_array = unique_array.join(','); // Convert to comma-separated string
-        // console.log(product_id, unique_array, final_array);
-        $("#ProductIds").val(final_array);
-    }
-</script>   -->
