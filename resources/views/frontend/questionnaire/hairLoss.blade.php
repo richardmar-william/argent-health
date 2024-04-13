@@ -1638,7 +1638,7 @@
                                     <div><img class="ad-content-image" src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark verified-title">Verified by company</span></div>
                                     <ul class="d-flex flex-row-reverse stars">
                                         @for ($i=0; $i<5; $i++)
-                                            <li><i class="ti-star text-warning"></i></li>
+                                            <li><i class="fa fa-star text-warning"></i></li>
                                         @endfor
                                     </ul>
                                 </div>

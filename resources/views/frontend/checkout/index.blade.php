@@ -740,7 +740,7 @@
                                                             <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
                                                             <ul class="d-flex">
                                                                 @for ($i=0; $i<$review->rating; $i++)
-                                                                    <li><i class="ti-star text-warning"></i></li>
+                                                                    <li><i class="fa fa-star text-warning"></i></li>
                                                                 @endfor
                                                             </ul>
                                                         </div>

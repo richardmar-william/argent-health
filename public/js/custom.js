@@ -81,6 +81,11 @@ $(document).ready(function () {
         $('.quest-v2-header').css('border-bottom', '5px solid #f5f5f5')
         $('body').addClass('h-100 bg-white')
     }
+
+    if(questType == undefined) {
+        $('body').removeClass('h-100 bg-white')
+        $('.quest-v2-header').css('border-bottom', 'none')
+    }
     // Function to go to the next step
     function nextStep() {
         if (currentStep < totalSteps) {
@@ -105,7 +110,8 @@ $(document).ready(function () {
                 }
                 currentSubStep = 0;
                 var steps = Object.keys(spaceQuestions[questType]);
-                if(steps.indexOf(currentStep)) {
+
+                if(steps.indexOf(currentStep.toString()) != -1) {
                     switch (spaceQuestions[questType][currentStep].type) {
                         case 'showHairAds': {
                             showHairAds();
