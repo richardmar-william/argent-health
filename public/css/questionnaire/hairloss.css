@@ -73,6 +73,8 @@
     width: fit-content;
     border-radius: 11px;
     margin: auto;
+    animation-name: fade;
+    animation-duration: 2s;
 }
 
 .review-brand-content {

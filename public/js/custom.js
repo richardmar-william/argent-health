@@ -308,7 +308,7 @@ function showHairAds (){
         $('.quest-v2-content ').css('background-color', '#fff');
         $('body').addClass('bg-white')
         $('.ad-content').hide();
-    }, 1500)
+    }, 3000)
 }
 
 function showVideoAnimation(data) {
