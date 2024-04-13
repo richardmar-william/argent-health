@@ -82,6 +82,7 @@ $(document).ready(function () {
                     switch (spaceQuestions[questType][currentStep].type) {
                         case 'showHairAds': {
                             showHairAds();
+
                             break;
                         }
                         case 'showTreatment' : {
@@ -94,7 +95,6 @@ $(document).ready(function () {
                         }
                     }
                 }
-
                 updateProgressBar();
                 if (currentStep == totalSteps)
                     $(document.body).css("background-color", "#e4e4e4");
@@ -305,6 +305,8 @@ function showHairAds (){
 
     setTimeout(function() {
         $('.quest-v2-inner-wrap').show();
+        $('.quest-v2-content ').css('background-color', '#fff');
+        $('body').addClass('bg-white')
         $('.ad-content').hide();
     }, 1500)
 }
@@ -335,6 +337,9 @@ function showVideoAnimation(data) {
     setTimeout(function() {
         clearInterval(timer);
         $('.quest-v2-inner-wrap').show();
+        $('.quest-v2-content ').css('background-color', '#fff');
+        $('body').addClass('bg-white')
         $('.video-content').hide();
+        $('.video-title').empty();
     }, 8000);
 }
