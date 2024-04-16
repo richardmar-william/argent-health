@@ -326,7 +326,7 @@ function showHairAds (){
             $('.quest-v2-inner-wrap').hide();
             $('.quest-v2-content ').css('background-color', '#e4e4e4');
             $('body').removeClass('bg-white').css('background-color', '#e4e4e4')
-            $('.ad-content').show();
+            $('.hair-ad-content').show();
             var title = $(radios[i]).attr('id');
 
 
@@ -343,7 +343,7 @@ function showHairAds (){
         $('.quest-v2-inner-wrap').show();
         $('.quest-v2-content ').css('background-color', '#fff');
         $('body').addClass('h-100 bg-white');
-        $('.ad-content').hide();
+        $('.hair-ad-content').hide();
     }, 3000)
 }
 
