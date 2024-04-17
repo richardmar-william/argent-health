@@ -225,7 +225,7 @@
                                                 @endphp
                                                 @if($category_id == "33" || $category_id == "32")
                                                 <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
-                                                    <div class="form-group form-radio">
+                                                    <div class="form-group form-radio mt-3">
                                                         <input type="radio" id="product_sub_month_0" name="input_product_sub" value="0" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
                                                         <label class="sub-leb" for="product_sub_month_0">
                                                             <h4>One time treatment plan</h4>
@@ -779,7 +779,7 @@
                                                 <img src="{{ asset('images/brand line.png') }}">
                                                 <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
                                                 <div>
-                                                        <h4 class="font-poppins-bold">100+</h4>
+                                                        <h4 class="font-poppins-bold">1000+</h4>
                                                         <p class="text-white" style="width: max-content">Total ratings</p>
                                                 </div>
                                                 </div>

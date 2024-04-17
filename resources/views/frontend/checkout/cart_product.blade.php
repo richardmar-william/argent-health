@@ -247,7 +247,7 @@
                                 <img src="{{ asset('images/brand line.png') }}">
                                 <div class="d-flex flex-column justify-content-center" style="margin-left: 16px">
                                 <div>
-                                        <h4 class="font-poppins-bold">100+</h4>
+                                        <h4 class="font-poppins-bold">1000+</h4>
                                         <p class="text-white" style="width: max-content">Total sales</p>
                                 </div>
                                 </div>
