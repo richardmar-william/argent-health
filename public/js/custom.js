@@ -61,6 +61,10 @@ var spaceQuestions = {
                 mobile: "Our products come in sleek mobile.MP4",
             },
         },
+        8: {
+            type: "showReview",
+            description: "Lorem ipsum dolor sit amet, consecteur...",
+        },
         13: {
             type: "showTreatment",
             video: {
@@ -159,6 +163,11 @@ $(document).ready(function () {
                             showVideoAnimation(
                                 spaceQuestions[questType][currentStep]
                             );
+                            break;
+                        }
+                        case "showReview": {
+                            showReviews(spaceQuestions[questType][currentStep]);
+                            break;
                         }
                     }
                 }
@@ -385,7 +394,22 @@ function showHairAds() {
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
         $(".hair-ad-content").hide();
-    }, 3000);
+    }, 5000);
+}
+
+function showReviews(data) {
+    $(".quest-v2-inner-wrap").hide();
+    $(".quest-v2-content ").css("background-color", "#e4e4e4");
+    $("body").removeClass("bg-white").css("background-color", "#e4e4e4");
+    $("#quest-review-description").html(data.description);
+    $(".quest-review-content").show();
+
+    setTimeout(function () {
+        $(".quest-v2-inner-wrap").show();
+        $(".quest-v2-content ").css("background-color", "#fff");
+        $("body").addClass("h-100 bg-white");
+        $(".quest-review-content").hide();
+    }, 5000);
 }
 
 function showVideoAnimation(data) {
