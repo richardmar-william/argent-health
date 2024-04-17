@@ -47,14 +47,86 @@
     min-height: 100%;
 }
 
+.quest-review-content {
+    display: none;
+}
+
+.review-card .card-header {
+    border: none;
+}
+
+.review-card .card-footer {
+    border: none;
+    border-radius: 11px;
+    background-color: #fff;
+}
+
+.verified-title {
+    font-size: 16px;
+}
+
+.ad-content-image {
+    width: 24px;
+    height: 24px;
+}
+
+.review-card {
+    width: 60%;
+    border-radius: 11px;
+    margin: auto;
+    animation-name: fade;
+    animation-duration: 2s;
+    min-height: 300px;
+}
+
+.stars li {
+    font-size: 16px;
+}
+
+.review-user-name {
+    color: #484f47;
+}
+.review-content {
+    color: #979caa;
+}
+
 @media (max-width: 600px) {
     #video-player-desktop {
         display: none;
+    }
+    .stars li {
+        font-size: 12px;
+    }
+
+    .review-card {
+        width: 90%;
+        min-height: 200px;
+    }
+    .ad-content-image {
+        width: 16px;
+        height: 16px;
+    }
+
+    .verified-title {
+        font-size: 12px;
+    }
+
+    #quest-review-description {
+        font-size: 12px;
     }
 }
 
 @media (min-width: 600px) {
     #video-player-mobile {
         display: none;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
     }
 }

@@ -74,6 +74,10 @@ var spaceQuestions = {
         },
     },
     premature: {
+        3: {
+            type: "showReview",
+            description: "Lorem ipsum dolor sit amet, consecteur...",
+        },
         6: {
             type: "showTreatment",
             video: {

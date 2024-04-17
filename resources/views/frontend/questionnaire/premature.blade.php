@@ -1756,6 +1756,28 @@
                     <!-- error message end -->
 
                 </main>
+                <div class="quest-review-content">
+                    <div class="view">
+                        <div class="card review-card mt-5">
+                            <div class="card-header d-flex justify-content-between bg-transparent">
+                                <h5 class="font-poppins review-user-name pt-1">Jenny D.</h5>
+                                <ul class="d-flex flex-row-reverse stars mt-1">
+                                    @for ($i=0; $i<5; $i++)
+                                        <li><i class="fa fa-star text-warning"></i></li>
+                                    @endfor
+                                </ul>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <p class="font-black" id="quest-review-description"></p>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <div><img class="ad-content-image" src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark verified-title">Verified Customer</span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="video-content">
                     <video muted loop class="video-player" id="video-player-desktop">
                         <source id="video-src-desktop" type="video/mp4">
