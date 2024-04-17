@@ -1,4 +1,4 @@
-.review-user-name{
+.review-user-name {
     color: #484f47;
 }
 .review-content {
@@ -40,21 +40,34 @@
     display: none;
 }
 
-#video-player {
-    height: 30vh;
+.video-player {
     width: 100%;
+    height: 88vh;
     object-fit: fill;
 }
 
-.question-text {
-    color: #000;
-    animation-name: fade;
-    animation-duration: 2s;
-    text-align: center;
-    font-size: large;
+.video-player source {
+    min-width: 100%;
+    min-height: 100%;
 }
 
 @keyframes fade {
-    from {opacity: 0}
-    to {opacity: 1}
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    #video-player-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 600px) {
+    #video-player-mobile {
+        display: none;
+    }
 }

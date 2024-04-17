@@ -235,7 +235,7 @@
             </div>
         </div>
         <div class="quest-v2-content">
-            <div class="container-fluid">
+            <div class="main-container container-fluid">
                 <main class="quest-v2-inner-wrap">
                     <form id="" action="{{ route('cart_product') }}" method="POST">
                         @csrf
@@ -1756,6 +1756,14 @@
                     <!-- error message end -->
 
                 </main>
+                <div class="video-content">
+                    <video muted loop class="video-player" id="video-player-desktop">
+                        <source id="video-src-desktop" type="video/mp4">
+                    </video>
+                    <video muted loop class="video-player" id="video-player-mobile">
+                        <source id="video-src-mobile" type="video/mp4">
+                    </video>
+                </div>
             </div>
         </div>
     </section>
@@ -1771,6 +1779,7 @@
 
 
 <script>
+    var app_url = '{{ env('APP_URL') }}';
 function cartItem(priligy) {
     localStorage.setItem("p_name", priligy);
 }

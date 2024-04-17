@@ -10,56 +10,82 @@ $(document).ready(function () {
 });
 
 var spaceQuestions = {
-    'hairLoss': {
+    hairLoss: {
         2: {
-            type: 'showHairAds'
+            type: "showHairAds",
         },
         5: {
-            type: 'showTreatment',
-            questions: ['Our treatments are delivered using a hydrophilic alcohol-free, botanical formula',
-                        'Studies have shown it to outperform alcohol-based preparations of minoxidil',
-                        'For delivery and absorption'],
-            video: '1.mp4'
+            type: "showTreatment",
+            questions: [
+                "Our treatments are delivered using a hydrophilic alcohol-free, botanical formula",
+                "Studies have shown it to outperform alcohol-based preparations of minoxidil",
+                "For delivery and absorption",
+            ],
+            video: "1.mp4",
         },
         8: {
-            type: 'showMHRA',
-            questions:['Minoxidil and Finasteride are the only MHRA approved treatments for hair loss',
-                        'studies showing combination use results in',
-                        '94% effectiveness'
-                    ],
-            video: '1.mp4'
-
-        }
+            type: "showMHRA",
+            questions: [
+                "Minoxidil and Finasteride are the only MHRA approved treatments for hair loss",
+                "studies showing combination use results in",
+                "94% effectiveness",
+            ],
+            video: "1.mp4",
+        },
     },
-    'beard' : {
+    beard: {
         6: {
-            type: 'showTreatment',
-            questions: ['Our treatments are delivered using a hydrophilic alcohol-free, botanical formula',
-            'Studies have shown it to outperform alcohol-based preparations of minoxidil',
-            'For delivery and absorption'],
-            video: '1.mp4'
+            type: "showTreatment",
+            questions: [
+                "Our treatments are delivered using a hydrophilic alcohol-free, botanical formula",
+                "Studies have shown it to outperform alcohol-based preparations of minoxidil",
+                "For delivery and absorption",
+            ],
+            video: "1.mp4",
         },
         10: {
-            type: 'showSmoke',
+            type: "showSmoke",
             questions: [
-                'A randomized trial done in 2016 found that participants using minoxidil',
-                'had 86% more beard hair growth',
-                'compared to those using a placebo.'
-                ],
-            video: '1.mp4'
-        }
-    },
-    'erectile': {
-        2: {
-            type: 'showTreatment',
-            questions: [
-                'Our products come in sleek, low-profile packaging',
-                'designed for discretion whenever and wherever needed'
+                "A randomized trial done in 2016 found that participants using minoxidil",
+                "had 86% more beard hair growth",
+                "compared to those using a placebo.",
             ],
-            video: '1.mp4'
-        }
-    }
-}
+            video: "1.mp4",
+        },
+    },
+    erectile: {
+        2: {
+            type: "showTreatment",
+            video: {
+                desktop: "Our products come in sleek desk.MP4",
+                mobile: "Our products come in sleek mobile.MP4",
+            },
+        },
+        13: {
+            type: "showTreatment",
+            video: {
+                desktop: "Tadalafil (Cialis) got its _weekend pill DESK.MP4",
+                mobile: "Tadalafil (Cialis) got its _weekend pill mobile.MP4",
+            },
+        },
+    },
+    premature: {
+        6: {
+            type: "showTreatment",
+            video: {
+                desktop: "Pre-comp-Desk.MP4",
+                mobile: "Pre-comp.MP4",
+            },
+        },
+        9: {
+            type: "showTreatment",
+            video: {
+                desktop: "Our products come in sleek desk 2.MP4",
+                mobile: "Our products come in sleek mobile 2.MP4",
+            },
+        },
+    },
+};
 
 $(document).ready(function () {
     var currentStep = 1;
@@ -69,22 +95,22 @@ $(document).ready(function () {
     var progressBarValue = 0;
     var totalSubSteps;
     var getStepVal;
-    var questType = $('#quest-page-type').val();
+    var questType = $("#quest-page-type").val();
     $(".sub-step").hide();
 
     // Hide all steps except the first one
     $(".quest-v2-step").not(":first").hide();
 
-    if(questType != undefined && currentStep > 1){
-        $('body').addClass('h-100 bg-white')
-    }else {
-        $('.quest-v2-header').css('border-bottom', '5px solid #f5f5f5')
-        $('body').addClass('h-100 bg-white')
+    if (questType != undefined && currentStep > 1) {
+        $("body").addClass("h-100 bg-white");
+    } else {
+        $(".quest-v2-header").css("border-bottom", "5px solid #f5f5f5");
+        $("body").addClass("h-100 bg-white");
     }
 
-    if(questType == undefined) {
-        $('body').removeClass('h-100 bg-white')
-        $('.quest-v2-header').css('border-bottom', 'none')
+    if (questType == undefined) {
+        $("body").removeClass("h-100 bg-white");
+        $(".quest-v2-header").css("border-bottom", "none");
     }
     // Function to go to the next step
     function nextStep() {
@@ -92,8 +118,8 @@ $(document).ready(function () {
             setTimeout(function () {
                 $(".quest-v2-step ").hide();
                 $(".sub-step").hide();
-                if(currentStep >=1){
-                    $('.quest-v2-header').css('border-bottom', 'none')
+                if (currentStep >= 1) {
+                    $(".quest-v2-header").css("border-bottom", "none");
                 }
                 currentStep++;
                 console.log("currentStep::", currentStep);
@@ -102,31 +128,37 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
-                if(currentStep > progressTotalSteps) {
-                    $('.question-final').addClass('bg-white')
-                    $('.question-final').css('padding-top', '48px')
-                    $('.quest-v2-content').css("background-color", "#e4e4e4");
-                    $('.brands-reviews-content').css('display', 'block');
+                if (currentStep > progressTotalSteps) {
+                    $(".question-final").addClass("bg-white");
+                    $(".question-final").css("padding-top", "48px");
+                    $(".quest-v2-content").css("background-color", "#e4e4e4");
+                    $(".brands-reviews-content").css("display", "block");
                 }
                 currentSubStep = 0;
                 var steps = Object.keys(spaceQuestions[questType]);
 
-                if(steps.indexOf(currentStep.toString()) != -1) {
+                if (steps.indexOf(currentStep.toString()) != -1) {
                     switch (spaceQuestions[questType][currentStep].type) {
-                        case 'showHairAds': {
+                        case "showHairAds": {
                             showHairAds();
                             break;
                         }
-                        case 'showTreatment' : {
-                            showVideoAnimation(spaceQuestions[questType][currentStep])
+                        case "showTreatment": {
+                            showVideoAnimation(
+                                spaceQuestions[questType][currentStep]
+                            );
                             break;
                         }
-                        case 'showMHRA' : {
-                            showVideoAnimation(spaceQuestions[questType][currentStep])
+                        case "showMHRA": {
+                            showVideoAnimation(
+                                spaceQuestions[questType][currentStep]
+                            );
                             break;
                         }
-                        case 'showSmoke': {
-                            showVideoAnimation(spaceQuestions[questType][currentStep])
+                        case "showSmoke": {
+                            showVideoAnimation(
+                                spaceQuestions[questType][currentStep]
+                            );
                         }
                     }
                 }
@@ -146,8 +178,11 @@ $(document).ready(function () {
                 $(".quest-v2-step").hide();
                 $(".sub-step").hide();
                 currentStep--;
-                if(currentStep == 1){
-                    $('.quest-v2-header').css('border-bottom', '5px solid #f5f5f5')
+                if (currentStep == 1) {
+                    $(".quest-v2-header").css(
+                        "border-bottom",
+                        "5px solid #f5f5f5"
+                    );
                 }
                 console.log("currentStep back::", currentStep);
                 $("#step" + currentStep).show();
@@ -161,11 +196,11 @@ $(document).ready(function () {
                 progressBarValue = $("#step" + currentStep).attr(
                     "data-progress"
                 );
-                if(currentStep <= progressTotalSteps) {
-                    $('.question-final').addClass('bg-white')
-                    $('.question-final').css('padding-top', '48px')
-                    $('.quest-v2-content').css("background-color", "#fff");
-                    $('.brands-reviews-content').css('display', 'none');
+                if (currentStep <= progressTotalSteps) {
+                    $(".question-final").addClass("bg-white");
+                    $(".question-final").css("padding-top", "48px");
+                    $(".quest-v2-content").css("background-color", "#fff");
+                    $(".brands-reviews-content").css("display", "none");
                 }
                 updateProgressBar();
                 if (currentStep == totalSteps - 1)
@@ -316,67 +351,70 @@ $(".questionnaire-v2-main .quest-v2-step h3 textarea.in_type").each(
     }
 );
 
-function showHairAds (){
-    var radios = document.getElementsByName('Q1_answer');
+function showHairAds() {
+    var radios = document.getElementsByName("Q1_answer");
 
     for (var i = 0, length = radios.length; i < length; i++) {
-
         if (radios[i].checked) {
             // do whatever you want with the checked radio
-            $('.quest-v2-inner-wrap').hide();
-            $('.quest-v2-content ').css('background-color', '#e4e4e4');
-            $('body').removeClass('bg-white').css('background-color', '#e4e4e4')
-            $('.hair-ad-content').show();
-            var title = $(radios[i]).attr('id');
-
+            $(".quest-v2-inner-wrap").hide();
+            $(".quest-v2-content ").css("background-color", "#e4e4e4");
+            $("body")
+                .removeClass("bg-white")
+                .css("background-color", "#e4e4e4");
+            $(".hair-ad-content").show();
+            var title = $(radios[i]).attr("id");
 
             // title + 'before.jpg'
-            $('#ad-title').html(radios[i].value)
-            $('#ad-image-before').attr('src', `${app_url}/images/${title}before.png`);
-            $('#ad-image-after').attr('src', `${app_url}/images/${title}after.png`);
+            $("#ad-title").html(radios[i].value);
+            $("#ad-image-before").attr(
+                "src",
+                `${app_url}/images/${title}before.png`
+            );
+            $("#ad-image-after").attr(
+                "src",
+                `${app_url}/images/${title}after.png`
+            );
             // only one radio can be logically checked, don't check the rest
             break;
         }
     }
 
-    setTimeout(function() {
-        $('.quest-v2-inner-wrap').show();
-        $('.quest-v2-content ').css('background-color', '#fff');
-        $('body').addClass('h-100 bg-white');
-        $('.hair-ad-content').hide();
-    }, 3000)
+    setTimeout(function () {
+        $(".quest-v2-inner-wrap").show();
+        $(".quest-v2-content ").css("background-color", "#fff");
+        $("body").addClass("h-100 bg-white");
+        $(".hair-ad-content").hide();
+    }, 3000);
 }
 
 function showVideoAnimation(data) {
-    $('.quest-v2-inner-wrap').hide();
-    $('.quest-v2-content ').css('background-color', '#e4e4e4');
-    $('body').removeClass('bg-white').css('background-color', '#e4e4e4')
-    $('.video-content').show();
+    $(".main-container").removeClass("container-fluid");
+    $(".quest-v2-inner-wrap").hide();
+    $(".quest-v2-content ").css("background-color", "#e4e4e4");
+    $("body").removeClass("bg-white").css("background-color", "#e4e4e4");
+    $(".video-content").show();
 
-    $('#video-src').attr('src', `${app_url}/videos/${data.video}`);
-    $('#video-player').get(0).load();
-    $('#video-player').get(0).play();
+    $("#video-src-desktop").attr(
+        "src",
+        `${app_url}/videos/${data.video.desktop}`
+    );
+    $("#video-src-mobile").attr(
+        "src",
+        `${app_url}/videos/${data.video.mobile}`
+    );
+    $("#video-player-desktop").get(0).load();
+    $("#video-player-desktop").get(0).play();
 
-    var index = 0;
+    $("#video-player-mobile").get(0).load();
+    $("#video-player-mobile").get(0).play();
 
-    var timer = setInterval(function() {
-            if(index < data.questions.length) {
-                $('.video-title').empty();
-                var question = `<p class="question-text font-poppins">${data.questions[index]}</p>`
-                $('.video-title').append(question);
-                index++;
-            } else {
-                index = 0
-            }
-        }, 2000)
-    var outTime = 2000 * (data.questions.length + 1);
-
-    setTimeout(function() {
-        clearInterval(timer);
-        $('.quest-v2-inner-wrap').show();
-        $('.quest-v2-content ').css('background-color', '#fff');
-        $('body').addClass('h-100 bg-white');
-        $('.video-content').hide();
-        $('.video-title').empty();
-    }, outTime);
+    setTimeout(function () {
+        $(".main-container").addClass("container-fluid");
+        $(".quest-v2-inner-wrap").show();
+        $(".quest-v2-content ").css("background-color", "#fff");
+        $("body").addClass("h-100 bg-white");
+        $(".video-content").hide();
+        $(".video-title").empty();
+    }, 10000);
 }
