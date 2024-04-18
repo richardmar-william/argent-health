@@ -43,7 +43,7 @@
     margin-right: 0px;
 }
 
-.brand-images img{
+.brand-images img {
     margin-right: 16px;
 }
 
@@ -69,6 +69,20 @@
     .brands-title p {
         font-size: 12px;
     }
+    .brands .brand-images.mobile img {
+        max-width: 4rem;
+        max-height: 4rem;
+        margin-right: 8px;
+    }
+
+    .brand-images.mobile p {
+        font-size: 6px;
+    }
+}
+
+.brands .brand-images.mobile img {
+    max-width: 4rem;
+    max-height: 4rem;
 }
 
 @media (max-width: 500px) {
@@ -95,7 +109,7 @@
 }
 
 @media (max-width: 370px) {
-    .brand-images img{
+    .brand-images img {
         margin-right: 4px !important;
     }
 

@@ -767,11 +767,11 @@
                                                 <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
                                                     <div>
                                                         <ul class="d-flex">
-                                                            <li><i class="ti-star"></i></li>
-                                                            <li><i class="ti-star"></i></li>
-                                                            <li><i class="ti-star"></i></li>
-                                                            <li><i class="ti-star"></i></li>
-                                                            <li><i class="ti-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
                                                         </ul>
                                                         <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
                                                     </div>
