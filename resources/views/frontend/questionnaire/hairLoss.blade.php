@@ -368,7 +368,7 @@
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="thinninghl" name="Q1_answer"
                                                     value="Thinning all over (Temples and Crown)">
-                                                <label class="open-que-error hair-label" for="thinninghl">
+                                                <label class="next-button hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_tc_5899.jpg') }}"
@@ -382,7 +382,7 @@
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="thincrownhl" name="Q1_answer"
                                                     value="Thin crown">
-                                                <label class="open-que-error hair-label" for="thincrownhl">
+                                                <label class="next-button hair-label" for="thincrownhl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_5898.jpg') }}"
@@ -396,7 +396,7 @@
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="extensivehl" name="Q1_answer"
                                                     value="Extensive Hair loss">
-                                                <label class="open-que-error hair-label" for="extensivehl">
+                                                <label class="next-button hair-label" for="extensivehl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_5900.jpg') }}"
@@ -469,7 +469,7 @@
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="thinninghl" name="Q1_answer"
                                                     value="Thinning all over (Temples and Crown)">
-                                                <label class="open-que-error hair-label" for="thinninghl">
+                                                <label class="next-button hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_tc_5899.jpg') }}"
@@ -483,7 +483,7 @@
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="thincrownhl" name="Q1_answer"
                                                     value="Thin crown">
-                                                <label class="open-que-error hair-label" for="thincrownhl">
+                                                <label class="next-button hair-label" for="thincrownhl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_5898.jpg') }}"
@@ -497,7 +497,7 @@
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="extensivehl" name="Q1_answer"
                                                     value="Extensive Hair loss">
-                                                <label class="open-que-error hair-label" for="extensivehl">
+                                                <label class="next-button hair-label" for="extensivehl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_5900.jpg') }}"
