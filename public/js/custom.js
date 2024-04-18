@@ -16,35 +16,26 @@ var spaceQuestions = {
         },
         5: {
             type: "showTreatment",
-            questions: [
-                "Our treatments are delivered using a hydrophilic alcohol-free, botanical formula",
-                "Studies have shown it to outperform alcohol-based preparations of minoxidil",
-                "For delivery and absorption",
-            ],
-            video: "1.mp4",
+            video: {
+                desktop: "Minoxidil and Finasteride desk.MP4",
+                mobile: "Minoxidil and Finasteride Mobile.MP4",
+            },
         },
         8: {
-            type: "showMHRA",
-            questions: [
-                "Minoxidil and Finasteride are the only MHRA approved treatments for hair loss",
-                "studies showing combination use results in",
-                "94% effectiveness",
-            ],
-            video: "1.mp4",
+            type: "showTreatment",
+            video: {
+                desktop: "Pre-comp-hair-mobile.MP4",
+                mobile: "Pre-comp-hair-desk.MP4",
+            },
         },
     },
     beard: {
         6: {
             type: "showTreatment",
-            questions: [
-                "Our treatments are delivered using a hydrophilic alcohol-free, botanical formula",
-                "Studies have shown it to outperform alcohol-based preparations of minoxidil",
-                "For delivery and absorption",
-            ],
             video: "1.mp4",
         },
         10: {
-            type: "showSmoke",
+            type: "showTreatment",
             questions: [
                 "A randomized trial done in 2016 found that participants using minoxidil",
                 "had 86% more beard hair growth",
@@ -152,18 +143,6 @@ $(document).ready(function () {
                             break;
                         }
                         case "showTreatment": {
-                            showVideoAnimation(
-                                spaceQuestions[questType][currentStep]
-                            );
-                            break;
-                        }
-                        case "showMHRA": {
-                            showVideoAnimation(
-                                spaceQuestions[questType][currentStep]
-                            );
-                            break;
-                        }
-                        case "showSmoke": {
                             showVideoAnimation(
                                 spaceQuestions[questType][currentStep]
                             );

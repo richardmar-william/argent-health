@@ -291,7 +291,7 @@
             </div>
         </div>
         <div class="quest-v2-content">
-            <div class="container-fluid">
+            <div class="main-container container-fluid">
                 <div class="quest-v2-inner-wrap">
                     <form action="{{ route('cart_product') }}" method="POST">
                         @csrf
@@ -1653,12 +1653,12 @@
                     </div>
                 </div>
                 <div class="video-content">
-                    <video muted loop id="video-player">
-                        <source id="video-src" type="video/mp4">
+                    <video muted loop class="video-player" id="video-player-desktop">
+                        <source id="video-src-desktop" type="video/mp4">
                     </video>
-                    <div class="video-title">
-
-                    </div>
+                    <video muted loop class="video-player" id="video-player-mobile">
+                        <source id="video-src-mobile" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
