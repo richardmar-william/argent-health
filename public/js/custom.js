@@ -20,6 +20,7 @@ var spaceQuestions = {
                 desktop: "Minoxidil and Finasteride desk.MP4",
                 mobile: "Minoxidil and Finasteride Mobile.MP4",
             },
+            delay: 10000,
         },
         8: {
             type: "showTreatment",
@@ -27,21 +28,25 @@ var spaceQuestions = {
                 desktop: "Pre-comp-hair-mobile.MP4",
                 mobile: "Pre-comp-hair-desk.MP4",
             },
+            delay: 9000,
         },
     },
     beard: {
-        6: {
+        7: {
             type: "showTreatment",
-            video: "1.mp4",
+            video: {
+                desktop: "Pre-comp 6.MP4",
+                mobile: "Pre-comp 3.MP4",
+            },
+            delay: 9000,
         },
-        10: {
+        11: {
             type: "showTreatment",
-            questions: [
-                "A randomized trial done in 2016 found that participants using minoxidil",
-                "had 86% more beard hair growth",
-                "compared to those using a placebo.",
-            ],
-            video: "1.mp4",
+            video: {
+                desktop: "A randomized trial desk 1.MP4",
+                mobile: "A randomized trial Mobile 1.MP4",
+            },
+            delay: 10000,
         },
     },
     erectile: {
@@ -51,6 +56,7 @@ var spaceQuestions = {
                 desktop: "Our products come in sleek desk.MP4",
                 mobile: "Our products come in sleek mobile.MP4",
             },
+            delay: 10000,
         },
         8: {
             type: "showReview",
@@ -62,6 +68,7 @@ var spaceQuestions = {
                 desktop: "Tadalafil (Cialis) got its _weekend pill DESK.MP4",
                 mobile: "Tadalafil (Cialis) got its _weekend pill mobile.MP4",
             },
+            delay: 9000,
         },
     },
     premature: {
@@ -75,6 +82,7 @@ var spaceQuestions = {
                 desktop: "Pre-comp-Desk.MP4",
                 mobile: "Pre-comp.MP4",
             },
+            delay: 10000,
         },
         9: {
             type: "showTreatment",
@@ -82,6 +90,7 @@ var spaceQuestions = {
                 desktop: "Our products come in sleek desk 2.MP4",
                 mobile: "Our products come in sleek mobile 2.MP4",
             },
+            delay: 10000,
         },
     },
 };
@@ -423,5 +432,5 @@ function showVideoAnimation(data) {
         $("body").addClass("h-100 bg-white");
         $(".video-content").hide();
         $(".video-title").empty();
-    }, 10000);
+    }, data.delay);
 }

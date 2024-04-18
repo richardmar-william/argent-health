@@ -267,7 +267,7 @@
             </div>
         </div>
         <div class="quest-v2-content">
-            <div class="container-fluid">
+            <div class="main-container container-fluid">
                 <div class="quest-v2-inner-wrap">
                     <form id="bg-form" action="{{ route('cart_product') }}" method="post">
                         @csrf
@@ -594,7 +594,6 @@
                                         <div class="row">
                                             <div class="quest-v2-label col-md-6 col-sm-12 d-flex flex-column justify-content-between">
                                                 <h3 class="quest-v2-subh mb-30">
-                                                    <!-- <input class="in_type" type="text" name="HAVE YOU USED MINOXIDIL IN THE PAST 12 MONTHS?" value="HAVE YOU USED MINOXIDIL IN THE PAST 12 MONTHS?">  -->
                                                     <textarea readonly="readonly" class="in_type" type="text" name="Q7"
                                                         value="HAVE YOU USED MINOXIDIL IN THE PAST 12 MONTHS?">Have you used minoxidil in the past 12 months?</textarea>
                                                 </h3>
@@ -1273,12 +1272,12 @@
                     <!-- loader section end -->
                 </div>
                 <div class="video-content">
-                    <video muted loop id="video-player">
-                        <source id="video-src" type="video/mp4">
+                    <video muted loop class="video-player" id="video-player-desktop">
+                        <source id="video-src-desktop" type="video/mp4">
                     </video>
-                    <div class="video-title">
-
-                    </div>
+                    <video muted loop class="video-player" id="video-player-mobile">
+                        <source id="video-src-mobile" type="video/mp4">
+                    </video>
                 </div>
             </div>
         </div>
