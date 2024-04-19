@@ -12,7 +12,7 @@
 
 .swiper-slide .card {
     width: 70%;
-    padding: 30px;
+    padding: 16px;
     border-radius: 29px;
 }
 
@@ -84,7 +84,7 @@
 @media (max-width: 575px) {
     .swiper-slide .card {
         width: 90%;
-        margin-right: 32px;
+        margin-right: 16px;
     }
 }
 
