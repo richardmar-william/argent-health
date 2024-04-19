@@ -310,7 +310,7 @@
                                         <div class="hair-loss-content">
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="genhairloss" name="Q1_answer"
-                                                    value="Genetic Hair Loss/ Mild">
+                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white">
                                                 <label class="next-button hair-label" for="genhairloss">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -325,7 +325,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="recehairline" name="Q1_answer"
-                                                    value="Receding Hairline">
+                                                    value="Receding Hairline" data-background="#e4e4e4" data-color="text-dark">
                                                 <label class="next-button hair-label" for="recehairline">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -367,21 +367,21 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="thinninghl" name="Q1_answer"
-                                                    value="Thinning all over (Temples and Crown)">
+                                                    value="Thinning all over" data-background="#000" data-color="text-white">
                                                 <label class="next-button hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_tc_5899.jpg') }}"
-                                                            alt="Thinning all over (Temples and Crown)" width="340px">
+                                                            alt="Thinning all over" width="340px">
                                                         <div class="card-body">
-                                                            <p class="card-title text-center">Thinning all over (Temples and Crown)</p>
+                                                            <p class="card-title text-center">Thinning all over</p>
                                                         </div>
                                                     </div>
                                                 </label>
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="thincrownhl" name="Q1_answer"
-                                                    value="Thin crown">
+                                                    value="Thin crown" data-background="#e4e4e4" data-color="text-dark">
                                                 <label class="next-button hair-label" for="thincrownhl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -395,7 +395,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="extensivehl" name="Q1_answer"
-                                                    value="Extensive Hair loss">
+                                                    value="Extensive Hair loss" data-background="#e4e4e4" data-color="text-dark">
                                                 <label class="next-button hair-label" for="extensivehl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -411,7 +411,7 @@
                                         <div class="row hair-loss-mobile">
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="genhairloss" name="Q1_answer"
-                                                    value="Genetic Hair Loss/ Mild">
+                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white">
                                                 <label class="next-button hair-label" for="genhairloss">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -426,7 +426,7 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="recehairline" name="Q1_answer"
-                                                    value="Receding Hairline (Temples)">
+                                                    value="Receding Hairline" data-background="#e4e4e4" data-color="text-dark">
                                                 <label class="next-button hair-label" for="recehairline">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -468,21 +468,21 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="thinninghl" name="Q1_answer"
-                                                    value="Thinning all over (Temples and Crown)">
+                                                    value="Thinning all over" data-background="#000" data-color="text-white">
                                                 <label class="next-button hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_tc_5899.jpg') }}"
-                                                            alt="Thinning all over (Temples and Crown)" width="100%">
+                                                            alt="Thinning all over" width="100%">
                                                         <div class="card-body">
-                                                            <p class="card-title text-center">Thinning all over (Temples and Crown)</p>
+                                                            <p class="card-title text-center">Thinning all over</p>
                                                         </div>
                                                     </div>
                                                 </label>
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="thincrownhl" name="Q1_answer"
-                                                    value="Thin crown">
+                                                    value="Thin crown" data-background="#e4e4e4" data-color="text-dark">
                                                 <label class="next-button hair-label" for="thincrownhl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -496,7 +496,7 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="extensivehl" name="Q1_answer"
-                                                    value="Extensive Hair loss">
+                                                    value="Extensive Hair loss" data-background="#e4e4e4" data-color="text-dark">
                                                 <label class="next-button hair-label" for="extensivehl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -1055,28 +1055,6 @@
 
                                 </div>
                             </div>
-                            <!-- <div class="sub-step fixed-step" id="sub-step3">
-                                <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" name="Q12" type="text"
-                                            value="Do you have uncontrolled low or high blood pressure?"> Do you have uncontrolled low or high blood pressure?</textarea>
-                                    </h3>
-
-                                    <div class="form-group form-radio question-radio">
-                                        <input type="radio" id="uncont-bloodp-no" name="Q12_answer" value="No">
-                                        <label class="next-button" for="uncont-bloodp-no">No</label>
-                                    </div>
-                                    <div class="form-group form-radio question-radio">
-                                        <input type="radio" id="uncont-bloodp-yes" name="Q12_answer" value="Yes">
-                                        <label class="open-que-error" for="uncont-bloodp-yes">Yes</label>
-                                    </div>
-                                    <div class="quest-v2-btn">
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
-                                    </div>
-
-                                </div>
-                            </div> -->
                         </div>
                         <!-- 7th step -->
                         <div class="quest-v2-step data-progress d-none" data-progress="66.6" id="step7">
@@ -1300,47 +1278,9 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <ul class="quest-v2-list pb-30 mb-30">
-                                            <li>Major illnesses</li>
-                                            <li>Ongoing medical conditions</li>
-                                            <li>Any medication prescribed or over the counter that you take</li>
-                                            <li>Allergies to medication</li>
-                                            <li>Operations</li>
-                                        </ul> -->
-
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="sub-step fixed-step" id="sub-step1">
-                                <div class="inner-form-group">
-                                    <h3 class="quest-v2-subh mb-30">
-                                        <textarea class="in_type" readonly="readonly" name="Q17" type="text"
-                                            value="ongoing medical conditions">Please Inform Us About Any Major Illnesses, Ongoing Medical Conditions, Medications (Prescribed Or Over-The-Counter) You Take, Allergies To Medication, Or Surgeries. This Information Is Necessary For Our Clinicians To Ensure The Prescribed Treatment Is Safe For You.”</textarea>
-                                    </h3>
-
-                                    <div class="form-group form-radio question-radio">
-                                        <input type="radio" id="prescribed-1" name="Q17_answer"
-                                            value="I have a major illness, ongoing medical condition, allergy to medication, or take prescribed or over-the-counter medication to inform you about.">
-                                        <label class="next-button" for="prescribed-1">I have a major illness, ongoing
-                                            medical condition, allergy to medication, or take prescribed or
-                                            over-the-counter medication to inform you about.</label>
-                                    </div>
-                                    <div class="form-group form-radio question-radio">
-                                        <input type="radio" id="prescribed-2" name="Q17_answer"
-                                            value="I do not have a major illness, ongoing medical condition, operation, allergy to medication, or take prescribed or over-the-counter medication to inform you about.">
-                                        <label class="next-button" for="prescribed-2"> I do not have a major illness,
-                                            ongoing medical condition, operation, allergy to medication, or take
-                                            prescribed or over-the-counter medication to inform you about.</label>
-                                    </div>
-                                    <div class="quest-v2-btn">
-
-
-                                        <a class="btn-d-trans btn-wt-170 back-sub-step"
-                                            href="javascript:void(0)">Back</a>
-                                    </div>
-
-                                </div>
-                            </div> -->
                         </div>
 
                         <div class="quest-v2-step data-progress d-none" data-progress="100" id="step10">
@@ -1627,10 +1567,10 @@
                 </div>
                 <div class="hair-ad-content">
                     <div class="title mt-5 text-center">
-                        <h1 class="font-yeseva font-black font-weight-600" id="ad-title">Extensive Hair Loss</h1>
-                        <h1 class="font-poppins font-black font-weight-600">We’ve got you Covered </h1>
+                        <h1 class="font-yeseva font-black font-weight-400" id="ad-title">Extensive Hair Loss</h1>
+                        <h1 class="font-poppins font-black font-weight-400" id="default-ad-title">We’ve got you Covered </h1>
                     </div>
-                    <div class="view">
+                    <div class="view mt-5">
                         <div class="card review-card mt-5">
                             <div class="card-header d-flex justify-content-between bg-transparent">
                                 <h5 class="font-poppins review-user-name pt-1">Manny A.</h5>
@@ -1650,6 +1590,7 @@
                                 </div>
                             </div>
                         </div>
+                        <p class="hair-ad-description">Agent is a UK Registered Pharmacy, all our treatments are managed by Licensed healthcare professionals.</p>
                     </div>
                 </div>
                 <div class="video-content">

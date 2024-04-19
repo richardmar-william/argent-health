@@ -60,7 +60,8 @@ var spaceQuestions = {
         },
         8: {
             type: "showReview",
-            description: "Lorem ipsum dolor sit amet, consecteur...",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun",
         },
         13: {
             type: "showTreatment",
@@ -74,7 +75,8 @@ var spaceQuestions = {
     premature: {
         3: {
             type: "showReview",
-            description: "Lorem ipsum dolor sit amet, consecteur...",
+            description:
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun",
         },
         6: {
             type: "showTreatment",
@@ -148,7 +150,7 @@ $(document).ready(function () {
                 if (steps.indexOf(currentStep.toString()) != -1) {
                     switch (spaceQuestions[questType][currentStep].type) {
                         case "showHairAds": {
-                            showHairAds();
+                            showHairAds(spaceQuestions[questType][currentStep]);
                             break;
                         }
                         case "showTreatment": {
@@ -352,22 +354,26 @@ $(".questionnaire-v2-main .quest-v2-step h3 textarea.in_type").each(
     }
 );
 
-function showHairAds() {
+function showHairAds(data) {
     var radios = document.getElementsByName("Q1_answer");
 
     for (var i = 0, length = radios.length; i < length; i++) {
         if (radios[i].checked) {
+            var title = $(radios[i]).attr("id");
+            var background = $(radios[i]).data("background");
+            var color = $(radios[i]).data("color");
             // do whatever you want with the checked radio
             $(".quest-v2-inner-wrap").hide();
-            $(".quest-v2-content ").css("background-color", "#e4e4e4");
+            $(".quest-v2-content ").css("background-color", background);
             $("body")
                 .removeClass("bg-white")
-                .css("background-color", "#e4e4e4");
+                .css("background-color", background);
             $(".hair-ad-content").show();
-            var title = $(radios[i]).attr("id");
 
+            $(".hair-ad-description").addClass(color);
             // title + 'before.jpg'
-            $("#ad-title").html(radios[i].value);
+            $("#ad-title").addClass(color).html(radios[i].value);
+            $("#default-ad-title").addClass(color);
             $("#ad-image-before").attr(
                 "src",
                 `${app_url}/images/${title}before.png`
@@ -385,14 +391,17 @@ function showHairAds() {
         $(".quest-v2-inner-wrap").show();
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
+        $("#ad-title").removeClass(color);
+        $(".hair-ad-description").removeClass(color);
+        $("#default-ad-title").removeClass(color);
         $(".hair-ad-content").hide();
     }, 5000);
 }
 
 function showReviews(data) {
     $(".quest-v2-inner-wrap").hide();
-    $(".quest-v2-content ").css("background-color", "#e4e4e4");
-    $("body").removeClass("bg-white").css("background-color", "#e4e4e4");
+    $(".quest-v2-content ").css("background-color", "#000");
+    $("body").removeClass("bg-white").css("background-color", "#000");
     $("#quest-review-description").html(data.description);
     $(".quest-review-content").show();
 
@@ -407,8 +416,8 @@ function showReviews(data) {
 function showVideoAnimation(data) {
     $(".main-container").removeClass("container-fluid");
     $(".quest-v2-inner-wrap").hide();
-    $(".quest-v2-content ").css("background-color", "#e4e4e4");
-    $("body").removeClass("bg-white").css("background-color", "#e4e4e4");
+    $(".quest-v2-content ").css("background-color", "#000");
+    $("body").removeClass("bg-white").css("background-color", "#000");
     $(".video-content").show();
 
     $("#video-src-desktop").attr(

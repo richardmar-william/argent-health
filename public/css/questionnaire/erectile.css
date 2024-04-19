@@ -5,6 +5,10 @@
     color: #979caa;
 }
 
+.quest-review-content {
+    margin-top: 30%;
+}
+
 .quest-v2-quest .form-group.form-radio {
     background-color: #f5f5f5;
     border-radius: 39px;

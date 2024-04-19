@@ -408,6 +408,13 @@ a:hover {
     min-width: 11.5rem;
 }
 
+.hair-ad-description {
+    margin: auto;
+    width: 70%;
+    text-align: center;
+    margin-top: 32px;
+}
+
 .quest-v2-content [type="radio"]:checked + .hair-label:before,
 .quest-v2-content [type="radio"]:not(:checked) + .hair-label:before {
     display: none;
@@ -2233,14 +2240,14 @@ p#coupon_error {
     display: none;
 }
 
-.brands.container{
+.brands.container {
     background-color: #f5f5f5;
     border-radius: 29px;
     width: fit-content;
     padding: 32px 16px 32px 32px;
 }
 
-.brands .brand-images.mobile img{
+.brands .brand-images.mobile img {
     max-width: 5rem;
     max-height: 5rem;
 }
@@ -2250,7 +2257,7 @@ p#coupon_error {
     max-height: 100px;
 }
 
-.brands-rating{
+.brands-rating {
     padding: 16px;
     background-color: #3f453f;
     border-radius: 16px;

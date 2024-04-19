@@ -1619,6 +1619,10 @@
                     <!-- loader section end -->
                 </div>
                 <div class="quest-review-content">
+                    <div class="title mt-5 text-center">
+                        <h1 class="font-yeseva font-black font-weight-400 text-white">Erectile Dysfunction?</h1>
+                        <h1 class="font-poppins font-black font-weight-400 text-white">We’ve got you Covered </h1>
+                    </div>
                     <div class="view">
                         <div class="card review-card mt-5">
                             <div class="card-header d-flex justify-content-between bg-transparent">
@@ -1631,7 +1635,7 @@
                             </div>
                             <div class="card-body">
                                 <div>
-                                    <p class="font-black" id="quest-review-description"></p>
+                                    <p class="font-gray-light" id="quest-review-description"></p>
                                 </div>
                             </div>
                             <div class="card-footer">
