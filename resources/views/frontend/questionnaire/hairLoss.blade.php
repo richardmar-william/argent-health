@@ -310,7 +310,7 @@
                                         <div class="hair-loss-content">
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="genhairloss" name="Q1_answer"
-                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white">
+                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white" data-name="James H">
                                                 <label class="next-button hair-label" for="genhairloss">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -325,7 +325,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="recehairline" name="Q1_answer"
-                                                    value="Receding Hairline" data-background="#e4e4e4" data-color="text-dark">
+                                                    value="Receding Hairline" data-background="#e4e4e4" data-color="text-dark" data-name="Ike">
                                                 <label class="next-button hair-label" for="recehairline">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -367,7 +367,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="thinninghl" name="Q1_answer"
-                                                    value="Thinning all over" data-background="#000" data-color="text-white">
+                                                    value="Thinning all over" data-background="#000" data-color="text-white" data-name="Reece T">
                                                 <label class="next-button hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -381,7 +381,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="thincrownhl" name="Q1_answer"
-                                                    value="Thin crown" data-background="#e4e4e4" data-color="text-dark">
+                                                    value="Thin crown" data-background="#e4e4e4" data-color="text-dark" data-name="Eric O">
                                                 <label class="next-button hair-label" for="thincrownhl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -395,7 +395,7 @@
                                             </div>
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="extensivehl" name="Q1_answer"
-                                                    value="Extensive Hair loss" data-background="#e4e4e4" data-color="text-dark">
+                                                    value="Extensive Hair loss" data-background="#e4e4e4" data-color="text-dark" data-name="James D">
                                                 <label class="next-button hair-label" for="extensivehl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -411,7 +411,7 @@
                                         <div class="row hair-loss-mobile">
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="genhairloss" name="Q1_answer"
-                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white">
+                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white" data-name="James H">
                                                 <label class="next-button hair-label" for="genhairloss">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -426,7 +426,7 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="recehairline" name="Q1_answer"
-                                                    value="Receding Hairline" data-background="#e4e4e4" data-color="text-dark">
+                                                    value="Receding Hairline" data-background="#e4e4e4" data-color="text-dark" data-name="Ike">
                                                 <label class="next-button hair-label" for="recehairline">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -468,7 +468,7 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="thinninghl" name="Q1_answer"
-                                                    value="Thinning all over" data-background="#000" data-color="text-white">
+                                                    value="Thinning all over" data-background="#000" data-color="text-white" data-name="Reece T">
                                                 <label class="next-button hair-label" for="thinninghl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -482,7 +482,7 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="thincrownhl" name="Q1_answer"
-                                                    value="Thin crown" data-background="#e4e4e4" data-color="text-dark">
+                                                    value="Thin crown" data-background="#e4e4e4" data-color="text-dark" data-name="Eric O">
                                                 <label class="next-button hair-label" for="thincrownhl">
                                                     <div class="card">
                                                         <img class="card-img-top"
@@ -496,7 +496,7 @@
                                             </div>
                                             <div class="form-group form-radio col-6">
                                                 <input type="radio" id="extensivehl" name="Q1_answer"
-                                                    value="Extensive Hair loss" data-background="#e4e4e4" data-color="text-dark">
+                                                    value="Extensive Hair loss" data-background="#e4e4e4" data-color="text-dark" data-name="James D">
                                                 <label class="next-button hair-label" for="extensivehl">
                                                     <div class="card">
                                                         <img class="card-img-top"

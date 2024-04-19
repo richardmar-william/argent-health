@@ -362,8 +362,10 @@ function showHairAds(data) {
             var title = $(radios[i]).attr("id");
             var background = $(radios[i]).data("background");
             var color = $(radios[i]).data("color");
+            var name = $(radios[i]).data("name");
             // do whatever you want with the checked radio
             $(".quest-v2-inner-wrap").hide();
+            $(".review-user-name").html(name);
             $(".quest-v2-content ").css("background-color", background);
             $("body")
                 .removeClass("bg-white")
