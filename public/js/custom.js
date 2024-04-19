@@ -32,6 +32,9 @@ var spaceQuestions = {
         },
     },
     beard: {
+        4: {
+            type: "showBeardAds",
+        },
         7: {
             type: "showTreatment",
             video: {
@@ -161,6 +164,10 @@ $(document).ready(function () {
                         }
                         case "showReview": {
                             showReviews(spaceQuestions[questType][currentStep]);
+                            break;
+                        }
+                        case "showBeardAds": {
+                            showBeardAds();
                             break;
                         }
                     }
@@ -354,7 +361,7 @@ $(".questionnaire-v2-main .quest-v2-step h3 textarea.in_type").each(
     }
 );
 
-function showHairAds(data) {
+function showHairAds() {
     var radios = document.getElementsByName("Q1_answer");
 
     for (var i = 0, length = radios.length; i < length; i++) {
@@ -397,6 +404,24 @@ function showHairAds(data) {
         $(".hair-ad-description").removeClass(color);
         $("#default-ad-title").removeClass(color);
         $(".hair-ad-content").hide();
+    }, 5000);
+}
+
+function showBeardAds() {
+    $(".quest-v2-inner-wrap").hide();
+    $(".quest-v2-content ").css("background-color", "#000");
+    $("body").removeClass("bg-white").css("background-color", "#000");
+    $(".beard-ad-content").show();
+
+    $(".beard-ad-description").addClass("text-white");
+    // title + 'before.jpg'
+
+    setTimeout(function () {
+        $(".quest-v2-inner-wrap").show();
+        $(".quest-v2-content ").css("background-color", "#fff");
+        $("body").addClass("h-100 bg-white");
+        $(".beard-ad-description").removeClass("text-white");
+        $(".beard-ad-content").hide();
     }, 5000);
 }
 

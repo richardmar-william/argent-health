@@ -46,9 +46,57 @@
     object-fit: fill;
 }
 
+.review-card .card-header {
+    border: none;
+}
+
+.review-card .card-footer {
+    border: none;
+}
+
+.review-card {
+    width: fit-content;
+    border-radius: 11px;
+    margin: auto;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+.card-images img {
+    max-width: 30vw;
+}
+.review-user-name {
+    color: #484f47;
+}
+.beard-ad-content {
+    display: none;
+    margin-top: 30%;
+}
+
+.ad-content-image {
+    max-height: 1.5rem;
+}
+
 .video-player source {
     min-width: 100%;
     min-height: 100%;
+}
+
+.question-text {
+    color: #000;
+    animation-name: fade;
+    animation-duration: 2s;
+    text-align: center;
+    font-size: large;
+}
+
+@keyframes fade {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .question-text {

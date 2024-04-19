@@ -1271,6 +1271,30 @@
                     </div>
                     <!-- loader section end -->
                 </div>
+                <div class="beard-ad-content">
+                    <div class="view mt-5">
+                        <div class="card review-card mt-5">
+                            <div class="card-header d-flex justify-content-between bg-transparent">
+                                <h5 class="font-poppins pt-1 review-user-name">Daniel R</h5>
+                                <div class="d-flex flex-column">
+                                    <div><img class="ad-content-image" src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark verified-title">Verified by company</span></div>
+                                    <ul class="d-flex flex-row-reverse stars">
+                                        @for ($i=0; $i<5; $i++)
+                                            <li><i class="fa fa-star text-warning"></i></li>
+                                        @endfor
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex justify-content-center card-images">
+                                    <img style="margin-right: 32px; border-radius: 10px" src="{{ asset('images/beardbefore.png') }}">
+                                    <img src="{{ asset('images/beardafter.png') }}" style="border-radius: 10px">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="hair-ad-description">Agent is a UK Registered Pharmacy, all our treatments are managed by Licensed healthcare professionals.</p>
+                    </div>
+                </div>
                 <div class="video-content">
                     <video muted loop class="video-player" id="video-player-desktop">
                         <source id="video-src-desktop" type="video/mp4">
