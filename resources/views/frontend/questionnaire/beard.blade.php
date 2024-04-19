@@ -1062,8 +1062,8 @@
                                     <div class="v2-1step-cont">
                                         <div>
                                             <h1 class="weare-going-con mb-20 qe-title">
-                                                <div class="ques-final-thankyou">Thank you</div>
-                                                <div class="ques-final-answering">For Answering</div>
+                                                <div class="ques-final-thankyou font-yeseva" style="font-weight: 600; letter-spacing: -2px">Thank you</div>
+                                                <div class="ques-final-answering font-yeseva" style="font-weight: 600; letter-spacing: -2px">For Answering</div>
                                             </h1>
                                             <p class="mb-30">Thank you for answering questions about your health and
                                                 experiences with hair loss. Your responses will assist our licensed

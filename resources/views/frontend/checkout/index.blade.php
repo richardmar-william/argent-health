@@ -182,8 +182,8 @@
 
                                 <div class="quest-ordrsmry-left">
                                         <h1 class="card-heading" >
-                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -2px;">Order</div>
-                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -2px;">Summary</div>
+                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -4px;">Order</div>
+                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -4px;">Summary</div>
                                         </h1>
                                         <div class="mobile-logo mb-3">
                                             <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
@@ -369,10 +369,10 @@
                                 <div class="row banner-img">
                                     <div class="col-12 text-center 2">
                                         <h1 class="account-signup">
-                                            <div>
+                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -2px">
                                                 Account
                                             </div>
-                                            <div>
+                                            <div class="font-yeseva" style="font-weight: 600; letter-spacing: -2px">
                                                 Sign Up
                                             </div>
                                         </h1>
@@ -554,8 +554,8 @@
                                 <div class="row banner-img">
                                     <div class="col-12">
                                         <div class="shipping-details-header">
-                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -2px;">Shipping</div>
-                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -2px;">details</div>
+                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -4px;">Shipping</div>
+                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -4px;">details</div>
                                         </div>
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
@@ -736,8 +736,8 @@
                                                 @foreach ($reviews as $review)
                                                 <div class="swiper-slide">
                                                     <div class="card review-card">
-                                                        <div class="card-header d-flex justify-content-between">
-                                                            <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
+                                                        <div class="card-header d-flex justify-content-between" style="background-color: #fff">
+                                                            <h5 class="font-poppins review-user-name">{{ $review->username }}</h5>
                                                             <ul class="d-flex">
                                                                 @for ($i=0; $i<$review->rating; $i++)
                                                                     <li><i class="fa fa-star text-warning"></i></li>
@@ -746,10 +746,9 @@
                                                         </div>
                                                         <div class="card-body">
                                                             <p class="font-poppins review-content">{{ $review->content }}</p>
-                                                            <p> Verified by company</p>
                                                         </div>
-                                                        <div class="card-footer">
-                                                            <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
+                                                        <div class="card-footer" style="background-color: #fff">
+                                                            <img src="{{ asset('images/verified.svg') }}" style="max-width: 2rem"/><span class="font-poppins text-dark" style="font-size: 12px">Verified by company</span>
                                                         </div>
                                                     </div>
                                                 </div>

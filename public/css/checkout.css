@@ -1,9 +1,9 @@
-
-.review-user-name{
+.review-user-name {
     color: #484f47;
 }
 .review-content {
     color: #979caa;
+    font-size: 12px;
 }
 
 .swiper {
@@ -18,7 +18,7 @@
 
 .swiper-wrapper {
     transition-timing-function: linear;
-  }
+}
 
 .review-card .card-header {
     border: none;
@@ -62,7 +62,7 @@
     margin-right: 0px;
 }
 
-.brand-images img{
+.brand-images img {
     margin-right: 16px;
 }
 
@@ -75,7 +75,6 @@
     margin: auto;
 }
 
-
 @media (max-width: 991px) {
     .mobile-logo {
         display: block;
@@ -83,7 +82,7 @@
 }
 
 @media (max-width: 575px) {
-    .swiper-slide .card  {
+    .swiper-slide .card {
         width: 90%;
         margin-right: 32px;
     }
@@ -96,7 +95,7 @@
 }
 
 @media (max-width: 670px) {
-    .brand-images img{
+    .brand-images img {
         width: 3rem;
         height: 3rem;
         margin-right: 8px;
@@ -132,7 +131,7 @@
 }
 
 @media (max-width: 375px) {
-    .brand-images img{
+    .brand-images img {
         margin-right: 4px !important;
     }
     .brand-images p {

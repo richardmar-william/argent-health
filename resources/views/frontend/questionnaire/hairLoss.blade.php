@@ -310,12 +310,12 @@
                                         <div class="hair-loss-content">
                                             <div class="form-group form-radio hair-card">
                                                 <input type="radio" id="genhairloss" name="Q1_answer"
-                                                    value="Genetic Hair Loss/ Mild" data-background="#000" data-color="text-white" data-name="James H">
+                                                    value="Genetic Hair Loss / Mild" data-background="#000" data-color="text-white" data-name="James H">
                                                 <label class="next-button hair-label" for="genhairloss">
                                                     <div class="card">
                                                         <img class="card-img-top"
                                                             src="{{ asset('images/hair_5894.png') }}"
-                                                            alt="Genetic/Mild Hair Loss">
+                                                            alt="Genetic / Mild Hair Loss">
                                                         <div class="card-body">
                                                             <p class="card-title text-center">Genetic/Mild Hair Loss
                                                             </p>
@@ -1374,8 +1374,8 @@
                                     <div class="v2-1step-cont">
                                         <div>
                                             <h1 class="weare-going-con mb-20 qe-title">
-                                                <div class="ques-final-thankyou">Thank you</div>
-                                                <div class="ques-final-answering">For Answering</div>
+                                                <div class="ques-final-thankyou font-yeseva" style="font-weight: 600; letter-spacing: -2px">Thank you</div>
+                                                <div class="ques-final-answering font-yeseva" style="font-weight: 600; letter-spacing: -2px">For Answering</div>
                                             </h1>
                                             <p class="mb-30">Thank you for answering questions about your health and
                                                 experiences with hair loss. Your responses will assist our licensed
@@ -1567,8 +1567,8 @@
                 </div>
                 <div class="hair-ad-content">
                     <div class="title mt-5 text-center">
-                        <h1 class="font-yeseva font-black font-weight-400" id="ad-title">Extensive Hair Loss</h1>
-                        <h1 class="font-poppins font-black font-weight-400" id="default-ad-title">We’ve got you Covered </h1>
+                        <h1 class="font-yeseva font-black font-weight-400 letter-spec-1" id="ad-title">Extensive Hair Loss</h1>
+                        <h1 class="font-poppins font-black font-weight-400 letter-spec-1" id="default-ad-title">We’ve got you Covered </h1>
                     </div>
                     <div class="view mt-5">
                         <div class="card review-card mt-5">

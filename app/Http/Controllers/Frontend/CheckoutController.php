@@ -501,7 +501,35 @@ class CheckoutController extends Controller
                 $product_data = Product::whereIn('id',explode(',',  $product_id))->get();
                 if(sizeof($product_data) > 0) $prod_subs = $product_data[0]['subscription_duration'];
 
-                $reviews = Review::with(['user','product'])->take(10)->latest()->get();
+                // $reviews = Review::with(['user','product'])->take(10)->latest()->get();
+                $reviews = [
+                    (object)[
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'username' => 'Jenny D',
+                        'rating' => 5
+                    ],
+                    (object)[
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'username' => 'Jenny D',
+                        'rating' => 5
+                    ],
+                    (object)[
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'username' => 'Jenny D',
+                        'rating' => 5
+                    ],
+                    (object)[
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'username' => 'Jenny D',
+                        'rating' => 5
+                    ],
+                    (object)[
+                        'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                        'username' => 'Jenny D',
+                        'rating' => 5
+                    ]
+                ];
+                $reviews = collect($reviews);
                 $order_id = 0;
                 if($_SERVER['REMOTE_ADDR'] == "191.178.104.67") {
                     return view('frontend.checkout.index1',compact('get_data','product_data', 'order_id','total_price', 'sessionId','prod_subs','first_time_disc','product_id'));

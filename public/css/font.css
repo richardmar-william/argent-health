@@ -40,3 +40,7 @@
 .font-gray-light {
     color: #979caa;
 }
+
+.letter-spec-1 {
+    letter-spacing: -1px;
+}
