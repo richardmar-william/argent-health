@@ -462,15 +462,17 @@ function showVideoAnimation(data) {
     $("#video-player-mobile").get(0).play();
 
     setTimeout(function () {
+        $("#video-player-desktop").get(0).pause();
+        $("#video-player-desktop").get(0).cruuentTiem = 0;
+        $("#video-src-desktop").attr("src", "");
+        $("#video-player-mobile").get(0).pause();
+        $("#video-player-mobile").get(0).cruuentTiem = 0;
+        $("#video-src-mobile").attr("src", "");
         $(".main-container").addClass("container-fluid");
         $(".quest-v2-inner-wrap").show();
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
         $(".video-content").hide();
         $(".video-title").empty();
-        $("#video-player-desktop").get(0).pause();
-        $("#video-src-desktop").attr("src", "");
-        $("#video-player-mobile").get(0).pause();
-        $("#video-src-mobile").attr("src", "");
     }, data.delay);
 }

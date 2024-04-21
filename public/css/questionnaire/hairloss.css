@@ -170,13 +170,13 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-device-width: 600px) {
     #video-player-desktop {
         display: none;
     }
 }
 
-@media (min-width: 600px) {
+@media (max-device-width: 600px) {
     #video-player-mobile {
         display: none;
     }
