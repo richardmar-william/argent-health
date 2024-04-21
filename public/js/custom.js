@@ -468,5 +468,9 @@ function showVideoAnimation(data) {
         $("body").addClass("h-100 bg-white");
         $(".video-content").hide();
         $(".video-title").empty();
+        $("#video-player-desktop").get(0).pause();
+        $("#video-src-desktop").attr("src", "");
+        $("#video-player-mobile").get(0).pause();
+        $("#video-src-mobile").attr("src", "");
     }, data.delay);
 }
