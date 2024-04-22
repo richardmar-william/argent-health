@@ -903,14 +903,6 @@
         </script>
     <!-- <script src="js/custom.js"></script> -->
     <script src="{{ asset('js/custom.js') }}"></script>
-    <Script>/**
- * Define the version of the Google Pay API referenced when creating your
- * configuration
- *
- */
-
-
-        </script>
 </body>
 
 </html>
@@ -1184,7 +1176,7 @@ $(document).ready(function() {
 window.onload = function() {
     if (!window.location.hash) {
         window.location = window.location + '#loaded';
-        window.location.reload();
+        window.location.href = window.location;
     }
 }
 </script>
@@ -1328,7 +1320,7 @@ function appendRadioValue(selectedId) {
             $("[name='email']").val(localStorage.getItem("new_user_email"))
         }
         function getProductInfo(id) {
-            var monthList = JSON.parse('<?php echo ($monthList); ?>');
+            var monthList = JSON.parse({{$monthList}});
 
             for(var i = 0 ; i < monthList.length ; i ++) {
                 if(monthList[i].id == id) return monthList[i];
