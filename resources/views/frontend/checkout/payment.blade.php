@@ -407,8 +407,8 @@
                         <div class="row right-banner banner-img">
                             <div class="col-12">
                                     <div class="shipping-details-header">
-                                        <div class="font-poppins" style="font-weight: 600; letter-spacing: -4px;">Payment</div>
-                                        <div class="font-yeseva" style="font-weight: 400; letter-spacing: -4px;">details</div>
+                                        <div class="font-poppins" style="font-weight: 600; letter-spacing: -3px;">Payment</div>
+                                        <div class="font-yeseva" style="font-weight: 400; letter-spacing: -3px;">details</div>
                                     </div>
                                 <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                             </div>

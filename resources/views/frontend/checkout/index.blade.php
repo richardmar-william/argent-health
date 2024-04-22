@@ -182,8 +182,8 @@
 
                                 <div class="quest-ordrsmry-left">
                                         <h1 class="card-heading" >
-                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -4px;">Order</div>
-                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -4px;">Summary</div>
+                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -3px;">Order</div>
+                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -3px;">Summary</div>
                                         </h1>
                                         <div class="mobile-logo mb-3">
                                             <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
@@ -554,8 +554,8 @@
                                 <div class="row banner-img">
                                     <div class="col-12">
                                         <div class="shipping-details-header">
-                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -4px;">Shipping</div>
-                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -4px;">details</div>
+                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -3px;">Shipping</div>
+                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -3px;">details</div>
                                         </div>
                                         <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
                                     </div>
@@ -1320,7 +1320,7 @@ function appendRadioValue(selectedId) {
             $("[name='email']").val(localStorage.getItem("new_user_email"))
         }
         function getProductInfo(id) {
-            var monthList = JSON.parse({{$monthList}});
+            var monthList = <?php echo json_encode($monthList)?>;
 
             for(var i = 0 ; i < monthList.length ; i ++) {
                 if(monthList[i].id == id) return monthList[i];
