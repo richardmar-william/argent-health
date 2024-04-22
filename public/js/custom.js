@@ -14,20 +14,26 @@ var spaceQuestions = {
         2: {
             type: "showHairAds",
         },
-        5: {
-            type: "showTreatment",
+        4: {
+            type: "prepareVideo",
             video: {
                 desktop: "Minoxidil and Finasteride desk.MP4",
                 mobile: "Minoxidil and Finasteride Mobile.MP4",
             },
+        },
+        5: {
+            type: "showTreatment",
             delay: 10000,
         },
-        8: {
-            type: "showTreatment",
+        7: {
+            type: "prepareVideo",
             video: {
                 desktop: "Pre-comp-hair-mobile.MP4",
                 mobile: "Pre-comp-hair-desk.MP4",
             },
+        },
+        8: {
+            type: "showTreatment",
             delay: 9000,
         },
     },
@@ -35,30 +41,39 @@ var spaceQuestions = {
         4: {
             type: "showBeardAds",
         },
-        7: {
-            type: "showTreatment",
+        6: {
+            type: "prepareVideo",
             video: {
                 desktop: "Pre-comp 6.MP4",
                 mobile: "Pre-comp 3.MP4",
             },
+        },
+        7: {
+            type: "showTreatment",
             delay: 9000,
         },
-        11: {
-            type: "showTreatment",
+        6: {
+            type: "prepareVideo",
             video: {
                 desktop: "A randomized trial desk 1.MP4",
                 mobile: "A randomized trial Mobile 1.MP4",
             },
+        },
+        11: {
+            type: "showTreatment",
             delay: 10000,
         },
     },
     erectile: {
-        2: {
-            type: "showTreatment",
+        1: {
+            type: "prepareVideo",
             video: {
                 desktop: "Our products come in sleek desk.MP4",
                 mobile: "Our products come in sleek mobile.MP4",
             },
+        },
+        2: {
+            type: "showTreatment",
             delay: 10000,
         },
         8: {
@@ -66,12 +81,16 @@ var spaceQuestions = {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun",
         },
-        13: {
-            type: "showTreatment",
+        12: {
+            type: "prepareVideo",
             video: {
                 desktop: "Tadalafil (Cialis) got its _weekend pill DESK.MP4",
                 mobile: "Tadalafil (Cialis) got its _weekend pill mobile.MP4",
             },
+        },
+        13: {
+            type: "showTreatment",
+
             delay: 9000,
         },
     },
@@ -81,20 +100,26 @@ var spaceQuestions = {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun",
         },
-        6: {
-            type: "showTreatment",
+        5: {
+            type: "prepareVideo",
             video: {
                 desktop: "Pre-comp-Desk.MP4",
                 mobile: "Pre-comp.MP4",
             },
+        },
+        6: {
+            type: "showTreatment",
             delay: 10000,
         },
-        9: {
-            type: "showTreatment",
+        5: {
+            type: "prepareVideo",
             video: {
                 desktop: "Our products come in sleek desk 2.MP4",
                 mobile: "Our products come in sleek mobile 2.MP4",
             },
+        },
+        9: {
+            type: "showTreatment",
             delay: 10000,
         },
     },
@@ -168,6 +193,12 @@ $(document).ready(function () {
                         }
                         case "showBeardAds": {
                             showBeardAds();
+                            break;
+                        }
+                        case "prepareVideo": {
+                            prepareVideo(
+                                spaceQuestions[questType][currentStep]
+                            );
                             break;
                         }
                     }
@@ -440,13 +471,7 @@ function showReviews(data) {
     }, 5000);
 }
 
-function showVideoAnimation(data) {
-    $(".main-container").removeClass("container-fluid");
-    $(".quest-v2-inner-wrap").hide();
-    $(".quest-v2-content ").css("background-color", "#000");
-    $("body").removeClass("bg-white").css("background-color", "#000");
-    $(".video-content").show();
-
+function prepareVideo(data) {
     $("#video-src-desktop").attr(
         "src",
         `${app_url}/videos/${data.video.desktop}`
@@ -455,6 +480,15 @@ function showVideoAnimation(data) {
         "src",
         `${app_url}/videos/${data.video.mobile}`
     );
+}
+
+function showVideoAnimation(data) {
+    $(".main-container").removeClass("container-fluid");
+    $(".quest-v2-inner-wrap").hide();
+    $(".quest-v2-content ").css("background-color", "#000");
+    $("body").removeClass("bg-white").css("background-color", "#000");
+    $(".video-content").show();
+
     $("#video-player-desktop").get(0).load();
     $("#video-player-desktop").get(0).play();
 
@@ -463,16 +497,12 @@ function showVideoAnimation(data) {
 
     setTimeout(function () {
         $("#video-player-desktop").get(0).pause();
-        $("#video-player-desktop").get(0).cruuentTiem = 0;
-        $("#video-src-desktop").attr("src", "");
         $("#video-player-mobile").get(0).pause();
-        $("#video-player-mobile").get(0).cruuentTiem = 0;
-        $("#video-src-mobile").attr("src", "");
         $(".main-container").addClass("container-fluid");
         $(".quest-v2-inner-wrap").show();
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
         $(".video-content").hide();
         $(".video-title").empty();
-    }, data.delay);
+    }, data.delay + 1000);
 }
