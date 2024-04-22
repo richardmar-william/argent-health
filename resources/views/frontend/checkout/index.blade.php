@@ -235,7 +235,7 @@
                                                 @endif
                                                 @if($month->subscription_duration == 1)
                                                 <div class="col-lg-12 col-sm-12 mb-3 one-month-sb">
-                                                    <div class="form-group form-radio" style="margin-top: 30px">
+                                                    <div class="form-group form-radio" style="margin-top: 10px">
                                                         <input type="radio" id="product_sub_month_2" name="input_product_sub" <?php echo $prod_subs == '1' ? 'checked="checked"' : "";?>  value="1" product-id="{{$month->id}}" product-img="{{ asset('storage/images/products/') }}{{ '/'. $img->file_name}}">
                                                         <label class="sub-leb" for="product_sub_month_2">
                                                             <h4>1 month treatment plan</h4>
@@ -244,7 +244,7 @@
                                                 </div>
                                                 @else
                                                 <div class="col-lg-12 col-sm-12 mb-3 over-one-month-sb">
-                                                    <div class="form-group form-radio" style="margin-top: 30px">
+                                                    <div class="form-group form-radio" style="margin-top: 10px">
                                                         <input type="radio" id="product_sub_month_3" name="input_product_sub" <?php echo $prod_subs == '3' ? 'checked="checked"' : "";?> product-id="{{$month->id}}" value="3">
                                                         <label class="sub-leb" for="product_sub_month_3">
                                                             <span class="">Recommended</span>
@@ -738,7 +738,7 @@
                                                     <div class="card review-card">
                                                         <div class="card-header d-flex justify-content-between" style="background-color: #fff">
                                                             <h5 class="font-poppins review-user-name">{{ $review->username }}</h5>
-                                                            <ul class="d-flex">
+                                                            <ul class="d-flex reivew-star">
                                                                 @for ($i=0; $i<$review->rating; $i++)
                                                                     <li><i class="fa fa-star text-warning"></i></li>
                                                                 @endfor

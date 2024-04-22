@@ -4,15 +4,33 @@
 .review-content {
     color: #979caa;
     font-size: 12px;
+    margin-bottom: 0px;
 }
 
 .swiper {
     width: 100%;
 }
 
+.review-card .card-body {
+    padding-bottom: 0;
+    padding-top: 0;
+}
+
+.reivew-star {
+    margin-right: 5rem;
+    border: 1px solid #e4e4e4;
+    border-radius: 25px;
+    padding-right: 8px;
+    padding-left: 8px;
+}
+
+.reivew-star li {
+    font-size: 12px;
+}
+
 .swiper-slide .card {
     width: 70%;
-    padding: 16px;
+    padding: 8px;
     border-radius: 29px;
 }
 

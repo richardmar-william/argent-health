@@ -519,7 +519,7 @@
                                             <div class="card review-card">
                                                 <div class="card-header d-flex justify-content-between">
                                                     <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
-                                                    <ul class="d-flex">
+                                                    <ul class="d-flex review-star">
                                                         @for ($i=0; $i<$review->rating; $i++)
                                                             <li><i class="fa fa-star text-warning"></i></li>
                                                         @endfor
