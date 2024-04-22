@@ -7,7 +7,7 @@
         Session::forget('placed_order');
     @endphp
     <div class="main-div homepage-banner"
-        style="background: #000000 url({{ asset('frontend_new/images/agent-home.webp') }}); background-position: right center;">
+        style="background: #000000 url({{ asset('frontend_new/images/agent-home.webp') }}); background-position: right center; background-size: cover;">
         <div class="container-xxl container mb-60">
             <div class="home-div top-div text-white">
                 <h1><span class="sans-heading">be the gent<br> you were</span> <br>born to be</h1>
