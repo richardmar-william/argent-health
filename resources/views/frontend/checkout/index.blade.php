@@ -1328,7 +1328,7 @@ function appendRadioValue(selectedId) {
             $("[name='email']").val(localStorage.getItem("new_user_email"))
         }
         function getProductInfo(id) {
-            var monthList = <?php echo json_encode($monthList)?>;
+            var monthList = JSON.parse('<?php echo ($monthList); ?>');
 
             for(var i = 0 ; i < monthList.length ; i ++) {
                 if(monthList[i].id == id) return monthList[i];
@@ -1734,6 +1734,4 @@ function appendRadioValue(selectedId) {
     })
     window.initAutocomplete = initAutocomplete;
     window.initAutocomplete();
-
-
 </script>

@@ -1594,10 +1594,10 @@
                     </div>
                 </div>
                 <div class="video-content">
-                    <video muted loop class="video-player" id="video-player-desktop">
+                    <video muted loop playsinline class="video-player" id="video-player-desktop">
                         <source id="video-src-desktop" type="video/mp4">
                     </video>
-                    <video muted loop class="video-player" id="video-player-mobile">
+                    <video muted loop playsinline class="video-player" id="video-player-mobile">
                         <source id="video-src-mobile" type="video/mp4">
                     </video>
                 </div>
