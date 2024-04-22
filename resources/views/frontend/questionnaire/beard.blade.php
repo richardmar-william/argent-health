@@ -1139,7 +1139,7 @@
                                                 <div class="d-flex flex-column justify-content-center" style="margin-left: 16px">
                                                 <div>
                                                         <h4 class="font-poppins-bold">1000+</h4>
-                                                        <p class="text-white" style="width: max-content; margin-bottom:0;">Total sales</p>
+                                                        <p class="text-white" style="width: max-content; margin-bottom:0;">Happy Gents</p>
                                                 </div>
                                                 </div>
                                             </div>
