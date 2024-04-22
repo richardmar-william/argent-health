@@ -422,22 +422,25 @@ class CheckoutController extends Controller
     {
             $sessionId = $request->Session_Id;
 
-            // if(Session::has('hair_loss')){
-            //     $sessionId = Session::get('hair_loss');
-            //      //Session::forget('hair_loss');
-            // }
-            // if(Session::has('beard_browth')){
-            //     $sessionId = Session::get('beard_browth');
-            //     //Session::forget('beard_browth');
-            // }
-            // if(Session::has('erectile_dysfunction')){
-            //     $sessionId = Session::get('erectile_dysfunction');
-            //      //Session::forget('erectile_dysfunction');
-            // }
-            // if(Session::has('premature_ejaculation')){
-            //     $sessionId = Session::get('premature_ejaculation');
-            //     //Session::forget('premature_ejaculation');
-            // }
+            if(!isset($sessionId) || empty($sessionId)) {
+                
+                            if(Session::has('hair_loss')){
+                                $sessionId = Session::get('hair_loss');
+                                 //Session::forget('hair_loss');
+                            }
+                            if(Session::has('beard_browth')){
+                                $sessionId = Session::get('beard_browth');
+                                //Session::forget('beard_browth');
+                            }
+                            if(Session::has('erectile_dysfunction')){
+                                $sessionId = Session::get('erectile_dysfunction');
+                                 //Session::forget('erectile_dysfunction');
+                            }
+                            if(Session::has('premature_ejaculation')){
+                                $sessionId = Session::get('premature_ejaculation');
+                                //Session::forget('premature_ejaculation');
+                            }
+            }
 
             //dd($sessionId);
             // if($request->Session_Id != $sessionId){
@@ -449,6 +452,7 @@ class CheckoutController extends Controller
             //     return view('frontend.questionnaire.mainPage')->withErrors(['error', 'Sorry there was some server error, please fill the questionnaire again...']);
             // }
             //  dd($request->product_ids,$sessionId );
+            
             if(!isset($sessionId) || empty($sessionId)){
                return redirect('/shop');
             }

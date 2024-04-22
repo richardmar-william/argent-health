@@ -487,14 +487,13 @@ function showVideoAnimation(data) {
     $(".quest-v2-inner-wrap").hide();
     $(".quest-v2-content ").css("background-color", "#000");
     $("body").removeClass("bg-white").css("background-color", "#000");
-    $(".video-content").show();
 
     $("#video-player-desktop").get(0).load();
     $("#video-player-desktop").get(0).play();
 
     $("#video-player-mobile").get(0).load();
     $("#video-player-mobile").get(0).play();
-
+    $(".video-content").show();
     setTimeout(function () {
         $("#video-player-desktop").get(0).pause();
         $("#video-player-mobile").get(0).pause();
