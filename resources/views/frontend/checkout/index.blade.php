@@ -181,13 +181,13 @@
                                 <input type="hidden" name="total_price" value="{{$total_price}}">
 
                                 <div class="quest-ordrsmry-left">
-                                        <h1 class="card-heading" >
-                                            <div class="font-poppins" style="font-weight: 600; letter-spacing: -3px;">Order</div>
-                                            <div class="font-yeseva" style="font-weight: 400; letter-spacing: -3px;">Summary</div>
-                                        </h1>
-                                        <div class="mobile-logo mb-3">
-                                            <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
-                                        </div>
+                                    <h1 class="card-heading" >
+                                        <div class="font-poppins" style="font-weight: 600; letter-spacing: -3px;">Order</div>
+                                        <div class="font-yeseva" style="font-weight: 400; letter-spacing: -3px;">Summary</div>
+                                    </h1>
+                                    <div class="mobile-logo mb-3">
+                                        <img src="{{asset('frontend_new/images/money-back.png')}}" class="img-fluid"/>
+                                    </div>
                                     <!-- apply affiliate -->
                                     <div class="card-design mb-40">
                                         @foreach($product_data as $product)

@@ -316,9 +316,9 @@
     <div class="container-fluid mt-3 choose-perfer-content authed-view <?php echo (!($category == "30" || $category == "31" || $category == "32" || $category == "33") || !Auth::check()) ? "d-none":""?>">
         <div class="row choose-prefer-contet-header">
             <div class="col col-lg-8 col-md-12 p-3 choose-prefer">
-                <div class="choose-prefer-title">Please choose your  </div>
-                <div style="">Preferred monthly </div>
-                <div style="">Treatment</div>
+                <div class="choose-prefer-title" style="letter-spacing: -2px">Please choose your  </div>
+                <div style="letter-spacing: -2px">Preferred monthly </div>
+                <div style="letter-spacing: -2px">Treatment</div>
             </div>
             <div class="col p-3 text-right recommend-button">
                 <a class="btn-d-trans btn-wt-300" href="javascript:void(0)">Recommended for you</a>
