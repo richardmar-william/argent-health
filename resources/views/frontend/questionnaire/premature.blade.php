@@ -1758,7 +1758,7 @@
                 </main>
                 <div class="quest-review-content">
                     <div class="title mt-5 text-center">
-                        <h1 class="font-yeseva font-black font-weight-400 text-white">Erectile Dysfunction?</h1>
+                        <h1 class="font-yeseva font-black font-weight-400 text-white">Premature Ejaculation?</h1>
                         <h1 class="font-poppins font-black font-weight-400 text-white">We’ve got you Covered </h1>
                     </div>
                     <div class="view">
