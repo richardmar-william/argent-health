@@ -1,8 +1,8 @@
 .review-user-name {
     color: #484f47;
 }
-.review-content {
-    color: #979caa;
+.review-brand-content {
+    margin-bottom: 3rem;
 }
 
 .quest-v2-quest .form-group.form-radio {
@@ -12,7 +12,7 @@
 
 .brands {
     background-color: #fff;
-    border-radius: 29px;
+    border-radius: 16px;
     width: fit-content;
     padding: 32px 16px 32px 16px;
 }
@@ -27,6 +27,11 @@
     justify-content: center;
 }
 
+.brands .brand-images.mobile img {
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
 .questionnaire-v2-main .container-fluid.brands-reviews-content {
     margin-bottom: 5rem;
     padding: 0 8px;
@@ -34,6 +39,19 @@
 
 .brands.mobile {
     width: 100%;
+}
+
+.brands-rating {
+    margin-right: 0px;
+}
+
+.brand-images img {
+    margin-right: 16px;
+}
+
+.brands-rating img {
+    max-height: 4rem;
+    margin: auto;
 }
 
 .video-player {
@@ -132,5 +150,81 @@
     }
     to {
         opacity: 1;
+    }
+}
+
+@media (max-width: 670px) {
+    .brand-images p {
+        font-size: 12px;
+    }
+    .brands-rating p {
+        font-size: 12px;
+    }
+    .brands-rating li {
+        font-size: 12px;
+    }
+    .brands-title p {
+        font-size: 12px;
+    }
+    .brands .brand-images.mobile img {
+        max-width: 4rem;
+        max-height: 4rem;
+        margin-right: 8px;
+    }
+
+    .brand-images.mobile p {
+        font-size: 6px;
+    }
+}
+
+.brands .brand-images.mobile img {
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+@media (max-width: 500px) {
+    .brands {
+        padding: 16px 8px 16px 16px;
+    }
+
+    .brands-rating {
+        padding: 8px;
+    }
+
+    .brand-images p {
+        font-size: 12px;
+    }
+    .brands-rating p {
+        font-size: 12px;
+    }
+    .brands-rating li {
+        font-size: 12px;
+    }
+    .brands-title p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 370px) {
+    .brand-images img {
+        margin-right: 4px !important;
+    }
+
+    .brands-rating img {
+        max-height: 4rem;
+        margin: auto;
+    }
+
+    .brand-images p {
+        font-size: 8px;
+    }
+    .brands-rating p {
+        font-size: 8px;
+    }
+    .brands-rating li {
+        font-size: 8px;
+    }
+    .brands-title p {
+        font-size: 8px;
     }
 }

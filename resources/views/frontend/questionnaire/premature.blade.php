@@ -1663,28 +1663,87 @@
                         </div>
                         <!-- 13th step end -->
                         <div class='container-fluid brands-reviews-content' style="display: none">
-                            <div class="col-12">
-                                <div class="brands container mt-5" id="business brands">
-                                    <div class="d-flex justify-content-center">
-                                        <div class="d-flex justify-content-between brand-images mobile">
-                                            <img src="{{ asset('images/brand-medicine.png') }}">
-                                            <p class="font-heavy-green mr-50">Licensed & Registered
-                                                    Medication</p>
-                                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green mr-50">Free & Discreet 24Hr Shipping</p>
-                                            <img src="{{ asset('images/brand-pause.png') }}" style="margin-right: 16px;"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                            <div class="row review-brand-content">
+                                <div class="col-12">
+                                    <div class="brands mobile mt-5">
+                                        <div class="d-flex">
+                                            <div class="d-flex bg-black brands-rating mr-3">
+                                                <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 16px">
+                                                    <div>
+                                                        <ul class="d-flex">
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                            <li><i class="fa fa-star"></i></li>
+                                                        </ul>
+                                                        <p class="text-white" style="width: max-content; margin-bottom: 0;">100 ratings</p>
+                                                    </div>
+                                                </div>
+                                                <img src="{{ asset('images/brand line.png') }}">
+                                                <div class="d-flex flex-column justify-content-center" style="margin-left: 16px">
+                                                <div>
+                                                        <h4 class="font-poppins-bold">1000+</h4>
+                                                        <p class="text-white" style="width: max-content; margin-bottom:0;">Total sales</p>
+                                                </div>
+                                                </div>
+                                            </div>
+                                            <div class="font-heavy-green brands-title d-flex flex-column justify-content-center" style="margin-right: 0px">
+                                                <p class="font-poppins">Trusted by <b class="d-inline">hundreds</b> of
+                                                customers with amazing
+                                                results</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="brands container mt-5" id="business brands">
+                                            <div class="d-flex justify-content-center">
+                                                <div class="d-flex">
+                                                    <div class="d-flex bg-black brands-rating mr-3">
+                                                        <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
+                                                            <div>
+                                                                <ul class="d-flex">
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                    <li><i class="fa fa-star"></i></li>
+                                                                </ul>
+                                                                <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
+                                                            </div>
+                                                        </div>
+                                                        <img src="{{ asset('images/brand line.png') }}">
+                                                        <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
+                                                        <div>
+                                                                <h4 class="font-poppins-bold">1000+</h4>
+                                                                <p class="text-white" style="width: max-content">Total ratings</p>
+                                                        </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="font-heavy-green brands-title d-flex flex-column justify-content-center">
+                                                        <p class="font-poppins">Trusted by <b>hundreds</b> of
+                                                        customers with amazing
+                                                        results</p>
+                                                    </div>
+                                                </div>
+                                                <div class="d-flex justify-content-between brand-images">
+                                                    <img src="{{ asset('images/brand-medicine.png') }}">
+                                                    <img src="{{ asset('images/brand-shipping.png') }}">
+                                                    <img src="{{ asset('images/brand-pause.png') }}">
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="brands mobile mt-5" id="business brands">
-
-                                        <div class="d-flex justify-content-around brand-images mobile">
-                                            <img src="{{ asset('images/brand-medicine.png') }}">
-                                            <img src="{{ asset('images/brand-shipping.png') }}">
-                                            <img src="{{ asset('images/brand-pause.png') }}">
+                                <div class="col-12">
+                                    <div class="brands mobile mt-5" id="business brands">
+                                        <div class="d-flex justify-content-between brand-images mobile">
+                                            <img src="{{ asset('images/brand-medicine.png') }}"><p class="font-heavy-green">Licensed & Registered
+                                                Medication</p>
+                                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
+                                            <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
                                         </div>
-
+                                    </div>
                                 </div>
                             </div>
                         </div>
