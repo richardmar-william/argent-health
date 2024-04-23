@@ -3,8 +3,10 @@
 }
 .review-content {
     color: #979caa;
-    font-size: 12px;
+    font-size: 10px;
     margin-bottom: 0px;
+    padding-top: 8px;
+    padding-bottom: 8px;
 }
 
 .swiper {
@@ -17,7 +19,7 @@
 }
 
 .reivew-star {
-    margin-right: 5rem;
+    margin-right: 7rem;
     border: 1px solid #e4e4e4;
     border-radius: 25px;
     padding-right: 8px;
@@ -25,7 +27,7 @@
 }
 
 .reivew-star li {
-    font-size: 12px;
+    font-size: 10px;
 }
 
 .swiper-slide .card {
@@ -51,7 +53,7 @@
 }
 
 .brands {
-    background-color: #fff;
+    background-color: #f5f5f5;
     border-radius: 16px;
     width: fit-content;
 }
@@ -60,6 +62,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+    margin-bottom: 0;
 }
 
 .mobile-logo {
@@ -72,8 +75,9 @@
 }
 
 .brands.mobile {
-    width: 85%;
+    width: 90%;
     margin: auto;
+    margin-bottom: 14px;
 }
 
 .brands-rating {

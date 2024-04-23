@@ -201,116 +201,116 @@
             </a>
         </div>
     </div>
-        <div class="quest-v2-content auth-view <?php echo Auth::check()?"d-none":""?>">
-            <div class="quest-v21-signin">
-                <div class="img-view"><img src="/frontend/images/signin.jpg"></div>
-                <form class="quest-v21-signin-form" action="{{ route('login') }}" method="post">
-                    @csrf
-                    <input type="hidden" name="session_id" value="<?php echo $session_id;?>">
-                    <input type="hidden" name="log-in" value="cart_product">
-                    <h1>
-                        <div>Please enter</div>
-                        <span>your email</span>
-                    </h1>
-                    <h4>Enter Your Email to get started</h4>
-                    <div class=" form-group input-email">
-                        <label for="email" class="form-label">Email Address:</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
-                    </div>
-                    @error('email')
-                    <span class="text-danger">{{ $message }}</span>
-                    @enderror
-                    <div class="form-group input-password">
-                        <label for="pwd" class="form-label">Password:</label>
-                        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
-                    </div>
-                    <button type="button" class='btn-d-black' id="btn_signin">Continue</button>
-                </form>
-            </div>
-            <div class="row review-brand-content">
-                <div class="col-12">
-                    <div class="brands mobile mt-5">
-                        <div class="d-flex">
-                            <div class="d-flex bg-black brands-rating mr-3">
-                                <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 16px">
-                                    <div>
-                                        <ul class="d-flex">
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                            <li><i class="fa fa-star"></i></li>
-                                        </ul>
-                                        <p class="text-white" style="width: max-content; margin-bottom: 0;">100 ratings</p>
-                                    </div>
-                                </div>
-                                <img src="{{ asset('images/brand line.png') }}">
-                                <div class="d-flex flex-column justify-content-center" style="margin-left: 16px">
+    <div class="quest-v2-content auth-view <?php echo Auth::check()?"d-none":""?>">
+        <div class="quest-v21-signin">
+            <div class="img-view"><img src="/frontend/images/signin.jpg"></div>
+            <form class="quest-v21-signin-form" action="{{ route('login') }}" method="post">
+                @csrf
+                <input type="hidden" name="session_id" value="<?php echo $session_id;?>">
+                <input type="hidden" name="log-in" value="cart_product">
+                <h1>
+                    <div>Please enter</div>
+                    <span>your email</span>
+                </h1>
+                <h4>Enter Your Email to get started</h4>
+                <div class=" form-group input-email">
+                    <label for="email" class="form-label">Email Address:</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required>
+                </div>
+                @error('email')
+                <span class="text-danger">{{ $message }}</span>
+                @enderror
+                <div class="form-group input-password">
+                    <label for="pwd" class="form-label">Password:</label>
+                    <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
+                </div>
+                <button type="button" class='btn-d-black' id="btn_signin">Continue</button>
+            </form>
+        </div>
+        <div class="row review-brand-content">
+            <div class="col-12">
+                <div class="brands mobile mt-5">
+                    <div class="d-flex">
+                        <div class="d-flex bg-black brands-rating mr-3">
+                            <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 16px">
                                 <div>
-                                        <h4 class="font-poppins-bold">1000+</h4>
-                                        <p class="text-white" style="width: max-content; margin-bottom:0;">Happy Gents</p>
-                                </div>
+                                    <ul class="d-flex">
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                        <li><i class="fa fa-star"></i></li>
+                                    </ul>
+                                    <p class="text-white" style="width: max-content; margin-bottom: 0;">100 ratings</p>
                                 </div>
                             </div>
-                            <div class="font-heavy-green brands-title d-flex flex-column justify-content-center" style="margin-right: 0px">
-                                <p class="font-poppins">Trusted by <b class="d-inline">hundreds</b> of
-                                customers with amazing
-                                results</p>
+                            <img src="{{ asset('images/brand line.png') }}">
+                            <div class="d-flex flex-column justify-content-center" style="margin-left: 16px">
+                            <div>
+                                    <h4 class="font-poppins-bold">1000+</h4>
+                                    <p class="text-white" style="width: max-content; margin-bottom:0;">Happy Gents</p>
+                            </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-12">
-                        <div class="brands container mt-5" id="business brands">
-                            <div class="d-flex justify-content-center">
-                                <div class="d-flex">
-                                    <div class="d-flex bg-black brands-rating mr-3">
-                                        <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
-                                            <div>
-                                                <ul class="d-flex">
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                    <li><i class="fa fa-star"></i></li>
-                                                </ul>
-                                                <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
-                                            </div>
-                                        </div>
-                                        <img src="{{ asset('images/brand line.png') }}">
-                                        <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
-                                        <div>
-                                                <h4 class="font-poppins-bold">1000+</h4>
-                                                <p class="text-white" style="width: max-content">Total ratings</p>
-                                        </div>
-                                        </div>
-                                    </div>
-                                    <div class="font-heavy-green brands-title d-flex flex-column justify-content-center">
-                                        <p class="font-poppins">Trusted by <b>hundreds</b> of
-                                        customers with amazing
-                                        results</p>
-                                    </div>
-                                </div>
-                                <div class="d-flex justify-content-between brand-images">
-                                    <img src="{{ asset('images/brand-medicine.png') }}">
-                                    <img src="{{ asset('images/brand-shipping.png') }}">
-                                    <img src="{{ asset('images/brand-pause.png') }}">
-                                </div>
-                            </div>
+                        <div class="font-heavy-green brands-title d-flex flex-column justify-content-center" style="margin-right: 0px">
+                            <p class="font-poppins">Trusted by <b class="d-inline">hundreds</b> of
+                            customers with amazing
+                            results</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="brands mobile mt-5" id="business brands">
-                        <div class="d-flex justify-content-between brand-images mobile">
-                            <img src="{{ asset('images/brand-medicine.png') }}"><p class="font-heavy-green">Licensed & Registered
-                                Medication</p>
-                            <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
-                            <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
+                    <div class="brands container mt-5" id="business brands">
+                        <div class="d-flex justify-content-center">
+                            <div class="d-flex">
+                                <div class="d-flex bg-black brands-rating mr-3">
+                                    <div class="border-right d-flex flex-column justify-content-center" style="margin-right: 32px">
+                                        <div>
+                                            <ul class="d-flex">
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                                <li><i class="fa fa-star"></i></li>
+                                            </ul>
+                                            <p class="text-white" style="width: max-content; margin-top: 6px">100 ratings</p>
+                                        </div>
+                                    </div>
+                                    <img src="{{ asset('images/brand line.png') }}">
+                                    <div class="d-flex flex-column justify-content-center" style="margin-left: 32px">
+                                    <div>
+                                            <h4 class="font-poppins-bold">1000+</h4>
+                                            <p class="text-white" style="width: max-content">Total ratings</p>
+                                    </div>
+                                    </div>
+                                </div>
+                                <div class="font-heavy-green brands-title d-flex flex-column justify-content-center">
+                                    <p class="font-poppins">Trusted by <b>hundreds</b> of
+                                    customers with amazing
+                                    results</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between brand-images">
+                                <img src="{{ asset('images/brand-medicine.png') }}">
+                                <img src="{{ asset('images/brand-shipping.png') }}">
+                                <img src="{{ asset('images/brand-pause.png') }}">
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="brands mobile mt-5" id="business brands">
+                    <div class="d-flex justify-content-between brand-images mobile">
+                        <img src="{{ asset('images/brand-medicine.png') }}"><p class="font-heavy-green">Licensed & Registered
+                            Medication</p>
+                        <img src="{{ asset('images/brand-shipping.png') }}"><p class="font-heavy-green">Free & Discreet 24Hr Shipping</p>
+                        <img src="{{ asset('images/brand-pause.png') }}"><p class="font-heavy-green">Pause Or CancelAt Anytime</p>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
     @if($category == "30" || $category == "31" || $category == "32" || $category == "33")
     <div class="container-fluid mt-3 choose-perfer-content authed-view <?php echo (!($category == "30" || $category == "31" || $category == "32" || $category == "33") || !Auth::check()) ? "d-none":""?>">
@@ -620,9 +620,6 @@
                 <svg xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24" width="512" height="512"><path d="M0,12A12,12,0,1,0,12,0,12.013,12.013,0,0,0,0,12Zm15.414-1.414a2,2,0,0,1,0,2.828l-4.673,4.673L9.327,16.673,14,12,9.289,7.288,10.7,5.874Z"/></svg>
             </div>
             <div class="swiper-pagination"></div>
-        </div>
-        <div class="reviews" id="product-review">
-
         </div>
     </div>
 
@@ -2639,7 +2636,21 @@
           </div>
         </div>
     </div>
-
+    {{-- <div class="col-12">
+        <div class="reviews">
+            <div class="swiper" id="review-swiper">
+                <div class="swiper-wrapper">
+                    @if (!empty($reviews))
+                        @foreach ($reviews as $review)
+                        <div class="swiper-slide">
+                            <p>111</p>
+                        </div>
+                        @endforeach
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div> --}}
     <form action="{{ route('checkout.index') }}" method="POST" id="submit_form">
         @csrf
         <input type="hidden" name="product_ids" id="ProductIds">
@@ -2669,6 +2680,33 @@
 
 <script>
     $(document).ready(function () {
+        var reviewSwiper = new Swiper("#review-swiper", {
+            spaceBetween: 0,
+            initialSlide: 2,
+            slidesPerView: 1,
+            loop: true,
+            speed: 50000,
+            centeredSlides:true,
+            autoplay: {
+                enabled: true,
+                delay: 1,
+            },
+            breakpoints: {
+                640: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                768: {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                },
+                1440: {
+                slidesPerView: 2,
+                spaceBetween: 0,
+                },
+            },
+        });
+
         var swiper = new Swiper("#rec_prod", {
             watchSlidesProgress: true,
             slidesPerView: 1,

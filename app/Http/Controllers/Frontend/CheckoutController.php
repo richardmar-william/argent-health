@@ -402,10 +402,79 @@ class CheckoutController extends Controller
                     // ]);
                     //dd("$request->session_id");
                     // DB::commit();
+                    $reviews = [
+                        (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                            'username' => 'Jenny D',
+                            'type' => 'review',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                            'username' => 'Jenny D',
+                            'type' => 'review',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                            'username' => 'Jenny D',
+                            'type' => 'review',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                            'username' => 'Jenny D',
+                            'type' => 'review',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                            'username' => 'Jenny D',
+                            'type' => 'review',
+                            'rating' => 5
+                        ]
+                        // (object)[
+                        //     'username' => 'Jenny D',
+                        //     'type' => 'hair',
+                        //     'image_before' => 'genhairlossbefore.png',
+                        //     'image_after' => 'genhairlossafter.png',
+                        //     'rating' => 5
+                        // ],
+                        // (object)[
+                        //     'username' => 'Jenny D',
+                        //     'type' => 'hair',
+                        //     'image_before' => 'extensivehlbefore.png',
+                        //     'image_after' => 'extensivehlafter.png',
+                        //     'rating' => 5
+                        // ],
+                        // (object)[
+                        //     'username' => 'Jenny D',
+                        //     'type' => 'hair',
+                        //     'image_before' => 'recehairlinebefore.png',
+                        //     'image_after' => 'recehairlineafter.png',
+                        //     'rating' => 5
+                        // ],
+                        // (object)[
+                        //     'username' => 'Jenny D',
+                        //     'type' => 'hair',
+                        //     'image_before' => 'thincrownhlbefore.png',
+                        //     'image_after' => 'thincrownhlafter.png',
+                        //     'rating' => 5
+                        // ],
+                        // (object)[
+                        //     'username' => 'Jenny D',
+                        //     'type' => 'hair',
+                        //     'image_before' => 'thinninghlbefore.png',
+                        //     'image_after' => 'thinninghlafter.png',
+                        //     'rating' => 5
+                        // ]
+                    ];
+                    $reviews = collect($reviews);
+
                     Session::forget("new_user");
                     $productList = Product::with('tags')->orderBy("category_id")->orderBy("quantity_mg")->orderBy("quantity")->orderBy("treat_method")->get()->toArray();
                     $mediaList = Media::get()->toArray();
-                    return view('frontend.checkout.cart_product', ["category"=>$request->category_id, 'productList' => $productList, "mediaList" => $mediaList, "session_id"=>$request->session_id]);
+                    return view('frontend.checkout.cart_product', ["category"=>$request->category_id, 'productList' => $productList, "mediaList" => $mediaList, "session_id"=>$request->session_id, 'reviews' => $reviews]);
                 }
                 catch (\Exception $e) {
                     DB::rollback();
