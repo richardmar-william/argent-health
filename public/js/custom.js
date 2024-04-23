@@ -475,15 +475,17 @@ function showVideoAnimation(data) {
 
     $("#video-player-mobile").get(0).load();
     $("#video-player-mobile").get(0).play();
-    $(".video-content").show();
+    $(".video-content").fadeIn();
+
     setTimeout(function () {
+        $(".video-content").fadeOut();
         $("#video-player-desktop").get(0).pause();
         $("#video-player-mobile").get(0).pause();
+
         $(".main-container").addClass("container-fluid");
-        $(".quest-v2-inner-wrap").show();
+        $(".quest-v2-inner-wrap").fadeIn();
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
-        $(".video-content").hide();
         $(".video-title").empty();
-    }, data.delay + 1000);
+    }, data.delay + 1500);
 }
