@@ -748,7 +748,7 @@
                                                             <p class="font-poppins review-content">{{ $review->content }}</p>
                                                         </div>
                                                         <div class="card-footer" style="background-color: #fff">
-                                                            <img src="{{ asset('images/verified.svg') }}" style="max-width: 2rem"/><span class="font-poppins text-dark" style="font-size: 12px">Verified by company</span>
+                                                            <img src="{{ asset('images/verified.svg') }}" style="max-width: 2rem"/><span class="font-poppins text-dark" style="font-size: 12px">Verified Customer</span>
                                                         </div>
                                                     </div>
                                                 </div>

@@ -806,7 +806,34 @@ class CheckoutController extends Controller
         $billing_street = isset($request->billing_street) ? $request->billing_street : "";
         $billing_city = isset($request->billing_city) ? $request->billing_city : "";
         $billing_zipcode = isset($request->billing_zipcode) ? $request->billing_zipcode : "";
-        $reviews = Review::with(['user','product'])->take(10)->latest()->get();
+        $reviews = [
+            (object)[
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                'username' => 'Jenny D',
+                'rating' => 5
+            ],
+            (object)[
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                'username' => 'Jenny D',
+                'rating' => 5
+            ],
+            (object)[
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                'username' => 'Jenny D',
+                'rating' => 5
+            ],
+            (object)[
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                'username' => 'Jenny D',
+                'rating' => 5
+            ],
+            (object)[
+                'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                'username' => 'Jenny D',
+                'rating' => 5
+            ]
+        ];
+        $reviews = collect($reviews);
 
         return view('frontend.checkout.payment',compact('user_id','order_id','final_price','subscription_dur','prod_name','total_price','sessionId','cc','billing_street','billing_city','billing_zipcode', 'reviews'));
 

@@ -48,9 +48,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="css/quest-v2.css">
     <link rel="stylesheet" href="css/quest-v2-respsv.css">
-     <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
-     <link rel="stylesheet" href="{{ asset('frontend_new/css/new-questionnaire.css') }}">
-        <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend_new/css/new-questionnaire.css') }}">
+    <link rel="stylesheet" href="{{ asset('frontend/css/custom.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2-respsv.css') }}">
     <link rel="stylesheet" href="{{ asset('css/quest-v2.1.css') }}">
@@ -496,7 +496,7 @@
                     </div>
                 </div>
                 <div class="row review-brand-content">
-                    <div class="col-12" style="margin-bottom: 4rem;">
+                    <div class="col-12 mb-3">
                         <div class="brands mobile mt-5" id="business brands" style="width: 100%">
                             <div class="d-flex justify-content-center">
                                 <div class="d-flex justify-content-between brand-images mobile">
@@ -517,9 +517,9 @@
                                         @foreach ($reviews as $review)
                                         <div class="swiper-slide">
                                             <div class="card review-card">
-                                                <div class="card-header d-flex justify-content-between">
-                                                    <h5 class="font-poppins review-user-name">{{ $review->user->username }}</h5>
-                                                    <ul class="d-flex review-star">
+                                                <div class="card-header d-flex justify-content-between" style="background-color: #fff">
+                                                    <h5 class="font-poppins review-user-name">{{ $review->username }}</h5>
+                                                    <ul class="d-flex reivew-star">
                                                         @for ($i=0; $i<$review->rating; $i++)
                                                             <li><i class="fa fa-star text-warning"></i></li>
                                                         @endfor
@@ -527,10 +527,9 @@
                                                 </div>
                                                 <div class="card-body">
                                                     <p class="font-poppins review-content">{{ $review->content }}</p>
-                                                    <p> Verified by company</p>
                                                 </div>
-                                                <div class="card-footer">
-                                                    <img src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark">Verified by company</span>
+                                                <div class="card-footer" style="background-color: #fff">
+                                                    <img src="{{ asset('images/verified.svg') }}" style="max-width: 2rem"/><span class="font-poppins text-dark" style="font-size: 12px">Verified Customer</span>
                                                 </div>
                                             </div>
                                         </div>
