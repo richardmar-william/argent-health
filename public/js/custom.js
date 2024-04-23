@@ -14,26 +14,20 @@ var spaceQuestions = {
         2: {
             type: "showHairAds",
         },
-        4: {
-            type: "prepareVideo",
+        5: {
+            type: "showTreatment",
             video: {
                 desktop: "Minoxidil and Finasteride desk.MP4",
                 mobile: "Minoxidil and Finasteride Mobile.MP4",
             },
-        },
-        5: {
-            type: "showTreatment",
             delay: 10000,
         },
-        7: {
-            type: "prepareVideo",
+        8: {
+            type: "showTreatment",
             video: {
                 desktop: "Pre-comp-hair-mobile.MP4",
                 mobile: "Pre-comp-hair-desk.MP4",
             },
-        },
-        8: {
-            type: "showTreatment",
             delay: 9000,
         },
     },
@@ -41,39 +35,30 @@ var spaceQuestions = {
         4: {
             type: "showBeardAds",
         },
-        6: {
-            type: "prepareVideo",
+        7: {
+            type: "showTreatment",
             video: {
                 desktop: "Pre-comp 6.MP4",
                 mobile: "Pre-comp 3.MP4",
             },
-        },
-        7: {
-            type: "showTreatment",
             delay: 9000,
         },
-        6: {
-            type: "prepareVideo",
+        11: {
+            type: "showTreatment",
             video: {
                 desktop: "A randomized trial desk 1.MP4",
                 mobile: "A randomized trial Mobile 1.MP4",
             },
-        },
-        11: {
-            type: "showTreatment",
             delay: 10000,
         },
     },
     erectile: {
-        1: {
-            type: "prepareVideo",
+        2: {
+            type: "showTreatment",
             video: {
                 desktop: "Our products come in sleek desk.MP4",
                 mobile: "Our products come in sleek mobile.MP4",
             },
-        },
-        2: {
-            type: "showTreatment",
             delay: 10000,
         },
         8: {
@@ -81,16 +66,12 @@ var spaceQuestions = {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun",
         },
-        12: {
-            type: "prepareVideo",
+        13: {
+            type: "showTreatment",
             video: {
                 desktop: "Tadalafil (Cialis) got its _weekend pill DESK.MP4",
                 mobile: "Tadalafil (Cialis) got its _weekend pill mobile.MP4",
             },
-        },
-        13: {
-            type: "showTreatment",
-
             delay: 9000,
         },
     },
@@ -100,26 +81,20 @@ var spaceQuestions = {
             description:
                 "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididun",
         },
-        5: {
-            type: "prepareVideo",
+        6: {
+            type: "showTreatment",
             video: {
                 desktop: "Pre-comp-Desk.MP4",
                 mobile: "Pre-comp.MP4",
             },
-        },
-        6: {
-            type: "showTreatment",
             delay: 10000,
         },
-        5: {
-            type: "prepareVideo",
+        9: {
+            type: "showTreatment",
             video: {
                 desktop: "Our products come in sleek desk 2.MP4",
                 mobile: "Our products come in sleek mobile 2.MP4",
             },
-        },
-        9: {
-            type: "showTreatment",
             delay: 10000,
         },
     },
@@ -471,7 +446,22 @@ function showReviews(data) {
     }, 5000);
 }
 
-function prepareVideo(data) {
+// function prepareVideo(data) {
+//     $("#video-src-desktop").attr(
+//         "src",
+//         `${app_url}/videos/${data.video.desktop}`
+//     );
+//     $("#video-src-mobile").attr(
+//         "src",
+//         `${app_url}/videos/${data.video.mobile}`
+//     );
+// }
+
+function showVideoAnimation(data) {
+    $(".main-container").removeClass("container-fluid");
+    $(".quest-v2-inner-wrap").hide();
+    $(".quest-v2-content ").css("background-color", "#000");
+    $("body").removeClass("bg-white").css("background-color", "#000");
     $("#video-src-desktop").attr(
         "src",
         `${app_url}/videos/${data.video.desktop}`
@@ -480,14 +470,6 @@ function prepareVideo(data) {
         "src",
         `${app_url}/videos/${data.video.mobile}`
     );
-}
-
-function showVideoAnimation(data) {
-    $(".main-container").removeClass("container-fluid");
-    $(".quest-v2-inner-wrap").hide();
-    $(".quest-v2-content ").css("background-color", "#000");
-    $("body").removeClass("bg-white").css("background-color", "#000");
-
     $("#video-player-desktop").get(0).load();
     $("#video-player-desktop").get(0).play();
 
