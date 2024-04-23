@@ -1331,6 +1331,9 @@
                     <!-- loader section end -->
                 </div>
                 <div class="beard-ad-content">
+                    <div class="title mt-5 text-center">
+                        <h1 class="font-poppins font-white font-weight-400 letter-spec-1">We’ve got you Covered </h1>
+                    </div>
                     <div class="view mt-5">
                         <div class="card review-card mt-5">
                             <div class="card-header d-flex justify-content-between bg-transparent">
