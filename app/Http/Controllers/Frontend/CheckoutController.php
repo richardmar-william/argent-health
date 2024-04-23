@@ -432,42 +432,42 @@ class CheckoutController extends Controller
                             'username' => 'Jenny D',
                             'type' => 'review',
                             'rating' => 5
+                        ],
+                        (object)[
+                            'username' => 'Jenny D',
+                            'type' => 'hair',
+                            'image_before' => 'genhairlossbefore.png',
+                            'image_after' => 'genhairlossafter.png',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'username' => 'Jenny D',
+                            'type' => 'hair',
+                            'image_before' => 'extensivehlbefore.png',
+                            'image_after' => 'extensivehlafter.png',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'username' => 'Jenny D',
+                            'type' => 'hair',
+                            'image_before' => 'recehairlinebefore.png',
+                            'image_after' => 'recehairlineafter.png',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'username' => 'Jenny D',
+                            'type' => 'hair',
+                            'image_before' => 'thincrownhlbefore.png',
+                            'image_after' => 'thincrownhlafter.png',
+                            'rating' => 5
+                        ],
+                        (object)[
+                            'username' => 'Jenny D',
+                            'type' => 'hair',
+                            'image_before' => 'thinninghlbefore.png',
+                            'image_after' => 'thinninghlafter.png',
+                            'rating' => 5
                         ]
-                        // (object)[
-                        //     'username' => 'Jenny D',
-                        //     'type' => 'hair',
-                        //     'image_before' => 'genhairlossbefore.png',
-                        //     'image_after' => 'genhairlossafter.png',
-                        //     'rating' => 5
-                        // ],
-                        // (object)[
-                        //     'username' => 'Jenny D',
-                        //     'type' => 'hair',
-                        //     'image_before' => 'extensivehlbefore.png',
-                        //     'image_after' => 'extensivehlafter.png',
-                        //     'rating' => 5
-                        // ],
-                        // (object)[
-                        //     'username' => 'Jenny D',
-                        //     'type' => 'hair',
-                        //     'image_before' => 'recehairlinebefore.png',
-                        //     'image_after' => 'recehairlineafter.png',
-                        //     'rating' => 5
-                        // ],
-                        // (object)[
-                        //     'username' => 'Jenny D',
-                        //     'type' => 'hair',
-                        //     'image_before' => 'thincrownhlbefore.png',
-                        //     'image_after' => 'thincrownhlafter.png',
-                        //     'rating' => 5
-                        // ],
-                        // (object)[
-                        //     'username' => 'Jenny D',
-                        //     'type' => 'hair',
-                        //     'image_before' => 'thinninghlbefore.png',
-                        //     'image_after' => 'thinninghlafter.png',
-                        //     'rating' => 5
-                        // ]
                     ];
                     $reviews = collect($reviews);
 

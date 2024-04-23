@@ -202,6 +202,61 @@
         </div>
     </div>
     <div class="quest-v2-content auth-view <?php echo Auth::check()?"d-none":""?>">
+        {{-- <div class="col-12">
+            <div class="reviews">
+                <div class="title mt-5 text-center">
+                    <h1><span class="font-yeseva font-white font-weight-400 letter-spec-1">Analysing</span> <span class="font-poppins font-white font-weight-400 letter-spec-1">Your</span></h1>
+                    <h1 class="font-poppins font-white font-weight-400 letter-spec-1">Answers</h1>
+                </div>
+                <div class="swiper mt-5" id="review-swiper">
+                    <div class="swiper-wrapper">
+                        @if (!empty($reviews))
+                            @foreach ($reviews as $review)
+                            <div class="swiper-slide" style="{{ $review->type == 'hair' ? 'flex-shrink: unset' : 'flex-shrink: 0'}}">
+                                <div class="card review-card">
+                                   @if ($review->type=="hair")
+                                    <div class="card-header d-flex justify-content-between bg-transparent">
+                                            <h5 class="font-poppins review-user-name pt-1">{{ $review->username }}</h5>
+                                            <div class="d-flex flex-column">
+                                                <div><img class="ad-content-image" src="{{ asset('images/verified.svg') }}"/><span class="font-poppins text-dark verified-title">Verified by company</span></div>
+                                                <ul class="d-flex flex-row-reverse stars">
+                                                    @for ($i=0; $i<5; $i++)
+                                                        <li><i class="fa fa-star text-warning"></i></li>
+                                                    @endfor
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="d-flex justify-content-center card-images">
+                                                <img style="margin-right: 32px" src="{{ asset('images').'/'.$review->image_before }}">
+                                                <img src="{{ asset('images').'/'.$review->image_after }}">
+                                            </div>
+                                        </div>  
+                                   @else
+                                    <div class="card-header d-flex justify-content-between" style="background-color: #fff">
+                                        <h5 class="font-poppins review-user-name">{{ $review->username }}</h5>
+                                        <ul class="d-flex flex-row-reverse stars">
+                                            @for ($i=0; $i<$review->rating; $i++)
+                                                <li><i class="fa fa-star text-warning"></i></li>
+                                            @endfor
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <p class="font-poppins review-content">{{ $review->content }}</p>
+                                    </div>
+                                    <div class="card-footer" style="background-color: #fff">
+                                        <img src="{{ asset('images/verified.svg') }}" style="max-width: 2rem"/><span class="font-poppins text-dark" style="font-size: 12px">Verified Customer</span>
+                                    </div>
+                                   @endif
+                                </div>
+                            </div>
+                            @endforeach
+                        @endif
+                    </div>
+                </div>
+                <p class="hair-ad-description">Agent is a UK Registered Pharmacy, all our treatments are managed by Licensed healthcare professionals.</p>
+            </div>
+        </div> --}}
         <div class="quest-v21-signin">
             <div class="img-view"><img src="/frontend/images/signin.jpg"></div>
             <form class="quest-v21-signin-form" action="{{ route('login') }}" method="post">
@@ -2636,21 +2691,6 @@
           </div>
         </div>
     </div>
-    {{-- <div class="col-12">
-        <div class="reviews">
-            <div class="swiper" id="review-swiper">
-                <div class="swiper-wrapper">
-                    @if (!empty($reviews))
-                        @foreach ($reviews as $review)
-                        <div class="swiper-slide">
-                            <p>111</p>
-                        </div>
-                        @endforeach
-                    @endif
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <form action="{{ route('checkout.index') }}" method="POST" id="submit_form">
         @csrf
         <input type="hidden" name="product_ids" id="ProductIds">
@@ -2680,32 +2720,39 @@
 
 <script>
     $(document).ready(function () {
-        var reviewSwiper = new Swiper("#review-swiper", {
-            spaceBetween: 0,
-            initialSlide: 2,
-            slidesPerView: 1,
-            loop: true,
-            speed: 50000,
-            centeredSlides:true,
-            autoplay: {
-                enabled: true,
-                delay: 1,
-            },
-            breakpoints: {
-                640: {
-                slidesPerView: 1,
-                spaceBetween: 0,
+        // viewSliders();
+        function viewSliders() {
+            var reviewSwiper = new Swiper("#review-swiper", {
+                spaceBetween: 0, 
+                loop: true,
+                speed: 20000,
+                autoplay: {
+                    enabled: true,
+                    delay: 0,
                 },
-                768: {
-                slidesPerView: 1,
-                spaceBetween: 0,
+                breakpoints: {
+                    640: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    },
+                    768: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                    },
+                    1440: {
+                    slidesPerView: 2,
+                    spaceBetween: 0,
+                    },
                 },
-                1440: {
-                slidesPerView: 2,
-                spaceBetween: 0,
-                },
-            },
-        });
+            });
+            setTimeout(function() {
+                $('.quest-v2-content').css('background', '#e4e4e4');
+                $('body').css('background', '#e4e4e4');  
+                $('.reviews').hide();
+                $('.quest-v21-signin').show();
+                $('.review-brand-content').show();
+            }, 10000)
+        }
 
         var swiper = new Swiper("#rec_prod", {
             watchSlidesProgress: true,
