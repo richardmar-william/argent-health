@@ -487,5 +487,5 @@ function showVideoAnimation(data) {
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
         $(".video-title").empty();
-    }, data.delay + 1500);
+    }, data.delay + 2000);
 }
