@@ -402,75 +402,133 @@ class CheckoutController extends Controller
                     // ]);
                     //dd("$request->session_id");
                     // DB::commit();
+                    $type  = Session::get('quest_type');
                     $reviews = [
                         (object)[
                             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'review',
-                            'rating' => 5
+                            'type' => 'PE',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
                             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'review',
-                            'rating' => 5
+                            'type' => 'PE',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
                             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'review',
-                            'rating' => 5
+                            'type' => 'PE',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
                             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'review',
-                            'rating' => 5
+                            'type' => 'PE',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
                             'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'review',
-                            'rating' => 5
+                            'type' => 'PE',
+                            'rating' => 5,
+                            'show_type' => 'text'
+                        ],
+                        //////////////////////////////
+                        (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
+                            'username' => 'Jenny D',
+                            'type' => 'ED',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'hair',
-                            'image_before' => 'genhairlossbefore.png',
-                            'image_after' => 'genhairlossafter.png',
-                            'rating' => 5
+                            'type' => 'ED',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'hair',
-                            'image_before' => 'extensivehlbefore.png',
-                            'image_after' => 'extensivehlafter.png',
-                            'rating' => 5
+                            'type' => 'ED',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
-                            'type' => 'hair',
-                            'image_before' => 'recehairlinebefore.png',
-                            'image_after' => 'recehairlineafter.png',
-                            'rating' => 5
+                            'type' => 'ED',
+                            'rating' => 5,
+                            'show_type' => 'text'
                         ],
                         (object)[
+                            'content' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ',
                             'username' => 'Jenny D',
+                            'type' => 'ED',
+                            'rating' => 5,
+                            'show_type' => 'text'
+                        ],
+                        ////////////////////////////////////////
+                        (object)[
+                            'username' => 'Issac',
                             'type' => 'hair',
-                            'image_before' => 'thincrownhlbefore.png',
-                            'image_after' => 'thincrownhlafter.png',
-                            'rating' => 5
+                            'image_before' => 'Issacbefore.png',
+                            'image_after' => 'Issacafter.png',
+                            'rating' => 5,
+                            'show_type' => 'image'
                         ],
                         (object)[
-                            'username' => 'Jenny D',
+                            'username' => 'Harry',
                             'type' => 'hair',
-                            'image_before' => 'thinninghlbefore.png',
-                            'image_after' => 'thinninghlafter.png',
-                            'rating' => 5
+                            'image_before' => 'Harrybefore.png',
+                            'image_after' => 'Harryafter.png',
+                            'rating' => 5,
+                            'show_type' => 'image'
+                        ],
+                        (object)[
+                            'username' => 'Eddy',
+                            'type' => 'hair',
+                            'image_before' => 'Eddybefore.png',
+                            'image_after' => 'Eddyafter.png',
+                            'rating' => 5,
+                            'show_type' => 'image'
+                        ],
+                        ///////////////////////////////
+                        (object)[
+                            'username' => 'Arun H',
+                            'type' => 'beard',
+                            'image_before' => 'Arun Hbefore.jpg',
+                            'image_after' => 'Arun Hafter.jpg',
+                            'rating' => 5,
+                            'show_type' => 'image'
+                        ],
+                        (object)[
+                            'username' => 'Dammy A',
+                            'type' => 'beard',
+                            'image_before' => 'Dammy Abefore.png',
+                            'image_after' => 'Dammy Aafter.png',
+                            'rating' => 5,
+                            'show_type' => 'image'
+                        ],
+                        (object)[
+                            'username' => 'Marcus S',
+                            'type' => 'beard',
+                            'image_before' => 'Marcus Sbefore.jpg',
+                            'image_after' => 'Marcus Safter.jpg',
+                            'rating' => 5,
+                            'show_type' => 'image'
                         ]
                     ];
-                    $reviews = collect($reviews);
-
+                    
+                    $reviews = collect($reviews)->where('type', $type)->shuffle();
+                    
                     Session::forget("new_user");
                     $productList = Product::with('tags')->orderBy("category_id")->orderBy("quantity_mg")->orderBy("quantity")->orderBy("treat_method")->get()->toArray();
                     $mediaList = Media::get()->toArray();

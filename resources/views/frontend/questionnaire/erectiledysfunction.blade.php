@@ -244,10 +244,12 @@
     @php
         if (Session::has('erectile_dysfunction')) {
             $sessionId = Session::get('erectile_dysfunction');
+            Session::put('quest_type', 'ED');
         } else {
             $randomString = Str::random(40);
             Session::put('erectile_dysfunction', $randomString);
             $sessionId = Session::get('erectile_dysfunction');
+            Session::put('quest_type', 'ED');
         }
     @endphp
     <!-- questionnair start here -->
@@ -1705,10 +1707,10 @@
                     </div>
                 </div>
                 <div class="video-content">
-                    <video muted loop playsinline class="video-player" id="video-player-desktop">
+                    <video muted playsinline class="video-player" id="video-player-desktop">
                         <source id="video-src-desktop" type="video/mp4">
                     </video>
-                    <video muted loop playsinline class="video-player" id="video-player-mobile">
+                    <video muted playsinline class="video-player" id="video-player-mobile">
                         <source id="video-src-mobile" type="video/mp4">
                     </video>
                 </div>

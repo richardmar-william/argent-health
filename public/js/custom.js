@@ -410,6 +410,7 @@ function showHairAds() {
         $(".hair-ad-description").removeClass(color);
         $("#default-ad-title").removeClass(color);
         $(".hair-ad-content").hide();
+        $(".questionnaire-v2-main").css("background-color", "#e4e4e4");
     }, 5000);
 }
 
@@ -443,6 +444,7 @@ function showReviews(data) {
         $(".quest-v2-content ").css("background-color", "#fff");
         $("body").addClass("h-100 bg-white");
         $(".quest-review-content").hide();
+        $(".questionnaire-v2-main").css("background-color", "#e4e4e4");
     }, 5000);
 }
 
@@ -475,7 +477,7 @@ function showVideoAnimation(data) {
 
     $("#video-player-mobile").get(0).load();
     $("#video-player-mobile").get(0).play();
-    $(".video-content").fadeIn();
+    $(".video-content").fadeIn(1000);
 
     setTimeout(function () {
         $(".video-content").fadeOut();

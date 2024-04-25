@@ -274,9 +274,11 @@
     @php
         if (Session::has('hair_loss')) {
             $sessionId = Session::get('hair_loss');
+            Session::put('quest_type', 'hair');
         } else {
             $randomString = Str::random(40);
             Session::put('hair_loss', $randomString);
+            Session::put('quest_type', 'hair');
             $sessionId = Session::get('hair_loss');
         }
     @endphp
