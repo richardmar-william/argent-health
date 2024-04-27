@@ -2684,7 +2684,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"><img src="{{ asset('images/close-icon.png') }}"/></button>
                 </div>
                 <div class="modal-product-content">
-                    <h3 class="modal-product-title"></h3>
+                    <h3 class="modal-product-title text-center"></h3>
                     <p class="modal-product-description" style="max-height: 20rem; overflow-y: auto"></p>
                 </div>
             </div>
@@ -2703,6 +2703,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 <!-- <script src="js/custom.js"></script> -->
 <script src="{{ asset('js/custom.js') }}"></script>
+<script src="{{ asset('js/cart_product.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 </body>
 
@@ -3065,20 +3066,6 @@
 
         $("#ProductIds").val(product_ids.join(',')); // Convert the array to a comma-separated string and set the value
     }
-
-    $('.show-product-modal').click(function(e){
-        e.preventDefault();
-        var data = $(this).data('product')
-        var image = $(this).data('image')
-
-        var modal = $('#product-modal')
-        $('.modal-product-image').attr('src', image);
-        $('.modal-product-title').html(data.name)
-        $('.modal-product-description').html(data.description)
-        modal.modal('show')
-        return false;
-    })
-
     function OpenModal(product) {
         console.log(product);
         return false
