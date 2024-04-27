@@ -500,6 +500,14 @@ class CheckoutController extends Controller
                             'rating' => 5,
                             'show_type' => 'image'
                         ],
+                        (object)[
+                            'username' => 'Steven',
+                            'type' => 'hair',
+                            'image_before' => 'Stevenbefore.jpg',
+                            'image_after' => 'Stevenafter.jpg',
+                            'rating' => 5,
+                            'show_type' => 'image'
+                        ],
                         ///////////////////////////////
                         (object)[
                             'username' => 'Arun H',
