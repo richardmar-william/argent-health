@@ -405,7 +405,7 @@ function showHairAds() {
     setTimeout(function () {
         $(".quest-v2-inner-wrap").show();
         $(".quest-v2-content ").css("background-color", "#fff");
-        $("body").addClass("h-100 bg-white");
+        $("body").addClass("h-100");
         $("#ad-title").removeClass(color);
         $(".hair-ad-description").removeClass(color);
         $("#default-ad-title").removeClass(color);
@@ -426,7 +426,8 @@ function showBeardAds() {
     setTimeout(function () {
         $(".quest-v2-inner-wrap").show();
         $(".quest-v2-content ").css("background-color", "#fff");
-        $("body").addClass("h-100 bg-white");
+        $(".questionnaire-v2-main ").css("background-color", "#e4e4e4");
+        $("body").addClass("h-100");
         $(".beard-ad-description").removeClass("text-white");
         $(".beard-ad-content").hide();
     }, 5000);
@@ -442,7 +443,7 @@ function showReviews(data) {
     setTimeout(function () {
         $(".quest-v2-inner-wrap").show();
         $(".quest-v2-content ").css("background-color", "#fff");
-        $("body").addClass("h-100 bg-white");
+        $("body").addClass("h-100");
         $(".quest-review-content").hide();
         $(".questionnaire-v2-main").css("background-color", "#e4e4e4");
     }, 5000);
@@ -487,7 +488,7 @@ function showVideoAnimation(data) {
         $(".main-container").addClass("container-fluid");
         $(".quest-v2-inner-wrap").fadeIn();
         $(".quest-v2-content ").css("background-color", "#fff");
-        $("body").addClass("h-100 bg-white");
+        $("body").addClass("h-100");
         $(".video-title").empty();
     }, data.delay + 2000);
 }

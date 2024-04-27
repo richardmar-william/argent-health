@@ -315,7 +315,7 @@
                     </div>
                 </div>
                 <div class="col-12">
-                    <div class="brands container mt-5" id="business brands">
+                    <div class="brands container mt-5 mb-5" id="business brands">
                         <div class="d-flex justify-content-center">
                             <div class="d-flex">
                                 <div class="d-flex bg-black brands-rating mr-3">
