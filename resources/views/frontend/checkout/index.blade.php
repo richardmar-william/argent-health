@@ -315,7 +315,8 @@
                                             <div class="total-amount">
                                                 <h3>Total</h3>
                                                 <h3 id="final_price" class="text-default"> @if($category_id != 31)  <span class="text-grey"> <del>£{{$price}}</del></span> @endif <span id="first_time_disc"> £{{$first_time_discount}}.00 </span>
-                                            </h3>
+                                                    <input type="hidden" id="origin-total-price" value={{$price}}>
+                                                </h3>
                                                 <span id="totalAmt" class="d-none">{{$first_time_discount}}</span>
                                                 <!-- <p><span id="user_off"></span>%Discount</p> -->
                                             </div>
@@ -1099,6 +1100,7 @@ $(document).ready(function() {
     $('#coupon_btn').click(function(){
         if($('#coupon_code').val() != ''){
             var code = $('#coupon_code').val();
+            var originPrice = $('#origin-total-price').val();
             $.ajax({
             type: "GET",
             url: `/checkout/getcoupon/${code}`,
@@ -1106,7 +1108,7 @@ $(document).ready(function() {
                 'X-CSRF-Token': csrfToken
             },
             success: function(response) {
-      
+                
                 $('#coupon_btn').prop('disabled',true);
                 $('#coupon_code').prop('disabled',true);
                 $('#coupon_error').text('Coupon applied');
@@ -1120,7 +1122,7 @@ $(document).ready(function() {
                         break;
                     }
                     case 'percentage': {
-                        discountedAmt = totalAmt * result.value/100;
+                        discountedAmt = parseInt(originPrice) * result.value/100;
                         afterAmt = totalAmt - discountedAmt;
                     }
                 }
