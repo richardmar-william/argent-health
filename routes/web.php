@@ -155,6 +155,7 @@ Route::any('checkout/place_order', [CheckoutController::class, 'place_order'])->
 Route::get('checkout/payment-page', [CheckoutController::class, 'payment_page'])->name('payment.page');
 Route::any('checkout/success1', [CheckoutController::class, 'success'])->name('checkout.success1');
 Route::post('checkout/applycoupon', [CheckoutController::class, 'apply_coupon'])->name('checkout.applycoupon');
+Route::get('checkout/getcoupon/{code}', [CheckoutController::class, 'get_coupon'])->name('checkout.getcoupon');
 Route::post('checkout/subscription_update', [CheckoutController::class, 'subscription_update'])->name('subscription.update');
 Route::post('/google-payment', [GooglePayController::class, 'store'])->name('googlepayment.store');
 Route::post('googlepay-config', [GooglePayController::class, 'setConfig'])->name('googlepay.config');

@@ -16,6 +16,7 @@ use App\Models\Product;
 use App\Models\Media;
 use Session;
 use App\Models\Order;
+use App\Models\Coupon;
 use Auth;
 use Illuminate\Support\Str;
 use App\Models\affiliateCoupon;
@@ -933,6 +934,15 @@ class CheckoutController extends Controller
 
      }
 
+     public function get_coupon($code) {
+        $coupon = Coupon::where('code', $code)->active()->first();
+        if(!$coupon) return response()->json(['error' => 'Not Found'], 404);
+        $result = [
+            'type' => $coupon->type,
+            'value' => $coupon->value
+        ];
+        return response()->json(compact('result'), 200);
+     }
 
 
      //code for payment

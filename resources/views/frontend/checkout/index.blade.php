@@ -1080,39 +1080,6 @@ $(document).ready(function() {
 });
 </script>
 
-<!-- script for calculate coupon -->
-<script>
-$(document).ready(function() {
-    var csrfToken = $('meta[name="csrf-token"]').attr('content');
-
-    // $("#myForm").submit(function(event) {
-    //     event.preventDefault();
-    //     var formData = $(this).serialize();
-    //     $.ajax({
-    //         type: "POST",
-    //         url: "{{ route('checkout.applycoupon') }}",
-    //         headers: {
-    //             'X-CSRF-Token': csrfToken
-    //         },
-    //         data: formData,
-    //         success: function(response) {
-    //             const final = "£" + response[0];
-    //             const user_off = response[1];
-    //             $("#error").hide();
-    //             $("#final_price").html(final),
-    //                 $("#user_off").html(user_off)
-    //             // console.log(response);
-    //         },
-    //         error: function(error) {
-    //             // console.error("Error:", error);
-    //             $("#error").html("Invalid Coupon")
-    //         }
-    //     });
-    // });
-});
-</script>
-<!-- script for calculate coupon -->
-
 <!-- script for subscription update -->
 <script>
 </script>
@@ -1121,35 +1088,57 @@ $(document).ready(function() {
 <script>
 // Wait for the document to be ready
 $(document).ready(function() {
-
+    var csrfToken = $('meta[name="csrf-token"]').attr('content');
     $('#coupon_btn').prop('disabled',false);
     $('#coupon_code').prop('disabled',false);
     $('#coupon_error').val('');
     $('#coupon_btn').removeClass('d-none');
+    var totalAmt = Number($('#totalAmt').html());
+    var discountedAmt = 0;
+    var afterAmt = 0;
     $('#coupon_btn').click(function(){
         if($('#coupon_code').val() != ''){
-            $('#coupon_btn').prop('disabled',true);
-            $('#coupon_code').prop('disabled',true);
-            $('#coupon_error').text('Coupon applied');
-            $('#coupon_btn').addClass('d-none');
-            $('#coupon_error').addClass('text-success');
-
-
-            var totalAmt = Number($('#totalAmt').html());
-            var discountedAmt = totalAmt*(0.1);
-            var afterAmt = totalAmt*(0.9);
-            discountedAmt = parseFloat(discountedAmt).toFixed(2);
-            afterAmt = parseFloat(afterAmt).toFixed(2);
-            $("#input_couponTotal").val(discountedAmt)
-            // $("[name='total_price']").val(afterAmt)
-            $('#couponTotal').html('£'+discountedAmt);
-            $('#orderTotal').html('£'+afterAmt)
-            $('.coupon-area').removeClass('d-none');
-
-
+            var code = $('#coupon_code').val();
+            $.ajax({
+            type: "GET",
+            url: `/checkout/getcoupon/${code}`,
+            headers: {
+                'X-CSRF-Token': csrfToken
+            },
+            success: function(response) {
+      
+                $('#coupon_btn').prop('disabled',true);
+                $('#coupon_code').prop('disabled',true);
+                $('#coupon_error').text('Coupon applied');
+                $('#coupon_btn').addClass('d-none');
+                $('#coupon_error').addClass('text-success');
+                var result = response.result;
+                switch(result.type) {
+                    case 'fixed': {
+                        discountedAmt = result.value;
+                        afterAmt = totalAmt - discountedAmt;
+                        break;
+                    }
+                    case 'percentage': {
+                        discountedAmt = totalAmt * result.value/100;
+                        afterAmt = totalAmt - discountedAmt;
+                    }
+                }
+                discountedAmt = parseFloat(discountedAmt).toFixed(2);
+                afterAmt = parseFloat(afterAmt).toFixed(2);
+                $("#input_couponTotal").val(discountedAmt)
+                // $("[name='total_price']").val(afterAmt)
+                $('#couponTotal').html('£'+discountedAmt);
+                $('#orderTotal').html('£'+afterAmt)
+                $('.coupon-area').removeClass('d-none');
+            },
+            error: function(error) {
+                alert('Invalid coupon');
+            }
+        });
+            
         }else{
-            $('#coupon_btn').prop('disabled',false);
-            $('#coupon_code').prop('disabled',false);
+            alert('Insert coupon');
         }
     });
 
